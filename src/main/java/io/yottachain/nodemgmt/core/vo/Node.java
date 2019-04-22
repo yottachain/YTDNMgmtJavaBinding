@@ -40,6 +40,8 @@ public class Node {
         this.addrs = addrs;
     }
 
+    public Node() {}
+
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
         this.id = id;
         this.nodeid = nodeid;

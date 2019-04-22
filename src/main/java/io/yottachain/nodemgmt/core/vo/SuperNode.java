@@ -49,6 +49,8 @@ public class SuperNode {
         this.addrs = addrs;
     }
 
+    public SuperNode() {}
+
     public SuperNode(int id, String nodeid, String pubkey, String privkey, List<String> addrs) {
         this.id = id;
         this.nodeid = nodeid;
