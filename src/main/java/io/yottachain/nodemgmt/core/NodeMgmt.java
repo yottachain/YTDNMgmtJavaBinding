@@ -3,6 +3,7 @@ package io.yottachain.nodemgmt.core;
 import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
+import io.yottachain.nodemgmt.YottaNodeMgmt;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.vo.Node;
 import io.yottachain.nodemgmt.core.vo.SuperNode;
@@ -20,6 +21,61 @@ public class NodeMgmt {
             String err = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
             throw new NodeMgmtException(err);
+        }
+    }
+
+    public static Node registerNode(Node node) throws NodeMgmtException {
+        if (node == null) {
+            throw new NodeMgmtException("register node cannot be null.");
+        }
+        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
+        ntnode.fill(node);
+        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.RegisterNode(ntnode);
+        if (nodePtr != null) {
+            try {
+                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
+                if (retnode.error != null) {
+                    String err = retnode.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                return retnode.convertTo();
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static Node updateNodeStatus(Node node) throws NodeMgmtException {
+        if (node == null) {
+            throw new NodeMgmtException("update status cannot be null.");
+        }
+        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
+        ntnode.fill(node);
+        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.UpdateNodeStatus(ntnode);
+        if (nodePtr != null) {
+            try {
+                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
+                if (retnode.error != null) {
+                    String err = retnode.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                return retnode.convertTo();
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static void incrUsedSpace(int id, long incr) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.IncrUsedSpace(id, incr);
+        if (errPtr != null) {
+            String errstr = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(errstr);
         }
     }
 
@@ -182,9 +238,21 @@ public class NodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        NodeMgmt.start("mongodb://localhost:27017");
-        // List<Node> nodes = NodeMgmt.allocNodes(100);
-//        List<Node> nodes = NodeMgmt.getNodes(Arrays.asList(new Integer[]{1}));
+        NodeMgmt.start("mongodb://152.136.13.254:27017");
+        NodeMgmt.incrUsedSpace(4,5);
+        YottaNodeMgmt.registerNode("16Uiu2HAm5hqd85Hzpvvg4BfVBVfAsXPaRMj9YNhwkkGnD2Qiqxn9", "user1234", 1000l, Arrays.asList(new String[]{"/ip4/127.0.0.1/tcp/2222"}));
+//        Node node = new Node(11, "123", "456", "user123", Arrays.asList("/ip4/127.0.0.1/tcp/1888", "/ip4/10.0.1.2/tcp/1888"),10, 20, 30, 40, 50, 60, 70);
+//        node = NodeMgmt.updateNodeStatus(node);
+//        System.out.println("===========================");
+//        System.out.println("ID: " + node.getId());
+//        System.out.println("NODE ID: " + node.getNodeid());
+//        System.out.println("PUBKEY: " + node.getPubkey());
+//        System.out.println("ADDRS: " + node.getAddrs().size());
+
+
+
+//        List<Node> nodes = NodeMgmt.allocNodes(100);
+//        //List<Node> nodes = NodeMgmt.getNodes(Arrays.asList(new Integer[]{1}));
 //        for (Node n : nodes) {
 //            System.out.println("===========================");
 //            System.out.println("ID: " + n.getId());
@@ -192,16 +260,16 @@ public class NodeMgmt {
 //            System.out.println("PUBKEY: " + n.getPubkey());
 //            System.out.println("ADDRS: " + n.getAddrs().size());
 //        }
-
-        List<SuperNode> supernodes = NodeMgmt.getSuperNodes();
-        for (SuperNode n : supernodes) {
-            System.out.println("===========================");
-            System.out.println("ID: " + n.getId());
-            System.out.println("NODE ID: " + n.getNodeid());
-            System.out.println("PUBKEY: " + n.getPubkey());
-            System.out.println("PRIVKEY: " + n.getPrivkey());
-            System.out.println("ADDRS: " + n.getAddrs().size());
-        }
-        System.out.println("PK: " + NodeMgmt.getNodeIDByPubKey("3333333"));
+//
+//        List<SuperNode> supernodes = NodeMgmt.getSuperNodes();
+//        for (SuperNode n : supernodes) {
+//            System.out.println("===========================");
+//            System.out.println("ID: " + n.getId());
+//            System.out.println("NODE ID: " + n.getNodeid());
+//            System.out.println("PUBKEY: " + n.getPubkey());
+//            System.out.println("PRIVKEY: " + n.getPrivkey());
+//            System.out.println("ADDRS: " + n.getAddrs().size());
+//        }
+//        System.out.println("PK: " + NodeMgmt.getNodeIDByPubKey("5JvCxXLSLzihWdXT7C9mtQkfLFHJZPdX1hxQo6su7dNt28mZ5W2"));
     }
 }
