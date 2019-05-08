@@ -222,6 +222,7 @@ public class NodeMgmtWrapper {
         Pointer GetSuperNodePrivateKey(int id);
         Pointer GetNodeIDByPubKey(String pubkey);
         Pointer GetSuperNodeIDByPubKey(String pubkey);
+        Pointer AddDNI(int id, Pointer shard, long size);
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);

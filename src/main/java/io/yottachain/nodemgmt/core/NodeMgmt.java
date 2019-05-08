@@ -237,10 +237,26 @@ public class NodeMgmt {
         }
     }
 
+    public static void addDNI(int id, byte[] shard) throws NodeMgmtException {
+        Pointer shardPtr = new Memory(Native.getNativeSize(Byte.TYPE) * shard.length);
+        for (int i=0; i<shard.length; i++) {
+            shardPtr.setByte(i, shard[i]);
+        }
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.AddDNI(id, shardPtr, shard.length);
+        Native.free(Pointer.nativeValue(shardPtr));
+        Pointer.nativeValue(shardPtr, 0);
+        if (errPtr != null) {
+            String err = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(err);
+        }
+    }
+
     public static void main(String[] args) throws Exception {
-        NodeMgmt.start("mongodb://152.136.13.254:27017");
-        NodeMgmt.incrUsedSpace(4,5);
-        YottaNodeMgmt.registerNode("16Uiu2HAm5hqd85Hzpvvg4BfVBVfAsXPaRMj9YNhwkkGnD2Qiqxn9", "user1234", 1000l, Arrays.asList(new String[]{"/ip4/127.0.0.1/tcp/2222"}));
+        NodeMgmt.start("mongodb://127.0.0.1:27017");
+        NodeMgmt.addDNI(2, "abc".getBytes());
+//        NodeMgmt.incrUsedSpace(4,5);
+//        YottaNodeMgmt.registerNode("16Uiu2HAm5hqd85Hzpvvg4BfVBVfAsXPaRMj9YNhwkkGnD2Qiqxn9", "hahaha","user1234", 1000l, Arrays.asList(new String[]{"/ip4/127.0.0.1/tcp/2222"}));
 //        Node node = new Node(11, "123", "456", "user123", Arrays.asList("/ip4/127.0.0.1/tcp/1888", "/ip4/10.0.1.2/tcp/1888"),10, 20, 30, 40, 50, 60, 70);
 //        node = NodeMgmt.updateNodeStatus(node);
 //        System.out.println("===========================");

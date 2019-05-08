@@ -12,9 +12,10 @@ public class YottaNodeMgmt {
         NodeMgmt.start(urls);
     }
 
-    public static Node registerNode(String nodeid, String owner, long maxDataSpace, List<String> addrs) throws NodeMgmtException {
+    public static Node registerNode(String nodeid, String pubkey, String owner, long maxDataSpace, List<String> addrs) throws NodeMgmtException {
         Node node = new Node();
         node.setNodeid(nodeid);
+        node.setPubkey(pubkey);
         node.setOwner(owner);
         node.setMaxDataSpace(maxDataSpace);
         node.setAddrs(addrs);
@@ -55,5 +56,9 @@ public class YottaNodeMgmt {
 
     public static Integer getSuperNodeIDByPubKey(String pubkey) throws NodeMgmtException {
         return NodeMgmt.getSuperNodeIDByPubKey(pubkey);
+    }
+
+    public static void addDNI(int id, byte[] shard) throws NodeMgmtException {
+        NodeMgmt.addDNI(id, shard);
     }
 }
