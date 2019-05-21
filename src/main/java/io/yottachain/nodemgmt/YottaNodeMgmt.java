@@ -8,8 +8,8 @@ import io.yottachain.nodemgmt.core.vo.SuperNode;
 import java.util.List;
 
 public class YottaNodeMgmt {
-    public static void start(String urls) throws NodeMgmtException {
-        NodeMgmt.start(urls);
+    public static void start(String mongoURL, String eosURL) throws NodeMgmtException {
+        NodeMgmt.start(mongoURL, eosURL);
     }
 
     public static Node registerNode(String nodeid, String pubkey, String owner, long maxDataSpace, List<String> addrs) throws NodeMgmtException {
@@ -22,14 +22,13 @@ public class YottaNodeMgmt {
         return  NodeMgmt.registerNode(node);
     }
 
-    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long usedSpace, List<String> addrs) throws NodeMgmtException {
+    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, List<String> addrs) throws NodeMgmtException {
         Node node = new Node();
         node.setId(id);
         node.setCpu(cpu);
         node.setMemory(memory);
         node.setBandwidth(bandwidth);
         node.setMaxDataSpace(maxDataSpace);
-        node.setAssignedSpace(assignedSpace);
         node.setAddrs(addrs);
         return  NodeMgmt.updateNodeStatus(node);
     }

@@ -212,7 +212,7 @@ public class NodeMgmtWrapper {
                 Native.load(Platform.isWindows()?"nodemgmt.dll":"nodemgmt.so",
                         NodeMgmtLib.class);
 
-        Pointer NewInstance(String urls);
+        Pointer NewInstance(String mongoURL, String eosURL);
         Pointer RegisterNode(Node node);
         Pointer IncrUsedSpace(int id, long incr);
         Pointer UpdateNodeStatus(Node node);

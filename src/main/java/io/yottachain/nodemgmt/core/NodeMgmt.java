@@ -3,7 +3,6 @@ package io.yottachain.nodemgmt.core;
 import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
-import io.yottachain.nodemgmt.YottaNodeMgmt;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.vo.Node;
 import io.yottachain.nodemgmt.core.vo.SuperNode;
@@ -15,8 +14,8 @@ import java.util.List;
 
 public class NodeMgmt {
 
-    public static void start(String urls) throws NodeMgmtException {
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(urls);
+    public static void start(String mongoURL, String eosURL) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL);
         if (errPtr != null) {
             String err = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
@@ -253,7 +252,8 @@ public class NodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        NodeMgmt.start("mongodb://127.0.0.1:27017");
+        NodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.11.202:8888");
+        List<Node> nodes = NodeMgmt.allocNodes(10);
         NodeMgmt.addDNI(2, "abc".getBytes());
 //        NodeMgmt.incrUsedSpace(4,5);
 //        YottaNodeMgmt.registerNode("16Uiu2HAm5hqd85Hzpvvg4BfVBVfAsXPaRMj9YNhwkkGnD2Qiqxn9", "hahaha","user1234", 1000l, Arrays.asList(new String[]{"/ip4/127.0.0.1/tcp/2222"}));
