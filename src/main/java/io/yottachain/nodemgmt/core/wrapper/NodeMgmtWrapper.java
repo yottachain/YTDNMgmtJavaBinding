@@ -175,6 +175,27 @@ public class NodeMgmtWrapper {
         }
     }
 
+    public static class Nodestatret extends Structure {
+        public long activeMiners;
+        public long totalMiners;
+        public long maxTotal;
+        public long assignedTotal;
+        public long productiveTotal;
+        public long usedTotal;
+        public Pointer error;
+
+        public Nodestatret(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"activeMiners", "totalMiners", "maxTotal", "assignedTotal", "productiveTotal", "usedTotal", "error"});
+        }
+
+    }
+
     public static class Stringwitherror extends Structure {
         public Pointer str;
         public Pointer error;
@@ -223,11 +244,14 @@ public class NodeMgmtWrapper {
         Pointer GetNodeIDByPubKey(String pubkey);
         Pointer GetSuperNodeIDByPubKey(String pubkey);
         Pointer AddDNI(int id, Pointer shard, long size);
+        Pointer ActiveNodesList();
+        Pointer Statistics();
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);
         void FreeAllocnoderet(Pointer ptr);
         void FreeAllocsupernoderet(Pointer ptr);
+        void FreeNodestatret(Pointer ptr);
         void FreeStringwitherror(Pointer ptr);
         void FreeIntwitherror(Pointer ptr);
         void FreeString(Pointer ptr);

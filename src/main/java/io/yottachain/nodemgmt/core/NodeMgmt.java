@@ -8,9 +8,7 @@ import io.yottachain.nodemgmt.core.vo.Node;
 import io.yottachain.nodemgmt.core.vo.SuperNode;
 import io.yottachain.nodemgmt.core.wrapper.NodeMgmtWrapper;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class NodeMgmt {
 
@@ -251,41 +249,60 @@ public class NodeMgmt {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        NodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.11.202:8888");
-        List<Node> nodes = NodeMgmt.allocNodes(10);
-        NodeMgmt.addDNI(2, "abc".getBytes());
-//        NodeMgmt.incrUsedSpace(4,5);
-//        YottaNodeMgmt.registerNode("16Uiu2HAm5hqd85Hzpvvg4BfVBVfAsXPaRMj9YNhwkkGnD2Qiqxn9", "hahaha","user1234", 1000l, Arrays.asList(new String[]{"/ip4/127.0.0.1/tcp/2222"}));
-//        Node node = new Node(11, "123", "456", "user123", Arrays.asList("/ip4/127.0.0.1/tcp/1888", "/ip4/10.0.1.2/tcp/1888"),10, 20, 30, 40, 50, 60, 70);
-//        node = NodeMgmt.updateNodeStatus(node);
-//        System.out.println("===========================");
-//        System.out.println("ID: " + node.getId());
-//        System.out.println("NODE ID: " + node.getNodeid());
-//        System.out.println("PUBKEY: " + node.getPubkey());
-//        System.out.println("ADDRS: " + node.getAddrs().size());
+    public static List<Node> activeNodesList() throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.ActiveNodesList();
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Allocnoderet allocNodeRet = new NodeMgmtWrapper.Allocnoderet(ptr);
+                if (allocNodeRet.error != null) {
+                    String err = allocNodeRet.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                if (allocNodeRet.nodes == null) {
+                    return null;
+                }
+                Pointer[] pVals = allocNodeRet.nodes.getPointerArray(0, allocNodeRet.size);
+                List<Node> nodeList = new ArrayList<>();
+                for (Pointer p : pVals) {
+                    NodeMgmtWrapper.Node n = new NodeMgmtWrapper.Node(p);
+                    int id = n.id;
+                    String nodeid = (n.nodeid==null)?null:n.nodeid.getString(0);
+                    String pubkey = (n.pubkey==null)?null:n.pubkey.getString(0);
+                    String[] addrs = (n.addrs==null)?null:n.addrs.getStringArray(0, n.addrsize);
+                    Node node = new Node(id, nodeid, pubkey, Arrays.asList(addrs));
+                    nodeList.add(node);
+                }
+                return nodeList;
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeAllocnoderet(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
 
-
-
-//        List<Node> nodes = NodeMgmt.allocNodes(100);
-//        //List<Node> nodes = NodeMgmt.getNodes(Arrays.asList(new Integer[]{1}));
-//        for (Node n : nodes) {
-//            System.out.println("===========================");
-//            System.out.println("ID: " + n.getId());
-//            System.out.println("NODE ID: " + n.getNodeid());
-//            System.out.println("PUBKEY: " + n.getPubkey());
-//            System.out.println("ADDRS: " + n.getAddrs().size());
-//        }
-//
-//        List<SuperNode> supernodes = NodeMgmt.getSuperNodes();
-//        for (SuperNode n : supernodes) {
-//            System.out.println("===========================");
-//            System.out.println("ID: " + n.getId());
-//            System.out.println("NODE ID: " + n.getNodeid());
-//            System.out.println("PUBKEY: " + n.getPubkey());
-//            System.out.println("PRIVKEY: " + n.getPrivkey());
-//            System.out.println("ADDRS: " + n.getAddrs().size());
-//        }
-//        System.out.println("PK: " + NodeMgmt.getNodeIDByPubKey("5JvCxXLSLzihWdXT7C9mtQkfLFHJZPdX1hxQo6su7dNt28mZ5W2"));
+    public static Map<String, Long> statistics() throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.Statistics();
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Nodestatret nodestatret = new NodeMgmtWrapper.Nodestatret(ptr);
+                if (nodestatret.error != null) {
+                    String err = nodestatret.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                Map<String, Long> map = new HashMap<>();
+                map.put("activeMiner", nodestatret.activeMiners);
+                map.put("totalMiner", nodestatret.totalMiners);
+                map.put("maxDataSpace", nodestatret.maxTotal);
+                map.put("assignedSpace", nodestatret.assignedTotal);
+                map.put("productiveSpace", nodestatret.productiveTotal);
+                map.put("usedSpace", nodestatret.usedTotal);
+                return map;
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNodestatret(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
     }
 }
