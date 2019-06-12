@@ -12,8 +12,8 @@ import java.util.*;
 
 public class NodeMgmt {
 
-    public static void start(String mongoURL, String eosURL) throws NodeMgmtException {
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL);
+    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwner);
         if (errPtr != null) {
             String err = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);

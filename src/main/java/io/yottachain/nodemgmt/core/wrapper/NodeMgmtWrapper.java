@@ -22,6 +22,7 @@ public class NodeMgmtWrapper {
         public long assignedSpace;
         public long productiveSpace;
         public long usedSpace;
+        public int relay;
         public Pointer error;
 
         public Node() {
@@ -35,7 +36,7 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "error"});
+            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "relay", "error"});
         }
 
         public void fill(io.yottachain.nodemgmt.core.vo.Node node) {
@@ -66,6 +67,7 @@ public class NodeMgmtWrapper {
             this.assignedSpace = node.getAssignedSpace();
             this.productiveSpace = node.getProductiveSpace();
             this.usedSpace = node.getUsedSpace();
+            this.relay = node.getRelay();
         }
 
         public io.yottachain.nodemgmt.core.vo.Node convertTo() {
@@ -82,6 +84,7 @@ public class NodeMgmtWrapper {
             node.setAssignedSpace(this.assignedSpace);
             node.setProductiveSpace(this.productiveSpace);
             node.setUsedSpace(this.usedSpace);
+            node.setRelay(this.relay);
             return node;
         }
     }
@@ -233,7 +236,7 @@ public class NodeMgmtWrapper {
                 Native.load(Platform.isWindows()?"nodemgmt.dll":"nodemgmt.so",
                         NodeMgmtLib.class);
 
-        Pointer NewInstance(String mongoURL, String eosURL);
+        Pointer NewInstance(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner);
         Pointer RegisterNode(Node node);
         Pointer IncrUsedSpace(int id, long incr);
         Pointer UpdateNodeStatus(Node node);

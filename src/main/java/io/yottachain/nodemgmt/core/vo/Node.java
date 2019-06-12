@@ -16,6 +16,7 @@ public class Node {
     private long assignedSpace;
     private long productiveSpace;
     private long usedSpace;
+    private int relay;
 
     public int getId() {
         return id;
@@ -113,6 +114,14 @@ public class Node {
         this.usedSpace = usedSpace;
     }
 
+    public int getRelay() {
+        return relay;
+    }
+
+    public void setRelay(int relay) {
+        this.relay = relay;
+    }
+
     public Node() {}
 
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
@@ -122,7 +131,7 @@ public class Node {
         this.addrs = addrs;
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace) {
+    public Node(int id, String nodeid, String pubkey, String owner, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, int relay) {
         this(id, nodeid, pubkey, addrs);
         this.owner = owner;
         this.cpu = cpu;
@@ -132,6 +141,7 @@ public class Node {
         this.assignedSpace = assignedSpace;
         this.productiveSpace = productiveSpace;
         this.usedSpace = usedSpace;
+        this.relay = relay;
     }
 
 }

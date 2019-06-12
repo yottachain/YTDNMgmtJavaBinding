@@ -5,27 +5,25 @@ import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.vo.Node;
 import io.yottachain.nodemgmt.core.vo.SuperNode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class YottaNodeMgmt {
-    public static void start(String mongoURL, String eosURL) throws NodeMgmtException {
-        NodeMgmt.start(mongoURL, eosURL);
+    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner) throws NodeMgmtException {
+        NodeMgmt.start(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwner);
     }
 
-    public static Node registerNode(String nodeid, String pubkey, String owner, long maxDataSpace, List<String> addrs) throws NodeMgmtException {
+    public static Node registerNode(String nodeid, String pubkey, String owner, long maxDataSpace, List<String> addrs, boolean relay) throws NodeMgmtException {
         Node node = new Node();
         node.setNodeid(nodeid);
         node.setPubkey(pubkey);
         node.setOwner(owner);
         node.setMaxDataSpace(maxDataSpace);
         node.setAddrs(addrs);
+        node.setRelay(relay ? 1 : 0);
         return  NodeMgmt.registerNode(node);
     }
 
-    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, List<String> addrs) throws NodeMgmtException {
+    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, List<String> addrs, boolean relay) throws NodeMgmtException {
         Node node = new Node();
         node.setId(id);
         node.setCpu(cpu);
@@ -86,8 +84,9 @@ public class YottaNodeMgmt {
 
     private static String checkPublicIP(List<String> addrs) {
         for (String addr : addrs) {
-            if (addr.startsWith("/ip4/127.0.0.1") ||
+            if (addr.startsWith("/ip4/127.") ||
                     addr.startsWith("/ip4/192.168.") ||
+                    addr.startsWith("/ip4/169.254.") ||
                     addr.startsWith("/ip4/10.") ||
                     addr.startsWith("/ip4/172.16.") ||
                     addr.startsWith("/ip4/172.17.") ||
@@ -116,7 +115,9 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.11.202:8888");
+        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.16.118:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345");
+        //Node node = YottaNodeMgmt.registerNode("1234", "abcd", "username1234", 100000, Arrays.asList("/ip4/127.0.0.1/tcp/8888"));
+
         List<Node> nodes = YottaNodeMgmt.allocNodes(10);
         List<Map<String, String>> actives = YottaNodeMgmt.activeNodesList();
         Map<String, Long> map = NodeMgmt.statistics();
@@ -124,8 +125,8 @@ public class YottaNodeMgmt {
 //        NodeMgmt.addDNI(2, "abc".getBytes());
 //        NodeMgmt.incrUsedSpace(4,5);
 //        YottaNodeMgmt.registerNode("16Uiu2HAm5hqd85Hzpvvg4BfVBVfAsXPaRMj9YNhwkkGnD2Qiqxn9", "hahaha","user1234", 1000l, Arrays.asList(new String[]{"/ip4/127.0.0.1/tcp/2222"}));
-//        Node node = new Node(11, "123", "456", "user123", Arrays.asList("/ip4/127.0.0.1/tcp/1888", "/ip4/10.0.1.2/tcp/1888"),10, 20, 30, 40, 50, 60, 70);
-//        node = NodeMgmt.updateNodeStatus(node);
+        Node node = new Node(716, null, null, null, Arrays.asList("/ip4/192.168.2.159/tcp/9001", "/ip4/192.168.242.1/tcp/9001", "/ip4/192.168.75.1/tcp/9001", "/ip4/127.0.0.1/tcp/9001"),37, 73, 0, 2621440, 0, 0, 0, 1);
+        node = NodeMgmt.updateNodeStatus(node);
 //        System.out.println("===========================");
 //        System.out.println("ID: " + node.getId());
 //        System.out.println("NODE ID: " + node.getNodeid());
