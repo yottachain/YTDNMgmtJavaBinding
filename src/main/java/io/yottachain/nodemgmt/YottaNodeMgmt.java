@@ -8,8 +8,8 @@ import io.yottachain.nodemgmt.core.vo.SuperNode;
 import java.util.*;
 
 public class YottaNodeMgmt {
-    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner) throws NodeMgmtException {
-        NodeMgmt.start(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwner);
+    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner, int bpid) throws NodeMgmtException {
+        NodeMgmt.start(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwner, bpid);
     }
 
     public static Node registerNode(String nodeid, String pubkey, String owner, long maxDataSpace, List<String> addrs, boolean relay) throws NodeMgmtException {
@@ -115,7 +115,7 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.16.118:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345");
+        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.16.118:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345", 2);
         //Node node = YottaNodeMgmt.registerNode("1234", "abcd", "username1234", 100000, Arrays.asList("/ip4/127.0.0.1/tcp/8888"));
 
         List<Node> nodes = YottaNodeMgmt.allocNodes(10);
