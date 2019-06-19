@@ -5,6 +5,7 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.vo.Node;
+import io.yottachain.nodemgmt.core.vo.SpotCheckList;
 import io.yottachain.nodemgmt.core.vo.SuperNode;
 import io.yottachain.nodemgmt.core.wrapper.NodeMgmtWrapper;
 
@@ -303,6 +304,73 @@ public class NodeMgmt {
             }
         } else {
             throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static List<SpotCheckList> getSpotCheckList() throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSpotCheckList();
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Spotchecklists spotchecklists = new NodeMgmtWrapper.Spotchecklists(ptr);
+                if (spotchecklists.error != null) {
+                    String err = spotchecklists.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                List<SpotCheckList> spotCheckList = new ArrayList<SpotCheckList>();
+                if (spotchecklists.list != null) {
+                    Pointer[] ptrs = spotchecklists.list.getPointerArray(0, spotchecklists.size);
+                    for (int i = 0; i< ptrs.length; i++){
+                        Pointer p = ptrs[i];
+                        NodeMgmtWrapper.Spotchecklist sclist = new NodeMgmtWrapper.Spotchecklist(p);
+                        spotCheckList.add(sclist.convertTo());
+                    }
+                }
+                return spotCheckList;
+
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeSpotchecklists(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static Node getSTNode() throws NodeMgmtException {
+        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
+        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNode();
+        if (nodePtr != null) {
+            try {
+                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
+                if (retnode.error != null) {
+                    String err = retnode.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                return retnode.convertTo();
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static void UpdateTaskStatus(String id, int progress, int[] nodeIDs) throws NodeMgmtException {
+        Pointer param = null;
+        if (nodeIDs != null) {
+            param = new Memory(nodeIDs.length * Native.getNativeSize(Integer.TYPE));
+            for (int i = 0; i < nodeIDs.length; i++) {
+                param.setInt(i * Native.getNativeSize(Integer.TYPE), nodeIDs[i]);
+            }
+        }
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.UpdateTaskStatus(id, progress, param, nodeIDs!=null?nodeIDs.length:0);
+        if (param != null) {
+            Native.free(Pointer.nativeValue(param));
+            Pointer.nativeValue(param, 0);
+        }
+        if (errPtr != null) {
+            String err = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(err);
         }
     }
 }

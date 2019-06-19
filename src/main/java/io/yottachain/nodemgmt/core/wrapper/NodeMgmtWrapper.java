@@ -1,7 +1,10 @@
 package io.yottachain.nodemgmt.core.wrapper;
 
 import com.sun.jna.*;
+import io.yottachain.nodemgmt.core.vo.SpotCheckList;
+import io.yottachain.nodemgmt.core.vo.SpotCheckTask;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -199,6 +202,87 @@ public class NodeMgmtWrapper {
 
     }
 
+    public static class Spotchecklists extends Structure {
+        public Pointer list;
+        public int size;
+        public Pointer error;
+
+        public Spotchecklists(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"list", "size", "error"});
+        }
+    }
+
+    public static class Spotchecklist extends Structure {
+        public Pointer taskid;
+        public Pointer tasklist;
+        public int size;
+        public int progress;
+        public long timestamp;
+        public long duration;
+
+        public Spotchecklist(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"taskid", "tasklist", "size", "progress", "timestamp", "duration"});
+        }
+
+        public SpotCheckList convertTo() {
+            SpotCheckList list = new SpotCheckList();
+            list.setTaskID(this.taskid!=null?this.taskid.getString(0): null);
+            list.setProgress(this.progress);
+            list.setDuration(this.duration);
+            list.setTimestamp(this.timestamp);
+            if (this.tasklist != null) {
+                List<SpotCheckTask> tasklist = new ArrayList<SpotCheckTask>();
+                Pointer[] ptrs = this.tasklist.getPointerArray(0, this.size);
+                for (int i = 0; i< ptrs.length; i++){
+                    Pointer p = ptrs[i];
+                    NodeMgmtWrapper.Spotchecktask sctask = new NodeMgmtWrapper.Spotchecktask(p);
+                    SpotCheckTask task = sctask.convertTo();
+                    tasklist.add(task);
+                }
+                list.setTaskList(tasklist);
+            }
+            return list;
+        }
+    }
+
+    public static class Spotchecktask extends Structure {
+        public int id;
+        public Pointer nodeid;
+        public Pointer addr;
+        public Pointer vni;
+
+        public Spotchecktask(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"id", "nodeid", "addr", "vni"});
+        }
+
+        public io.yottachain.nodemgmt.core.vo.SpotCheckTask convertTo() {
+            io.yottachain.nodemgmt.core.vo.SpotCheckTask task = new io.yottachain.nodemgmt.core.vo.SpotCheckTask();
+            task.setId(this.id);
+            task.setNodeID(this.nodeid!=null?this.nodeid.getString(0):null);
+            task.setAddr(this.addr!=null?this.addr.getString(0):null);
+            task.setVni(this.vni!=null?this.vni.getString(0):null);
+            return task;
+        }
+    }
+
     public static class Stringwitherror extends Structure {
         public Pointer str;
         public Pointer error;
@@ -249,12 +333,16 @@ public class NodeMgmtWrapper {
         Pointer AddDNI(int id, Pointer shard, long size);
         Pointer ActiveNodesList();
         Pointer Statistics();
+        Pointer GetSpotCheckList();
+        Pointer GetSTNode();
+        Pointer UpdateTaskStatus(String id, int progress, Pointer invalidNodeList, int size);
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);
         void FreeAllocnoderet(Pointer ptr);
         void FreeAllocsupernoderet(Pointer ptr);
         void FreeNodestatret(Pointer ptr);
+        void FreeSpotchecklists(Pointer ptr);
         void FreeStringwitherror(Pointer ptr);
         void FreeIntwitherror(Pointer ptr);
         void FreeString(Pointer ptr);

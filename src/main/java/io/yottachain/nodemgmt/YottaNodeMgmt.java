@@ -3,6 +3,7 @@ package io.yottachain.nodemgmt;
 import io.yottachain.nodemgmt.core.NodeMgmt;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.vo.Node;
+import io.yottachain.nodemgmt.core.vo.SpotCheckList;
 import io.yottachain.nodemgmt.core.vo.SuperNode;
 
 import java.util.*;
@@ -20,7 +21,7 @@ public class YottaNodeMgmt {
         node.setMaxDataSpace(maxDataSpace);
         node.setAddrs(addrs);
         node.setRelay(relay ? 1 : 0);
-        return  NodeMgmt.registerNode(node);
+        return NodeMgmt.registerNode(node);
     }
 
     public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, List<String> addrs, boolean relay) throws NodeMgmtException {
@@ -31,7 +32,7 @@ public class YottaNodeMgmt {
         node.setBandwidth(bandwidth);
         node.setMaxDataSpace(maxDataSpace);
         node.setAddrs(addrs);
-        return  NodeMgmt.updateNodeStatus(node);
+        return NodeMgmt.updateNodeStatus(node);
     }
 
     public static List<Node> allocNodes(int shardCount) throws NodeMgmtException {
@@ -82,6 +83,18 @@ public class YottaNodeMgmt {
         return NodeMgmt.statistics();
     }
 
+    public static List<SpotCheckList> getSpotCheckList() throws NodeMgmtException {
+        return NodeMgmt.getSpotCheckList();
+    }
+
+    public static Node getSTNode() throws NodeMgmtException {
+        return NodeMgmt.getSTNode();
+    }
+
+    public static void UpdateTaskStatus(String id, int progress, int[] nodeIDs) throws NodeMgmtException {
+        NodeMgmt.UpdateTaskStatus(id, progress, nodeIDs);
+    }
+
     private static String checkPublicIP(List<String> addrs) {
         for (String addr : addrs) {
             if (addr.startsWith("/ip4/127.") ||
@@ -115,8 +128,11 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.16.118:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345", 2);
+        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.16.118:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345", 2);
         //Node node = YottaNodeMgmt.registerNode("1234", "abcd", "username1234", 100000, Arrays.asList("/ip4/127.0.0.1/tcp/8888"));
+        List<SpotCheckList> list = YottaNodeMgmt.getSpotCheckList();
+        Node n = YottaNodeMgmt.getSTNode();
+        YottaNodeMgmt.UpdateTaskStatus("5d0854da30a31ead856c870c", 70, null);
 
         List<Node> nodes = YottaNodeMgmt.allocNodes(10);
         List<Map<String, String>> actives = YottaNodeMgmt.activeNodesList();
