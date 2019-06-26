@@ -7,6 +7,9 @@ public class Node {
     private String nodeid;
     private String pubkey;
     private String owner;
+    private String profitAcc;
+    private String poolID;
+    private long quota;
     private List<String> addrs;
 
     private int cpu;
@@ -16,7 +19,11 @@ public class Node {
     private long assignedSpace;
     private long productiveSpace;
     private long usedSpace;
+    private double weight;
+    private int valid;
     private int relay;
+    private int status;
+    private long timestamp;
 
     public int getId() {
         return id;
@@ -48,6 +55,30 @@ public class Node {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String getProfitAcc() {
+        return profitAcc;
+    }
+
+    public void setProfitAcc(String profitAcc) {
+        this.profitAcc = profitAcc;
+    }
+
+    public String getPoolID() {
+        return poolID;
+    }
+
+    public void setPoolID(String poolID) {
+        this.poolID = poolID;
+    }
+
+    public long getQuota() {
+        return quota;
+    }
+
+    public void setQuota(long quota) {
+        this.quota = quota;
     }
 
     public List<String> getAddrs() {
@@ -114,6 +145,22 @@ public class Node {
         this.usedSpace = usedSpace;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public int getValid() {
+        return valid;
+    }
+
+    public void setValid(int valid) {
+        this.valid = valid;
+    }
+
     public int getRelay() {
         return relay;
     }
@@ -122,26 +169,49 @@ public class Node {
         this.relay = relay;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public Node() {}
 
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
-        this.id = id;
-        this.nodeid = nodeid;
-        this.pubkey = pubkey;
-        this.addrs = addrs;
+        this.setId(id);
+        this.setNodeid(nodeid);
+        this.setPubkey(pubkey);
+        this.setAddrs(addrs);
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, int relay) {
+    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp) {
         this(id, nodeid, pubkey, addrs);
-        this.owner = owner;
-        this.cpu = cpu;
-        this.memory = memory;
-        this.bandwidth = bandwidth;
-        this.maxDataSpace = maxDataSpace;
-        this.assignedSpace = assignedSpace;
-        this.productiveSpace = productiveSpace;
-        this.usedSpace = usedSpace;
-        this.relay = relay;
+        this.setOwner(owner);
+        this.setProfitAcc(profitAcc);
+        this.setPoolID(poolID);
+        this.setQuota(quota);
+        this.setCpu(cpu);
+        this.setMemory(memory);
+        this.setBandwidth(bandwidth);
+        this.setMaxDataSpace(maxDataSpace);
+        this.setAssignedSpace(assignedSpace);
+        this.setProductiveSpace(productiveSpace);
+        this.setUsedSpace(usedSpace);
+        this.setWeight(weight);
+        this.setValid(valid);
+        this.setRelay(relay);
+        this.setStatus(status);
+        this.setTimestamp(timestamp);
     }
 
 }

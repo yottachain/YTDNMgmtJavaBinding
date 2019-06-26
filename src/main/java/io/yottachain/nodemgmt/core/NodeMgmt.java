@@ -22,6 +22,42 @@ public class NodeMgmt {
         }
     }
 
+    public static int newNodeID() throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewNodeID();
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Intwitherror iwe = new NodeMgmtWrapper.Intwitherror(ptr);
+                if (iwe.error != null) {
+                    String err = iwe.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                return iwe.id;
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeIntwitherror(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static void preRegisterNode(String trx) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.PreRegisterNode(trx);
+        if (errPtr != null) {
+            String errstr = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(errstr);
+        }
+    }
+
+    public static void changeMinerPool(String trx) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.ChangeMinerPool(trx);
+        if (errPtr != null) {
+            String errstr = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(errstr);
+        }
+    }
+
     public static Node registerNode(Node node) throws NodeMgmtException {
         if (node == null) {
             throw new NodeMgmtException("register node cannot be null.");
@@ -106,6 +142,20 @@ public class NodeMgmt {
             }
         } else {
             throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static void syncNode(Node node) throws NodeMgmtException {
+        if (node == null) {
+            throw new NodeMgmtException("update status cannot be null.");
+        }
+        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
+        ntnode.fill(node);
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.SyncNode(ntnode);
+        if (errPtr != null) {
+            String errstr = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(errstr);
         }
     }
 
@@ -211,6 +261,24 @@ public class NodeMgmt {
                 return iwe.id;
             } finally {
                 NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeIntwitherror(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static Node getNodeByPubKey(String pubkey) throws NodeMgmtException {
+        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetNodeByPubKey(pubkey);
+        if (nodePtr != null) {
+            try {
+                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
+                if (retnode.error != null) {
+                    String err = retnode.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                return retnode.convertTo();
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
             }
         } else {
             throw new NodeMgmtException("unknown exception");
@@ -336,7 +404,6 @@ public class NodeMgmt {
     }
 
     public static Node getSTNode() throws NodeMgmtException {
-        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
         Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNode();
         if (nodePtr != null) {
             try {

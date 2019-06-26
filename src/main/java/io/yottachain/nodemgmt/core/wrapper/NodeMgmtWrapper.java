@@ -16,6 +16,9 @@ public class NodeMgmtWrapper {
         public Pointer nodeid;
         public Pointer pubkey;
         public Pointer owner;
+        public Pointer profitAcc;
+        public Pointer poolID;
+        public long quota;
         public Pointer addrs;
         public int addrsize;
         public int cpu;
@@ -25,7 +28,11 @@ public class NodeMgmtWrapper {
         public long assignedSpace;
         public long productiveSpace;
         public long usedSpace;
+        public double weight;
+        public int valid;
         public int relay;
+        public int status;
+        public long timestamp;
         public Pointer error;
 
         public Node() {
@@ -39,7 +46,7 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "relay", "error"});
+            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "error"});
         }
 
         public void fill(io.yottachain.nodemgmt.core.vo.Node node) {
@@ -59,6 +66,15 @@ public class NodeMgmtWrapper {
                 this.owner = new Memory(node.getOwner().length() + 1);
                 this.owner.setString(0, node.getOwner());
             }
+            if (node.getProfitAcc() != null) {
+                this.profitAcc = new Memory(node.getProfitAcc().length() + 1);
+                this.profitAcc.setString(0, node.getProfitAcc());
+            }
+            if (node.getPoolID() != null) {
+                this.poolID = new Memory(node.getPoolID().length() + 1);
+                this.poolID.setString(0, node.getPoolID());
+            }
+            this.quota = node.getQuota();
             if (node.getAddrs() != null) {
                 this.addrs = new StringArray(node.getAddrs().toArray(new String[0]));
                 this.addrsize = node.getAddrs().size();
@@ -70,7 +86,11 @@ public class NodeMgmtWrapper {
             this.assignedSpace = node.getAssignedSpace();
             this.productiveSpace = node.getProductiveSpace();
             this.usedSpace = node.getUsedSpace();
+            this.weight = node.getWeight();
+            this.valid = node.getValid();
             this.relay = node.getRelay();
+            this.status = node.getStatus();
+            this.timestamp = node.getTimestamp();
         }
 
         public io.yottachain.nodemgmt.core.vo.Node convertTo() {
@@ -79,6 +99,9 @@ public class NodeMgmtWrapper {
             node.setNodeid(this.nodeid!=null?this.nodeid.getString(0):null);
             node.setPubkey(this.pubkey!=null?this.pubkey.getString(0):null);
             node.setOwner(this.owner!=null?this.owner.getString(0):null);
+            node.setProfitAcc(this.profitAcc!=null?this.profitAcc.getString(0):null);
+            node.setPoolID(this.poolID!=null?this.poolID.getString(0):null);
+            node.setQuota(this.quota);
             node.setAddrs(this.addrs!=null?Arrays.asList(this.addrs.getStringArray(0, this.addrsize)):null);
             node.setCpu(this.cpu);
             node.setMemory(this.memory);
@@ -87,7 +110,11 @@ public class NodeMgmtWrapper {
             node.setAssignedSpace(this.assignedSpace);
             node.setProductiveSpace(this.productiveSpace);
             node.setUsedSpace(this.usedSpace);
+            node.setWeight(this.weight);
+            node.setValid(this.valid);
             node.setRelay(this.relay);
+            node.setStatus(this.status);
+            node.setTimestamp(this.timestamp);
             return node;
         }
     }
@@ -321,14 +348,19 @@ public class NodeMgmtWrapper {
                         NodeMgmtLib.class);
 
         Pointer NewInstance(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner, int bpid);
+        Pointer NewNodeID();
+        Pointer PreRegisterNode(String trx);
+        Pointer ChangeMinerPool(String trx);
         Pointer RegisterNode(Node node);
         Pointer IncrUsedSpace(int id, long incr);
         Pointer UpdateNodeStatus(Node node);
         Pointer AllocNodes(int shardCount);
+        Pointer SyncNode(Node node);
         Pointer GetNodes(Pointer nodeIDs, int size);
         Pointer GetSuperNodes();
         Pointer GetSuperNodePrivateKey(int id);
         Pointer GetNodeIDByPubKey(String pubkey);
+        Pointer GetNodeByPubKey(String pubkey);
         Pointer GetSuperNodeIDByPubKey(String pubkey);
         Pointer AddDNI(int id, Pointer shard, long size);
         Pointer ActiveNodesList();
