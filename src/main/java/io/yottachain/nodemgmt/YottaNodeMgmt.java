@@ -9,8 +9,8 @@ import io.yottachain.nodemgmt.core.vo.SuperNode;
 import java.util.*;
 
 public class YottaNodeMgmt {
-    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner, int bpid) throws NodeMgmtException {
-        NodeMgmt.start(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwner, bpid);
+    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, int bpid) throws NodeMgmtException {
+        NodeMgmt.start(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, bpid);
     }
 
     public static int newNodeID() throws NodeMgmtException {
@@ -45,6 +45,7 @@ public class YottaNodeMgmt {
         node.setBandwidth(bandwidth);
         node.setMaxDataSpace(maxDataSpace);
         node.setAddrs(addrs);
+        node.setRelay(relay?1:0);
         return NodeMgmt.updateNodeStatus(node);
     }
 
@@ -149,7 +150,10 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.16.118:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345", 2);
+        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.18.185:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345", "hdddeposit12", 2);
+
+        //Node dddd = YottaNodeMgmt.updateNodeStatus(872, 42, 65, 0, 2621440, Arrays.asList("/ip4/127.0.0.1/tcp/8888"), true);
+
         System.out.println(YottaNodeMgmt.newNodeID());
         Node nn = YottaNodeMgmt.getNodeByPubKey("8KPrhwPsqWs23w5KjsAaEgEwLMbvSRPksEFeYhB7jA1EZWX9MT");
         //Node node = YottaNodeMgmt.registerNode("1234", "abcd", "username1234", 100000, Arrays.asList("/ip4/127.0.0.1/tcp/8888"));

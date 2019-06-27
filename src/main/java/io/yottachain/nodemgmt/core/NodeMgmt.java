@@ -13,8 +13,8 @@ import java.util.*;
 
 public class NodeMgmt {
 
-    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwner, int bpid) throws NodeMgmtException {
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwner, bpid);
+    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD,int bpid) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, bpid);
         if (errPtr != null) {
             String err = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
