@@ -33,6 +33,7 @@ public class NodeMgmtWrapper {
         public int relay;
         public int status;
         public long timestamp;
+        public int version;
         public Pointer error;
 
         public Node() {
@@ -46,7 +47,7 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "error"});
+            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "error"});
         }
 
         public void fill(io.yottachain.nodemgmt.core.vo.Node node) {
@@ -91,6 +92,7 @@ public class NodeMgmtWrapper {
             this.relay = node.getRelay();
             this.status = node.getStatus();
             this.timestamp = node.getTimestamp();
+            this.version = node.getVersion();
         }
 
         public io.yottachain.nodemgmt.core.vo.Node convertTo() {
@@ -115,6 +117,7 @@ public class NodeMgmtWrapper {
             node.setRelay(this.relay);
             node.setStatus(this.status);
             node.setTimestamp(this.timestamp);
+            node.setVersion(this.version);
             return node;
         }
     }
@@ -354,7 +357,7 @@ public class NodeMgmtWrapper {
         Pointer RegisterNode(Node node);
         Pointer IncrUsedSpace(int id, long incr);
         Pointer UpdateNodeStatus(Node node);
-        Pointer AllocNodes(int shardCount);
+        Pointer AllocNodes(int shardCount, Pointer errIDs, int size);
         Pointer SyncNode(Node node);
         Pointer GetNodes(Pointer nodeIDs, int size);
         Pointer GetSuperNodes();

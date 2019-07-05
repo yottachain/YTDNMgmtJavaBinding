@@ -24,6 +24,7 @@ public class Node {
     private int relay;
     private int status;
     private long timestamp;
+    private int version;
 
     public int getId() {
         return id;
@@ -185,6 +186,14 @@ public class Node {
         this.timestamp = timestamp;
     }
 
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
     public Node() {}
 
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
@@ -194,7 +203,7 @@ public class Node {
         this.setAddrs(addrs);
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp) {
+    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version) {
         this(id, nodeid, pubkey, addrs);
         this.setOwner(owner);
         this.setProfitAcc(profitAcc);
@@ -212,6 +221,7 @@ public class Node {
         this.setRelay(relay);
         this.setStatus(status);
         this.setTimestamp(timestamp);
+        this.setVersion(version);
     }
 
 }

@@ -113,8 +113,17 @@ public class NodeMgmt {
         }
     }
 
-    public static List<Node> allocNodes(int shardCount) throws NodeMgmtException {
-        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.AllocNodes(shardCount);
+    public static List<Node> allocNodes(int shardCount, int[] errIDs) throws NodeMgmtException {
+        Pointer param = null;
+        int size = 0;
+        if (errIDs!=null && errIDs.length>0) {
+            param = new Memory(errIDs.length * Native.getNativeSize(Integer.TYPE));
+            for (int i = 0; i < errIDs.length; i++) {
+                param.setInt(i * Native.getNativeSize(Integer.TYPE), errIDs[i]);
+            }
+            size = errIDs.length;
+        }
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.AllocNodes(shardCount, param, size);
         if (ptr != null) {
             try {
                 NodeMgmtWrapper.Allocnoderet allocNodeRet = new NodeMgmtWrapper.Allocnoderet(ptr);

@@ -37,7 +37,20 @@ public class YottaNodeMgmt {
         return NodeMgmt.registerNode(node);
     }
 
-    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, List<String> addrs, boolean relay) throws NodeMgmtException {
+    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, List<String> addrs, boolean relay, int version) throws NodeMgmtException {
+        if (addrs!=null && addrs.size()>0) {
+            List<String> exp =new ArrayList<>();
+            for (String addr : addrs) {
+                if(addr.startsWith("/ip4/127.0.0.1/tcp")) {
+                    exp.add(addr);
+                }
+            }
+            if (exp.size() > 0) {
+                for (String addr : exp) {
+                    addrs.remove(addr);
+                }
+            }
+        }
         Node node = new Node();
         node.setId(id);
         node.setCpu(cpu);
@@ -46,11 +59,12 @@ public class YottaNodeMgmt {
         node.setMaxDataSpace(maxDataSpace);
         node.setAddrs(addrs);
         node.setRelay(relay?1:0);
+        node.setVersion(version);
         return NodeMgmt.updateNodeStatus(node);
     }
 
-    public static List<Node> allocNodes(int shardCount) throws NodeMgmtException {
-        return NodeMgmt.allocNodes(shardCount);
+    public static List<Node> allocNodes(int shardCount, int[] errIDs) throws NodeMgmtException {
+        return NodeMgmt.allocNodes(shardCount, errIDs);
     }
 
     public static void syncNode(Node node) throws NodeMgmtException {
@@ -150,7 +164,7 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.18.185:8888", "username1234", "5JcDH48njDbUQLu1R8SWwKsfWLnqBpWXDDiCgxFC3hioDuwLhVx", "hddpool12345", "hdddeposit12", 2);
+        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", 2);
 
         //Node dddd = YottaNodeMgmt.updateNodeStatus(872, 42, 65, 0, 2621440, Arrays.asList("/ip4/127.0.0.1/tcp/8888"), true);
 
@@ -161,7 +175,7 @@ public class YottaNodeMgmt {
         Node n = YottaNodeMgmt.getSTNode();
         //YottaNodeMgmt.UpdateTaskStatus("5d0854da30a31ead856c870c", 70, null);
 
-        List<Node> nodes = YottaNodeMgmt.allocNodes(10);
+        List<Node> nodes = YottaNodeMgmt.allocNodes(10, new int[]{215});
         List<Map<String, String>> actives = YottaNodeMgmt.activeNodesList();
         Map<String, Long> map = NodeMgmt.statistics();
         System.out.println(map.get("activeMiner"));
