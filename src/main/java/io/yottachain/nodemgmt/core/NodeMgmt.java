@@ -458,7 +458,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void UpdateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
+    public static void updateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
         Pointer param = null;
         if (nodeIDs != null) {
             param = new Memory(nodeIDs.length * Native.getNativeSize(Integer.TYPE));
