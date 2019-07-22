@@ -430,7 +430,35 @@ public class NodeMgmt {
         }
     }
 
-    public static void UpdateTaskStatus(String id, int progress, int[] nodeIDs) throws NodeMgmtException {
+    public static List<Node> getSTNodes(long count) throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNodes(count);
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Allocnoderet allocNodeRet = new NodeMgmtWrapper.Allocnoderet(ptr);
+                if (allocNodeRet.error != null) {
+                    String err = allocNodeRet.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                if (allocNodeRet.nodes == null) {
+                    return null;
+                }
+                Pointer[] pVals = allocNodeRet.nodes.getPointerArray(0, allocNodeRet.size);
+                List<Node> nodeList = new ArrayList<>();
+                for (Pointer p : pVals) {
+                    NodeMgmtWrapper.Node n = new NodeMgmtWrapper.Node(p);
+                    Node node = n.convertTo();
+                    nodeList.add(node);
+                }
+                return nodeList;
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeAllocnoderet(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static void UpdateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
         Pointer param = null;
         if (nodeIDs != null) {
             param = new Memory(nodeIDs.length * Native.getNativeSize(Integer.TYPE));
@@ -438,7 +466,7 @@ public class NodeMgmt {
                 param.setInt(i * Native.getNativeSize(Integer.TYPE), nodeIDs[i]);
             }
         }
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.UpdateTaskStatus(id, progress, param, nodeIDs!=null?nodeIDs.length:0);
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.UpdateTaskStatus(id, param, nodeIDs!=null?nodeIDs.length:0);
         if (param != null) {
             Native.free(Pointer.nativeValue(param));
             Pointer.nativeValue(param, 0);

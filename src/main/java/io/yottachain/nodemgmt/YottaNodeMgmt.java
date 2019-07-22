@@ -127,8 +127,12 @@ public class YottaNodeMgmt {
         return NodeMgmt.getSTNode();
     }
 
-    public static void UpdateTaskStatus(String id, int progress, int[] nodeIDs) throws NodeMgmtException {
-        NodeMgmt.UpdateTaskStatus(id, progress, nodeIDs);
+    public static List<Node> getSTNodes(long count) throws NodeMgmtException {
+        return NodeMgmt.getSTNodes(count);
+    }
+
+    public static void UpdateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
+        NodeMgmt.UpdateTaskStatus(id, nodeIDs);
     }
 
     private static String checkPublicIP(List<String> addrs) {
@@ -168,12 +172,12 @@ public class YottaNodeMgmt {
 
         //Node dddd = YottaNodeMgmt.updateNodeStatus(872, 42, 65, 0, 2621440, Arrays.asList("/ip4/127.0.0.1/tcp/8888"), true);
 
-        System.out.println(YottaNodeMgmt.newNodeID());
-        Node nn = YottaNodeMgmt.getNodeByPubKey("8KPrhwPsqWs23w5KjsAaEgEwLMbvSRPksEFeYhB7jA1EZWX9MT");
+        //System.out.println(YottaNodeMgmt.newNodeID());
+        //Node nn = YottaNodeMgmt.getNodeByPubKey("8KPrhwPsqWs23w5KjsAaEgEwLMbvSRPksEFeYhB7jA1EZWX9MT");
         //Node node = YottaNodeMgmt.registerNode("1234", "abcd", "username1234", 100000, Arrays.asList("/ip4/127.0.0.1/tcp/8888"));
         List<SpotCheckList> list = YottaNodeMgmt.getSpotCheckList();
-        Node n = YottaNodeMgmt.getSTNode();
-        //YottaNodeMgmt.UpdateTaskStatus("5d0854da30a31ead856c870c", 70, null);
+        List<Node> n = YottaNodeMgmt.getSTNodes(3);
+        YottaNodeMgmt.UpdateTaskStatus(list.get(0).getTaskID(), new int[]{188});
 
         List<Node> nodes = YottaNodeMgmt.allocNodes(10, new int[]{215});
         List<Map<String, String>> actives = YottaNodeMgmt.activeNodesList();

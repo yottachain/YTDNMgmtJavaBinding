@@ -252,9 +252,7 @@ public class NodeMgmtWrapper {
         public Pointer taskid;
         public Pointer tasklist;
         public int size;
-        public int progress;
         public long timestamp;
-        public long duration;
 
         public Spotchecklist(Pointer ptr) {
             super(ptr);
@@ -263,14 +261,12 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"taskid", "tasklist", "size", "progress", "timestamp", "duration"});
+            return Arrays.asList(new String[]{"taskid", "tasklist", "size", "timestamp"});
         }
 
         public SpotCheckList convertTo() {
             SpotCheckList list = new SpotCheckList();
             list.setTaskID(this.taskid!=null?this.taskid.getString(0): null);
-            list.setProgress(this.progress);
-            list.setDuration(this.duration);
             list.setTimestamp(this.timestamp);
             if (this.tasklist != null) {
                 List<SpotCheckTask> tasklist = new ArrayList<SpotCheckTask>();
@@ -370,7 +366,8 @@ public class NodeMgmtWrapper {
         Pointer Statistics();
         Pointer GetSpotCheckList();
         Pointer GetSTNode();
-        Pointer UpdateTaskStatus(String id, int progress, Pointer invalidNodeList, int size);
+        Pointer GetSTNodes(long count);
+        Pointer UpdateTaskStatus(String id, Pointer invalidNodeList, int size);
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);
