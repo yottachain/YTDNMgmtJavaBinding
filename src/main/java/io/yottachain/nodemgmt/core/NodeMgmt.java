@@ -4,9 +4,7 @@ import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
-import io.yottachain.nodemgmt.core.vo.Node;
-import io.yottachain.nodemgmt.core.vo.SpotCheckList;
-import io.yottachain.nodemgmt.core.vo.SuperNode;
+import io.yottachain.nodemgmt.core.vo.*;
 import io.yottachain.nodemgmt.core.wrapper.NodeMgmtWrapper;
 
 import java.util.*;
@@ -142,7 +140,7 @@ public class NodeMgmt {
                     String nodeid = (n.nodeid==null)?null:n.nodeid.getString(0);
                     String pubkey = (n.pubkey==null)?null:n.pubkey.getString(0);
                     String[] addrs = (n.addrs==null)?null:n.addrs.getStringArray(0, n.addrsize);
-                    Node node = new Node(id, nodeid, pubkey, Arrays.asList(addrs));
+                    Node node = new Node(id, nodeid, pubkey, addrs==null?null:Arrays.asList(addrs));
                     nodeList.add(node);
                 }
                 return nodeList;
@@ -477,4 +475,67 @@ public class NodeMgmt {
             throw new NodeMgmtException(err);
         }
     }
+
+    public static List<ShardCount> getInvalidNodes() throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetInvalidNodes();
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Shardcountlist shardcountlist = new NodeMgmtWrapper.Shardcountlist(ptr);
+                if (shardcountlist.error != null) {
+                    String err = shardcountlist.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                List<ShardCount> shardcounts = new ArrayList<ShardCount>();
+                if (shardcountlist.shardcounts != null) {
+                    Pointer[] ptrs = shardcountlist.shardcounts.getPointerArray(0, shardcountlist.size);
+                    for (int i = 0; i< ptrs.length; i++){
+                        Pointer p = ptrs[i];
+                        NodeMgmtWrapper.Shardcount sc = new NodeMgmtWrapper.Shardcount(p);
+                        shardcounts.add(sc.convertTo());
+                    }
+                }
+                return shardcounts.size()==0 ? null : shardcounts;
+
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeShardcountlist(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
+        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetRebuildItem(minerID, index, total);
+        if (ptr != null) {
+            try {
+                NodeMgmtWrapper.Rebuilditem rebuilditem = new NodeMgmtWrapper.Rebuilditem(ptr);
+                if (rebuilditem.error != null) {
+                    String err = rebuilditem.error.getString(0);
+                    throw new NodeMgmtException(err);
+                }
+                return rebuilditem.convertTo();
+
+            } finally {
+                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeRebuilditem(ptr);
+            }
+        } else {
+            throw new NodeMgmtException("unknown exception");
+        }
+    }
+
+    public static void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
+        Pointer shardPtr = new Memory(Native.getNativeSize(Byte.TYPE) * shard.length);
+        for (int i=0; i<shard.length; i++) {
+            shardPtr.setByte(i, shard[i]);
+        }
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.DeleteDNI(id, shardPtr, shard.length);
+        Native.free(Pointer.nativeValue(shardPtr));
+        Pointer.nativeValue(shardPtr, 0);
+        if (errPtr != null) {
+            String err = errPtr.getString(0);
+            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+            throw new NodeMgmtException(err);
+        }
+    }
+
 }

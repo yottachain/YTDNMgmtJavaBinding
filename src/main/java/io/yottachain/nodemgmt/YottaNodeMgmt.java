@@ -2,9 +2,8 @@ package io.yottachain.nodemgmt;
 
 import io.yottachain.nodemgmt.core.NodeMgmt;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
-import io.yottachain.nodemgmt.core.vo.Node;
-import io.yottachain.nodemgmt.core.vo.SpotCheckList;
-import io.yottachain.nodemgmt.core.vo.SuperNode;
+import io.yottachain.nodemgmt.core.vo.*;
+import io.yottachain.nodemgmt.core.wrapper.NodeMgmtWrapper;
 
 import java.util.*;
 
@@ -135,6 +134,18 @@ public class YottaNodeMgmt {
         NodeMgmt.updateTaskStatus(id, nodeIDs);
     }
 
+    public static List<ShardCount> getInvalidNodes() throws NodeMgmtException {
+        return NodeMgmt.getInvalidNodes();
+    }
+
+    public static RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
+        return NodeMgmt.getRebuildItem(minerID, index, total);
+    }
+
+    public static void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
+        NodeMgmt.deleteDNI(id, shard);
+    }
+
     private static String checkPublicIP(List<String> addrs) {
         for (String addr : addrs) {
             if (addr.startsWith("/ip4/127.") ||
@@ -168,8 +179,13 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://152.136.18.185:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", 2);
-
+        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", 0);
+//        List<ShardCount> sclist = YottaNodeMgmt.getInvalidNodes();
+//        for (ShardCount sc : sclist) {
+//            System.out.println(sc.getId() + ":" + sc.getCnt());
+//        }
+        RebuildItem item = YottaNodeMgmt.getRebuildItem(4, 0, 10);
+        System.out.println(item.getShards().size());
         //Node dddd = YottaNodeMgmt.updateNodeStatus(872, 42, 65, 0, 2621440, Arrays.asList("/ip4/127.0.0.1/tcp/8888"), true);
 
         //System.out.println(YottaNodeMgmt.newNodeID());

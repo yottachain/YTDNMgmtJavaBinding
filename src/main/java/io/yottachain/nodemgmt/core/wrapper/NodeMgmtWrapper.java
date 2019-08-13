@@ -1,6 +1,8 @@
 package io.yottachain.nodemgmt.core.wrapper;
 
 import com.sun.jna.*;
+import io.yottachain.nodemgmt.core.vo.RebuildItem;
+import io.yottachain.nodemgmt.core.vo.ShardCount;
 import io.yottachain.nodemgmt.core.vo.SpotCheckList;
 import io.yottachain.nodemgmt.core.vo.SpotCheckTask;
 
@@ -299,13 +301,107 @@ public class NodeMgmtWrapper {
             return Arrays.asList(new String[]{"id", "nodeid", "addr", "vni"});
         }
 
-        public io.yottachain.nodemgmt.core.vo.SpotCheckTask convertTo() {
-            io.yottachain.nodemgmt.core.vo.SpotCheckTask task = new io.yottachain.nodemgmt.core.vo.SpotCheckTask();
+        public SpotCheckTask convertTo() {
+            SpotCheckTask task = new SpotCheckTask();
             task.setId(this.id);
             task.setNodeID(this.nodeid!=null?this.nodeid.getString(0):null);
             task.setAddr(this.addr!=null?this.addr.getString(0):null);
             task.setVni(this.vni!=null?this.vni.getString(0):null);
             return task;
+        }
+    }
+
+    public static class Shardcountlist extends Structure {
+        public Pointer shardcounts;
+        public int size;
+        public Pointer error;
+
+        public Shardcountlist(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"shardcounts", "size", "error"});
+        }
+    }
+
+    public static class Shardcount extends Structure {
+        public int id;
+        public long cnt;
+
+        public Shardcount(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"id", "cnt"});
+        }
+
+        public ShardCount convertTo() {
+            ShardCount shardCount= new ShardCount();
+            shardCount.setId(this.id);
+            shardCount.setCnt(this.cnt);
+            return shardCount;
+        }
+    }
+
+    public static class Rebuilditem extends Structure {
+        public Pointer node;
+        public Pointer shards;
+        public int size;
+        public Pointer error;
+
+        public Rebuilditem(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"node", "shards", "size", "error"});
+        }
+
+        public RebuildItem convertTo() {
+            RebuildItem item = new RebuildItem();
+            if (this.node!=null) {
+                Node node = new Node(this.node);
+                item.setNode(node.convertTo());
+            }
+            if (this.shards != null) {
+                List<byte[]> shards = new ArrayList<byte[]>();
+                Pointer[] ptrs = this.shards.getPointerArray(0, this.size);
+                for (int i = 0; i< ptrs.length; i++){
+                    Pointer p = ptrs[i];
+                    Vni vni = new Vni(p);
+                    byte[] b = vni.shard.getByteArray(0, vni.size);
+                    if (b!=null && b.length==1 && b[0]==0) {
+                        shards.add(null);
+                    } else {
+                        shards.add(b);
+                    }
+                }
+                item.setShards(shards);
+            }
+            return item;
+        }
+    }
+
+    public static class Vni extends Structure {
+        public Pointer shard;
+        public int size;
+
+        public Vni(Pointer ptr) {
+            super(ptr);
+            read();
+        }
+
+        @Override
+        protected List getFieldOrder() {
+            return Arrays.asList(new String[]{"shard", "size"});
         }
     }
 
@@ -317,7 +413,6 @@ public class NodeMgmtWrapper {
             super(ptr);
             read();
         }
-
 
         @Override
         protected List getFieldOrder() {
@@ -368,6 +463,9 @@ public class NodeMgmtWrapper {
         Pointer GetSTNode();
         Pointer GetSTNodes(long count);
         Pointer UpdateTaskStatus(String id, Pointer invalidNodeList, int size);
+        Pointer GetInvalidNodes();
+        Pointer GetRebuildItem(int minerID, long index, long total);
+        Pointer DeleteDNI(int id, Pointer shard, long size);
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);
@@ -375,6 +473,8 @@ public class NodeMgmtWrapper {
         void FreeAllocsupernoderet(Pointer ptr);
         void FreeNodestatret(Pointer ptr);
         void FreeSpotchecklists(Pointer ptr);
+        void FreeShardcountlist(Pointer ptr);
+        void FreeRebuilditem(Pointer ptr);
         void FreeStringwitherror(Pointer ptr);
         void FreeIntwitherror(Pointer ptr);
         void FreeString(Pointer ptr);
