@@ -4,14 +4,15 @@ import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
+import io.yottachain.nodemgmt.core.interfaces.NodeMgmtInterface;
 import io.yottachain.nodemgmt.core.vo.*;
 import io.yottachain.nodemgmt.core.wrapper.NodeMgmtWrapper;
 
 import java.util.*;
 
-public class NodeMgmt {
+public class NodeMgmt implements NodeMgmtInterface {
 
-    public static void start(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD,int bpid) throws NodeMgmtException {
+    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD,int bpid) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, bpid);
         if (errPtr != null) {
             String err = errPtr.getString(0);
@@ -20,7 +21,7 @@ public class NodeMgmt {
         }
     }
 
-    public static int newNodeID() throws NodeMgmtException {
+    public int newNodeID() throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewNodeID();
         if (ptr != null) {
             try {
@@ -38,7 +39,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void preRegisterNode(String trx) throws NodeMgmtException {
+    public void preRegisterNode(String trx) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.PreRegisterNode(trx);
         if (errPtr != null) {
             String errstr = errPtr.getString(0);
@@ -47,7 +48,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void changeMinerPool(String trx) throws NodeMgmtException {
+    public void changeMinerPool(String trx) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.ChangeMinerPool(trx);
         if (errPtr != null) {
             String errstr = errPtr.getString(0);
@@ -56,7 +57,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Node registerNode(Node node) throws NodeMgmtException {
+    public Node registerNode(Node node) throws NodeMgmtException {
         if (node == null) {
             throw new NodeMgmtException("register node cannot be null.");
         }
@@ -79,7 +80,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Node updateNodeStatus(Node node) throws NodeMgmtException {
+    public Node updateNodeStatus(Node node) throws NodeMgmtException {
         if (node == null) {
             throw new NodeMgmtException("update status cannot be null.");
         }
@@ -102,7 +103,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void incrUsedSpace(int id, long incr) throws NodeMgmtException {
+    public void incrUsedSpace(int id, long incr) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.IncrUsedSpace(id, incr);
         if (errPtr != null) {
             String errstr = errPtr.getString(0);
@@ -111,7 +112,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<Node> allocNodes(int shardCount, int[] errIDs) throws NodeMgmtException {
+    public List<Node> allocNodes(int shardCount, int[] errIDs) throws NodeMgmtException {
         Pointer param = null;
         int size = 0;
         if (errIDs!=null && errIDs.length>0) {
@@ -152,7 +153,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void syncNode(Node node) throws NodeMgmtException {
+    public void syncNode(Node node) throws NodeMgmtException {
         if (node == null) {
             throw new NodeMgmtException("update status cannot be null.");
         }
@@ -166,7 +167,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<Node> getNodes(List<Integer> nodes) throws NodeMgmtException {
+    public List<Node> getNodes(List<Integer> nodes) throws NodeMgmtException {
         Pointer param = new Memory(nodes.size() * Native.getNativeSize(Integer.TYPE));
         for (int i=0; i<nodes.size(); i++) {
             param.setInt(i * Native.getNativeSize(Integer.TYPE), nodes.get(i));
@@ -202,7 +203,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<SuperNode> getSuperNodes() throws NodeMgmtException {
+    public List<SuperNode> getSuperNodes() throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSuperNodes();
         if (ptr != null) {
             try {
@@ -235,7 +236,7 @@ public class NodeMgmt {
         }
     }
 
-    public static String getSuperNodePrivateKey(int id) throws NodeMgmtException {
+    public String getSuperNodePrivateKey(int id) throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSuperNodePrivateKey(id);
         if (ptr != null) {
             try {
@@ -256,7 +257,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Integer getNodeIDByPubKey(String pubkey) throws NodeMgmtException {
+    public Integer getNodeIDByPubKey(String pubkey) throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetNodeIDByPubKey(pubkey);
         if (ptr != null) {
             try {
@@ -274,7 +275,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Node getNodeByPubKey(String pubkey) throws NodeMgmtException {
+    public Node getNodeByPubKey(String pubkey) throws NodeMgmtException {
         Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetNodeByPubKey(pubkey);
         if (nodePtr != null) {
             try {
@@ -292,7 +293,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Integer getSuperNodeIDByPubKey(String pubkey) throws NodeMgmtException {
+    public Integer getSuperNodeIDByPubKey(String pubkey) throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSuperNodeIDByPubKey(pubkey);
         if (ptr != null) {
             try {
@@ -310,7 +311,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void addDNI(int id, byte[] shard) throws NodeMgmtException {
+    public void addDNI(int id, byte[] shard) throws NodeMgmtException {
         Pointer shardPtr = new Memory(Native.getNativeSize(Byte.TYPE) * shard.length);
         for (int i=0; i<shard.length; i++) {
             shardPtr.setByte(i, shard[i]);
@@ -325,7 +326,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<Node> activeNodesList() throws NodeMgmtException {
+    public List<Node> activeNodesList() throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.ActiveNodesList();
         if (ptr != null) {
             try {
@@ -357,7 +358,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Map<String, Long> statistics() throws NodeMgmtException {
+    public Map<String, Long> statistics() throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.Statistics();
         if (ptr != null) {
             try {
@@ -382,7 +383,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<SpotCheckList> getSpotCheckList() throws NodeMgmtException {
+    public List<SpotCheckList> getSpotCheckList() throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSpotCheckList();
         if (ptr != null) {
             try {
@@ -410,7 +411,7 @@ public class NodeMgmt {
         }
     }
 
-    public static Node getSTNode() throws NodeMgmtException {
+    public Node getSTNode() throws NodeMgmtException {
         Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNode();
         if (nodePtr != null) {
             try {
@@ -428,7 +429,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<Node> getSTNodes(long count) throws NodeMgmtException {
+    public List<Node> getSTNodes(long count) throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNodes(count);
         if (ptr != null) {
             try {
@@ -456,7 +457,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void updateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
+    public void updateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
         Pointer param = null;
         if (nodeIDs != null) {
             param = new Memory(nodeIDs.length * Native.getNativeSize(Integer.TYPE));
@@ -476,7 +477,7 @@ public class NodeMgmt {
         }
     }
 
-    public static List<ShardCount> getInvalidNodes() throws NodeMgmtException {
+    public List<ShardCount> getInvalidNodes() throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetInvalidNodes();
         if (ptr != null) {
             try {
@@ -504,7 +505,7 @@ public class NodeMgmt {
         }
     }
 
-    public static RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
+    public RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
         Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetRebuildItem(minerID, index, total);
         if (ptr != null) {
             try {
@@ -523,7 +524,7 @@ public class NodeMgmt {
         }
     }
 
-    public static void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
+    public void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
         Pointer shardPtr = new Memory(Native.getNativeSize(Byte.TYPE) * shard.length);
         for (int i=0; i<shard.length; i++) {
             shardPtr.setByte(i, shard[i]);
