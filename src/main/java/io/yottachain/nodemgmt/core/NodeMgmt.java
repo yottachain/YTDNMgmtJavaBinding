@@ -191,7 +191,7 @@ public class NodeMgmt implements NodeMgmtInterface {
                     String nodeid = (n.nodeid==null)?null:n.nodeid.getString(0);
                     String pubkey = (n.pubkey==null)?null:n.pubkey.getString(0);
                     String[] addrs = (n.addrs==null)?null:n.addrs.getStringArray(0, n.addrsize);
-                    Node node = new Node(id, nodeid, pubkey, Arrays.asList(addrs));
+                    Node node = new Node(id, nodeid, pubkey, addrs==null?null:Arrays.asList(addrs));
                     nodeList.add(node);
                 }
                 return nodeList;

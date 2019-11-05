@@ -194,22 +194,7 @@ public class YottaNodeMgmt {
     }
 
     public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version) throws NodeMgmtException {
-        List<String> filterAddrs = null;
-        if (addrs!=null && addrs.size()>0) {
-            filterAddrs = getPublicIP(addrs);
-//            List<String> exp = new ArrayList<>();
-//            for (String addr : addrs) {
-//                if(addr.startsWith("/ip4/127.0.0.1/tcp")) {
-//                    exp.add(addr);
-//                }
-//            }
-//            if (exp.size() > 0) {
-//                for (String addr : exp) {
-//                    addrs.remove(addr);
-//                }
-//            }
-        }
-        if (filterAddrs==null || filterAddrs.size()==0) {
+        if (addrs==null || addrs.size()==0) {
             throw new NodeMgmtException("Addresses of data node cannot be null");
         }
         Node node = new Node();
@@ -219,7 +204,7 @@ public class YottaNodeMgmt {
         node.setBandwidth(bandwidth);
         node.setMaxDataSpace(maxDataSpace);
         node.setUsedSpace(usedSpace);
-        node.setAddrs(filterAddrs);
+        node.setAddrs(addrs);
         node.setRelay(relay?1:0);
         node.setVersion(version);
         return client.updateNodeStatus(node);
@@ -267,8 +252,9 @@ public class YottaNodeMgmt {
         for (Node n : list) {
             Map<String, String> m = new HashMap<>();
             List<String> addrs = n.getAddrs();
-            String ip = checkPublicIP(addrs);
-            if (ip != null) {
+            // String ip = checkPublicIP(addrs);
+            String ip = addrs.get(0);
+            if (ip != null && !ip.equals("")) {
                 m.put("id", Integer.toString(n.getId()));
                 m.put("ip", ip);
                 result.add(m);
@@ -309,37 +295,37 @@ public class YottaNodeMgmt {
         client.deleteDNI(id, shard);
     }
 
-    private static String checkPublicIP(List<String> addrs) {
-        for (String addr : addrs) {
-            if (addr.startsWith("/ip4/127.") ||
-                    addr.startsWith("/ip4/192.168.") ||
-                    addr.startsWith("/ip4/169.254.") ||
-                    addr.startsWith("/ip4/10.") ||
-                    addr.startsWith("/ip4/172.16.") ||
-                    addr.startsWith("/ip4/172.17.") ||
-                    addr.startsWith("/ip4/172.18.") ||
-                    addr.startsWith("/ip4/172.19.") ||
-                    addr.startsWith("/ip4/172.20.") ||
-                    addr.startsWith("/ip4/172.21.") ||
-                    addr.startsWith("/ip4/172.22.") ||
-                    addr.startsWith("/ip4/172.23.") ||
-                    addr.startsWith("/ip4/172.24.") ||
-                    addr.startsWith("/ip4/172.25.") ||
-                    addr.startsWith("/ip4/172.26.") ||
-                    addr.startsWith("/ip4/172.27.") ||
-                    addr.startsWith("/ip4/172.28.") ||
-                    addr.startsWith("/ip4/172.29.") ||
-                    addr.startsWith("/ip4/172.30.") ||
-                    addr.startsWith("/ip4/172.31.") ||
-                    addr.startsWith("/p2p-circuit/")
-                    ) {
-                continue;
-            } else {
-                return addr;
-            }
-        }
-        return null;
-    }
+//    private static String checkPublicIP(List<String> addrs) {
+//        for (String addr : addrs) {
+//            if (addr.startsWith("/ip4/127.") ||
+//                    addr.startsWith("/ip4/192.168.") ||
+//                    addr.startsWith("/ip4/169.254.") ||
+//                    addr.startsWith("/ip4/10.") ||
+//                    addr.startsWith("/ip4/172.16.") ||
+//                    addr.startsWith("/ip4/172.17.") ||
+//                    addr.startsWith("/ip4/172.18.") ||
+//                    addr.startsWith("/ip4/172.19.") ||
+//                    addr.startsWith("/ip4/172.20.") ||
+//                    addr.startsWith("/ip4/172.21.") ||
+//                    addr.startsWith("/ip4/172.22.") ||
+//                    addr.startsWith("/ip4/172.23.") ||
+//                    addr.startsWith("/ip4/172.24.") ||
+//                    addr.startsWith("/ip4/172.25.") ||
+//                    addr.startsWith("/ip4/172.26.") ||
+//                    addr.startsWith("/ip4/172.27.") ||
+//                    addr.startsWith("/ip4/172.28.") ||
+//                    addr.startsWith("/ip4/172.29.") ||
+//                    addr.startsWith("/ip4/172.30.") ||
+//                    addr.startsWith("/ip4/172.31.") ||
+//                    addr.startsWith("/p2p-circuit/")
+//                    ) {
+//                continue;
+//            } else {
+//                return addr;
+//            }
+//        }
+//        return null;
+//    }
 
     private static List<String> getPublicIP(List<String> addrs) {
         List<String> pubAddrs = new ArrayList<>();
