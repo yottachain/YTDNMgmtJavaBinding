@@ -441,7 +441,7 @@ public class NodeMgmtWrapper {
                 Native.load(Platform.isWindows()?"nodemgmt.dll":"nodemgmt.so",
                         NodeMgmtLib.class);
 
-        Pointer NewInstance(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, int bpid);
+        Pointer NewInstance(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid);
         Pointer NewNodeID();
         Pointer PreRegisterNode(String trx);
         Pointer ChangeMinerPool(String trx);

@@ -32,10 +32,11 @@ public class YottaNodeMgmt {
     private static final String NODEMGMT_BPPRIVKEY = NODEMGMT_ETCD_PREFIX + "bpPrivkey";
     private static final String NODEMGMT_CONTRACTOWNERM = NODEMGMT_ETCD_PREFIX + "contractOwnerM";
     private static final String NODEMGMT_CONTRACTOWNERD = NODEMGMT_ETCD_PREFIX + "contractOwnerD";
+    private static final String NODEMGMT_SHADOWACCOUNT = NODEMGMT_ETCD_PREFIX + "shadowAccount";
     private static final String NODEMGMT_BPID = NODEMGMT_ETCD_PREFIX + "bpid";
 
 
-    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final int bpid) throws NodeMgmtException {
+    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid) throws NodeMgmtException {
         String embededStr = System.getenv("NODEMGMT_EMBEDED");
         if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
             logger.info("NodeMgmt is under standalone mode");
@@ -123,6 +124,17 @@ public class YottaNodeMgmt {
                             logger.info("Write contract owner D to ETCD: " + contractOwnerD);
                         }
 
+                        RangeResponse shadowAccountResp = kvclient.get(KeyUtils.bs(NODEMGMT_SHADOWACCOUNT)).sync();
+                        String shadowAccountNew = null;
+                        if (shadowAccountResp.getKvsCount()>0) {
+                            shadowAccountNew = shadowAccountResp.getKvs(0).getValue().toStringUtf8();
+                            logger.info("Read shadow account from ETCD: " + shadowAccountNew);
+                        }
+                        if (StringUtil.isNullOrEmpty(shadowAccountNew) || !shadowAccount.equals(shadowAccountNew)) {
+                            kvclient.put(KeyUtils.bs(NODEMGMT_SHADOWACCOUNT), KeyUtils.bs(shadowAccount)).sync();
+                            logger.info("Write shadow account to ETCD: " + shadowAccount);
+                        }
+
                         RangeResponse bpidResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPID)).sync();
                         String bpidNew = null;
                         if (bpidResp.getKvsCount()>0) {
@@ -165,7 +177,7 @@ public class YottaNodeMgmt {
             logger.info("Create NodeMgmt GRPC connection: " + nodemgmthostname + ":" + nodemgmtPort);
         } else {
             logger.info("NodeMgmt is under embeded mode");
-            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, bpid);
+            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid);
         }
     }
 
@@ -275,6 +287,14 @@ public class YottaNodeMgmt {
         return client.getSTNode();
     }
 
+    public static boolean spotcheckSelected() throws NodeMgmtException {
+        Node n = client.getSTNode();
+        if (n.getId()==1) {
+            return true;
+        }
+        return false;
+    }
+
     public static List<Node> getSTNodes(long count) throws NodeMgmtException {
         return client.getSTNodes(count);
     }
@@ -361,7 +381,7 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", 0);
+        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", "producer1", 0);
 //        List<ShardCount> sclist = YottaNodeMgmt.getInvalidNodes();
 //        for (ShardCount sc : sclist) {
 //            System.out.println(sc.getId() + ":" + sc.getCnt());
