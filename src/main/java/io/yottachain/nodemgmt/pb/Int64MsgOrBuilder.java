@@ -4,11 +4,11 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface Int64MsgOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.Int64Msg)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.Int64Msg)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int64 value = 1;</code>
-     */
-    long getValue();
+  /**
+   * <code>int64 value = 1;</code>
+   */
+  long getValue();
 }

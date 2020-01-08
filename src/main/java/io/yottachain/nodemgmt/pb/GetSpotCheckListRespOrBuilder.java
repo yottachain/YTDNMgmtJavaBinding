@@ -4,30 +4,30 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface GetSpotCheckListRespOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.GetSpotCheckListResp)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.GetSpotCheckListResp)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
-     */
-    java.util.List<io.yottachain.nodemgmt.pb.SpotCheckListMsg>
-    getSpotCheckListsList();
-    /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
-     */
-    io.yottachain.nodemgmt.pb.SpotCheckListMsg getSpotCheckLists(int index);
-    /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
-     */
-    int getSpotCheckListsCount();
-    /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
-     */
-    java.util.List<? extends io.yottachain.nodemgmt.pb.SpotCheckListMsgOrBuilder>
-    getSpotCheckListsOrBuilderList();
-    /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
-     */
-    io.yottachain.nodemgmt.pb.SpotCheckListMsgOrBuilder getSpotCheckListsOrBuilder(
-            int index);
+  /**
+   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   */
+  java.util.List<io.yottachain.nodemgmt.pb.SpotCheckListMsg> 
+      getSpotCheckListsList();
+  /**
+   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   */
+  io.yottachain.nodemgmt.pb.SpotCheckListMsg getSpotCheckLists(int index);
+  /**
+   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   */
+  int getSpotCheckListsCount();
+  /**
+   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   */
+  java.util.List<? extends io.yottachain.nodemgmt.pb.SpotCheckListMsgOrBuilder> 
+      getSpotCheckListsOrBuilderList();
+  /**
+   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   */
+  io.yottachain.nodemgmt.pb.SpotCheckListMsgOrBuilder getSpotCheckListsOrBuilder(
+      int index);
 }

@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface NodeMgmtInterface {
+    void setMaster(boolean b) throws NodeMgmtException;
+    void changeEosURL(String eosURL) throws NodeMgmtException;
     int newNodeID() throws NodeMgmtException;
     void preRegisterNode(String trx) throws NodeMgmtException;
     void changeMinerPool(String trx) throws NodeMgmtException;
@@ -30,4 +32,5 @@ public interface NodeMgmtInterface {
     List<ShardCount> getInvalidNodes() throws NodeMgmtException;
     RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException;
     void deleteDNI(int id, byte[] shard) throws NodeMgmtException;
+    void finishRebuild(int id) throws NodeMgmtException;
 }

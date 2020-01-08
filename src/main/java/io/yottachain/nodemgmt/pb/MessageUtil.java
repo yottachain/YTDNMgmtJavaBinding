@@ -35,7 +35,8 @@ public class MessageUtil {
                 .setRelay(node.getRelay())
                 .setStatus(node.getStatus())
                 .setTimestamp(node.getTimestamp())
-                .setVersion(node.getVersion());
+                .setVersion(node.getVersion())
+                .setRebuilding(node.getRebuilding());
         return builder.build();
 
     }
@@ -63,6 +64,7 @@ public class MessageUtil {
         node.setStatus(msg.getStatus());
         node.setTimestamp(msg.getTimestamp());
         node.setVersion(msg.getVersion());
+        node.setRebuilding(msg.getRebuilding());
         return node;
     }
 

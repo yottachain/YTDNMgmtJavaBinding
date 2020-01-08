@@ -4,11 +4,11 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface Int32MsgOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.Int32Msg)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.Int32Msg)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 value = 1;</code>
-     */
-    int getValue();
+  /**
+   * <code>int32 value = 1;</code>
+   */
+  int getValue();
 }

@@ -20,6 +20,7 @@ public class NodeMgmtWrapper {
         public Pointer owner;
         public Pointer profitAcc;
         public Pointer poolID;
+        public Pointer poolOwner;
         public long quota;
         public Pointer addrs;
         public int addrsize;
@@ -36,6 +37,7 @@ public class NodeMgmtWrapper {
         public int status;
         public long timestamp;
         public int version;
+        public int rebuilding;
         public Pointer error;
 
         public Node() {
@@ -49,7 +51,7 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "error"});
+            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "poolOwner", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "rebuilding", "error"});
         }
 
         public void fill(io.yottachain.nodemgmt.core.vo.Node node) {
@@ -77,6 +79,10 @@ public class NodeMgmtWrapper {
                 this.poolID = new Memory(node.getPoolID().length() + 1);
                 this.poolID.setString(0, node.getPoolID());
             }
+            if (node.getPoolOwner() != null) {
+                this.poolOwner = new Memory(node.getPoolOwner().length() + 1);
+                this.poolOwner.setString(0, node.getPoolOwner());
+            }
             this.quota = node.getQuota();
             if (node.getAddrs() != null) {
                 this.addrs = new StringArray(node.getAddrs().toArray(new String[0]));
@@ -95,6 +101,7 @@ public class NodeMgmtWrapper {
             this.status = node.getStatus();
             this.timestamp = node.getTimestamp();
             this.version = node.getVersion();
+            this.rebuilding = node.getRebuilding();
         }
 
         public io.yottachain.nodemgmt.core.vo.Node convertTo() {
@@ -105,6 +112,7 @@ public class NodeMgmtWrapper {
             node.setOwner(this.owner!=null?this.owner.getString(0):null);
             node.setProfitAcc(this.profitAcc!=null?this.profitAcc.getString(0):null);
             node.setPoolID(this.poolID!=null?this.poolID.getString(0):null);
+            node.setPoolOwner(this.poolOwner!=null?this.poolOwner.getString(0):null);
             node.setQuota(this.quota);
             node.setAddrs(this.addrs!=null?Arrays.asList(this.addrs.getStringArray(0, this.addrsize)):null);
             node.setCpu(this.cpu);
@@ -120,6 +128,7 @@ public class NodeMgmtWrapper {
             node.setStatus(this.status);
             node.setTimestamp(this.timestamp);
             node.setVersion(this.version);
+            node.setRebuilding(this.rebuilding);
             return node;
         }
     }
@@ -441,7 +450,9 @@ public class NodeMgmtWrapper {
                 Native.load(Platform.isWindows()?"nodemgmt.dll":"nodemgmt.so",
                         NodeMgmtLib.class);
 
-        Pointer NewInstance(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid);
+        Pointer NewInstance(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master);
+        Pointer SetMaster(int master);
+        Pointer ChangeEosURL(String eosURL);
         Pointer NewNodeID();
         Pointer PreRegisterNode(String trx);
         Pointer ChangeMinerPool(String trx);
@@ -466,6 +477,7 @@ public class NodeMgmtWrapper {
         Pointer GetInvalidNodes();
         Pointer GetRebuildItem(int minerID, long index, long total);
         Pointer DeleteDNI(int id, Pointer shard, long size);
+        Pointer FinishRebuild(int id);
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);

@@ -9,6 +9,7 @@ public class Node {
     private String owner;
     private String profitAcc;
     private String poolID;
+    private String poolOwner;
     private long quota;
     private List<String> addrs;
 
@@ -25,6 +26,7 @@ public class Node {
     private int status;
     private long timestamp;
     private int version;
+    private int rebuilding;
 
     public int getId() {
         return id;
@@ -72,6 +74,14 @@ public class Node {
 
     public void setPoolID(String poolID) {
         this.poolID = poolID;
+    }
+
+    public String getPoolOwner() {
+        return poolOwner;
+    }
+
+    public void setPoolOwner(String poolOwner) {
+        this.poolOwner = poolOwner;
     }
 
     public long getQuota() {
@@ -194,6 +204,14 @@ public class Node {
         this.version = version;
     }
 
+    public int getRebuilding() {
+        return rebuilding;
+    }
+
+    public void setRebuilding(int rebuilding) {
+        this.rebuilding = rebuilding;
+    }
+
     public Node() {}
 
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
@@ -203,11 +221,12 @@ public class Node {
         this.setAddrs(addrs);
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version) {
+    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding) {
         this(id, nodeid, pubkey, addrs);
         this.setOwner(owner);
         this.setProfitAcc(profitAcc);
         this.setPoolID(poolID);
+        this.setPoolOwner(poolOwner);
         this.setQuota(quota);
         this.setCpu(cpu);
         this.setMemory(memory);
@@ -222,6 +241,7 @@ public class Node {
         this.setStatus(status);
         this.setTimestamp(timestamp);
         this.setVersion(version);
+        this.setRebuilding(rebuilding);
     }
 
 }

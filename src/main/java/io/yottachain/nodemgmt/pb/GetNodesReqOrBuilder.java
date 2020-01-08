@@ -4,19 +4,19 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface GetNodesReqOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.GetNodesReq)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.GetNodesReq)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated int32 nodeIDs = 1;</code>
-     */
-    java.util.List<java.lang.Integer> getNodeIDsList();
-    /**
-     * <code>repeated int32 nodeIDs = 1;</code>
-     */
-    int getNodeIDsCount();
-    /**
-     * <code>repeated int32 nodeIDs = 1;</code>
-     */
-    int getNodeIDs(int index);
+  /**
+   * <code>repeated int32 nodeIDs = 1;</code>
+   */
+  java.util.List<java.lang.Integer> getNodeIDsList();
+  /**
+   * <code>repeated int32 nodeIDs = 1;</code>
+   */
+  int getNodeIDsCount();
+  /**
+   * <code>repeated int32 nodeIDs = 1;</code>
+   */
+  int getNodeIDs(int index);
 }

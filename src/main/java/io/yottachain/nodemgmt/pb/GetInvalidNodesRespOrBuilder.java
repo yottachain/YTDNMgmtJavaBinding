@@ -4,30 +4,30 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface GetInvalidNodesRespOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.GetInvalidNodesResp)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.GetInvalidNodesResp)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
-     */
-    java.util.List<io.yottachain.nodemgmt.pb.ShardCountMsg>
-    getShardCountsList();
-    /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
-     */
-    io.yottachain.nodemgmt.pb.ShardCountMsg getShardCounts(int index);
-    /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
-     */
-    int getShardCountsCount();
-    /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
-     */
-    java.util.List<? extends io.yottachain.nodemgmt.pb.ShardCountMsgOrBuilder>
-    getShardCountsOrBuilderList();
-    /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
-     */
-    io.yottachain.nodemgmt.pb.ShardCountMsgOrBuilder getShardCountsOrBuilder(
-            int index);
+  /**
+   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   */
+  java.util.List<io.yottachain.nodemgmt.pb.ShardCountMsg> 
+      getShardCountsList();
+  /**
+   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   */
+  io.yottachain.nodemgmt.pb.ShardCountMsg getShardCounts(int index);
+  /**
+   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   */
+  int getShardCountsCount();
+  /**
+   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   */
+  java.util.List<? extends io.yottachain.nodemgmt.pb.ShardCountMsgOrBuilder> 
+      getShardCountsOrBuilderList();
+  /**
+   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   */
+  io.yottachain.nodemgmt.pb.ShardCountMsgOrBuilder getShardCountsOrBuilder(
+      int index);
 }

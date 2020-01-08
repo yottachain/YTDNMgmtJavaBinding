@@ -9,6 +9,8 @@ option java_outer_classname = "NodeMgmtProto";
 
 // node management micro-servicew
 service YTDNMgmt {
+  rpc SetMaster(Int32Msg) returns (Empty) {}
+  rpc ChangeEosURL(StringMsg) returns (Empty) {}
   rpc NewNodeID (Empty) returns (Int32Msg) {}
   rpc PreRegisterNode(StringMsg) returns (Empty) {}
   rpc ChangeMinerPool(StringMsg) returns (Empty) {}
@@ -34,6 +36,7 @@ service YTDNMgmt {
   rpc GetRebuildItem(GetRebuildItemReq) returns(GetRebuildItemResp) {}
   rpc GetRebuildNode(Int64Msg) returns (NodeMsg) {}
   rpc DeleteDNI(DNIReq) returns (Empty) {}
+  rpc FinishRebuild(Int32Msg) returns (Empty) {}
 }
 
 // empty message
@@ -78,6 +81,7 @@ message NodeMsg {
 	int32 status = 19;             //status code: 0 - registered 1 - active
 	int64 timestamp = 20;          //timestamp of status updating operation
 	int32 version = 21;            //version number of miner
+	int32 rebuilding = 22;         //if node is under rebuilding
 }
 
 // SuperNode message

@@ -4,16 +4,16 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface IncrUsedSpaceReqOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.IncrUsedSpaceReq)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.IncrUsedSpaceReq)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 id = 1;</code>
-     */
-    int getId();
+  /**
+   * <code>int32 id = 1;</code>
+   */
+  int getId();
 
-    /**
-     * <code>int64 incr = 2;</code>
-     */
-    long getIncr();
+  /**
+   * <code>int64 incr = 2;</code>
+   */
+  long getIncr();
 }

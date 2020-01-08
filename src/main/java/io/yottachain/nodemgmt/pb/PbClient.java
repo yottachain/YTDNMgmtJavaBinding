@@ -29,6 +29,28 @@ public class PbClient implements NodeMgmtInterface {
     }
 
     @Override
+    public void setMaster(boolean b) throws NodeMgmtException {
+        int v = b?1:0;
+        try {
+            blockingStub.setMaster(Int32Msg.newBuilder().setValue(v).build());
+        } catch (StatusRuntimeException e) {
+            throw new NodeMgmtException("", e);
+        }
+    }
+
+    @Override
+    public void changeEosURL(String eosURL) throws NodeMgmtException {
+        if (eosURL == null) {
+            throw new NodeMgmtException("EOS URL must not be null");
+        }
+        try {
+            blockingStub.changeEosURL(StringMsg.newBuilder().setValue(eosURL).build());
+        } catch (StatusRuntimeException e) {
+            throw new NodeMgmtException("", e);
+        }
+    }
+
+    @Override
     public int newNodeID() throws NodeMgmtException {
         try {
             Int32Msg resp = blockingStub.newNodeID(Empty.newBuilder().build());
@@ -330,6 +352,15 @@ public class PbClient implements NodeMgmtInterface {
                     .setShard(ByteString.copyFrom(shard))
                     .build();
             blockingStub.deleteDNI(req);
+        } catch (StatusRuntimeException e) {
+            throw new NodeMgmtException("", e);
+        }
+    }
+
+    @Override
+    public void finishRebuild(int id) throws NodeMgmtException {
+        try {
+            blockingStub.finishRebuild(Int32Msg.newBuilder().setValue(id).build());
         } catch (StatusRuntimeException e) {
             throw new NodeMgmtException("", e);
         }

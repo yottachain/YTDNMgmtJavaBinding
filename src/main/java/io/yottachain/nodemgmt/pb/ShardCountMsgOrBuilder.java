@@ -4,16 +4,16 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface ShardCountMsgOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.ShardCountMsg)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.ShardCountMsg)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 iD = 1;</code>
-     */
-    int getID();
+  /**
+   * <code>int32 iD = 1;</code>
+   */
+  int getID();
 
-    /**
-     * <code>int64 cnt = 2;</code>
-     */
-    long getCnt();
+  /**
+   * <code>int64 cnt = 2;</code>
+   */
+  long getCnt();
 }

@@ -34,9 +34,11 @@ public class YottaNodeMgmt {
     private static final String NODEMGMT_CONTRACTOWNERD = NODEMGMT_ETCD_PREFIX + "contractOwnerD";
     private static final String NODEMGMT_SHADOWACCOUNT = NODEMGMT_ETCD_PREFIX + "shadowAccount";
     private static final String NODEMGMT_BPID = NODEMGMT_ETCD_PREFIX + "bpid";
+    private static final String NODEMGMT_MASTER = NODEMGMT_ETCD_PREFIX + "master";
 
 
-    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid) throws NodeMgmtException {
+    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid, final boolean isMaster) throws NodeMgmtException {
+        int master = isMaster?1:0;
         String embededStr = System.getenv("NODEMGMT_EMBEDED");
         if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
             logger.info("NodeMgmt is under standalone mode");
@@ -145,6 +147,17 @@ public class YottaNodeMgmt {
                             kvclient.put(KeyUtils.bs(NODEMGMT_BPID), KeyUtils.bs(Integer.toString(bpid))).sync();
                             logger.info("Write BP ID to ETCD: " + bpid);
                         }
+
+                        RangeResponse masterResp = kvclient.get(KeyUtils.bs(NODEMGMT_MASTER)).sync();
+                        String masterNew = null;
+                        if (masterResp.getKvsCount()>0) {
+                            masterNew = masterResp.getKvs(0).getValue().toStringUtf8();
+                            logger.info("Read master status from ETCD: " + masterNew);
+                        }
+                        if (StringUtil.isNullOrEmpty(masterNew) || !Integer.toString(master).equals(masterNew)) {
+                            kvclient.put(KeyUtils.bs(NODEMGMT_MASTER), KeyUtils.bs(Integer.toString(master))).sync();
+                            logger.info("Write master status to ETCD: " + master);
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -177,8 +190,16 @@ public class YottaNodeMgmt {
             logger.info("Create NodeMgmt GRPC connection: " + nodemgmthostname + ":" + nodemgmtPort);
         } else {
             logger.info("NodeMgmt is under embeded mode");
-            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid);
+            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master);
         }
+    }
+
+    public static void setMaster(boolean isMaster) {
+
+    }
+
+    public static void changeEosURL(String eosURL) {
+
     }
 
     public static int newNodeID() throws NodeMgmtException {
@@ -205,7 +226,7 @@ public class YottaNodeMgmt {
         return client.registerNode(node);
     }
 
-    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version) throws NodeMgmtException {
+    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version, int rebuilding) throws NodeMgmtException {
         if (addrs==null || addrs.size()==0) {
             throw new NodeMgmtException("Addresses of data node cannot be null");
         }
@@ -219,6 +240,7 @@ public class YottaNodeMgmt {
         node.setAddrs(addrs);
         node.setRelay(relay?1:0);
         node.setVersion(version);
+        node.setRebuilding(rebuilding);
         return client.updateNodeStatus(node);
     }
 
@@ -315,6 +337,10 @@ public class YottaNodeMgmt {
         client.deleteDNI(id, shard);
     }
 
+    public static void finishRebuild(int id) throws NodeMgmtException {
+        client.finishRebuild(id);
+    }
+
 //    private static String checkPublicIP(List<String> addrs) {
 //        for (String addr : addrs) {
 //            if (addr.startsWith("/ip4/127.") ||
@@ -381,8 +407,13 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", "producer1", 0);
-//        List<ShardCount> sclist = YottaNodeMgmt.getInvalidNodes();
+        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", "producer1", 1, true);
+        for (int i=0; i<1800; i++) {
+            boolean b = YottaNodeMgmt.spotcheckSelected();
+            if (b)
+                System.out.println(b);
+        }
+        //        List<ShardCount> sclist = YottaNodeMgmt.getInvalidNodes();
 //        for (ShardCount sc : sclist) {
 //            System.out.println(sc.getId() + ":" + sc.getCnt());
 //        }

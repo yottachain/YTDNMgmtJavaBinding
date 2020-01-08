@@ -4,32 +4,32 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface GetRebuildItemRespOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.GetRebuildItemResp)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.GetRebuildItemResp)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>.pb.NodeMsg node = 1;</code>
-     */
-    boolean hasNode();
-    /**
-     * <code>.pb.NodeMsg node = 1;</code>
-     */
-    io.yottachain.nodemgmt.pb.NodeMsg getNode();
-    /**
-     * <code>.pb.NodeMsg node = 1;</code>
-     */
-    io.yottachain.nodemgmt.pb.NodeMsgOrBuilder getNodeOrBuilder();
+  /**
+   * <code>.pb.NodeMsg node = 1;</code>
+   */
+  boolean hasNode();
+  /**
+   * <code>.pb.NodeMsg node = 1;</code>
+   */
+  io.yottachain.nodemgmt.pb.NodeMsg getNode();
+  /**
+   * <code>.pb.NodeMsg node = 1;</code>
+   */
+  io.yottachain.nodemgmt.pb.NodeMsgOrBuilder getNodeOrBuilder();
 
-    /**
-     * <code>repeated bytes shards = 2;</code>
-     */
-    java.util.List<com.google.protobuf.ByteString> getShardsList();
-    /**
-     * <code>repeated bytes shards = 2;</code>
-     */
-    int getShardsCount();
-    /**
-     * <code>repeated bytes shards = 2;</code>
-     */
-    com.google.protobuf.ByteString getShards(int index);
+  /**
+   * <code>repeated bytes shards = 2;</code>
+   */
+  java.util.List<com.google.protobuf.ByteString> getShardsList();
+  /**
+   * <code>repeated bytes shards = 2;</code>
+   */
+  int getShardsCount();
+  /**
+   * <code>repeated bytes shards = 2;</code>
+   */
+  com.google.protobuf.ByteString getShards(int index);
 }

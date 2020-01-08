@@ -4,45 +4,45 @@
 package io.yottachain.nodemgmt.pb;
 
 public interface SpotCheckListMsgOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pb.SpotCheckListMsg)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:pb.SpotCheckListMsg)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>string taskID = 1;</code>
-     */
-    java.lang.String getTaskID();
-    /**
-     * <code>string taskID = 1;</code>
-     */
-    com.google.protobuf.ByteString
-    getTaskIDBytes();
+  /**
+   * <code>string taskID = 1;</code>
+   */
+  java.lang.String getTaskID();
+  /**
+   * <code>string taskID = 1;</code>
+   */
+  com.google.protobuf.ByteString
+      getTaskIDBytes();
 
-    /**
-     * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
-     */
-    java.util.List<io.yottachain.nodemgmt.pb.SpotCheckTaskMsg>
-    getTaskListList();
-    /**
-     * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
-     */
-    io.yottachain.nodemgmt.pb.SpotCheckTaskMsg getTaskList(int index);
-    /**
-     * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
-     */
-    int getTaskListCount();
-    /**
-     * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
-     */
-    java.util.List<? extends io.yottachain.nodemgmt.pb.SpotCheckTaskMsgOrBuilder>
-    getTaskListOrBuilderList();
-    /**
-     * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
-     */
-    io.yottachain.nodemgmt.pb.SpotCheckTaskMsgOrBuilder getTaskListOrBuilder(
-            int index);
+  /**
+   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   */
+  java.util.List<io.yottachain.nodemgmt.pb.SpotCheckTaskMsg> 
+      getTaskListList();
+  /**
+   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   */
+  io.yottachain.nodemgmt.pb.SpotCheckTaskMsg getTaskList(int index);
+  /**
+   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   */
+  int getTaskListCount();
+  /**
+   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   */
+  java.util.List<? extends io.yottachain.nodemgmt.pb.SpotCheckTaskMsgOrBuilder> 
+      getTaskListOrBuilderList();
+  /**
+   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   */
+  io.yottachain.nodemgmt.pb.SpotCheckTaskMsgOrBuilder getTaskListOrBuilder(
+      int index);
 
-    /**
-     * <code>int64 timestamp = 3;</code>
-     */
-    long getTimestamp();
+  /**
+   * <code>int64 timestamp = 3;</code>
+   */
+  long getTimestamp();
 }
