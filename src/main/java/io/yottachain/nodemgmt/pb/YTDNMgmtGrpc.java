@@ -123,97 +123,35 @@ public final class YTDNMgmtGrpc {
     return getNewNodeIDMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.StringMsg,
-      io.yottachain.nodemgmt.pb.Empty> getPreRegisterNodeMethod;
+  private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.String2Msg,
+      io.yottachain.nodemgmt.pb.Empty> getCallAPIMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PreRegisterNode",
-      requestType = io.yottachain.nodemgmt.pb.StringMsg.class,
+      fullMethodName = SERVICE_NAME + '/' + "CallAPI",
+      requestType = io.yottachain.nodemgmt.pb.String2Msg.class,
       responseType = io.yottachain.nodemgmt.pb.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.StringMsg,
-      io.yottachain.nodemgmt.pb.Empty> getPreRegisterNodeMethod() {
-    io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.StringMsg, io.yottachain.nodemgmt.pb.Empty> getPreRegisterNodeMethod;
-    if ((getPreRegisterNodeMethod = YTDNMgmtGrpc.getPreRegisterNodeMethod) == null) {
+  public static io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.String2Msg,
+      io.yottachain.nodemgmt.pb.Empty> getCallAPIMethod() {
+    io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.String2Msg, io.yottachain.nodemgmt.pb.Empty> getCallAPIMethod;
+    if ((getCallAPIMethod = YTDNMgmtGrpc.getCallAPIMethod) == null) {
       synchronized (YTDNMgmtGrpc.class) {
-        if ((getPreRegisterNodeMethod = YTDNMgmtGrpc.getPreRegisterNodeMethod) == null) {
-          YTDNMgmtGrpc.getPreRegisterNodeMethod = getPreRegisterNodeMethod =
-              io.grpc.MethodDescriptor.<io.yottachain.nodemgmt.pb.StringMsg, io.yottachain.nodemgmt.pb.Empty>newBuilder()
+        if ((getCallAPIMethod = YTDNMgmtGrpc.getCallAPIMethod) == null) {
+          YTDNMgmtGrpc.getCallAPIMethod = getCallAPIMethod =
+              io.grpc.MethodDescriptor.<io.yottachain.nodemgmt.pb.String2Msg, io.yottachain.nodemgmt.pb.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PreRegisterNode"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CallAPI"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.yottachain.nodemgmt.pb.StringMsg.getDefaultInstance()))
+                  io.yottachain.nodemgmt.pb.String2Msg.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.yottachain.nodemgmt.pb.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new YTDNMgmtMethodDescriptorSupplier("PreRegisterNode"))
+              .setSchemaDescriptor(new YTDNMgmtMethodDescriptorSupplier("CallAPI"))
               .build();
         }
       }
     }
-    return getPreRegisterNodeMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.StringMsg,
-      io.yottachain.nodemgmt.pb.Empty> getChangeMinerPoolMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ChangeMinerPool",
-      requestType = io.yottachain.nodemgmt.pb.StringMsg.class,
-      responseType = io.yottachain.nodemgmt.pb.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.StringMsg,
-      io.yottachain.nodemgmt.pb.Empty> getChangeMinerPoolMethod() {
-    io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.StringMsg, io.yottachain.nodemgmt.pb.Empty> getChangeMinerPoolMethod;
-    if ((getChangeMinerPoolMethod = YTDNMgmtGrpc.getChangeMinerPoolMethod) == null) {
-      synchronized (YTDNMgmtGrpc.class) {
-        if ((getChangeMinerPoolMethod = YTDNMgmtGrpc.getChangeMinerPoolMethod) == null) {
-          YTDNMgmtGrpc.getChangeMinerPoolMethod = getChangeMinerPoolMethod =
-              io.grpc.MethodDescriptor.<io.yottachain.nodemgmt.pb.StringMsg, io.yottachain.nodemgmt.pb.Empty>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ChangeMinerPool"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.yottachain.nodemgmt.pb.StringMsg.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.yottachain.nodemgmt.pb.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new YTDNMgmtMethodDescriptorSupplier("ChangeMinerPool"))
-              .build();
-        }
-      }
-    }
-    return getChangeMinerPoolMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.NodeMsg,
-      io.yottachain.nodemgmt.pb.NodeMsg> getRegisterNodeMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RegisterNode",
-      requestType = io.yottachain.nodemgmt.pb.NodeMsg.class,
-      responseType = io.yottachain.nodemgmt.pb.NodeMsg.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.NodeMsg,
-      io.yottachain.nodemgmt.pb.NodeMsg> getRegisterNodeMethod() {
-    io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.NodeMsg, io.yottachain.nodemgmt.pb.NodeMsg> getRegisterNodeMethod;
-    if ((getRegisterNodeMethod = YTDNMgmtGrpc.getRegisterNodeMethod) == null) {
-      synchronized (YTDNMgmtGrpc.class) {
-        if ((getRegisterNodeMethod = YTDNMgmtGrpc.getRegisterNodeMethod) == null) {
-          YTDNMgmtGrpc.getRegisterNodeMethod = getRegisterNodeMethod =
-              io.grpc.MethodDescriptor.<io.yottachain.nodemgmt.pb.NodeMsg, io.yottachain.nodemgmt.pb.NodeMsg>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegisterNode"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.yottachain.nodemgmt.pb.NodeMsg.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.yottachain.nodemgmt.pb.NodeMsg.getDefaultInstance()))
-              .setSchemaDescriptor(new YTDNMgmtMethodDescriptorSupplier("RegisterNode"))
-              .build();
-        }
-      }
-    }
-    return getRegisterNodeMethod;
+    return getCallAPIMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.pb.NodeMsg,
@@ -951,23 +889,9 @@ public final class YTDNMgmtGrpc {
 
     /**
      */
-    public void preRegisterNode(io.yottachain.nodemgmt.pb.StringMsg request,
+    public void callAPI(io.yottachain.nodemgmt.pb.String2Msg request,
         io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getPreRegisterNodeMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void changeMinerPool(io.yottachain.nodemgmt.pb.StringMsg request,
-        io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeMinerPoolMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void registerNode(io.yottachain.nodemgmt.pb.NodeMsg request,
-        io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.NodeMsg> responseObserver) {
-      asyncUnimplementedUnaryCall(getRegisterNodeMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getCallAPIMethod(), responseObserver);
     }
 
     /**
@@ -1148,26 +1072,12 @@ public final class YTDNMgmtGrpc {
                 io.yottachain.nodemgmt.pb.Int32Msg>(
                   this, METHODID_NEW_NODE_ID)))
           .addMethod(
-            getPreRegisterNodeMethod(),
+            getCallAPIMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                io.yottachain.nodemgmt.pb.StringMsg,
+                io.yottachain.nodemgmt.pb.String2Msg,
                 io.yottachain.nodemgmt.pb.Empty>(
-                  this, METHODID_PRE_REGISTER_NODE)))
-          .addMethod(
-            getChangeMinerPoolMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                io.yottachain.nodemgmt.pb.StringMsg,
-                io.yottachain.nodemgmt.pb.Empty>(
-                  this, METHODID_CHANGE_MINER_POOL)))
-          .addMethod(
-            getRegisterNodeMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                io.yottachain.nodemgmt.pb.NodeMsg,
-                io.yottachain.nodemgmt.pb.NodeMsg>(
-                  this, METHODID_REGISTER_NODE)))
+                  this, METHODID_CALL_API)))
           .addMethod(
             getUpdateNodeStatusMethod(),
             asyncUnaryCall(
@@ -1373,26 +1283,10 @@ public final class YTDNMgmtGrpc {
 
     /**
      */
-    public void preRegisterNode(io.yottachain.nodemgmt.pb.StringMsg request,
+    public void callAPI(io.yottachain.nodemgmt.pb.String2Msg request,
         io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPreRegisterNodeMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void changeMinerPool(io.yottachain.nodemgmt.pb.StringMsg request,
-        io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Empty> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getChangeMinerPoolMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void registerNode(io.yottachain.nodemgmt.pb.NodeMsg request,
-        io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.NodeMsg> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getRegisterNodeMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCallAPIMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1616,23 +1510,9 @@ public final class YTDNMgmtGrpc {
 
     /**
      */
-    public io.yottachain.nodemgmt.pb.Empty preRegisterNode(io.yottachain.nodemgmt.pb.StringMsg request) {
+    public io.yottachain.nodemgmt.pb.Empty callAPI(io.yottachain.nodemgmt.pb.String2Msg request) {
       return blockingUnaryCall(
-          getChannel(), getPreRegisterNodeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public io.yottachain.nodemgmt.pb.Empty changeMinerPool(io.yottachain.nodemgmt.pb.StringMsg request) {
-      return blockingUnaryCall(
-          getChannel(), getChangeMinerPoolMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public io.yottachain.nodemgmt.pb.NodeMsg registerNode(io.yottachain.nodemgmt.pb.NodeMsg request) {
-      return blockingUnaryCall(
-          getChannel(), getRegisterNodeMethod(), getCallOptions(), request);
+          getChannel(), getCallAPIMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1837,26 +1717,10 @@ public final class YTDNMgmtGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.yottachain.nodemgmt.pb.Empty> preRegisterNode(
-        io.yottachain.nodemgmt.pb.StringMsg request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.yottachain.nodemgmt.pb.Empty> callAPI(
+        io.yottachain.nodemgmt.pb.String2Msg request) {
       return futureUnaryCall(
-          getChannel().newCall(getPreRegisterNodeMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.yottachain.nodemgmt.pb.Empty> changeMinerPool(
-        io.yottachain.nodemgmt.pb.StringMsg request) {
-      return futureUnaryCall(
-          getChannel().newCall(getChangeMinerPoolMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.yottachain.nodemgmt.pb.NodeMsg> registerNode(
-        io.yottachain.nodemgmt.pb.NodeMsg request) {
-      return futureUnaryCall(
-          getChannel().newCall(getRegisterNodeMethod(), getCallOptions()), request);
+          getChannel().newCall(getCallAPIMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2039,31 +1903,29 @@ public final class YTDNMgmtGrpc {
   private static final int METHODID_SET_MASTER = 0;
   private static final int METHODID_CHANGE_EOS_URL = 1;
   private static final int METHODID_NEW_NODE_ID = 2;
-  private static final int METHODID_PRE_REGISTER_NODE = 3;
-  private static final int METHODID_CHANGE_MINER_POOL = 4;
-  private static final int METHODID_REGISTER_NODE = 5;
-  private static final int METHODID_UPDATE_NODE_STATUS = 6;
-  private static final int METHODID_INCR_USED_SPACE = 7;
-  private static final int METHODID_ALLOC_NODES = 8;
-  private static final int METHODID_SYNC_NODE = 9;
-  private static final int METHODID_GET_NODES = 10;
-  private static final int METHODID_GET_SUPER_NODES = 11;
-  private static final int METHODID_GET_SUPER_NODE_PRIVATE_KEY = 12;
-  private static final int METHODID_GET_NODE_IDBY_PUB_KEY = 13;
-  private static final int METHODID_GET_NODE_BY_PUB_KEY = 14;
-  private static final int METHODID_GET_SUPER_NODE_IDBY_PUB_KEY = 15;
-  private static final int METHODID_ADD_DNI = 16;
-  private static final int METHODID_ACTIVE_NODES_LIST = 17;
-  private static final int METHODID_STATISTICS = 18;
-  private static final int METHODID_GET_SPOT_CHECK_LIST = 19;
-  private static final int METHODID_GET_STNODE = 20;
-  private static final int METHODID_GET_STNODES = 21;
-  private static final int METHODID_UPDATE_TASK_STATUS = 22;
-  private static final int METHODID_GET_INVALID_NODES = 23;
-  private static final int METHODID_GET_REBUILD_ITEM = 24;
-  private static final int METHODID_GET_REBUILD_NODE = 25;
-  private static final int METHODID_DELETE_DNI = 26;
-  private static final int METHODID_FINISH_REBUILD = 27;
+  private static final int METHODID_CALL_API = 3;
+  private static final int METHODID_UPDATE_NODE_STATUS = 4;
+  private static final int METHODID_INCR_USED_SPACE = 5;
+  private static final int METHODID_ALLOC_NODES = 6;
+  private static final int METHODID_SYNC_NODE = 7;
+  private static final int METHODID_GET_NODES = 8;
+  private static final int METHODID_GET_SUPER_NODES = 9;
+  private static final int METHODID_GET_SUPER_NODE_PRIVATE_KEY = 10;
+  private static final int METHODID_GET_NODE_IDBY_PUB_KEY = 11;
+  private static final int METHODID_GET_NODE_BY_PUB_KEY = 12;
+  private static final int METHODID_GET_SUPER_NODE_IDBY_PUB_KEY = 13;
+  private static final int METHODID_ADD_DNI = 14;
+  private static final int METHODID_ACTIVE_NODES_LIST = 15;
+  private static final int METHODID_STATISTICS = 16;
+  private static final int METHODID_GET_SPOT_CHECK_LIST = 17;
+  private static final int METHODID_GET_STNODE = 18;
+  private static final int METHODID_GET_STNODES = 19;
+  private static final int METHODID_UPDATE_TASK_STATUS = 20;
+  private static final int METHODID_GET_INVALID_NODES = 21;
+  private static final int METHODID_GET_REBUILD_ITEM = 22;
+  private static final int METHODID_GET_REBUILD_NODE = 23;
+  private static final int METHODID_DELETE_DNI = 24;
+  private static final int METHODID_FINISH_REBUILD = 25;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2094,17 +1956,9 @@ public final class YTDNMgmtGrpc {
           serviceImpl.newNodeID((io.yottachain.nodemgmt.pb.Empty) request,
               (io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Int32Msg>) responseObserver);
           break;
-        case METHODID_PRE_REGISTER_NODE:
-          serviceImpl.preRegisterNode((io.yottachain.nodemgmt.pb.StringMsg) request,
+        case METHODID_CALL_API:
+          serviceImpl.callAPI((io.yottachain.nodemgmt.pb.String2Msg) request,
               (io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Empty>) responseObserver);
-          break;
-        case METHODID_CHANGE_MINER_POOL:
-          serviceImpl.changeMinerPool((io.yottachain.nodemgmt.pb.StringMsg) request,
-              (io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.Empty>) responseObserver);
-          break;
-        case METHODID_REGISTER_NODE:
-          serviceImpl.registerNode((io.yottachain.nodemgmt.pb.NodeMsg) request,
-              (io.grpc.stub.StreamObserver<io.yottachain.nodemgmt.pb.NodeMsg>) responseObserver);
           break;
         case METHODID_UPDATE_NODE_STATUS:
           serviceImpl.updateNodeStatus((io.yottachain.nodemgmt.pb.NodeMsg) request,
@@ -2258,9 +2112,7 @@ public final class YTDNMgmtGrpc {
               .addMethod(getSetMasterMethod())
               .addMethod(getChangeEosURLMethod())
               .addMethod(getNewNodeIDMethod())
-              .addMethod(getPreRegisterNodeMethod())
-              .addMethod(getChangeMinerPoolMethod())
-              .addMethod(getRegisterNodeMethod())
+              .addMethod(getCallAPIMethod())
               .addMethod(getUpdateNodeStatusMethod())
               .addMethod(getIncrUsedSpaceMethod())
               .addMethod(getAllocNodesMethod())

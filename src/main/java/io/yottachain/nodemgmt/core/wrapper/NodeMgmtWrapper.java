@@ -454,9 +454,7 @@ public class NodeMgmtWrapper {
         Pointer SetMaster(int master);
         Pointer ChangeEosURL(String eosURL);
         Pointer NewNodeID();
-        Pointer PreRegisterNode(String trx);
-        Pointer ChangeMinerPool(String trx);
-        Pointer RegisterNode(Node node);
+        Pointer CallAPI(String trx, String apiName);
         Pointer IncrUsedSpace(int id, long incr);
         Pointer UpdateNodeStatus(Node node);
         Pointer AllocNodes(int shardCount, Pointer errIDs, int size);

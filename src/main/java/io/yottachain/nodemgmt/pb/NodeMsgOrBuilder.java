@@ -108,10 +108,28 @@ public interface NodeMsgOrBuilder extends
 
   /**
    * <pre>
+   *Owner of associated miner pool
+   * </pre>
+   *
+   * <code>string poolOwner = 7;</code>
+   */
+  java.lang.String getPoolOwner();
+  /**
+   * <pre>
+   *Owner of associated miner pool
+   * </pre>
+   *
+   * <code>string poolOwner = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getPoolOwnerBytes();
+
+  /**
+   * <pre>
    *quota allocated by associated miner pool
    * </pre>
    *
-   * <code>int64 quota = 7;</code>
+   * <code>int64 quota = 8;</code>
    */
   long getQuota();
 
@@ -120,7 +138,7 @@ public interface NodeMsgOrBuilder extends
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   java.util.List<java.lang.String>
       getAddrsList();
@@ -129,7 +147,7 @@ public interface NodeMsgOrBuilder extends
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   int getAddrsCount();
   /**
@@ -137,7 +155,7 @@ public interface NodeMsgOrBuilder extends
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   java.lang.String getAddrs(int index);
   /**
@@ -145,7 +163,7 @@ public interface NodeMsgOrBuilder extends
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   com.google.protobuf.ByteString
       getAddrsBytes(int index);
@@ -155,7 +173,7 @@ public interface NodeMsgOrBuilder extends
    *CPU usage of data node
    * </pre>
    *
-   * <code>int32 cPU = 9;</code>
+   * <code>int32 cPU = 10;</code>
    */
   int getCPU();
 
@@ -164,7 +182,7 @@ public interface NodeMsgOrBuilder extends
    *memory usage of data node
    * </pre>
    *
-   * <code>int32 memory = 10;</code>
+   * <code>int32 memory = 11;</code>
    */
   int getMemory();
 
@@ -173,7 +191,7 @@ public interface NodeMsgOrBuilder extends
    *bandwidth usage of data node
    * </pre>
    *
-   * <code>int32 bandwidth = 11;</code>
+   * <code>int32 bandwidth = 12;</code>
    */
   int getBandwidth();
 
@@ -182,7 +200,7 @@ public interface NodeMsgOrBuilder extends
    *max space of data node
    * </pre>
    *
-   * <code>int64 maxDataSpace = 12;</code>
+   * <code>int64 maxDataSpace = 13;</code>
    */
   long getMaxDataSpace();
 
@@ -191,7 +209,7 @@ public interface NodeMsgOrBuilder extends
    *space assigned to YTFS
    * </pre>
    *
-   * <code>int64 assignedSpace = 13;</code>
+   * <code>int64 assignedSpace = 14;</code>
    */
   long getAssignedSpace();
 
@@ -200,7 +218,7 @@ public interface NodeMsgOrBuilder extends
    *pre-allocated space of data node
    * </pre>
    *
-   * <code>int64 productiveSpace = 14;</code>
+   * <code>int64 productiveSpace = 15;</code>
    */
   long getProductiveSpace();
 
@@ -209,7 +227,7 @@ public interface NodeMsgOrBuilder extends
    *used space of data node
    * </pre>
    *
-   * <code>int64 usedSpace = 15;</code>
+   * <code>int64 usedSpace = 16;</code>
    */
   long getUsedSpace();
 
@@ -218,7 +236,7 @@ public interface NodeMsgOrBuilder extends
    *weight for allocate data node
    * </pre>
    *
-   * <code>double weight = 16;</code>
+   * <code>double weight = 17;</code>
    */
   double getWeight();
 
@@ -227,7 +245,7 @@ public interface NodeMsgOrBuilder extends
    *Is node valid
    * </pre>
    *
-   * <code>int32 valid = 17;</code>
+   * <code>int32 valid = 18;</code>
    */
   int getValid();
 
@@ -236,7 +254,7 @@ public interface NodeMsgOrBuilder extends
    *Is relay node
    * </pre>
    *
-   * <code>int32 relay = 18;</code>
+   * <code>int32 relay = 19;</code>
    */
   int getRelay();
 
@@ -245,7 +263,7 @@ public interface NodeMsgOrBuilder extends
    *status code: 0 - registered 1 - active
    * </pre>
    *
-   * <code>int32 status = 19;</code>
+   * <code>int32 status = 20;</code>
    */
   int getStatus();
 
@@ -254,7 +272,7 @@ public interface NodeMsgOrBuilder extends
    *timestamp of status updating operation
    * </pre>
    *
-   * <code>int64 timestamp = 20;</code>
+   * <code>int64 timestamp = 21;</code>
    */
   long getTimestamp();
 
@@ -263,7 +281,7 @@ public interface NodeMsgOrBuilder extends
    *version number of miner
    * </pre>
    *
-   * <code>int32 version = 21;</code>
+   * <code>int32 version = 22;</code>
    */
   int getVersion();
 
@@ -272,7 +290,7 @@ public interface NodeMsgOrBuilder extends
    *if node is under rebuilding
    * </pre>
    *
-   * <code>int32 rebuilding = 22;</code>
+   * <code>int32 rebuilding = 23;</code>
    */
   int getRebuilding();
 }

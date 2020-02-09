@@ -10,9 +10,7 @@ public interface NodeMgmtInterface {
     void setMaster(boolean b) throws NodeMgmtException;
     void changeEosURL(String eosURL) throws NodeMgmtException;
     int newNodeID() throws NodeMgmtException;
-    void preRegisterNode(String trx) throws NodeMgmtException;
-    void changeMinerPool(String trx) throws NodeMgmtException;
-    Node registerNode(Node node) throws NodeMgmtException;
+    void callAPI(String trx, String apiName) throws NodeMgmtException;
     Node updateNodeStatus(Node node) throws NodeMgmtException;
     List<Node> allocNodes(int shardCount, int[] errIDs) throws NodeMgmtException;
     void syncNode(Node node) throws NodeMgmtException;

@@ -25,6 +25,11 @@ public final class NodeMgmtProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pb_StringMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pb_String2Msg_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pb_String2Msg_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pb_Int32Msg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -119,6 +124,16 @@ public final class NodeMgmtProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pb_GetRebuildItemResp_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pb_DownloadShardRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pb_DownloadShardRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pb_DownloadShardResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pb_DownloadShardResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -129,79 +144,80 @@ public final class NodeMgmtProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\013types.proto\022\002pb\"\007\n\005Empty\"\032\n\tStringMsg\022" +
-      "\r\n\005value\030\001 \001(\t\"\031\n\010Int32Msg\022\r\n\005value\030\001 \001(" +
-      "\005\"\031\n\010Int64Msg\022\r\n\005value\030\001 \001(\003\"\204\003\n\007NodeMsg" +
-      "\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006pubKey\030\003" +
-      " \001(\t\022\r\n\005owner\030\004 \001(\t\022\021\n\tprofitAcc\030\005 \001(\t\022\016" +
-      "\n\006poolID\030\006 \001(\t\022\r\n\005quota\030\007 \001(\003\022\r\n\005addrs\030\010" +
-      " \003(\t\022\013\n\003cPU\030\t \001(\005\022\016\n\006memory\030\n \001(\005\022\021\n\tban" +
-      "dwidth\030\013 \001(\005\022\024\n\014maxDataSpace\030\014 \001(\003\022\025\n\ras" +
-      "signedSpace\030\r \001(\003\022\027\n\017productiveSpace\030\016 \001" +
-      "(\003\022\021\n\tusedSpace\030\017 \001(\003\022\016\n\006weight\030\020 \001(\001\022\r\n" +
-      "\005valid\030\021 \001(\005\022\r\n\005relay\030\022 \001(\005\022\016\n\006status\030\023 " +
-      "\001(\005\022\021\n\ttimestamp\030\024 \001(\003\022\017\n\007version\030\025 \001(\005\022" +
-      "\022\n\nrebuilding\030\026 \001(\005\"Z\n\014SuperNodeMsg\022\n\n\002i" +
-      "D\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006pubKey\030\003 \001(\t\022" +
-      "\017\n\007privKey\030\004 \001(\t\022\r\n\005addrs\030\005 \003(\t\"\215\001\n\013Node" +
-      "StatMsg\022\024\n\014activeMiners\030\001 \001(\003\022\023\n\013totalMi" +
-      "ners\030\002 \001(\003\022\020\n\010maxTotal\030\003 \001(\003\022\025\n\rassigned" +
-      "Total\030\004 \001(\003\022\027\n\017productiveTotal\030\005 \001(\003\022\021\n\t" +
-      "usedTotal\030\006 \001(\003\"I\n\020SpotCheckTaskMsg\022\n\n\002i" +
-      "D\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\014\n\004addr\030\003 \001(\t\022\013\n" +
-      "\003vNI\030\004 \001(\t\"]\n\020SpotCheckListMsg\022\016\n\006taskID" +
-      "\030\001 \001(\t\022&\n\010taskList\030\002 \003(\0132\024.pb.SpotCheckT" +
-      "askMsg\022\021\n\ttimestamp\030\003 \001(\003\"D\n\024GetSpotChec" +
-      "kListResp\022,\n\016spotCheckLists\030\001 \003(\0132\024.pb.S" +
-      "potCheckListMsg\"\'\n\tNodesResp\022\032\n\005nodes\030\001 " +
-      "\003(\0132\013.pb.NodeMsg\"6\n\016SuperNodesResp\022$\n\nsu" +
-      "perNodes\030\001 \003(\0132\020.pb.SuperNodeMsg\",\n\020Incr" +
-      "UsedSpaceReq\022\n\n\002id\030\001 \001(\005\022\014\n\004incr\030\002 \001(\003\"3" +
-      "\n\rAllocNodesReq\022\022\n\nshardCount\030\001 \001(\005\022\016\n\006e" +
-      "rrIDs\030\002 \003(\005\"\036\n\013GetNodesReq\022\017\n\007nodeIDs\030\001 " +
-      "\003(\005\"#\n\006DNIReq\022\n\n\002id\030\001 \001(\005\022\r\n\005shard\030\002 \001(\014" +
-      "\":\n\023UpdateTaskStatusReq\022\n\n\002id\030\001 \001(\t\022\027\n\017i" +
-      "nvalidNodeList\030\002 \003(\005\"(\n\rShardCountMsg\022\n\n" +
-      "\002iD\030\001 \001(\005\022\013\n\003cnt\030\002 \001(\003\"=\n\023GetInvalidNode" +
-      "sResp\022&\n\013shardCounts\030\001 \003(\0132\021.pb.ShardCou" +
-      "ntMsg\"B\n\021GetRebuildItemReq\022\017\n\007minerID\030\001 " +
-      "\001(\005\022\r\n\005index\030\002 \001(\003\022\r\n\005total\030\003 \001(\003\"?\n\022Get" +
-      "RebuildItemResp\022\031\n\004node\030\001 \001(\0132\013.pb.NodeM" +
-      "sg\022\016\n\006shards\030\002 \003(\0142\307\n\n\010YTDNMgmt\022&\n\tSetMa" +
-      "ster\022\014.pb.Int32Msg\032\t.pb.Empty\"\000\022*\n\014Chang" +
-      "eEosURL\022\r.pb.StringMsg\032\t.pb.Empty\"\000\022&\n\tN" +
-      "ewNodeID\022\t.pb.Empty\032\014.pb.Int32Msg\"\000\022-\n\017P" +
-      "reRegisterNode\022\r.pb.StringMsg\032\t.pb.Empty" +
-      "\"\000\022-\n\017ChangeMinerPool\022\r.pb.StringMsg\032\t.p" +
-      "b.Empty\"\000\022*\n\014RegisterNode\022\013.pb.NodeMsg\032\013" +
-      ".pb.NodeMsg\"\000\022.\n\020UpdateNodeStatus\022\013.pb.N" +
-      "odeMsg\032\013.pb.NodeMsg\"\000\0222\n\rIncrUsedSpace\022\024" +
-      ".pb.IncrUsedSpaceReq\032\t.pb.Empty\"\000\0220\n\nAll" +
-      "ocNodes\022\021.pb.AllocNodesReq\032\r.pb.NodesRes" +
-      "p\"\000\022$\n\010SyncNode\022\013.pb.NodeMsg\032\t.pb.Empty\"" +
-      "\000\022,\n\010GetNodes\022\017.pb.GetNodesReq\032\r.pb.Node" +
-      "sResp\"\000\0220\n\rGetSuperNodes\022\t.pb.Empty\032\022.pb" +
-      ".SuperNodesResp\"\000\0227\n\026GetSuperNodePrivate" +
-      "Key\022\014.pb.Int32Msg\032\r.pb.StringMsg\"\000\0222\n\021Ge" +
-      "tNodeIDByPubKey\022\r.pb.StringMsg\032\014.pb.Int3" +
-      "2Msg\"\000\022/\n\017GetNodeByPubKey\022\r.pb.StringMsg" +
-      "\032\013.pb.NodeMsg\"\000\0227\n\026GetSuperNodeIDByPubKe" +
-      "y\022\r.pb.StringMsg\032\014.pb.Int32Msg\"\000\022!\n\006AddD" +
-      "NI\022\n.pb.DNIReq\032\t.pb.Empty\"\000\022-\n\017ActiveNod" +
-      "esList\022\t.pb.Empty\032\r.pb.NodesResp\"\000\022*\n\nSt" +
-      "atistics\022\t.pb.Empty\032\017.pb.NodeStatMsg\"\000\0229" +
-      "\n\020GetSpotCheckList\022\t.pb.Empty\032\030.pb.GetSp" +
-      "otCheckListResp\"\000\022%\n\tGetSTNode\022\t.pb.Empt" +
-      "y\032\013.pb.NodeMsg\"\000\022+\n\nGetSTNodes\022\014.pb.Int6" +
-      "4Msg\032\r.pb.NodesResp\"\000\0228\n\020UpdateTaskStatu" +
-      "s\022\027.pb.UpdateTaskStatusReq\032\t.pb.Empty\"\000\022" +
-      "7\n\017GetInvalidNodes\022\t.pb.Empty\032\027.pb.GetIn" +
-      "validNodesResp\"\000\022A\n\016GetRebuildItem\022\025.pb." +
-      "GetRebuildItemReq\032\026.pb.GetRebuildItemRes" +
-      "p\"\000\022-\n\016GetRebuildNode\022\014.pb.Int64Msg\032\013.pb" +
-      ".NodeMsg\"\000\022$\n\tDeleteDNI\022\n.pb.DNIReq\032\t.pb" +
-      ".Empty\"\000\022*\n\rFinishRebuild\022\014.pb.Int32Msg\032" +
-      "\t.pb.Empty\"\000B.\n\031io.yottachain.nodemgmt.p" +
-      "bB\rNodeMgmtProtoH\001P\001b\006proto3"
+      "\r\n\005value\030\001 \001(\t\",\n\nString2Msg\022\016\n\006param1\030\001" +
+      " \001(\t\022\016\n\006param2\030\002 \001(\t\"\031\n\010Int32Msg\022\r\n\005valu" +
+      "e\030\001 \001(\005\"\031\n\010Int64Msg\022\r\n\005value\030\001 \001(\003\"\227\003\n\007N" +
+      "odeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006pu" +
+      "bKey\030\003 \001(\t\022\r\n\005owner\030\004 \001(\t\022\021\n\tprofitAcc\030\005" +
+      " \001(\t\022\016\n\006poolID\030\006 \001(\t\022\021\n\tpoolOwner\030\007 \001(\t\022" +
+      "\r\n\005quota\030\010 \001(\003\022\r\n\005addrs\030\t \003(\t\022\013\n\003cPU\030\n \001" +
+      "(\005\022\016\n\006memory\030\013 \001(\005\022\021\n\tbandwidth\030\014 \001(\005\022\024\n" +
+      "\014maxDataSpace\030\r \001(\003\022\025\n\rassignedSpace\030\016 \001" +
+      "(\003\022\027\n\017productiveSpace\030\017 \001(\003\022\021\n\tusedSpace" +
+      "\030\020 \001(\003\022\016\n\006weight\030\021 \001(\001\022\r\n\005valid\030\022 \001(\005\022\r\n" +
+      "\005relay\030\023 \001(\005\022\016\n\006status\030\024 \001(\005\022\021\n\ttimestam" +
+      "p\030\025 \001(\003\022\017\n\007version\030\026 \001(\005\022\022\n\nrebuilding\030\027" +
+      " \001(\005\"Z\n\014SuperNodeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006node" +
+      "ID\030\002 \001(\t\022\016\n\006pubKey\030\003 \001(\t\022\017\n\007privKey\030\004 \001(" +
+      "\t\022\r\n\005addrs\030\005 \003(\t\"\215\001\n\013NodeStatMsg\022\024\n\014acti" +
+      "veMiners\030\001 \001(\003\022\023\n\013totalMiners\030\002 \001(\003\022\020\n\010m" +
+      "axTotal\030\003 \001(\003\022\025\n\rassignedTotal\030\004 \001(\003\022\027\n\017" +
+      "productiveTotal\030\005 \001(\003\022\021\n\tusedTotal\030\006 \001(\003" +
+      "\"I\n\020SpotCheckTaskMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006node" +
+      "ID\030\002 \001(\t\022\014\n\004addr\030\003 \001(\t\022\013\n\003vNI\030\004 \001(\t\"]\n\020S" +
+      "potCheckListMsg\022\016\n\006taskID\030\001 \001(\t\022&\n\010taskL" +
+      "ist\030\002 \003(\0132\024.pb.SpotCheckTaskMsg\022\021\n\ttimes" +
+      "tamp\030\003 \001(\003\"D\n\024GetSpotCheckListResp\022,\n\016sp" +
+      "otCheckLists\030\001 \003(\0132\024.pb.SpotCheckListMsg" +
+      "\"\'\n\tNodesResp\022\032\n\005nodes\030\001 \003(\0132\013.pb.NodeMs" +
+      "g\"6\n\016SuperNodesResp\022$\n\nsuperNodes\030\001 \003(\0132" +
+      "\020.pb.SuperNodeMsg\",\n\020IncrUsedSpaceReq\022\n\n" +
+      "\002id\030\001 \001(\005\022\014\n\004incr\030\002 \001(\003\"3\n\rAllocNodesReq" +
+      "\022\022\n\nshardCount\030\001 \001(\005\022\016\n\006errIDs\030\002 \003(\005\"\036\n\013" +
+      "GetNodesReq\022\017\n\007nodeIDs\030\001 \003(\005\"#\n\006DNIReq\022\n" +
+      "\n\002id\030\001 \001(\005\022\r\n\005shard\030\002 \001(\014\":\n\023UpdateTaskS" +
+      "tatusReq\022\n\n\002id\030\001 \001(\t\022\027\n\017invalidNodeList\030" +
+      "\002 \003(\005\"(\n\rShardCountMsg\022\n\n\002iD\030\001 \001(\005\022\013\n\003cn" +
+      "t\030\002 \001(\003\"=\n\023GetInvalidNodesResp\022&\n\013shardC" +
+      "ounts\030\001 \003(\0132\021.pb.ShardCountMsg\"B\n\021GetReb" +
+      "uildItemReq\022\017\n\007minerID\030\001 \001(\005\022\r\n\005index\030\002 " +
+      "\001(\003\022\r\n\005total\030\003 \001(\003\"?\n\022GetRebuildItemResp" +
+      "\022\031\n\004node\030\001 \001(\0132\013.pb.NodeMsg\022\016\n\006shards\030\002 " +
+      "\003(\014\"#\n\024DownloadShardRequest\022\013\n\003VHF\030\001 \001(\014" +
+      "\"%\n\025DownloadShardResponse\022\014\n\004data\030\001 \001(\0142" +
+      "\345\t\n\010YTDNMgmt\022&\n\tSetMaster\022\014.pb.Int32Msg\032" +
+      "\t.pb.Empty\"\000\022*\n\014ChangeEosURL\022\r.pb.String" +
+      "Msg\032\t.pb.Empty\"\000\022&\n\tNewNodeID\022\t.pb.Empty" +
+      "\032\014.pb.Int32Msg\"\000\022&\n\007CallAPI\022\016.pb.String2" +
+      "Msg\032\t.pb.Empty\"\000\022.\n\020UpdateNodeStatus\022\013.p" +
+      "b.NodeMsg\032\013.pb.NodeMsg\"\000\0222\n\rIncrUsedSpac" +
+      "e\022\024.pb.IncrUsedSpaceReq\032\t.pb.Empty\"\000\0220\n\n" +
+      "AllocNodes\022\021.pb.AllocNodesReq\032\r.pb.Nodes" +
+      "Resp\"\000\022$\n\010SyncNode\022\013.pb.NodeMsg\032\t.pb.Emp" +
+      "ty\"\000\022,\n\010GetNodes\022\017.pb.GetNodesReq\032\r.pb.N" +
+      "odesResp\"\000\0220\n\rGetSuperNodes\022\t.pb.Empty\032\022" +
+      ".pb.SuperNodesResp\"\000\0227\n\026GetSuperNodePriv" +
+      "ateKey\022\014.pb.Int32Msg\032\r.pb.StringMsg\"\000\0222\n" +
+      "\021GetNodeIDByPubKey\022\r.pb.StringMsg\032\014.pb.I" +
+      "nt32Msg\"\000\022/\n\017GetNodeByPubKey\022\r.pb.String" +
+      "Msg\032\013.pb.NodeMsg\"\000\0227\n\026GetSuperNodeIDByPu" +
+      "bKey\022\r.pb.StringMsg\032\014.pb.Int32Msg\"\000\022!\n\006A" +
+      "ddDNI\022\n.pb.DNIReq\032\t.pb.Empty\"\000\022-\n\017Active" +
+      "NodesList\022\t.pb.Empty\032\r.pb.NodesResp\"\000\022*\n" +
+      "\nStatistics\022\t.pb.Empty\032\017.pb.NodeStatMsg\"" +
+      "\000\0229\n\020GetSpotCheckList\022\t.pb.Empty\032\030.pb.Ge" +
+      "tSpotCheckListResp\"\000\022%\n\tGetSTNode\022\t.pb.E" +
+      "mpty\032\013.pb.NodeMsg\"\000\022+\n\nGetSTNodes\022\014.pb.I" +
+      "nt64Msg\032\r.pb.NodesResp\"\000\0228\n\020UpdateTaskSt" +
+      "atus\022\027.pb.UpdateTaskStatusReq\032\t.pb.Empty" +
+      "\"\000\0227\n\017GetInvalidNodes\022\t.pb.Empty\032\027.pb.Ge" +
+      "tInvalidNodesResp\"\000\022A\n\016GetRebuildItem\022\025." +
+      "pb.GetRebuildItemReq\032\026.pb.GetRebuildItem" +
+      "Resp\"\000\022-\n\016GetRebuildNode\022\014.pb.Int64Msg\032\013" +
+      ".pb.NodeMsg\"\000\022$\n\tDeleteDNI\022\n.pb.DNIReq\032\t" +
+      ".pb.Empty\"\000\022*\n\rFinishRebuild\022\014.pb.Int32M" +
+      "sg\032\t.pb.Empty\"\000B.\n\031io.yottachain.nodemgm" +
+      "t.pbB\rNodeMgmtProtoH\001P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -219,120 +235,138 @@ public final class NodeMgmtProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_StringMsg_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_pb_Int32Msg_descriptor =
+    internal_static_pb_String2Msg_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_pb_String2Msg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pb_String2Msg_descriptor,
+        new java.lang.String[] { "Param1", "Param2", });
+    internal_static_pb_Int32Msg_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_pb_Int32Msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_Int32Msg_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_pb_Int64Msg_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_pb_Int64Msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_Int64Msg_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_pb_NodeMsg_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_pb_NodeMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_NodeMsg_descriptor,
-        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", });
+        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", });
     internal_static_pb_SuperNodeMsg_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_pb_SuperNodeMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_SuperNodeMsg_descriptor,
         new java.lang.String[] { "ID", "NodeID", "PubKey", "PrivKey", "Addrs", });
     internal_static_pb_NodeStatMsg_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_pb_NodeStatMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_NodeStatMsg_descriptor,
         new java.lang.String[] { "ActiveMiners", "TotalMiners", "MaxTotal", "AssignedTotal", "ProductiveTotal", "UsedTotal", });
     internal_static_pb_SpotCheckTaskMsg_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_pb_SpotCheckTaskMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_SpotCheckTaskMsg_descriptor,
         new java.lang.String[] { "ID", "NodeID", "Addr", "VNI", });
     internal_static_pb_SpotCheckListMsg_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_pb_SpotCheckListMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_SpotCheckListMsg_descriptor,
         new java.lang.String[] { "TaskID", "TaskList", "Timestamp", });
     internal_static_pb_GetSpotCheckListResp_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_pb_GetSpotCheckListResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_GetSpotCheckListResp_descriptor,
         new java.lang.String[] { "SpotCheckLists", });
     internal_static_pb_NodesResp_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_pb_NodesResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_NodesResp_descriptor,
         new java.lang.String[] { "Nodes", });
     internal_static_pb_SuperNodesResp_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_pb_SuperNodesResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_SuperNodesResp_descriptor,
         new java.lang.String[] { "SuperNodes", });
     internal_static_pb_IncrUsedSpaceReq_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_pb_IncrUsedSpaceReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_IncrUsedSpaceReq_descriptor,
         new java.lang.String[] { "Id", "Incr", });
     internal_static_pb_AllocNodesReq_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_pb_AllocNodesReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_AllocNodesReq_descriptor,
         new java.lang.String[] { "ShardCount", "ErrIDs", });
     internal_static_pb_GetNodesReq_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_pb_GetNodesReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_GetNodesReq_descriptor,
         new java.lang.String[] { "NodeIDs", });
     internal_static_pb_DNIReq_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_pb_DNIReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_DNIReq_descriptor,
         new java.lang.String[] { "Id", "Shard", });
     internal_static_pb_UpdateTaskStatusReq_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_pb_UpdateTaskStatusReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_UpdateTaskStatusReq_descriptor,
         new java.lang.String[] { "Id", "InvalidNodeList", });
     internal_static_pb_ShardCountMsg_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_pb_ShardCountMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ShardCountMsg_descriptor,
         new java.lang.String[] { "ID", "Cnt", });
     internal_static_pb_GetInvalidNodesResp_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_pb_GetInvalidNodesResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_GetInvalidNodesResp_descriptor,
         new java.lang.String[] { "ShardCounts", });
     internal_static_pb_GetRebuildItemReq_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_pb_GetRebuildItemReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_GetRebuildItemReq_descriptor,
         new java.lang.String[] { "MinerID", "Index", "Total", });
     internal_static_pb_GetRebuildItemResp_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_pb_GetRebuildItemResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_GetRebuildItemResp_descriptor,
         new java.lang.String[] { "Node", "Shards", });
+    internal_static_pb_DownloadShardRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_pb_DownloadShardRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pb_DownloadShardRequest_descriptor,
+        new java.lang.String[] { "VHF", });
+    internal_static_pb_DownloadShardResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_pb_DownloadShardResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pb_DownloadShardResponse_descriptor,
+        new java.lang.String[] { "Data", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

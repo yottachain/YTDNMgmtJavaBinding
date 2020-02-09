@@ -4,6 +4,7 @@ import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
+import io.grpc.netty.shaded.io.netty.util.internal.StringUtil;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.interfaces.NodeMgmtInterface;
 import io.yottachain.nodemgmt.core.vo.*;
@@ -61,41 +62,13 @@ public class PbClient implements NodeMgmtInterface {
     }
 
     @Override
-    public void preRegisterNode(String trx) throws NodeMgmtException {
-        StringMsg req = null;
-        if (trx == null) {
-            req = StringMsg.newBuilder().build();
-        } else {
-            req = StringMsg.newBuilder().setValue(trx).build();
+    public void callAPI(String trx, String apiName) throws NodeMgmtException {
+        if (StringUtil.isNullOrEmpty(trx) || StringUtil.isNullOrEmpty(apiName)) {
+            throw new NodeMgmtException("transaction or API name cannot be empty");
         }
+        String2Msg req = String2Msg.newBuilder().setParam1(trx).setParam2(apiName).build();
         try {
-            blockingStub.preRegisterNode(req);
-        } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
-        }
-    }
-
-    @Override
-    public void changeMinerPool(String trx) throws NodeMgmtException {
-        StringMsg req = null;
-        if (trx == null) {
-            req = StringMsg.newBuilder().build();
-        } else {
-            req = StringMsg.newBuilder().setValue(trx).build();
-        }
-        try {
-            blockingStub.changeMinerPool(req);
-        } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
-        }
-    }
-
-    @Override
-    public Node registerNode(Node node) throws NodeMgmtException {
-        try {
-            NodeMsg req = MessageUtil.convertNodeToMsg(node);
-            NodeMsg resp = blockingStub.registerNode(req);
-            return MessageUtil.convertMsgToNode(resp);
+            blockingStub.callAPI(req);
         } catch (StatusRuntimeException e) {
             throw new NodeMgmtException("", e);
         }

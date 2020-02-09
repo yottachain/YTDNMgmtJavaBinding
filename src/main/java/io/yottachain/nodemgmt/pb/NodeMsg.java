@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     owner_ = "";
     profitAcc_ = "";
     poolID_ = "";
+    poolOwner_ = "";
     addrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -94,12 +95,18 @@ private static final long serialVersionUID = 0L;
             poolID_ = s;
             break;
           }
-          case 56: {
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            poolOwner_ = s;
+            break;
+          }
+          case 64: {
 
             quota_ = input.readInt64();
             break;
           }
-          case 66: {
+          case 74: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               addrs_ = new com.google.protobuf.LazyStringArrayList();
@@ -108,72 +115,72 @@ private static final long serialVersionUID = 0L;
             addrs_.add(s);
             break;
           }
-          case 72: {
+          case 80: {
 
             cPU_ = input.readInt32();
             break;
           }
-          case 80: {
+          case 88: {
 
             memory_ = input.readInt32();
             break;
           }
-          case 88: {
+          case 96: {
 
             bandwidth_ = input.readInt32();
             break;
           }
-          case 96: {
+          case 104: {
 
             maxDataSpace_ = input.readInt64();
             break;
           }
-          case 104: {
+          case 112: {
 
             assignedSpace_ = input.readInt64();
             break;
           }
-          case 112: {
+          case 120: {
 
             productiveSpace_ = input.readInt64();
             break;
           }
-          case 120: {
+          case 128: {
 
             usedSpace_ = input.readInt64();
             break;
           }
-          case 129: {
+          case 137: {
 
             weight_ = input.readDouble();
             break;
           }
-          case 136: {
+          case 144: {
 
             valid_ = input.readInt32();
             break;
           }
-          case 144: {
+          case 152: {
 
             relay_ = input.readInt32();
             break;
           }
-          case 152: {
+          case 160: {
 
             status_ = input.readInt32();
             break;
           }
-          case 160: {
+          case 168: {
 
             timestamp_ = input.readInt64();
             break;
           }
-          case 168: {
+          case 176: {
 
             version_ = input.readInt32();
             break;
           }
-          case 176: {
+          case 184: {
 
             rebuilding_ = input.readInt32();
             break;
@@ -436,27 +443,69 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int QUOTA_FIELD_NUMBER = 7;
+  public static final int POOLOWNER_FIELD_NUMBER = 7;
+  private volatile java.lang.Object poolOwner_;
+  /**
+   * <pre>
+   *Owner of associated miner pool
+   * </pre>
+   *
+   * <code>string poolOwner = 7;</code>
+   */
+  public java.lang.String getPoolOwner() {
+    java.lang.Object ref = poolOwner_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      poolOwner_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *Owner of associated miner pool
+   * </pre>
+   *
+   * <code>string poolOwner = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getPoolOwnerBytes() {
+    java.lang.Object ref = poolOwner_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      poolOwner_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUOTA_FIELD_NUMBER = 8;
   private long quota_;
   /**
    * <pre>
    *quota allocated by associated miner pool
    * </pre>
    *
-   * <code>int64 quota = 7;</code>
+   * <code>int64 quota = 8;</code>
    */
   public long getQuota() {
     return quota_;
   }
 
-  public static final int ADDRS_FIELD_NUMBER = 8;
+  public static final int ADDRS_FIELD_NUMBER = 9;
   private com.google.protobuf.LazyStringList addrs_;
   /**
    * <pre>
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   public com.google.protobuf.ProtocolStringList
       getAddrsList() {
@@ -467,7 +516,7 @@ private static final long serialVersionUID = 0L;
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   public int getAddrsCount() {
     return addrs_.size();
@@ -477,7 +526,7 @@ private static final long serialVersionUID = 0L;
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   public java.lang.String getAddrs(int index) {
     return addrs_.get(index);
@@ -487,190 +536,190 @@ private static final long serialVersionUID = 0L;
    *listening addresses of data node
    * </pre>
    *
-   * <code>repeated string addrs = 8;</code>
+   * <code>repeated string addrs = 9;</code>
    */
   public com.google.protobuf.ByteString
       getAddrsBytes(int index) {
     return addrs_.getByteString(index);
   }
 
-  public static final int CPU_FIELD_NUMBER = 9;
+  public static final int CPU_FIELD_NUMBER = 10;
   private int cPU_;
   /**
    * <pre>
    *CPU usage of data node
    * </pre>
    *
-   * <code>int32 cPU = 9;</code>
+   * <code>int32 cPU = 10;</code>
    */
   public int getCPU() {
     return cPU_;
   }
 
-  public static final int MEMORY_FIELD_NUMBER = 10;
+  public static final int MEMORY_FIELD_NUMBER = 11;
   private int memory_;
   /**
    * <pre>
    *memory usage of data node
    * </pre>
    *
-   * <code>int32 memory = 10;</code>
+   * <code>int32 memory = 11;</code>
    */
   public int getMemory() {
     return memory_;
   }
 
-  public static final int BANDWIDTH_FIELD_NUMBER = 11;
+  public static final int BANDWIDTH_FIELD_NUMBER = 12;
   private int bandwidth_;
   /**
    * <pre>
    *bandwidth usage of data node
    * </pre>
    *
-   * <code>int32 bandwidth = 11;</code>
+   * <code>int32 bandwidth = 12;</code>
    */
   public int getBandwidth() {
     return bandwidth_;
   }
 
-  public static final int MAXDATASPACE_FIELD_NUMBER = 12;
+  public static final int MAXDATASPACE_FIELD_NUMBER = 13;
   private long maxDataSpace_;
   /**
    * <pre>
    *max space of data node
    * </pre>
    *
-   * <code>int64 maxDataSpace = 12;</code>
+   * <code>int64 maxDataSpace = 13;</code>
    */
   public long getMaxDataSpace() {
     return maxDataSpace_;
   }
 
-  public static final int ASSIGNEDSPACE_FIELD_NUMBER = 13;
+  public static final int ASSIGNEDSPACE_FIELD_NUMBER = 14;
   private long assignedSpace_;
   /**
    * <pre>
    *space assigned to YTFS
    * </pre>
    *
-   * <code>int64 assignedSpace = 13;</code>
+   * <code>int64 assignedSpace = 14;</code>
    */
   public long getAssignedSpace() {
     return assignedSpace_;
   }
 
-  public static final int PRODUCTIVESPACE_FIELD_NUMBER = 14;
+  public static final int PRODUCTIVESPACE_FIELD_NUMBER = 15;
   private long productiveSpace_;
   /**
    * <pre>
    *pre-allocated space of data node
    * </pre>
    *
-   * <code>int64 productiveSpace = 14;</code>
+   * <code>int64 productiveSpace = 15;</code>
    */
   public long getProductiveSpace() {
     return productiveSpace_;
   }
 
-  public static final int USEDSPACE_FIELD_NUMBER = 15;
+  public static final int USEDSPACE_FIELD_NUMBER = 16;
   private long usedSpace_;
   /**
    * <pre>
    *used space of data node
    * </pre>
    *
-   * <code>int64 usedSpace = 15;</code>
+   * <code>int64 usedSpace = 16;</code>
    */
   public long getUsedSpace() {
     return usedSpace_;
   }
 
-  public static final int WEIGHT_FIELD_NUMBER = 16;
+  public static final int WEIGHT_FIELD_NUMBER = 17;
   private double weight_;
   /**
    * <pre>
    *weight for allocate data node
    * </pre>
    *
-   * <code>double weight = 16;</code>
+   * <code>double weight = 17;</code>
    */
   public double getWeight() {
     return weight_;
   }
 
-  public static final int VALID_FIELD_NUMBER = 17;
+  public static final int VALID_FIELD_NUMBER = 18;
   private int valid_;
   /**
    * <pre>
    *Is node valid
    * </pre>
    *
-   * <code>int32 valid = 17;</code>
+   * <code>int32 valid = 18;</code>
    */
   public int getValid() {
     return valid_;
   }
 
-  public static final int RELAY_FIELD_NUMBER = 18;
+  public static final int RELAY_FIELD_NUMBER = 19;
   private int relay_;
   /**
    * <pre>
    *Is relay node
    * </pre>
    *
-   * <code>int32 relay = 18;</code>
+   * <code>int32 relay = 19;</code>
    */
   public int getRelay() {
     return relay_;
   }
 
-  public static final int STATUS_FIELD_NUMBER = 19;
+  public static final int STATUS_FIELD_NUMBER = 20;
   private int status_;
   /**
    * <pre>
    *status code: 0 - registered 1 - active
    * </pre>
    *
-   * <code>int32 status = 19;</code>
+   * <code>int32 status = 20;</code>
    */
   public int getStatus() {
     return status_;
   }
 
-  public static final int TIMESTAMP_FIELD_NUMBER = 20;
+  public static final int TIMESTAMP_FIELD_NUMBER = 21;
   private long timestamp_;
   /**
    * <pre>
    *timestamp of status updating operation
    * </pre>
    *
-   * <code>int64 timestamp = 20;</code>
+   * <code>int64 timestamp = 21;</code>
    */
   public long getTimestamp() {
     return timestamp_;
   }
 
-  public static final int VERSION_FIELD_NUMBER = 21;
+  public static final int VERSION_FIELD_NUMBER = 22;
   private int version_;
   /**
    * <pre>
    *version number of miner
    * </pre>
    *
-   * <code>int32 version = 21;</code>
+   * <code>int32 version = 22;</code>
    */
   public int getVersion() {
     return version_;
   }
 
-  public static final int REBUILDING_FIELD_NUMBER = 22;
+  public static final int REBUILDING_FIELD_NUMBER = 23;
   private int rebuilding_;
   /**
    * <pre>
    *if node is under rebuilding
    * </pre>
    *
-   * <code>int32 rebuilding = 22;</code>
+   * <code>int32 rebuilding = 23;</code>
    */
   public int getRebuilding() {
     return rebuilding_;
@@ -708,53 +757,56 @@ private static final long serialVersionUID = 0L;
     if (!getPoolIDBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, poolID_);
     }
+    if (!getPoolOwnerBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, poolOwner_);
+    }
     if (quota_ != 0L) {
-      output.writeInt64(7, quota_);
+      output.writeInt64(8, quota_);
     }
     for (int i = 0; i < addrs_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, addrs_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, addrs_.getRaw(i));
     }
     if (cPU_ != 0) {
-      output.writeInt32(9, cPU_);
+      output.writeInt32(10, cPU_);
     }
     if (memory_ != 0) {
-      output.writeInt32(10, memory_);
+      output.writeInt32(11, memory_);
     }
     if (bandwidth_ != 0) {
-      output.writeInt32(11, bandwidth_);
+      output.writeInt32(12, bandwidth_);
     }
     if (maxDataSpace_ != 0L) {
-      output.writeInt64(12, maxDataSpace_);
+      output.writeInt64(13, maxDataSpace_);
     }
     if (assignedSpace_ != 0L) {
-      output.writeInt64(13, assignedSpace_);
+      output.writeInt64(14, assignedSpace_);
     }
     if (productiveSpace_ != 0L) {
-      output.writeInt64(14, productiveSpace_);
+      output.writeInt64(15, productiveSpace_);
     }
     if (usedSpace_ != 0L) {
-      output.writeInt64(15, usedSpace_);
+      output.writeInt64(16, usedSpace_);
     }
     if (weight_ != 0D) {
-      output.writeDouble(16, weight_);
+      output.writeDouble(17, weight_);
     }
     if (valid_ != 0) {
-      output.writeInt32(17, valid_);
+      output.writeInt32(18, valid_);
     }
     if (relay_ != 0) {
-      output.writeInt32(18, relay_);
+      output.writeInt32(19, relay_);
     }
     if (status_ != 0) {
-      output.writeInt32(19, status_);
+      output.writeInt32(20, status_);
     }
     if (timestamp_ != 0L) {
-      output.writeInt64(20, timestamp_);
+      output.writeInt64(21, timestamp_);
     }
     if (version_ != 0) {
-      output.writeInt32(21, version_);
+      output.writeInt32(22, version_);
     }
     if (rebuilding_ != 0) {
-      output.writeInt32(22, rebuilding_);
+      output.writeInt32(23, rebuilding_);
     }
     unknownFields.writeTo(output);
   }
@@ -784,9 +836,12 @@ private static final long serialVersionUID = 0L;
     if (!getPoolIDBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, poolID_);
     }
+    if (!getPoolOwnerBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, poolOwner_);
+    }
     if (quota_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, quota_);
+        .computeInt64Size(8, quota_);
     }
     {
       int dataSize = 0;
@@ -798,59 +853,59 @@ private static final long serialVersionUID = 0L;
     }
     if (cPU_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, cPU_);
+        .computeInt32Size(10, cPU_);
     }
     if (memory_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(10, memory_);
+        .computeInt32Size(11, memory_);
     }
     if (bandwidth_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(11, bandwidth_);
+        .computeInt32Size(12, bandwidth_);
     }
     if (maxDataSpace_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(12, maxDataSpace_);
+        .computeInt64Size(13, maxDataSpace_);
     }
     if (assignedSpace_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(13, assignedSpace_);
+        .computeInt64Size(14, assignedSpace_);
     }
     if (productiveSpace_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(14, productiveSpace_);
+        .computeInt64Size(15, productiveSpace_);
     }
     if (usedSpace_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(15, usedSpace_);
+        .computeInt64Size(16, usedSpace_);
     }
     if (weight_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(16, weight_);
+        .computeDoubleSize(17, weight_);
     }
     if (valid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(17, valid_);
+        .computeInt32Size(18, valid_);
     }
     if (relay_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(18, relay_);
+        .computeInt32Size(19, relay_);
     }
     if (status_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(19, status_);
+        .computeInt32Size(20, status_);
     }
     if (timestamp_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(20, timestamp_);
+        .computeInt64Size(21, timestamp_);
     }
     if (version_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(21, version_);
+        .computeInt32Size(22, version_);
     }
     if (rebuilding_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(22, rebuilding_);
+        .computeInt32Size(23, rebuilding_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -879,6 +934,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProfitAcc())) return false;
     if (!getPoolID()
         .equals(other.getPoolID())) return false;
+    if (!getPoolOwner()
+        .equals(other.getPoolOwner())) return false;
     if (getQuota()
         != other.getQuota()) return false;
     if (!getAddrsList()
@@ -935,6 +992,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProfitAcc().hashCode();
     hash = (37 * hash) + POOLID_FIELD_NUMBER;
     hash = (53 * hash) + getPoolID().hashCode();
+    hash = (37 * hash) + POOLOWNER_FIELD_NUMBER;
+    hash = (53 * hash) + getPoolOwner().hashCode();
     hash = (37 * hash) + QUOTA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQuota());
@@ -1125,6 +1184,8 @@ private static final long serialVersionUID = 0L;
 
       poolID_ = "";
 
+      poolOwner_ = "";
+
       quota_ = 0L;
 
       addrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1190,6 +1251,7 @@ private static final long serialVersionUID = 0L;
       result.owner_ = owner_;
       result.profitAcc_ = profitAcc_;
       result.poolID_ = poolID_;
+      result.poolOwner_ = poolOwner_;
       result.quota_ = quota_;
       if (((bitField0_ & 0x00000001) != 0)) {
         addrs_ = addrs_.getUnmodifiableView();
@@ -1279,6 +1341,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPoolID().isEmpty()) {
         poolID_ = other.poolID_;
+        onChanged();
+      }
+      if (!other.getPoolOwner().isEmpty()) {
+        poolOwner_ = other.poolOwner_;
         onChanged();
       }
       if (other.getQuota() != 0L) {
@@ -1849,13 +1915,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object poolOwner_ = "";
+    /**
+     * <pre>
+     *Owner of associated miner pool
+     * </pre>
+     *
+     * <code>string poolOwner = 7;</code>
+     */
+    public java.lang.String getPoolOwner() {
+      java.lang.Object ref = poolOwner_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        poolOwner_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *Owner of associated miner pool
+     * </pre>
+     *
+     * <code>string poolOwner = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPoolOwnerBytes() {
+      java.lang.Object ref = poolOwner_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        poolOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *Owner of associated miner pool
+     * </pre>
+     *
+     * <code>string poolOwner = 7;</code>
+     */
+    public Builder setPoolOwner(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      poolOwner_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *Owner of associated miner pool
+     * </pre>
+     *
+     * <code>string poolOwner = 7;</code>
+     */
+    public Builder clearPoolOwner() {
+      
+      poolOwner_ = getDefaultInstance().getPoolOwner();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *Owner of associated miner pool
+     * </pre>
+     *
+     * <code>string poolOwner = 7;</code>
+     */
+    public Builder setPoolOwnerBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      poolOwner_ = value;
+      onChanged();
+      return this;
+    }
+
     private long quota_ ;
     /**
      * <pre>
      *quota allocated by associated miner pool
      * </pre>
      *
-     * <code>int64 quota = 7;</code>
+     * <code>int64 quota = 8;</code>
      */
     public long getQuota() {
       return quota_;
@@ -1865,7 +2020,7 @@ private static final long serialVersionUID = 0L;
      *quota allocated by associated miner pool
      * </pre>
      *
-     * <code>int64 quota = 7;</code>
+     * <code>int64 quota = 8;</code>
      */
     public Builder setQuota(long value) {
       
@@ -1878,7 +2033,7 @@ private static final long serialVersionUID = 0L;
      *quota allocated by associated miner pool
      * </pre>
      *
-     * <code>int64 quota = 7;</code>
+     * <code>int64 quota = 8;</code>
      */
     public Builder clearQuota() {
       
@@ -1899,7 +2054,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getAddrsList() {
@@ -1910,7 +2065,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public int getAddrsCount() {
       return addrs_.size();
@@ -1920,7 +2075,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public java.lang.String getAddrs(int index) {
       return addrs_.get(index);
@@ -1930,7 +2085,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public com.google.protobuf.ByteString
         getAddrsBytes(int index) {
@@ -1941,7 +2096,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public Builder setAddrs(
         int index, java.lang.String value) {
@@ -1958,7 +2113,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public Builder addAddrs(
         java.lang.String value) {
@@ -1975,7 +2130,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public Builder addAllAddrs(
         java.lang.Iterable<java.lang.String> values) {
@@ -1990,7 +2145,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public Builder clearAddrs() {
       addrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2003,7 +2158,7 @@ private static final long serialVersionUID = 0L;
      *listening addresses of data node
      * </pre>
      *
-     * <code>repeated string addrs = 8;</code>
+     * <code>repeated string addrs = 9;</code>
      */
     public Builder addAddrsBytes(
         com.google.protobuf.ByteString value) {
@@ -2023,7 +2178,7 @@ private static final long serialVersionUID = 0L;
      *CPU usage of data node
      * </pre>
      *
-     * <code>int32 cPU = 9;</code>
+     * <code>int32 cPU = 10;</code>
      */
     public int getCPU() {
       return cPU_;
@@ -2033,7 +2188,7 @@ private static final long serialVersionUID = 0L;
      *CPU usage of data node
      * </pre>
      *
-     * <code>int32 cPU = 9;</code>
+     * <code>int32 cPU = 10;</code>
      */
     public Builder setCPU(int value) {
       
@@ -2046,7 +2201,7 @@ private static final long serialVersionUID = 0L;
      *CPU usage of data node
      * </pre>
      *
-     * <code>int32 cPU = 9;</code>
+     * <code>int32 cPU = 10;</code>
      */
     public Builder clearCPU() {
       
@@ -2061,7 +2216,7 @@ private static final long serialVersionUID = 0L;
      *memory usage of data node
      * </pre>
      *
-     * <code>int32 memory = 10;</code>
+     * <code>int32 memory = 11;</code>
      */
     public int getMemory() {
       return memory_;
@@ -2071,7 +2226,7 @@ private static final long serialVersionUID = 0L;
      *memory usage of data node
      * </pre>
      *
-     * <code>int32 memory = 10;</code>
+     * <code>int32 memory = 11;</code>
      */
     public Builder setMemory(int value) {
       
@@ -2084,7 +2239,7 @@ private static final long serialVersionUID = 0L;
      *memory usage of data node
      * </pre>
      *
-     * <code>int32 memory = 10;</code>
+     * <code>int32 memory = 11;</code>
      */
     public Builder clearMemory() {
       
@@ -2099,7 +2254,7 @@ private static final long serialVersionUID = 0L;
      *bandwidth usage of data node
      * </pre>
      *
-     * <code>int32 bandwidth = 11;</code>
+     * <code>int32 bandwidth = 12;</code>
      */
     public int getBandwidth() {
       return bandwidth_;
@@ -2109,7 +2264,7 @@ private static final long serialVersionUID = 0L;
      *bandwidth usage of data node
      * </pre>
      *
-     * <code>int32 bandwidth = 11;</code>
+     * <code>int32 bandwidth = 12;</code>
      */
     public Builder setBandwidth(int value) {
       
@@ -2122,7 +2277,7 @@ private static final long serialVersionUID = 0L;
      *bandwidth usage of data node
      * </pre>
      *
-     * <code>int32 bandwidth = 11;</code>
+     * <code>int32 bandwidth = 12;</code>
      */
     public Builder clearBandwidth() {
       
@@ -2137,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      *max space of data node
      * </pre>
      *
-     * <code>int64 maxDataSpace = 12;</code>
+     * <code>int64 maxDataSpace = 13;</code>
      */
     public long getMaxDataSpace() {
       return maxDataSpace_;
@@ -2147,7 +2302,7 @@ private static final long serialVersionUID = 0L;
      *max space of data node
      * </pre>
      *
-     * <code>int64 maxDataSpace = 12;</code>
+     * <code>int64 maxDataSpace = 13;</code>
      */
     public Builder setMaxDataSpace(long value) {
       
@@ -2160,7 +2315,7 @@ private static final long serialVersionUID = 0L;
      *max space of data node
      * </pre>
      *
-     * <code>int64 maxDataSpace = 12;</code>
+     * <code>int64 maxDataSpace = 13;</code>
      */
     public Builder clearMaxDataSpace() {
       
@@ -2175,7 +2330,7 @@ private static final long serialVersionUID = 0L;
      *space assigned to YTFS
      * </pre>
      *
-     * <code>int64 assignedSpace = 13;</code>
+     * <code>int64 assignedSpace = 14;</code>
      */
     public long getAssignedSpace() {
       return assignedSpace_;
@@ -2185,7 +2340,7 @@ private static final long serialVersionUID = 0L;
      *space assigned to YTFS
      * </pre>
      *
-     * <code>int64 assignedSpace = 13;</code>
+     * <code>int64 assignedSpace = 14;</code>
      */
     public Builder setAssignedSpace(long value) {
       
@@ -2198,7 +2353,7 @@ private static final long serialVersionUID = 0L;
      *space assigned to YTFS
      * </pre>
      *
-     * <code>int64 assignedSpace = 13;</code>
+     * <code>int64 assignedSpace = 14;</code>
      */
     public Builder clearAssignedSpace() {
       
@@ -2213,7 +2368,7 @@ private static final long serialVersionUID = 0L;
      *pre-allocated space of data node
      * </pre>
      *
-     * <code>int64 productiveSpace = 14;</code>
+     * <code>int64 productiveSpace = 15;</code>
      */
     public long getProductiveSpace() {
       return productiveSpace_;
@@ -2223,7 +2378,7 @@ private static final long serialVersionUID = 0L;
      *pre-allocated space of data node
      * </pre>
      *
-     * <code>int64 productiveSpace = 14;</code>
+     * <code>int64 productiveSpace = 15;</code>
      */
     public Builder setProductiveSpace(long value) {
       
@@ -2236,7 +2391,7 @@ private static final long serialVersionUID = 0L;
      *pre-allocated space of data node
      * </pre>
      *
-     * <code>int64 productiveSpace = 14;</code>
+     * <code>int64 productiveSpace = 15;</code>
      */
     public Builder clearProductiveSpace() {
       
@@ -2251,7 +2406,7 @@ private static final long serialVersionUID = 0L;
      *used space of data node
      * </pre>
      *
-     * <code>int64 usedSpace = 15;</code>
+     * <code>int64 usedSpace = 16;</code>
      */
     public long getUsedSpace() {
       return usedSpace_;
@@ -2261,7 +2416,7 @@ private static final long serialVersionUID = 0L;
      *used space of data node
      * </pre>
      *
-     * <code>int64 usedSpace = 15;</code>
+     * <code>int64 usedSpace = 16;</code>
      */
     public Builder setUsedSpace(long value) {
       
@@ -2274,7 +2429,7 @@ private static final long serialVersionUID = 0L;
      *used space of data node
      * </pre>
      *
-     * <code>int64 usedSpace = 15;</code>
+     * <code>int64 usedSpace = 16;</code>
      */
     public Builder clearUsedSpace() {
       
@@ -2289,7 +2444,7 @@ private static final long serialVersionUID = 0L;
      *weight for allocate data node
      * </pre>
      *
-     * <code>double weight = 16;</code>
+     * <code>double weight = 17;</code>
      */
     public double getWeight() {
       return weight_;
@@ -2299,7 +2454,7 @@ private static final long serialVersionUID = 0L;
      *weight for allocate data node
      * </pre>
      *
-     * <code>double weight = 16;</code>
+     * <code>double weight = 17;</code>
      */
     public Builder setWeight(double value) {
       
@@ -2312,7 +2467,7 @@ private static final long serialVersionUID = 0L;
      *weight for allocate data node
      * </pre>
      *
-     * <code>double weight = 16;</code>
+     * <code>double weight = 17;</code>
      */
     public Builder clearWeight() {
       
@@ -2327,7 +2482,7 @@ private static final long serialVersionUID = 0L;
      *Is node valid
      * </pre>
      *
-     * <code>int32 valid = 17;</code>
+     * <code>int32 valid = 18;</code>
      */
     public int getValid() {
       return valid_;
@@ -2337,7 +2492,7 @@ private static final long serialVersionUID = 0L;
      *Is node valid
      * </pre>
      *
-     * <code>int32 valid = 17;</code>
+     * <code>int32 valid = 18;</code>
      */
     public Builder setValid(int value) {
       
@@ -2350,7 +2505,7 @@ private static final long serialVersionUID = 0L;
      *Is node valid
      * </pre>
      *
-     * <code>int32 valid = 17;</code>
+     * <code>int32 valid = 18;</code>
      */
     public Builder clearValid() {
       
@@ -2365,7 +2520,7 @@ private static final long serialVersionUID = 0L;
      *Is relay node
      * </pre>
      *
-     * <code>int32 relay = 18;</code>
+     * <code>int32 relay = 19;</code>
      */
     public int getRelay() {
       return relay_;
@@ -2375,7 +2530,7 @@ private static final long serialVersionUID = 0L;
      *Is relay node
      * </pre>
      *
-     * <code>int32 relay = 18;</code>
+     * <code>int32 relay = 19;</code>
      */
     public Builder setRelay(int value) {
       
@@ -2388,7 +2543,7 @@ private static final long serialVersionUID = 0L;
      *Is relay node
      * </pre>
      *
-     * <code>int32 relay = 18;</code>
+     * <code>int32 relay = 19;</code>
      */
     public Builder clearRelay() {
       
@@ -2403,7 +2558,7 @@ private static final long serialVersionUID = 0L;
      *status code: 0 - registered 1 - active
      * </pre>
      *
-     * <code>int32 status = 19;</code>
+     * <code>int32 status = 20;</code>
      */
     public int getStatus() {
       return status_;
@@ -2413,7 +2568,7 @@ private static final long serialVersionUID = 0L;
      *status code: 0 - registered 1 - active
      * </pre>
      *
-     * <code>int32 status = 19;</code>
+     * <code>int32 status = 20;</code>
      */
     public Builder setStatus(int value) {
       
@@ -2426,7 +2581,7 @@ private static final long serialVersionUID = 0L;
      *status code: 0 - registered 1 - active
      * </pre>
      *
-     * <code>int32 status = 19;</code>
+     * <code>int32 status = 20;</code>
      */
     public Builder clearStatus() {
       
@@ -2441,7 +2596,7 @@ private static final long serialVersionUID = 0L;
      *timestamp of status updating operation
      * </pre>
      *
-     * <code>int64 timestamp = 20;</code>
+     * <code>int64 timestamp = 21;</code>
      */
     public long getTimestamp() {
       return timestamp_;
@@ -2451,7 +2606,7 @@ private static final long serialVersionUID = 0L;
      *timestamp of status updating operation
      * </pre>
      *
-     * <code>int64 timestamp = 20;</code>
+     * <code>int64 timestamp = 21;</code>
      */
     public Builder setTimestamp(long value) {
       
@@ -2464,7 +2619,7 @@ private static final long serialVersionUID = 0L;
      *timestamp of status updating operation
      * </pre>
      *
-     * <code>int64 timestamp = 20;</code>
+     * <code>int64 timestamp = 21;</code>
      */
     public Builder clearTimestamp() {
       
@@ -2479,7 +2634,7 @@ private static final long serialVersionUID = 0L;
      *version number of miner
      * </pre>
      *
-     * <code>int32 version = 21;</code>
+     * <code>int32 version = 22;</code>
      */
     public int getVersion() {
       return version_;
@@ -2489,7 +2644,7 @@ private static final long serialVersionUID = 0L;
      *version number of miner
      * </pre>
      *
-     * <code>int32 version = 21;</code>
+     * <code>int32 version = 22;</code>
      */
     public Builder setVersion(int value) {
       
@@ -2502,7 +2657,7 @@ private static final long serialVersionUID = 0L;
      *version number of miner
      * </pre>
      *
-     * <code>int32 version = 21;</code>
+     * <code>int32 version = 22;</code>
      */
     public Builder clearVersion() {
       
@@ -2517,7 +2672,7 @@ private static final long serialVersionUID = 0L;
      *if node is under rebuilding
      * </pre>
      *
-     * <code>int32 rebuilding = 22;</code>
+     * <code>int32 rebuilding = 23;</code>
      */
     public int getRebuilding() {
       return rebuilding_;
@@ -2527,7 +2682,7 @@ private static final long serialVersionUID = 0L;
      *if node is under rebuilding
      * </pre>
      *
-     * <code>int32 rebuilding = 22;</code>
+     * <code>int32 rebuilding = 23;</code>
      */
     public Builder setRebuilding(int value) {
       
@@ -2540,7 +2695,7 @@ private static final long serialVersionUID = 0L;
      *if node is under rebuilding
      * </pre>
      *
-     * <code>int32 rebuilding = 22;</code>
+     * <code>int32 rebuilding = 23;</code>
      */
     public Builder clearRebuilding() {
       

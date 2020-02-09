@@ -61,46 +61,12 @@ public class NodeMgmt implements NodeMgmtInterface {
     }
 
     @Override
-    public void preRegisterNode(String trx) throws NodeMgmtException {
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.PreRegisterNode(trx);
+    public void callAPI(String trx, String apiName) throws NodeMgmtException {
+        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.CallAPI(trx, apiName);
         if (errPtr != null) {
             String errstr = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
             throw new NodeMgmtException(errstr);
-        }
-    }
-
-    @Override
-    public void changeMinerPool(String trx) throws NodeMgmtException {
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.ChangeMinerPool(trx);
-        if (errPtr != null) {
-            String errstr = errPtr.getString(0);
-            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
-            throw new NodeMgmtException(errstr);
-        }
-    }
-
-    @Override
-    public Node registerNode(Node node) throws NodeMgmtException {
-        if (node == null) {
-            throw new NodeMgmtException("register node cannot be null.");
-        }
-        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
-        ntnode.fill(node);
-        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.RegisterNode(ntnode);
-        if (nodePtr != null) {
-            try {
-                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
-                if (retnode.error != null) {
-                    String err = retnode.error.getString(0);
-                    throw new NodeMgmtException(err);
-                }
-                return retnode.convertTo();
-            } finally {
-                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
-            }
-        } else {
-            throw new NodeMgmtException("unknown exception");
         }
     }
 
