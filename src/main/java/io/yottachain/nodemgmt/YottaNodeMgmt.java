@@ -196,7 +196,6 @@ public class YottaNodeMgmt {
     }
 
     public static void setMaster(boolean isMaster) {
-
     }
 
     public static void changeEosURL(String eosURL) {
