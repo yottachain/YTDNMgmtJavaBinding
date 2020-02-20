@@ -195,12 +195,12 @@ public class YottaNodeMgmt {
         }
     }
 
-    public static void setMaster(boolean isMaster) {
-
+    public static void setMaster(boolean isMaster) throws NodeMgmtException {
+        client.setMaster(isMaster);
     }
 
-    public static void changeEosURL(String eosURL) {
-
+    public static void changeEosURL(String eosURL) throws NodeMgmtException {
+        client.changeEosURL(eosURL);
     }
 
     public static int newNodeID() throws NodeMgmtException {
@@ -208,15 +208,15 @@ public class YottaNodeMgmt {
     }
 
     public static void preRegisterNode(String trx) throws NodeMgmtException {
-        callAPI(trx, ApiName.PreRegisterNode.toString());
+        callAPI(trx, ApiName.PreRegisterNode);
     }
 
     public static void changeMinerPool(String trx) throws NodeMgmtException {
-        callAPI(trx, ApiName.ChangeMinerPool.toString());
+        callAPI(trx, ApiName.ChangeMinerPool);
     }
 
-    public static void callAPI(String trx, String apiName)  throws NodeMgmtException {
-        client.callAPI(trx, apiName);
+    public static void callAPI(String trx, ApiName apiName)  throws NodeMgmtException {
+        client.callAPI(trx, apiName.toString());
     }
 
     public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version, int rebuilding) throws NodeMgmtException {
