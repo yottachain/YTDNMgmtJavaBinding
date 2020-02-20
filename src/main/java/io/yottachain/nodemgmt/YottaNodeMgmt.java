@@ -37,8 +37,7 @@ public class YottaNodeMgmt {
     private static final String NODEMGMT_MASTER = NODEMGMT_ETCD_PREFIX + "master";
 
 
-    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid) throws NodeMgmtException {
-        boolean isMaster = true;
+    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid, final boolean isMaster) throws NodeMgmtException {
         int master = isMaster?1:0;
         String embededStr = System.getenv("NODEMGMT_EMBEDED");
         if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
@@ -207,13 +206,13 @@ public class YottaNodeMgmt {
         return client.newNodeID();
     }
 
-    public static void preRegisterNode(String trx) throws NodeMgmtException {
-        callAPI(trx, ApiName.PreRegisterNode);
-    }
-
-    public static void changeMinerPool(String trx) throws NodeMgmtException {
-        callAPI(trx, ApiName.ChangeMinerPool);
-    }
+//    public static void preRegisterNode(String trx) throws NodeMgmtException {
+//        callAPI(trx, ApiName.PreRegisterNode);
+//    }
+//
+//    public static void changeMinerPool(String trx) throws NodeMgmtException {
+//        callAPI(trx, ApiName.ChangeMinerPool);
+//    }
 
     public static void callAPI(String trx, ApiName apiName)  throws NodeMgmtException {
         client.callAPI(trx, apiName.toString());
