@@ -37,8 +37,7 @@ public class YottaNodeMgmt {
     private static final String NODEMGMT_MASTER = NODEMGMT_ETCD_PREFIX + "master";
 
 
-    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid) throws NodeMgmtException {
-        boolean isMaster = true;
+    public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid, final boolean isMaster) throws NodeMgmtException {
         int master = isMaster?1:0;
         String embededStr = System.getenv("NODEMGMT_EMBEDED");
         if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
@@ -195,27 +194,28 @@ public class YottaNodeMgmt {
         }
     }
 
-    public static void setMaster(boolean isMaster) {
+    public static void setMaster(boolean isMaster) throws NodeMgmtException {
+        client.setMaster(isMaster);
     }
 
-    public static void changeEosURL(String eosURL) {
-
+    public static void changeEosURL(String eosURL) throws NodeMgmtException {
+        client.changeEosURL(eosURL);
     }
 
     public static int newNodeID() throws NodeMgmtException {
         return client.newNodeID();
     }
 
-    public static void preRegisterNode(String trx) throws NodeMgmtException {
-        callAPI(trx, ApiName.PreRegisterNode.toString());
-    }
+//    public static void preRegisterNode(String trx) throws NodeMgmtException {
+//        callAPI(trx, ApiName.PreRegisterNode);
+//    }
+//
+//    public static void changeMinerPool(String trx) throws NodeMgmtException {
+//        callAPI(trx, ApiName.ChangeMinerPool);
+//    }
 
-    public static void changeMinerPool(String trx) throws NodeMgmtException {
-        callAPI(trx, ApiName.ChangeMinerPool.toString());
-    }
-
-    public static void callAPI(String trx, String apiName)  throws NodeMgmtException {
-        client.callAPI(trx, apiName);
+    public static void callAPI(String trx, ApiName apiName)  throws NodeMgmtException {
+        client.callAPI(trx, apiName.toString());
     }
 
     public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version, int rebuilding) throws NodeMgmtException {
@@ -399,7 +399,7 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
-        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", "producer1", 1);
+        YottaNodeMgmt.start("mongodb://127.0.0.1:27017", "http://152.136.18.185:8888", "producer1", "5HtM6e3mQNLEu2TkQ1ZrbMNpRQiHGsKxEsLdxd9VsdCmp1um8QH", "hddpool12345", "hdddeposit12", "producer1", 1, true);
         for (int i=0; i<1800; i++) {
             boolean b = YottaNodeMgmt.spotcheckSelected();
             if (b)

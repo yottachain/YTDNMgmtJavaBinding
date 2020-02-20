@@ -6,8 +6,7 @@ public enum ApiName {
     ChangeAdminAcc,
     ChangeProfitAcc,
     ChangePoolID,
-    ChangeAssignedSpace;
-    public static void main(String[] args) {
-        System.out.println(ApiName.PreRegisterNode.toString());
-    }
+    ChangeAssignedSpace,
+    ChangeDepAcc,
+    ChangeDeposit;
 }
