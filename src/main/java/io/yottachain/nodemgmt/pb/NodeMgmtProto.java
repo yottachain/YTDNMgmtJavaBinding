@@ -146,7 +146,7 @@ public final class NodeMgmtProto {
       "\n\013types.proto\022\002pb\"\007\n\005Empty\"\032\n\tStringMsg\022" +
       "\r\n\005value\030\001 \001(\t\",\n\nString2Msg\022\016\n\006param1\030\001" +
       " \001(\t\022\016\n\006param2\030\002 \001(\t\"\031\n\010Int32Msg\022\r\n\005valu" +
-      "e\030\001 \001(\005\"\031\n\010Int64Msg\022\r\n\005value\030\001 \001(\003\"\227\003\n\007N" +
+      "e\030\001 \001(\005\"\031\n\010Int64Msg\022\r\n\005value\030\001 \001(\003\"\302\003\n\007N" +
       "odeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006pu" +
       "bKey\030\003 \001(\t\022\r\n\005owner\030\004 \001(\t\022\021\n\tprofitAcc\030\005" +
       " \001(\t\022\016\n\006poolID\030\006 \001(\t\022\021\n\tpoolOwner\030\007 \001(\t\022" +
@@ -157,67 +157,68 @@ public final class NodeMgmtProto {
       "\030\020 \001(\003\022\016\n\006weight\030\021 \001(\001\022\r\n\005valid\030\022 \001(\005\022\r\n" +
       "\005relay\030\023 \001(\005\022\016\n\006status\030\024 \001(\005\022\021\n\ttimestam" +
       "p\030\025 \001(\003\022\017\n\007version\030\026 \001(\005\022\022\n\nrebuilding\030\027" +
-      " \001(\005\"Z\n\014SuperNodeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006node" +
-      "ID\030\002 \001(\t\022\016\n\006pubKey\030\003 \001(\t\022\017\n\007privKey\030\004 \001(" +
-      "\t\022\r\n\005addrs\030\005 \003(\t\"\215\001\n\013NodeStatMsg\022\024\n\014acti" +
-      "veMiners\030\001 \001(\003\022\023\n\013totalMiners\030\002 \001(\003\022\020\n\010m" +
-      "axTotal\030\003 \001(\003\022\025\n\rassignedTotal\030\004 \001(\003\022\027\n\017" +
-      "productiveTotal\030\005 \001(\003\022\021\n\tusedTotal\030\006 \001(\003" +
-      "\"I\n\020SpotCheckTaskMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006node" +
-      "ID\030\002 \001(\t\022\014\n\004addr\030\003 \001(\t\022\013\n\003vNI\030\004 \001(\t\"]\n\020S" +
-      "potCheckListMsg\022\016\n\006taskID\030\001 \001(\t\022&\n\010taskL" +
-      "ist\030\002 \003(\0132\024.pb.SpotCheckTaskMsg\022\021\n\ttimes" +
-      "tamp\030\003 \001(\003\"D\n\024GetSpotCheckListResp\022,\n\016sp" +
-      "otCheckLists\030\001 \003(\0132\024.pb.SpotCheckListMsg" +
-      "\"\'\n\tNodesResp\022\032\n\005nodes\030\001 \003(\0132\013.pb.NodeMs" +
-      "g\"6\n\016SuperNodesResp\022$\n\nsuperNodes\030\001 \003(\0132" +
-      "\020.pb.SuperNodeMsg\",\n\020IncrUsedSpaceReq\022\n\n" +
-      "\002id\030\001 \001(\005\022\014\n\004incr\030\002 \001(\003\"3\n\rAllocNodesReq" +
-      "\022\022\n\nshardCount\030\001 \001(\005\022\016\n\006errIDs\030\002 \003(\005\"\036\n\013" +
-      "GetNodesReq\022\017\n\007nodeIDs\030\001 \003(\005\"#\n\006DNIReq\022\n" +
-      "\n\002id\030\001 \001(\005\022\r\n\005shard\030\002 \001(\014\":\n\023UpdateTaskS" +
-      "tatusReq\022\n\n\002id\030\001 \001(\t\022\027\n\017invalidNodeList\030" +
-      "\002 \003(\005\"(\n\rShardCountMsg\022\n\n\002iD\030\001 \001(\005\022\013\n\003cn" +
-      "t\030\002 \001(\003\"=\n\023GetInvalidNodesResp\022&\n\013shardC" +
-      "ounts\030\001 \003(\0132\021.pb.ShardCountMsg\"B\n\021GetReb" +
-      "uildItemReq\022\017\n\007minerID\030\001 \001(\005\022\r\n\005index\030\002 " +
-      "\001(\003\022\r\n\005total\030\003 \001(\003\"?\n\022GetRebuildItemResp" +
-      "\022\031\n\004node\030\001 \001(\0132\013.pb.NodeMsg\022\016\n\006shards\030\002 " +
-      "\003(\014\"#\n\024DownloadShardRequest\022\013\n\003VHF\030\001 \001(\014" +
-      "\"%\n\025DownloadShardResponse\022\014\n\004data\030\001 \001(\0142" +
-      "\345\t\n\010YTDNMgmt\022&\n\tSetMaster\022\014.pb.Int32Msg\032" +
-      "\t.pb.Empty\"\000\022*\n\014ChangeEosURL\022\r.pb.String" +
-      "Msg\032\t.pb.Empty\"\000\022&\n\tNewNodeID\022\t.pb.Empty" +
-      "\032\014.pb.Int32Msg\"\000\022&\n\007CallAPI\022\016.pb.String2" +
-      "Msg\032\t.pb.Empty\"\000\022.\n\020UpdateNodeStatus\022\013.p" +
-      "b.NodeMsg\032\013.pb.NodeMsg\"\000\0222\n\rIncrUsedSpac" +
-      "e\022\024.pb.IncrUsedSpaceReq\032\t.pb.Empty\"\000\0220\n\n" +
-      "AllocNodes\022\021.pb.AllocNodesReq\032\r.pb.Nodes" +
-      "Resp\"\000\022$\n\010SyncNode\022\013.pb.NodeMsg\032\t.pb.Emp" +
-      "ty\"\000\022,\n\010GetNodes\022\017.pb.GetNodesReq\032\r.pb.N" +
-      "odesResp\"\000\0220\n\rGetSuperNodes\022\t.pb.Empty\032\022" +
-      ".pb.SuperNodesResp\"\000\0227\n\026GetSuperNodePriv" +
-      "ateKey\022\014.pb.Int32Msg\032\r.pb.StringMsg\"\000\0222\n" +
-      "\021GetNodeIDByPubKey\022\r.pb.StringMsg\032\014.pb.I" +
-      "nt32Msg\"\000\022/\n\017GetNodeByPubKey\022\r.pb.String" +
-      "Msg\032\013.pb.NodeMsg\"\000\0227\n\026GetSuperNodeIDByPu" +
-      "bKey\022\r.pb.StringMsg\032\014.pb.Int32Msg\"\000\022!\n\006A" +
-      "ddDNI\022\n.pb.DNIReq\032\t.pb.Empty\"\000\022-\n\017Active" +
-      "NodesList\022\t.pb.Empty\032\r.pb.NodesResp\"\000\022*\n" +
-      "\nStatistics\022\t.pb.Empty\032\017.pb.NodeStatMsg\"" +
-      "\000\0229\n\020GetSpotCheckList\022\t.pb.Empty\032\030.pb.Ge" +
-      "tSpotCheckListResp\"\000\022%\n\tGetSTNode\022\t.pb.E" +
-      "mpty\032\013.pb.NodeMsg\"\000\022+\n\nGetSTNodes\022\014.pb.I" +
-      "nt64Msg\032\r.pb.NodesResp\"\000\0228\n\020UpdateTaskSt" +
-      "atus\022\027.pb.UpdateTaskStatusReq\032\t.pb.Empty" +
-      "\"\000\0227\n\017GetInvalidNodes\022\t.pb.Empty\032\027.pb.Ge" +
-      "tInvalidNodesResp\"\000\022A\n\016GetRebuildItem\022\025." +
-      "pb.GetRebuildItemReq\032\026.pb.GetRebuildItem" +
-      "Resp\"\000\022-\n\016GetRebuildNode\022\014.pb.Int64Msg\032\013" +
-      ".pb.NodeMsg\"\000\022$\n\tDeleteDNI\022\n.pb.DNIReq\032\t" +
-      ".pb.Empty\"\000\022*\n\rFinishRebuild\022\014.pb.Int32M" +
-      "sg\032\t.pb.Empty\"\000B.\n\031io.yottachain.nodemgm" +
-      "t.pbB\rNodeMgmtProtoH\001P\001b\006proto3"
+      " \001(\005\022\021\n\trealSpace\030\030 \001(\003\022\n\n\002tx\030\031 \001(\003\022\n\n\002r" +
+      "x\030\032 \001(\003\"Z\n\014SuperNodeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006n" +
+      "odeID\030\002 \001(\t\022\016\n\006pubKey\030\003 \001(\t\022\017\n\007privKey\030\004" +
+      " \001(\t\022\r\n\005addrs\030\005 \003(\t\"\215\001\n\013NodeStatMsg\022\024\n\014a" +
+      "ctiveMiners\030\001 \001(\003\022\023\n\013totalMiners\030\002 \001(\003\022\020" +
+      "\n\010maxTotal\030\003 \001(\003\022\025\n\rassignedTotal\030\004 \001(\003\022" +
+      "\027\n\017productiveTotal\030\005 \001(\003\022\021\n\tusedTotal\030\006 " +
+      "\001(\003\"I\n\020SpotCheckTaskMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006n" +
+      "odeID\030\002 \001(\t\022\014\n\004addr\030\003 \001(\t\022\013\n\003vNI\030\004 \001(\t\"]" +
+      "\n\020SpotCheckListMsg\022\016\n\006taskID\030\001 \001(\t\022&\n\010ta" +
+      "skList\030\002 \003(\0132\024.pb.SpotCheckTaskMsg\022\021\n\tti" +
+      "mestamp\030\003 \001(\003\"D\n\024GetSpotCheckListResp\022,\n" +
+      "\016spotCheckLists\030\001 \003(\0132\024.pb.SpotCheckList" +
+      "Msg\"\'\n\tNodesResp\022\032\n\005nodes\030\001 \003(\0132\013.pb.Nod" +
+      "eMsg\"6\n\016SuperNodesResp\022$\n\nsuperNodes\030\001 \003" +
+      "(\0132\020.pb.SuperNodeMsg\",\n\020IncrUsedSpaceReq" +
+      "\022\n\n\002id\030\001 \001(\005\022\014\n\004incr\030\002 \001(\003\"3\n\rAllocNodes" +
+      "Req\022\022\n\nshardCount\030\001 \001(\005\022\016\n\006errIDs\030\002 \003(\005\"" +
+      "\036\n\013GetNodesReq\022\017\n\007nodeIDs\030\001 \003(\005\"#\n\006DNIRe" +
+      "q\022\n\n\002id\030\001 \001(\005\022\r\n\005shard\030\002 \001(\014\":\n\023UpdateTa" +
+      "skStatusReq\022\n\n\002id\030\001 \001(\t\022\027\n\017invalidNodeLi" +
+      "st\030\002 \003(\005\"(\n\rShardCountMsg\022\n\n\002iD\030\001 \001(\005\022\013\n" +
+      "\003cnt\030\002 \001(\003\"=\n\023GetInvalidNodesResp\022&\n\013sha" +
+      "rdCounts\030\001 \003(\0132\021.pb.ShardCountMsg\"B\n\021Get" +
+      "RebuildItemReq\022\017\n\007minerID\030\001 \001(\005\022\r\n\005index" +
+      "\030\002 \001(\003\022\r\n\005total\030\003 \001(\003\"?\n\022GetRebuildItemR" +
+      "esp\022\031\n\004node\030\001 \001(\0132\013.pb.NodeMsg\022\016\n\006shards" +
+      "\030\002 \003(\014\"#\n\024DownloadShardRequest\022\013\n\003VHF\030\001 " +
+      "\001(\014\"%\n\025DownloadShardResponse\022\014\n\004data\030\001 \001" +
+      "(\0142\345\t\n\010YTDNMgmt\022&\n\tSetMaster\022\014.pb.Int32M" +
+      "sg\032\t.pb.Empty\"\000\022*\n\014ChangeEosURL\022\r.pb.Str" +
+      "ingMsg\032\t.pb.Empty\"\000\022&\n\tNewNodeID\022\t.pb.Em" +
+      "pty\032\014.pb.Int32Msg\"\000\022&\n\007CallAPI\022\016.pb.Stri" +
+      "ng2Msg\032\t.pb.Empty\"\000\022.\n\020UpdateNodeStatus\022" +
+      "\013.pb.NodeMsg\032\013.pb.NodeMsg\"\000\0222\n\rIncrUsedS" +
+      "pace\022\024.pb.IncrUsedSpaceReq\032\t.pb.Empty\"\000\022" +
+      "0\n\nAllocNodes\022\021.pb.AllocNodesReq\032\r.pb.No" +
+      "desResp\"\000\022$\n\010SyncNode\022\013.pb.NodeMsg\032\t.pb." +
+      "Empty\"\000\022,\n\010GetNodes\022\017.pb.GetNodesReq\032\r.p" +
+      "b.NodesResp\"\000\0220\n\rGetSuperNodes\022\t.pb.Empt" +
+      "y\032\022.pb.SuperNodesResp\"\000\0227\n\026GetSuperNodeP" +
+      "rivateKey\022\014.pb.Int32Msg\032\r.pb.StringMsg\"\000" +
+      "\0222\n\021GetNodeIDByPubKey\022\r.pb.StringMsg\032\014.p" +
+      "b.Int32Msg\"\000\022/\n\017GetNodeByPubKey\022\r.pb.Str" +
+      "ingMsg\032\013.pb.NodeMsg\"\000\0227\n\026GetSuperNodeIDB" +
+      "yPubKey\022\r.pb.StringMsg\032\014.pb.Int32Msg\"\000\022!" +
+      "\n\006AddDNI\022\n.pb.DNIReq\032\t.pb.Empty\"\000\022-\n\017Act" +
+      "iveNodesList\022\t.pb.Empty\032\r.pb.NodesResp\"\000" +
+      "\022*\n\nStatistics\022\t.pb.Empty\032\017.pb.NodeStatM" +
+      "sg\"\000\0229\n\020GetSpotCheckList\022\t.pb.Empty\032\030.pb" +
+      ".GetSpotCheckListResp\"\000\022%\n\tGetSTNode\022\t.p" +
+      "b.Empty\032\013.pb.NodeMsg\"\000\022+\n\nGetSTNodes\022\014.p" +
+      "b.Int64Msg\032\r.pb.NodesResp\"\000\0228\n\020UpdateTas" +
+      "kStatus\022\027.pb.UpdateTaskStatusReq\032\t.pb.Em" +
+      "pty\"\000\0227\n\017GetInvalidNodes\022\t.pb.Empty\032\027.pb" +
+      ".GetInvalidNodesResp\"\000\022A\n\016GetRebuildItem" +
+      "\022\025.pb.GetRebuildItemReq\032\026.pb.GetRebuildI" +
+      "temResp\"\000\022-\n\016GetRebuildNode\022\014.pb.Int64Ms" +
+      "g\032\013.pb.NodeMsg\"\000\022$\n\tDeleteDNI\022\n.pb.DNIRe" +
+      "q\032\t.pb.Empty\"\000\022*\n\rFinishRebuild\022\014.pb.Int" +
+      "32Msg\032\t.pb.Empty\"\000B.\n\031io.yottachain.node" +
+      "mgmt.pbB\rNodeMgmtProtoH\001P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -258,7 +259,7 @@ public final class NodeMgmtProto {
     internal_static_pb_NodeMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_NodeMsg_descriptor,
-        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", });
+        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", "RealSpace", "Tx", "Rx", });
     internal_static_pb_SuperNodeMsg_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_pb_SuperNodeMsg_fieldAccessorTable = new

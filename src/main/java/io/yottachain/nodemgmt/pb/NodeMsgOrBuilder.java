@@ -293,4 +293,31 @@ public interface NodeMsgOrBuilder extends
    * <code>int32 rebuilding = 23;</code>
    */
   int getRebuilding();
+
+  /**
+   * <pre>
+   *real space of miner
+   * </pre>
+   *
+   * <code>int64 realSpace = 24;</code>
+   */
+  long getRealSpace();
+
+  /**
+   * <pre>
+   *tx
+   * </pre>
+   *
+   * <code>int64 tx = 25;</code>
+   */
+  long getTx();
+
+  /**
+   * <pre>
+   *rx
+   * </pre>
+   *
+   * <code>int64 rx = 26;</code>
+   */
+  long getRx();
 }

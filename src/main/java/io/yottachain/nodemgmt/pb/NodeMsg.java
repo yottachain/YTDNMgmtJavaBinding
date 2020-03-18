@@ -185,6 +185,21 @@ private static final long serialVersionUID = 0L;
             rebuilding_ = input.readInt32();
             break;
           }
+          case 192: {
+
+            realSpace_ = input.readInt64();
+            break;
+          }
+          case 200: {
+
+            tx_ = input.readInt64();
+            break;
+          }
+          case 208: {
+
+            rx_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -725,6 +740,45 @@ private static final long serialVersionUID = 0L;
     return rebuilding_;
   }
 
+  public static final int REALSPACE_FIELD_NUMBER = 24;
+  private long realSpace_;
+  /**
+   * <pre>
+   *real space of miner
+   * </pre>
+   *
+   * <code>int64 realSpace = 24;</code>
+   */
+  public long getRealSpace() {
+    return realSpace_;
+  }
+
+  public static final int TX_FIELD_NUMBER = 25;
+  private long tx_;
+  /**
+   * <pre>
+   *tx
+   * </pre>
+   *
+   * <code>int64 tx = 25;</code>
+   */
+  public long getTx() {
+    return tx_;
+  }
+
+  public static final int RX_FIELD_NUMBER = 26;
+  private long rx_;
+  /**
+   * <pre>
+   *rx
+   * </pre>
+   *
+   * <code>int64 rx = 26;</code>
+   */
+  public long getRx() {
+    return rx_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -807,6 +861,15 @@ private static final long serialVersionUID = 0L;
     }
     if (rebuilding_ != 0) {
       output.writeInt32(23, rebuilding_);
+    }
+    if (realSpace_ != 0L) {
+      output.writeInt64(24, realSpace_);
+    }
+    if (tx_ != 0L) {
+      output.writeInt64(25, tx_);
+    }
+    if (rx_ != 0L) {
+      output.writeInt64(26, rx_);
     }
     unknownFields.writeTo(output);
   }
@@ -907,6 +970,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(23, rebuilding_);
     }
+    if (realSpace_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(24, realSpace_);
+    }
+    if (tx_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(25, tx_);
+    }
+    if (rx_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(26, rx_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -969,6 +1044,12 @@ private static final long serialVersionUID = 0L;
         != other.getVersion()) return false;
     if (getRebuilding()
         != other.getRebuilding()) return false;
+    if (getRealSpace()
+        != other.getRealSpace()) return false;
+    if (getTx()
+        != other.getTx()) return false;
+    if (getRx()
+        != other.getRx()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1035,6 +1116,15 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVersion();
     hash = (37 * hash) + REBUILDING_FIELD_NUMBER;
     hash = (53 * hash) + getRebuilding();
+    hash = (37 * hash) + REALSPACE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRealSpace());
+    hash = (37 * hash) + TX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTx());
+    hash = (37 * hash) + RX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRx());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1218,6 +1308,12 @@ private static final long serialVersionUID = 0L;
 
       rebuilding_ = 0;
 
+      realSpace_ = 0L;
+
+      tx_ = 0L;
+
+      rx_ = 0L;
+
       return this;
     }
 
@@ -1272,6 +1368,9 @@ private static final long serialVersionUID = 0L;
       result.timestamp_ = timestamp_;
       result.version_ = version_;
       result.rebuilding_ = rebuilding_;
+      result.realSpace_ = realSpace_;
+      result.tx_ = tx_;
+      result.rx_ = rx_;
       onBuilt();
       return result;
     }
@@ -1401,6 +1500,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRebuilding() != 0) {
         setRebuilding(other.getRebuilding());
+      }
+      if (other.getRealSpace() != 0L) {
+        setRealSpace(other.getRealSpace());
+      }
+      if (other.getTx() != 0L) {
+        setTx(other.getTx());
+      }
+      if (other.getRx() != 0L) {
+        setRx(other.getRx());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2700,6 +2808,120 @@ private static final long serialVersionUID = 0L;
     public Builder clearRebuilding() {
       
       rebuilding_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long realSpace_ ;
+    /**
+     * <pre>
+     *real space of miner
+     * </pre>
+     *
+     * <code>int64 realSpace = 24;</code>
+     */
+    public long getRealSpace() {
+      return realSpace_;
+    }
+    /**
+     * <pre>
+     *real space of miner
+     * </pre>
+     *
+     * <code>int64 realSpace = 24;</code>
+     */
+    public Builder setRealSpace(long value) {
+      
+      realSpace_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *real space of miner
+     * </pre>
+     *
+     * <code>int64 realSpace = 24;</code>
+     */
+    public Builder clearRealSpace() {
+      
+      realSpace_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long tx_ ;
+    /**
+     * <pre>
+     *tx
+     * </pre>
+     *
+     * <code>int64 tx = 25;</code>
+     */
+    public long getTx() {
+      return tx_;
+    }
+    /**
+     * <pre>
+     *tx
+     * </pre>
+     *
+     * <code>int64 tx = 25;</code>
+     */
+    public Builder setTx(long value) {
+      
+      tx_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *tx
+     * </pre>
+     *
+     * <code>int64 tx = 25;</code>
+     */
+    public Builder clearTx() {
+      
+      tx_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long rx_ ;
+    /**
+     * <pre>
+     *rx
+     * </pre>
+     *
+     * <code>int64 rx = 26;</code>
+     */
+    public long getRx() {
+      return rx_;
+    }
+    /**
+     * <pre>
+     *rx
+     * </pre>
+     *
+     * <code>int64 rx = 26;</code>
+     */
+    public Builder setRx(long value) {
+      
+      rx_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *rx
+     * </pre>
+     *
+     * <code>int64 rx = 26;</code>
+     */
+    public Builder clearRx() {
+      
+      rx_ = 0L;
       onChanged();
       return this;
     }

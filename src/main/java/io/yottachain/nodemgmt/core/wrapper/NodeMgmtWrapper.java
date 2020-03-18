@@ -38,6 +38,9 @@ public class NodeMgmtWrapper {
         public long timestamp;
         public int version;
         public int rebuilding;
+        public long realSpace;
+        public long tx;
+        public long rx;
         public Pointer error;
 
         public Node() {
@@ -51,7 +54,7 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "poolOwner", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "rebuilding", "error"});
+            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "poolOwner", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "rebuilding", "realSpace", "tx", "rx", "error"});
         }
 
         public void fill(io.yottachain.nodemgmt.core.vo.Node node) {
@@ -102,6 +105,9 @@ public class NodeMgmtWrapper {
             this.timestamp = node.getTimestamp();
             this.version = node.getVersion();
             this.rebuilding = node.getRebuilding();
+            this.realSpace = node.getRealSpace();
+            this.tx = node.getTx();
+            this.rx = node.getRx();
         }
 
         public io.yottachain.nodemgmt.core.vo.Node convertTo() {
@@ -129,6 +135,9 @@ public class NodeMgmtWrapper {
             node.setTimestamp(this.timestamp);
             node.setVersion(this.version);
             node.setRebuilding(this.rebuilding);
+            node.setRealSpace(this.realSpace);
+            node.setTx(this.tx);
+            node.setRx(this.rx);
             return node;
         }
     }
