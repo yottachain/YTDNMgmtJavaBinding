@@ -27,6 +27,9 @@ public class Node {
     private long timestamp;
     private int version;
     private int rebuilding;
+    private long realSpace;
+    private long tx;
+    private long rx;
 
     public int getId() {
         return id;
@@ -212,6 +215,30 @@ public class Node {
         this.rebuilding = rebuilding;
     }
 
+    public long getRealSpace() {
+        return realSpace;
+    }
+
+    public void setRealSpace(long realSpace) {
+        this.realSpace = realSpace;
+    }
+
+    public long getTx() {
+        return tx;
+    }
+
+    public void setTx(long tx) {
+        this.tx = tx;
+    }
+
+    public long getRx() {
+        return rx;
+    }
+
+    public void setRx(long rx) {
+        this.rx = rx;
+    }
+
     public Node() {}
 
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
@@ -221,7 +248,7 @@ public class Node {
         this.setAddrs(addrs);
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding) {
+    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding, long realSpace, long tx, long rx) {
         this(id, nodeid, pubkey, addrs);
         this.setOwner(owner);
         this.setProfitAcc(profitAcc);
@@ -242,6 +269,9 @@ public class Node {
         this.setTimestamp(timestamp);
         this.setVersion(version);
         this.setRebuilding(rebuilding);
+        this.setRealSpace(realSpace);
+        this.setTx(tx);
+        this.setRx(rx);
     }
 
 }
