@@ -3,22 +3,25 @@ package io.yottachain.nodemgmt.core;
 import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
+import io.yottachain.nodemgmt.analysis.pb.AnalysisCli;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.interfaces.NodeMgmtInterface;
 import io.yottachain.nodemgmt.core.vo.*;
-import io.yottachain.nodemgmt.core.wrapper.NodeMgmtWrapper;
+import io.yottachain.nodemgmt.core.wrapper.*;
 
 import java.util.*;
 
 public class NodeMgmt implements NodeMgmtInterface {
+    private AnalysisCli analysisCli;
 
-    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master) throws NodeMgmtException {
+    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master, String analysisHost, int analysisPort) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master);
         if (errPtr != null) {
             String err = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
             throw new NodeMgmtException(err);
         }
+        analysisCli = new AnalysisCli(analysisHost, analysisPort);
     }
 
     @Override
@@ -387,50 +390,62 @@ public class NodeMgmt implements NodeMgmtInterface {
 
     @Override
     public List<SpotCheckList> getSpotCheckList() throws NodeMgmtException {
-        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSpotCheckList();
-        if (ptr != null) {
-            try {
-                NodeMgmtWrapper.Spotchecklists spotchecklists = new NodeMgmtWrapper.Spotchecklists(ptr);
-                if (spotchecklists.error != null) {
-                    String err = spotchecklists.error.getString(0);
-                    throw new NodeMgmtException(err);
-                }
-                List<SpotCheckList> spotCheckList = new ArrayList<SpotCheckList>();
-                if (spotchecklists.list != null) {
-                    Pointer[] ptrs = spotchecklists.list.getPointerArray(0, spotchecklists.size);
-                    for (int i = 0; i< ptrs.length; i++){
-                        Pointer p = ptrs[i];
-                        NodeMgmtWrapper.Spotchecklist sclist = new NodeMgmtWrapper.Spotchecklist(p);
-                        spotCheckList.add(sclist.convertTo());
-                    }
-                }
-                return spotCheckList;
-
-            } finally {
-                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeSpotchecklists(ptr);
-            }
-        } else {
-            throw new NodeMgmtException("unknown exception");
-        }
+        SpotCheckList list = analysisCli.getSpotCheckList();
+        List<SpotCheckList> spotCheckList = new ArrayList<SpotCheckList>();
+        spotCheckList.add(list);
+        return spotCheckList;
+//        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSpotCheckList();
+//        if (ptr != null) {
+//            try {
+//                NodeMgmtWrapper.Spotchecklists spotchecklists = new NodeMgmtWrapper.Spotchecklists(ptr);
+//                if (spotchecklists.error != null) {
+//                    String err = spotchecklists.error.getString(0);
+//                    throw new NodeMgmtException(err);
+//                }
+//                List<SpotCheckList> spotCheckList = new ArrayList<SpotCheckList>();
+//                if (spotchecklists.list != null) {
+//                    Pointer[] ptrs = spotchecklists.list.getPointerArray(0, spotchecklists.size);
+//                    for (int i = 0; i< ptrs.length; i++){
+//                        Pointer p = ptrs[i];
+//                        NodeMgmtWrapper.Spotchecklist sclist = new NodeMgmtWrapper.Spotchecklist(p);
+//                        spotCheckList.add(sclist.convertTo());
+//                    }
+//                }
+//                return spotCheckList;
+//
+//            } finally {
+//                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeSpotchecklists(ptr);
+//            }
+//        } else {
+//            throw new NodeMgmtException("unknown exception");
+//        }
     }
 
     @Override
     public Node getSTNode() throws NodeMgmtException {
-        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNode();
-        if (nodePtr != null) {
-            try {
-                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
-                if (retnode.error != null) {
-                    String err = retnode.error.getString(0);
-                    throw new NodeMgmtException(err);
-                }
-                return retnode.convertTo();
-            } finally {
-                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
-            }
+        boolean b = analysisCli.isNodeSelected();
+        Node node = new Node();
+        if (b) {
+            node.setId(1);
         } else {
-            throw new NodeMgmtException("unknown exception");
+            node.setId(0);
         }
+        return node;
+//        Pointer nodePtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetSTNode();
+//        if (nodePtr != null) {
+//            try {
+//                NodeMgmtWrapper.Node retnode = new NodeMgmtWrapper.Node(nodePtr);
+//                if (retnode.error != null) {
+//                    String err = retnode.error.getString(0);
+//                    throw new NodeMgmtException(err);
+//                }
+//                return retnode.convertTo();
+//            } finally {
+//                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeNode(nodePtr);
+//            }
+//        } else {
+//            throw new NodeMgmtException("unknown exception");
+//        }
     }
 
     @Override
@@ -464,23 +479,28 @@ public class NodeMgmt implements NodeMgmtInterface {
 
     @Override
     public void updateTaskStatus(String id, int[] nodeIDs) throws NodeMgmtException {
-        Pointer param = null;
-        if (nodeIDs != null) {
-            param = new Memory(nodeIDs.length * Native.getNativeSize(Integer.TYPE));
-            for (int i = 0; i < nodeIDs.length; i++) {
-                param.setInt(i * Native.getNativeSize(Integer.TYPE), nodeIDs[i]);
-            }
+        if (nodeIDs.length>0) {
+            analysisCli.updateTaskStatus(id, nodeIDs[0]);
+        } else {
+            throw new NodeMgmtException("no invalid node ID reported");
         }
-        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.UpdateTaskStatus(id, param, nodeIDs!=null?nodeIDs.length:0);
-        if (param != null) {
-            Native.free(Pointer.nativeValue(param));
-            Pointer.nativeValue(param, 0);
-        }
-        if (errPtr != null) {
-            String err = errPtr.getString(0);
-            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
-            throw new NodeMgmtException(err);
-        }
+//        Pointer param = null;
+//        if (nodeIDs != null) {
+//            param = new Memory(nodeIDs.length * Native.getNativeSize(Integer.TYPE));
+//            for (int i = 0; i < nodeIDs.length; i++) {
+//                param.setInt(i * Native.getNativeSize(Integer.TYPE), nodeIDs[i]);
+//            }
+//        }
+//        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.UpdateTaskStatus(id, param, nodeIDs!=null?nodeIDs.length:0);
+//        if (param != null) {
+//            Native.free(Pointer.nativeValue(param));
+//            Pointer.nativeValue(param, 0);
+//        }
+//        if (errPtr != null) {
+//            String err = errPtr.getString(0);
+//            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
+//            throw new NodeMgmtException(err);
+//        }
     }
 
     @Override
