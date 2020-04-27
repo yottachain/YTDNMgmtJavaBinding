@@ -14,10 +14,12 @@ public class AnalysisCli {
 
     private final ManagedChannel channel;
     private final AnalysisGrpc.AnalysisBlockingStub blockingStub;
+    private int timeout;
 
-    public AnalysisCli(String host, int port) {
+    public AnalysisCli(String host, int port, int timeout) {
         this.channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
         this.blockingStub = AnalysisGrpc.newBlockingStub(channel);
+        this.timeout = timeout;
     }
 
     public void shutdown() throws InterruptedException {
@@ -26,7 +28,7 @@ public class AnalysisCli {
 
     public SpotCheckList getSpotCheckList() throws NodeMgmtException {
         try {
-            SpotCheckListMsg resp = blockingStub.getSpotCheckList(Empty.newBuilder().build());
+            SpotCheckListMsg resp = blockingStub.withDeadlineAfter(timeout, TimeUnit.MILLISECONDS).getSpotCheckList(Empty.newBuilder().build());
             String taskID = resp.getTaskID();
             List<SpotCheckTaskMsg> tasks = resp.getTaskListList();
             long timestamp = resp.getTimestamp();
@@ -50,7 +52,7 @@ public class AnalysisCli {
 
     public boolean isNodeSelected() throws NodeMgmtException {
         try {
-            BoolMessage resp = blockingStub.isNodeSelected(Empty.newBuilder().build());
+            BoolMessage resp = blockingStub.withDeadlineAfter(timeout, TimeUnit.MILLISECONDS).isNodeSelected(Empty.newBuilder().build());
             return resp.getValue();
         } catch (StatusRuntimeException e) {
             throw new NodeMgmtException("", e);
@@ -63,17 +65,9 @@ public class AnalysisCli {
                     .setId(id)
                     .setInvalidNode(nodeID)
                     .build();
-            blockingStub.updateTaskStatus(req);
+            blockingStub.withDeadlineAfter(timeout, TimeUnit.MILLISECONDS).updateTaskStatus(req);
         } catch (StatusRuntimeException e) {
             throw new NodeMgmtException("", e);
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        AnalysisCli client = new AnalysisCli("192.168.3.60", 8080);
-        //SpotCheckList spl = client.getSpotCheckList();
-        client.updateTaskStatus("5ea4228f97ce2642f46b8784", 28);
-        //System.out.println(spl.getTaskID());
-        client.shutdown();
     }
 }

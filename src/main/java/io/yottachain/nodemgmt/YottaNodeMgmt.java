@@ -199,7 +199,12 @@ public class YottaNodeMgmt {
             try {
                 analysisPort = Integer.parseInt(analysisPortStr);
             } catch (Exception e) {}
-            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, analysisHost, analysisPort);
+            String analysisTimeoutStr = System.getenv("NODEMGMT_ANALYSISTIMEOUT");
+            int analysisTimeout = 5000;
+            try {
+                analysisTimeout = Integer.parseInt(analysisTimeoutStr);
+            } catch (Exception e) {}
+            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, analysisHost, analysisPort, analysisTimeout);
         }
     }
 

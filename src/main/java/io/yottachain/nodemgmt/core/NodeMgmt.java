@@ -14,14 +14,14 @@ import java.util.*;
 public class NodeMgmt implements NodeMgmtInterface {
     private AnalysisCli analysisCli;
 
-    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master, String analysisHost, int analysisPort) throws NodeMgmtException {
+    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master, String analysisHost, int analysisPort, int analysisTimeout) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master);
         if (errPtr != null) {
             String err = errPtr.getString(0);
             NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
             throw new NodeMgmtException(err);
         }
-        analysisCli = new AnalysisCli(analysisHost, analysisPort);
+        analysisCli = new AnalysisCli(analysisHost, analysisPort, analysisTimeout);
     }
 
     @Override
