@@ -41,6 +41,7 @@ public class NodeMgmtWrapper {
         public long realSpace;
         public long tx;
         public long rx;
+        public Pointer ext;
         public Pointer error;
 
         public Node() {
@@ -54,7 +55,7 @@ public class NodeMgmtWrapper {
 
         @Override
         protected List getFieldOrder() {
-            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "poolOwner", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "rebuilding", "realSpace", "tx", "rx", "error"});
+            return Arrays.asList(new String[]{"id", "nodeid", "pubkey", "owner", "profitAcc", "poolID", "poolOwner", "quota", "addrs", "addrsize", "cpu", "memory", "bandwidth", "maxDataSpace", "assignedSpace", "productiveSpace", "usedSpace", "weight", "valid", "relay", "status", "timestamp", "version", "rebuilding", "realSpace", "tx", "rx", "ext", "error"});
         }
 
         public void fill(io.yottachain.nodemgmt.core.vo.Node node) {
@@ -108,6 +109,10 @@ public class NodeMgmtWrapper {
             this.realSpace = node.getRealSpace();
             this.tx = node.getTx();
             this.rx = node.getRx();
+            if (node.getOther() != null) {
+                this.ext = new Memory(node.getOther().length() + 1);
+                this.ext.setString(0, node.getOther());
+            }
         }
 
         public io.yottachain.nodemgmt.core.vo.Node convertTo() {
@@ -138,6 +143,7 @@ public class NodeMgmtWrapper {
             node.setRealSpace(this.realSpace);
             node.setTx(this.tx);
             node.setRx(this.rx);
+            node.setOther(this.ext!=null?this.ext.getString(0):null);
             return node;
         }
     }

@@ -30,6 +30,7 @@ public class Node {
     private long realSpace;
     private long tx;
     private long rx;
+    private String other;
 
     public int getId() {
         return id;
@@ -239,6 +240,14 @@ public class Node {
         this.rx = rx;
     }
 
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+    }
+
     public Node() {}
 
     public Node(int id, String nodeid, String pubkey, List<String> addrs) {
@@ -248,7 +257,7 @@ public class Node {
         this.setAddrs(addrs);
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding, long realSpace, long tx, long rx) {
+    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding, long realSpace, long tx, long rx, String other) {
         this(id, nodeid, pubkey, addrs);
         this.setOwner(owner);
         this.setProfitAcc(profitAcc);
@@ -272,6 +281,7 @@ public class Node {
         this.setRealSpace(realSpace);
         this.setTx(tx);
         this.setRx(rx);
+        this.setOther(other);
     }
 
 }

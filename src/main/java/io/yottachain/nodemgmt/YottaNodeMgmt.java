@@ -232,7 +232,7 @@ public class YottaNodeMgmt {
         client.callAPI(trx, apiName.toString());
     }
 
-    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version, int rebuilding, long realSpace, long tx, long rx) throws NodeMgmtException {
+    public static Node updateNodeStatus(int id, int cpu, int memory, int bandwidth, long maxDataSpace, long usedSpace, List<String> addrs, boolean relay, int version, int rebuilding, long realSpace, long tx, long rx, String other) throws NodeMgmtException {
         if (addrs==null || addrs.size()==0) {
             throw new NodeMgmtException("Addresses of data node cannot be null");
         }
@@ -250,6 +250,7 @@ public class YottaNodeMgmt {
         node.setRealSpace(realSpace);
         node.setTx(tx);
         node.setRx(rx);
+        node.setOther(other);
         return client.updateNodeStatus(node);
     }
 
