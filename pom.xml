@@ -103,7 +103,7 @@
                                 <exec executable="git">
                                     <arg value="clone"/>
                                     <arg value="-b"/>
-                                    <arg value="extreport"/>
+                                    <arg value="release"/>
                                     <arg value="https://github.com/yottachain/YTDNMgmt.git"/>
                                     <arg value="${project.build.directory}/ytdnmgmt"/>
                                 </exec>
