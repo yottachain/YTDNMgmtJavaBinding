@@ -7,7 +7,7 @@ import com.ibm.etcd.client.KeyUtils;
 import com.ibm.etcd.client.KvStoreClient;
 import com.ibm.etcd.client.kv.KvClient;
 import io.grpc.netty.shaded.io.netty.util.internal.StringUtil;
-import io.yottachain.nodemgmt.core.NodeMgmt;
+import io.yottachain.nodemgmt.core.*;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
 import io.yottachain.nodemgmt.core.interfaces.NodeMgmtInterface;
 import io.yottachain.nodemgmt.core.vo.*;
@@ -190,7 +190,21 @@ public class YottaNodeMgmt {
             logger.info("Create NodeMgmt GRPC connection: " + nodemgmthostname + ":" + nodemgmtPort);
         } else {
             logger.info("NodeMgmt is under embeded mode");
-            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master);
+            String analysisHost = System.getenv("NODEMGMT_ANALYSISHOSTNAME");
+            if (StringUtil.isNullOrEmpty(analysisHost)) {
+                analysisHost = "127.0.0.1";
+            }
+            String analysisPortStr = System.getenv("NODEMGMT_ANALYSISPORT");
+            int analysisPort = 8080;
+            try {
+                analysisPort = Integer.parseInt(analysisPortStr);
+            } catch (Exception e) {}
+            String analysisTimeoutStr = System.getenv("NODEMGMT_ANALYSISTIMEOUT");
+            int analysisTimeout = 5000;
+            try {
+                analysisTimeout = Integer.parseInt(analysisTimeoutStr);
+            } catch (Exception e) {}
+            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, analysisHost, analysisPort, analysisTimeout);
         }
     }
 

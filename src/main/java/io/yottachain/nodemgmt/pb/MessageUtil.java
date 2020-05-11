@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageUtil {
-    public static NodeMsg convertNodeToMsg(Node node) {
+    public static io.yottachain.nodemgmt.pb.NodeMsg convertNodeToMsg(Node node) {
         NodeMsg.Builder builder =  NodeMsg.newBuilder()
                 .setID(node.getId());
                 if (node.getNodeid() != null)
