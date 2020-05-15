@@ -301,6 +301,7 @@ public class YottaNodeMgmt {
             if (ip != null && !ip.equals("")) {
                 m.put("id", Integer.toString(n.getId()));
                 m.put("ip", ip);
+                m.put("nodeid", n.getNodeid());
                 result.add(m);
             }
         }
