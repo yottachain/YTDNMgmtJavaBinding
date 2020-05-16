@@ -22,7 +22,7 @@ public class YottaNodeMgmt {
 
     private static final Logger logger = Logger.getLogger(YottaNodeMgmt.class.getName());
 
-    private static NodeMgmtInterface client;
+    private static NodeMgmt client;
     private static AtomicBoolean flag = new AtomicBoolean(true);
 
     private static final String NODEMGMT_ETCD_PREFIX = "/nodemgmt/";
@@ -40,156 +40,165 @@ public class YottaNodeMgmt {
     public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid, final boolean isMaster) throws NodeMgmtException {
         int master = isMaster?1:0;
         String embededStr = System.getenv("NODEMGMT_EMBEDED");
-        if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
-            logger.info("NodeMgmt is under standalone mode");
-            String etcdportStr = System.getenv("ETCDPORT");
-            int etcdport = 2379;
-            try {
-                etcdport = Integer.parseInt(etcdportStr);
-            } catch (Exception e) {}
-            logger.info("ETCD port is " + etcdport);
-            String etcdhostname = System.getenv("ETCDHOSTNAME");
-            if (StringUtil.isNullOrEmpty(etcdhostname)) {
-                etcdhostname = "etcd-svc";
+//        if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
+//            logger.info("NodeMgmt is under standalone mode");
+//            String etcdportStr = System.getenv("ETCDPORT");
+//            int etcdport = 2379;
+//            try {
+//                etcdport = Integer.parseInt(etcdportStr);
+//            } catch (Exception e) {}
+//            logger.info("ETCD port is " + etcdport);
+//            String etcdhostname = System.getenv("ETCDHOSTNAME");
+//            if (StringUtil.isNullOrEmpty(etcdhostname)) {
+//                etcdhostname = "etcd-svc";
+//            }
+//            logger.info("ETCD hostname is " + etcdhostname);
+//            //1. 注册参数
+//            KvStoreClient etcdClient = EtcdClient.forEndpoint(etcdhostname, etcdport).withPlainText().build();
+//            final KvClient kvclient = etcdClient.getKvClient();
+//            logger.info("Create connection to ETCD: " + etcdhostname + ":" + etcdport);
+//            new Thread(() -> {
+//                while (flag.get()) {
+//                    try {
+//                        RangeResponse mongoUrlResp = kvclient.get(KeyUtils.bs(NODEMGMT_MONGOURL)).sync();
+//                        String mongoUrlNew = null;
+//                        if (mongoUrlResp.getKvsCount()>0) {
+//                            mongoUrlNew = mongoUrlResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read mongoDB URL from ETCD: " + mongoUrlNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(mongoUrlNew) || !mongoURL.equals(mongoUrlNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_MONGOURL), KeyUtils.bs(mongoURL)).sync();
+//                            logger.info("Write new mongoDB URL to ETCD: " + mongoURL);
+//                        }
+//
+//                        RangeResponse eosUrlResp = kvclient.get(KeyUtils.bs(NODEMGMT_EOSURL)).sync();
+//                        String eosUrlNew = null;
+//                        if (eosUrlResp.getKvsCount()>0) {
+//                            eosUrlNew = eosUrlResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read EOS URL from ETCD: " + eosUrlNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(eosUrlNew) || !eosURL.equals(eosUrlNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_EOSURL), KeyUtils.bs(eosURL)).sync();
+//                            logger.info("Write new EOS URL to ETCD: " + eosURL);
+//                        }
+//
+//                        RangeResponse bpAccountResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPACCOUNT)).sync();
+//                        String bpAccountNew = null;
+//                        if (bpAccountResp.getKvsCount()>0) {
+//                            bpAccountNew = bpAccountResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read BP account from ETCD: " + bpAccountNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(bpAccountNew) || !bpAccount.equals(bpAccountNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_BPACCOUNT), KeyUtils.bs(bpAccount)).sync();
+//                            logger.info("Write new BP account to ETCD: " + bpAccount);
+//                        }
+//
+//                        RangeResponse bpPrivkeyResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPPRIVKEY)).sync();
+//                        String bpPrivkeyNew = null;
+//                        if (bpPrivkeyResp.getKvsCount()>0) {
+//                            bpPrivkeyNew = bpPrivkeyResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read BP private key from ETCD: " + bpPrivkeyNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(bpPrivkeyNew) || !bpPrivkey.equals(bpPrivkeyNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_BPPRIVKEY), KeyUtils.bs(bpPrivkey)).sync();
+//                            logger.info("Write new BP private key to ETCD: " + bpPrivkey);
+//                        }
+//
+//                        RangeResponse contractOwnerMResp = kvclient.get(KeyUtils.bs(NODEMGMT_CONTRACTOWNERM)).sync();
+//                        String contractOwnerMNew = null;
+//                        if (contractOwnerMResp.getKvsCount()>0) {
+//                            contractOwnerMNew = contractOwnerMResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read contract owner M from ETCD: " + contractOwnerMNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(contractOwnerMNew) || !contractOwnerM.equals(contractOwnerMNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_CONTRACTOWNERM), KeyUtils.bs(contractOwnerM)).sync();
+//                            logger.info("Write contract owner M to ETCD: " + contractOwnerM);
+//                        }
+//
+//                        RangeResponse contractOwnerDResp = kvclient.get(KeyUtils.bs(NODEMGMT_CONTRACTOWNERD)).sync();
+//                        String contractOwnerDNew = null;
+//                        if (contractOwnerDResp.getKvsCount()>0) {
+//                            contractOwnerDNew = contractOwnerDResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read contract owner D from ETCD: " + contractOwnerDNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(contractOwnerDNew) || !contractOwnerD.equals(contractOwnerDNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_CONTRACTOWNERD), KeyUtils.bs(contractOwnerD)).sync();
+//                            logger.info("Write contract owner D to ETCD: " + contractOwnerD);
+//                        }
+//
+//                        RangeResponse shadowAccountResp = kvclient.get(KeyUtils.bs(NODEMGMT_SHADOWACCOUNT)).sync();
+//                        String shadowAccountNew = null;
+//                        if (shadowAccountResp.getKvsCount()>0) {
+//                            shadowAccountNew = shadowAccountResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read shadow account from ETCD: " + shadowAccountNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(shadowAccountNew) || !shadowAccount.equals(shadowAccountNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_SHADOWACCOUNT), KeyUtils.bs(shadowAccount)).sync();
+//                            logger.info("Write shadow account to ETCD: " + shadowAccount);
+//                        }
+//
+//                        RangeResponse bpidResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPID)).sync();
+//                        String bpidNew = null;
+//                        if (bpidResp.getKvsCount()>0) {
+//                            bpidNew = bpidResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read BP ID from ETCD: " + bpidNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(bpidNew) || !Integer.toString(bpid).equals(bpidNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_BPID), KeyUtils.bs(Integer.toString(bpid))).sync();
+//                            logger.info("Write BP ID to ETCD: " + bpid);
+//                        }
+//
+//                        RangeResponse masterResp = kvclient.get(KeyUtils.bs(NODEMGMT_MASTER)).sync();
+//                        String masterNew = null;
+//                        if (masterResp.getKvsCount()>0) {
+//                            masterNew = masterResp.getKvs(0).getValue().toStringUtf8();
+//                            logger.info("Read master status from ETCD: " + masterNew);
+//                        }
+//                        if (StringUtil.isNullOrEmpty(masterNew) || !Integer.toString(master).equals(masterNew)) {
+//                            kvclient.put(KeyUtils.bs(NODEMGMT_MASTER), KeyUtils.bs(Integer.toString(master))).sync();
+//                            logger.info("Write master status to ETCD: " + master);
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    try {
+//                        Thread.sleep(60000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                try {
+//                    etcdClient.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }).start();
+//            try {
+//                Thread.sleep(3000);
+//            } catch (InterruptedException e) {}
+//            //2. 建立GRPC连接
+//            String nodemgmtPortStr = System.getenv("NODEMGMT_GRPCPORT");
+//            int nodemgmtPort = 11001;
+//            try {
+//                nodemgmtPort = Integer.parseInt(nodemgmtPortStr);
+//            } catch (Exception e) {}
+//            String nodemgmthostname = System.getenv("NODEMGMT_GRPCHOSTNAME");
+//            if (StringUtil.isNullOrEmpty(nodemgmthostname)) {
+//                nodemgmthostname = "nodemgmt-svc";
+//            }
+//            client = new PbClient(nodemgmthostname, nodemgmtPort);
+//            logger.info("Create NodeMgmt GRPC connection: " + nodemgmthostname + ":" + nodemgmtPort);
+//        } else {
+            logger.info("NodeMgmt is under embeded mode");
+            String nodemgmthostname = System.getenv("NODEMGMT_GRPCHOSTNAME");
+            if (StringUtil.isNullOrEmpty(nodemgmthostname)) {
+                nodemgmthostname = "127.0.0.1";
             }
-            logger.info("ETCD hostname is " + etcdhostname);
-            //1. 注册参数
-            KvStoreClient etcdClient = EtcdClient.forEndpoint(etcdhostname, etcdport).withPlainText().build();
-            final KvClient kvclient = etcdClient.getKvClient();
-            logger.info("Create connection to ETCD: " + etcdhostname + ":" + etcdport);
-            new Thread(() -> {
-                while (flag.get()) {
-                    try {
-                        RangeResponse mongoUrlResp = kvclient.get(KeyUtils.bs(NODEMGMT_MONGOURL)).sync();
-                        String mongoUrlNew = null;
-                        if (mongoUrlResp.getKvsCount()>0) {
-                            mongoUrlNew = mongoUrlResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read mongoDB URL from ETCD: " + mongoUrlNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(mongoUrlNew) || !mongoURL.equals(mongoUrlNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_MONGOURL), KeyUtils.bs(mongoURL)).sync();
-                            logger.info("Write new mongoDB URL to ETCD: " + mongoURL);
-                        }
-
-                        RangeResponse eosUrlResp = kvclient.get(KeyUtils.bs(NODEMGMT_EOSURL)).sync();
-                        String eosUrlNew = null;
-                        if (eosUrlResp.getKvsCount()>0) {
-                            eosUrlNew = eosUrlResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read EOS URL from ETCD: " + eosUrlNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(eosUrlNew) || !eosURL.equals(eosUrlNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_EOSURL), KeyUtils.bs(eosURL)).sync();
-                            logger.info("Write new EOS URL to ETCD: " + eosURL);
-                        }
-
-                        RangeResponse bpAccountResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPACCOUNT)).sync();
-                        String bpAccountNew = null;
-                        if (bpAccountResp.getKvsCount()>0) {
-                            bpAccountNew = bpAccountResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read BP account from ETCD: " + bpAccountNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(bpAccountNew) || !bpAccount.equals(bpAccountNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_BPACCOUNT), KeyUtils.bs(bpAccount)).sync();
-                            logger.info("Write new BP account to ETCD: " + bpAccount);
-                        }
-
-                        RangeResponse bpPrivkeyResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPPRIVKEY)).sync();
-                        String bpPrivkeyNew = null;
-                        if (bpPrivkeyResp.getKvsCount()>0) {
-                            bpPrivkeyNew = bpPrivkeyResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read BP private key from ETCD: " + bpPrivkeyNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(bpPrivkeyNew) || !bpPrivkey.equals(bpPrivkeyNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_BPPRIVKEY), KeyUtils.bs(bpPrivkey)).sync();
-                            logger.info("Write new BP private key to ETCD: " + bpPrivkey);
-                        }
-
-                        RangeResponse contractOwnerMResp = kvclient.get(KeyUtils.bs(NODEMGMT_CONTRACTOWNERM)).sync();
-                        String contractOwnerMNew = null;
-                        if (contractOwnerMResp.getKvsCount()>0) {
-                            contractOwnerMNew = contractOwnerMResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read contract owner M from ETCD: " + contractOwnerMNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(contractOwnerMNew) || !contractOwnerM.equals(contractOwnerMNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_CONTRACTOWNERM), KeyUtils.bs(contractOwnerM)).sync();
-                            logger.info("Write contract owner M to ETCD: " + contractOwnerM);
-                        }
-
-                        RangeResponse contractOwnerDResp = kvclient.get(KeyUtils.bs(NODEMGMT_CONTRACTOWNERD)).sync();
-                        String contractOwnerDNew = null;
-                        if (contractOwnerDResp.getKvsCount()>0) {
-                            contractOwnerDNew = contractOwnerDResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read contract owner D from ETCD: " + contractOwnerDNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(contractOwnerDNew) || !contractOwnerD.equals(contractOwnerDNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_CONTRACTOWNERD), KeyUtils.bs(contractOwnerD)).sync();
-                            logger.info("Write contract owner D to ETCD: " + contractOwnerD);
-                        }
-
-                        RangeResponse shadowAccountResp = kvclient.get(KeyUtils.bs(NODEMGMT_SHADOWACCOUNT)).sync();
-                        String shadowAccountNew = null;
-                        if (shadowAccountResp.getKvsCount()>0) {
-                            shadowAccountNew = shadowAccountResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read shadow account from ETCD: " + shadowAccountNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(shadowAccountNew) || !shadowAccount.equals(shadowAccountNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_SHADOWACCOUNT), KeyUtils.bs(shadowAccount)).sync();
-                            logger.info("Write shadow account to ETCD: " + shadowAccount);
-                        }
-
-                        RangeResponse bpidResp = kvclient.get(KeyUtils.bs(NODEMGMT_BPID)).sync();
-                        String bpidNew = null;
-                        if (bpidResp.getKvsCount()>0) {
-                            bpidNew = bpidResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read BP ID from ETCD: " + bpidNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(bpidNew) || !Integer.toString(bpid).equals(bpidNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_BPID), KeyUtils.bs(Integer.toString(bpid))).sync();
-                            logger.info("Write BP ID to ETCD: " + bpid);
-                        }
-
-                        RangeResponse masterResp = kvclient.get(KeyUtils.bs(NODEMGMT_MASTER)).sync();
-                        String masterNew = null;
-                        if (masterResp.getKvsCount()>0) {
-                            masterNew = masterResp.getKvs(0).getValue().toStringUtf8();
-                            logger.info("Read master status from ETCD: " + masterNew);
-                        }
-                        if (StringUtil.isNullOrEmpty(masterNew) || !Integer.toString(master).equals(masterNew)) {
-                            kvclient.put(KeyUtils.bs(NODEMGMT_MASTER), KeyUtils.bs(Integer.toString(master))).sync();
-                            logger.info("Write master status to ETCD: " + master);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        Thread.sleep(60000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                try {
-                    etcdClient.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }).start();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {}
-            //2. 建立GRPC连接
             String nodemgmtPortStr = System.getenv("NODEMGMT_GRPCPORT");
             int nodemgmtPort = 11001;
             try {
                 nodemgmtPort = Integer.parseInt(nodemgmtPortStr);
             } catch (Exception e) {}
-            String nodemgmthostname = System.getenv("NODEMGMT_GRPCHOSTNAME");
-            if (StringUtil.isNullOrEmpty(nodemgmthostname)) {
-                nodemgmthostname = "nodemgmt-svc";
-            }
-            client = new PbClient(nodemgmthostname, nodemgmtPort);
-            logger.info("Create NodeMgmt GRPC connection: " + nodemgmthostname + ":" + nodemgmtPort);
-        } else {
-            logger.info("NodeMgmt is under embeded mode");
             String analysisHost = System.getenv("NODEMGMT_ANALYSISHOSTNAME");
             if (StringUtil.isNullOrEmpty(analysisHost)) {
                 analysisHost = "127.0.0.1";
@@ -204,8 +213,8 @@ public class YottaNodeMgmt {
             try {
                 analysisTimeout = Integer.parseInt(analysisTimeoutStr);
             } catch (Exception e) {}
-            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, analysisHost, analysisPort, analysisTimeout);
-        }
+            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, nodemgmthostname, nodemgmtPort, analysisHost, analysisPort, analysisTimeout);
+//        }
     }
 
     public static void setMaster(boolean isMaster) throws NodeMgmtException {
@@ -259,7 +268,7 @@ public class YottaNodeMgmt {
     }
 
     public static void syncNode(Node node) throws NodeMgmtException {
-        client.syncNode(node);
+         //client.syncNode(node);
     }
 
     public static List<Node> getNodes(List<Integer> nodes) throws NodeMgmtException {

@@ -483,14 +483,14 @@ public class NodeMgmtWrapper {
         Pointer AddDNI(int id, Pointer shard, long size);
         Pointer ActiveNodesList();
         Pointer Statistics();
-        Pointer GetSpotCheckList();
-        Pointer GetSTNode();
-        Pointer GetSTNodes(long count);
-        Pointer UpdateTaskStatus(String id, Pointer invalidNodeList, int size);
-        Pointer GetInvalidNodes();
-        Pointer GetRebuildItem(int minerID, long index, long total);
-        Pointer DeleteDNI(int id, Pointer shard, long size);
-        Pointer FinishRebuild(int id);
+//        Pointer GetSpotCheckList();
+//        Pointer GetSTNode();
+//        Pointer GetSTNodes(long count);
+//        Pointer UpdateTaskStatus(String id, Pointer invalidNodeList, int size);
+//        Pointer GetInvalidNodes();
+//        Pointer GetRebuildItem(int minerID, long index, long total);
+//        Pointer DeleteDNI(int id, Pointer shard, long size);
+//        Pointer FinishRebuild(int id);
 
         void FreeNode(Pointer ptr);
         void FreeSuperNode(Pointer ptr);
