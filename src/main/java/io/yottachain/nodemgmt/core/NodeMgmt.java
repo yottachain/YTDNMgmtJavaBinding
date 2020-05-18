@@ -160,10 +160,10 @@ public class NodeMgmt implements NodeMgmtInterface {
 
     @Override
     public void syncNode(Node node) throws NodeMgmtException {
-        if (node == null) {
-            throw new NodeMgmtException("update status cannot be null.");
-        }
-        pbClient.syncNode(node);
+//        if (node == null) {
+//            throw new NodeMgmtException("update status cannot be null.");
+//        }
+//        pbClient.syncNode(node);
 //        NodeMgmtWrapper.Node ntnode = new NodeMgmtWrapper.Node();
 //        ntnode.fill(node);
 //        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.SyncNode(ntnode);

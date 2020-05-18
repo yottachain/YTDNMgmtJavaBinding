@@ -42,7 +42,7 @@ public class PbClient implements NodeMgmtInterface {
     @Override
     public void changeEosURL(String eosURL) throws NodeMgmtException {
         if (eosURL == null) {
-            throw new NodeMgmtException("EOS URL must not be null");
+            throw new NodeMgmtException("EOS URL cannot be null");
         }
         try {
             blockingStub.changeEosURL(StringMsg.newBuilder().setValue(eosURL).build());
@@ -76,6 +76,9 @@ public class PbClient implements NodeMgmtInterface {
 
     @Override
     public Node updateNodeStatus(Node node) throws NodeMgmtException {
+        if (node == null) {
+            throw new NodeMgmtException("node cannot be null");
+        }
         try {
             NodeMsg req = MessageUtil.convertNodeToMsg(node);
             NodeMsg resp = blockingStub.updateNodeStatus(req);
@@ -88,8 +91,10 @@ public class PbClient implements NodeMgmtInterface {
     @Override
     public List<Node> allocNodes(int shardCount, int[] errIDs) throws NodeMgmtException {
         List<Integer> errList = new ArrayList<>();
-        for (Integer s : errIDs) {
-            errList.add(s);
+        if (errIDs !=null) {
+            for (Integer s : errIDs) {
+                errList.add(s);
+            }
         }
         AllocNodesReq req = AllocNodesReq.newBuilder()
                 .setShardCount(shardCount)
@@ -110,6 +115,9 @@ public class PbClient implements NodeMgmtInterface {
 
     @Override
     public void syncNode(Node node) throws NodeMgmtException {
+        if (node == null) {
+            throw new NodeMgmtException("node cannot be null");
+        }
         try {
             NodeMsg req = MessageUtil.convertNodeToMsg(node);
             blockingStub.syncNode(req);
@@ -120,6 +128,9 @@ public class PbClient implements NodeMgmtInterface {
 
     @Override
     public List<Node> getNodes(List<Integer> nodeIDs) throws NodeMgmtException {
+        if (nodeIDs == null) {
+            throw new NodeMgmtException("node IDs cannot be null");
+        }
         GetNodesReq req = GetNodesReq.newBuilder()
                 .addAllNodeIDs(nodeIDs)
                 .build();
@@ -162,6 +173,9 @@ public class PbClient implements NodeMgmtInterface {
     }
 
     public Integer getNodeIDByPubKey(String pubkey) throws NodeMgmtException {
+        if (StringUtil.isNullOrEmpty(pubkey)) {
+            throw new NodeMgmtException("pubkey cannot be empty");
+        }
         try {
             Int32Msg resp = blockingStub.getNodeIDByPubKey(StringMsg.newBuilder().setValue(pubkey).build());
             return resp.getValue();
@@ -172,6 +186,9 @@ public class PbClient implements NodeMgmtInterface {
 
     @Override
     public Node getNodeByPubKey(String pubkey) throws NodeMgmtException {
+        if (StringUtil.isNullOrEmpty(pubkey)) {
+            throw new NodeMgmtException("pubkey cannot be empty");
+        }
         try {
             NodeMsg resp = blockingStub.getNodeByPubKey(StringMsg.newBuilder().setValue(pubkey).build());
             return MessageUtil.convertMsgToNode(resp);
@@ -182,6 +199,9 @@ public class PbClient implements NodeMgmtInterface {
 
     @Override
     public Integer getSuperNodeIDByPubKey(String pubkey) throws NodeMgmtException {
+        if (StringUtil.isNullOrEmpty(pubkey)) {
+            throw new NodeMgmtException("pubkey cannot be empty");
+        }
         try {
             Int32Msg resp = blockingStub.getSuperNodeIDByPubKey(StringMsg.newBuilder().setValue(pubkey).build());
             return resp.getValue();
@@ -192,6 +212,9 @@ public class PbClient implements NodeMgmtInterface {
 
     @Override
     public void addDNI(int id, byte[] shard) throws NodeMgmtException {
+        if (shard==null || shard.length==0) {
+            throw new NodeMgmtException("shard cannot be empty");
+        }
         try {
             DNIReq req = DNIReq.newBuilder()
                     .setId(id)
