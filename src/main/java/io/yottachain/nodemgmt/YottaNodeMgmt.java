@@ -39,7 +39,7 @@ public class YottaNodeMgmt {
 
     public static void start(final String mongoURL, final String eosURL, final String bpAccount, final String bpPrivkey, final String contractOwnerM, final String contractOwnerD, final String shadowAccount, final int bpid, final boolean isMaster) throws NodeMgmtException {
         int master = isMaster?1:0;
-        String embededStr = System.getenv("NODEMGMT_EMBEDED");
+//        String embededStr = System.getenv("NODEMGMT_EMBEDED");
 //        if (!StringUtil.isNullOrEmpty(embededStr) && embededStr.equals("false")) {
 //            logger.info("NodeMgmt is under standalone mode");
 //            String etcdportStr = System.getenv("ETCDPORT");
