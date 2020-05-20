@@ -320,4 +320,22 @@ public interface NodeMsgOrBuilder extends
    * <code>int64 rx = 26;</code>
    */
   long getRx();
+
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  java.lang.String getExt();
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  com.google.protobuf.ByteString
+      getExtBytes();
 }

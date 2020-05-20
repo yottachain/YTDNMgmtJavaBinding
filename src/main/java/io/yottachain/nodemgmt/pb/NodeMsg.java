@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     poolID_ = "";
     poolOwner_ = "";
     addrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ext_ = "";
   }
 
   @java.lang.Override
@@ -198,6 +199,12 @@ private static final long serialVersionUID = 0L;
           case 208: {
 
             rx_ = input.readInt64();
+            break;
+          }
+          case 218: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ext_ = s;
             break;
           }
           default: {
@@ -779,6 +786,48 @@ private static final long serialVersionUID = 0L;
     return rx_;
   }
 
+  public static final int EXT_FIELD_NUMBER = 27;
+  private volatile java.lang.Object ext_;
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  public java.lang.String getExt() {
+    java.lang.Object ref = ext_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ext_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  public com.google.protobuf.ByteString
+      getExtBytes() {
+    java.lang.Object ref = ext_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ext_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -870,6 +919,9 @@ private static final long serialVersionUID = 0L;
     }
     if (rx_ != 0L) {
       output.writeInt64(26, rx_);
+    }
+    if (!getExtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, ext_);
     }
     unknownFields.writeTo(output);
   }
@@ -982,6 +1034,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(26, rx_);
     }
+    if (!getExtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, ext_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1050,6 +1105,8 @@ private static final long serialVersionUID = 0L;
         != other.getTx()) return false;
     if (getRx()
         != other.getRx()) return false;
+    if (!getExt()
+        .equals(other.getExt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1125,6 +1182,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RX_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRx());
+    hash = (37 * hash) + EXT_FIELD_NUMBER;
+    hash = (53 * hash) + getExt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1314,6 +1373,8 @@ private static final long serialVersionUID = 0L;
 
       rx_ = 0L;
 
+      ext_ = "";
+
       return this;
     }
 
@@ -1371,6 +1432,7 @@ private static final long serialVersionUID = 0L;
       result.realSpace_ = realSpace_;
       result.tx_ = tx_;
       result.rx_ = rx_;
+      result.ext_ = ext_;
       onBuilt();
       return result;
     }
@@ -1509,6 +1571,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRx() != 0L) {
         setRx(other.getRx());
+      }
+      if (!other.getExt().isEmpty()) {
+        ext_ = other.ext_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2922,6 +2988,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearRx() {
       
       rx_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ext_ = "";
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public java.lang.String getExt() {
+      java.lang.Object ref = ext_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ext_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExtBytes() {
+      java.lang.Object ref = ext_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ext_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder setExt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ext_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder clearExt() {
+      
+      ext_ = getDefaultInstance().getExt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder setExtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ext_ = value;
       onChanged();
       return this;
     }
