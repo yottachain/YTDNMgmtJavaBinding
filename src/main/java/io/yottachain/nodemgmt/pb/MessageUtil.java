@@ -20,6 +20,8 @@ public class MessageUtil {
                     builder.setProfitAcc(node.getProfitAcc());
                 if (node.getPoolID() != null)
                     builder.setPoolID(node.getPoolID());
+                if (node.getPoolOwner() != null)
+                    builder.setPoolOwner(node.getPoolOwner());
                 builder.setQuota(node.getQuota());
                 if (node.getAddrs() != null)
                     builder.addAllAddrs(node.getAddrs());
@@ -36,7 +38,12 @@ public class MessageUtil {
                 .setStatus(node.getStatus())
                 .setTimestamp(node.getTimestamp())
                 .setVersion(node.getVersion())
-                .setRebuilding(node.getRebuilding());
+                .setRebuilding(node.getRebuilding())
+                .setRealSpace(node.getRealSpace())
+                .setTx(node.getTx())
+                .setRx(node.getRx());
+                if (node.getOther() != null)
+                    builder.setExt(node.getOther());
         return builder.build();
 
     }
@@ -49,6 +56,7 @@ public class MessageUtil {
         node.setOwner(msg.getOwner());
         node.setProfitAcc(msg.getProfitAcc());
         node.setPoolID(msg.getPoolID());
+        node.setPoolOwner(msg.getPoolOwner());
         node.setQuota(msg.getQuota());
         node.setAddrs(msg.getAddrsList());
         node.setCpu(msg.getCPU());
@@ -65,6 +73,10 @@ public class MessageUtil {
         node.setTimestamp(msg.getTimestamp());
         node.setVersion(msg.getVersion());
         node.setRebuilding(msg.getRebuilding());
+        node.setRealSpace(msg.getRealSpace());
+        node.setTx(msg.getTx());
+        node.setRx(msg.getRx());
+        node.setOther(msg.getExt());
         return node;
     }
 
