@@ -31,9 +31,10 @@ public class MessageUtil {
                 .setMaxDataSpace(node.getMaxDataSpace())
                 .setAssignedSpace(node.getAssignedSpace())
                 .setProductiveSpace(node.getProductiveSpace())
-                .setUsedSpace(node.getUsedSpace())
-                .putAllUspaces(node.getUspaces())
-                .setWeight(node.getWeight())
+                .setUsedSpace(node.getUsedSpace());
+        if (node.getUspaces()!=null)
+            builder.putAllUspaces(node.getUspaces());
+        builder.setWeight(node.getWeight())
                 .setValid(node.getValid())
                 .setRelay(node.getRelay())
                 .setStatus(node.getStatus())
