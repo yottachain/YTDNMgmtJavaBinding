@@ -233,10 +233,64 @@ public interface NodeMsgOrBuilder extends
 
   /**
    * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   */
+  int getUspacesCount();
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   */
+  boolean containsUspaces(
+      java.lang.String key);
+  /**
+   * Use {@link #getUspacesMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Long>
+  getUspaces();
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.Long>
+  getUspacesMap();
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   */
+
+  long getUspacesOrDefault(
+      java.lang.String key,
+      long defaultValue);
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   */
+
+  long getUspacesOrThrow(
+      java.lang.String key);
+
+  /**
+   * <pre>
    *weight for allocate data node
    * </pre>
    *
-   * <code>double weight = 17;</code>
+   * <code>double weight = 18;</code>
    */
   double getWeight();
 
@@ -245,7 +299,7 @@ public interface NodeMsgOrBuilder extends
    *Is node valid
    * </pre>
    *
-   * <code>int32 valid = 18;</code>
+   * <code>int32 valid = 19;</code>
    */
   int getValid();
 
@@ -254,7 +308,7 @@ public interface NodeMsgOrBuilder extends
    *Is relay node
    * </pre>
    *
-   * <code>int32 relay = 19;</code>
+   * <code>int32 relay = 20;</code>
    */
   int getRelay();
 
@@ -263,7 +317,7 @@ public interface NodeMsgOrBuilder extends
    *status code: 0 - registered 1 - active
    * </pre>
    *
-   * <code>int32 status = 20;</code>
+   * <code>int32 status = 21;</code>
    */
   int getStatus();
 
@@ -272,7 +326,7 @@ public interface NodeMsgOrBuilder extends
    *timestamp of status updating operation
    * </pre>
    *
-   * <code>int64 timestamp = 21;</code>
+   * <code>int64 timestamp = 22;</code>
    */
   long getTimestamp();
 
@@ -281,7 +335,7 @@ public interface NodeMsgOrBuilder extends
    *version number of miner
    * </pre>
    *
-   * <code>int32 version = 22;</code>
+   * <code>int32 version = 23;</code>
    */
   int getVersion();
 
@@ -290,7 +344,7 @@ public interface NodeMsgOrBuilder extends
    *if node is under rebuilding
    * </pre>
    *
-   * <code>int32 rebuilding = 23;</code>
+   * <code>int32 rebuilding = 24;</code>
    */
   int getRebuilding();
 
@@ -299,7 +353,7 @@ public interface NodeMsgOrBuilder extends
    *real space of miner
    * </pre>
    *
-   * <code>int64 realSpace = 24;</code>
+   * <code>int64 realSpace = 25;</code>
    */
   long getRealSpace();
 
@@ -308,7 +362,7 @@ public interface NodeMsgOrBuilder extends
    *tx
    * </pre>
    *
-   * <code>int64 tx = 25;</code>
+   * <code>int64 tx = 26;</code>
    */
   long getTx();
 
@@ -317,7 +371,7 @@ public interface NodeMsgOrBuilder extends
    *rx
    * </pre>
    *
-   * <code>int64 rx = 26;</code>
+   * <code>int64 rx = 27;</code>
    */
   long getRx();
 
@@ -326,7 +380,7 @@ public interface NodeMsgOrBuilder extends
    *other
    * </pre>
    *
-   * <code>string ext = 27;</code>
+   * <code>string ext = 28;</code>
    */
   java.lang.String getExt();
   /**
@@ -334,7 +388,7 @@ public interface NodeMsgOrBuilder extends
    *other
    * </pre>
    *
-   * <code>string ext = 27;</code>
+   * <code>string ext = 28;</code>
    */
   com.google.protobuf.ByteString
       getExtBytes();
