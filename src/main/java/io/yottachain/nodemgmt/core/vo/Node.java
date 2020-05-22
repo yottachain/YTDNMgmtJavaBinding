@@ -1,6 +1,7 @@
 package io.yottachain.nodemgmt.core.vo;
 
 import java.util.List;
+import java.util.Map;
 
 public class Node {
     private int id;
@@ -20,6 +21,7 @@ public class Node {
     private long assignedSpace;
     private long productiveSpace;
     private long usedSpace;
+    private Map<String, Long> uspaces;
     private double weight;
     private int valid;
     private int relay;
@@ -160,6 +162,14 @@ public class Node {
         this.usedSpace = usedSpace;
     }
 
+    public Map<String, Long> getUspaces() {
+        return uspaces;
+    }
+
+    public void setUspaces(Map<String, Long> uspaces) {
+        this.uspaces = uspaces;
+    }
+
     public double getWeight() {
         return weight;
     }
@@ -257,7 +267,7 @@ public class Node {
         this.setAddrs(addrs);
     }
 
-    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding, long realSpace, long tx, long rx, String other) {
+    public Node(int id, String nodeid, String pubkey, String owner, String profitAcc, String poolID, String poolOwner, long quota, List<String> addrs, int cpu, int memory, int bandwidth, long maxDataSpace, long assignedSpace, long productiveSpace, long usedSpace, Map<String, Long> uspaces, double weight, int valid, int relay, int status, long timestamp, int version, int rebuilding, long realSpace, long tx, long rx, String other) {
         this(id, nodeid, pubkey, addrs);
         this.setOwner(owner);
         this.setProfitAcc(profitAcc);
@@ -271,6 +281,7 @@ public class Node {
         this.setAssignedSpace(assignedSpace);
         this.setProductiveSpace(productiveSpace);
         this.setUsedSpace(usedSpace);
+        this.uspaces = uspaces;
         this.setWeight(weight);
         this.setValid(valid);
         this.setRelay(relay);
