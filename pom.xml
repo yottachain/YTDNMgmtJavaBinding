@@ -74,7 +74,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-   
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
@@ -104,7 +103,7 @@
                                 <exec executable="git">
                                     <arg value="clone"/>
                                     <arg value="-b"/>
-                                    <arg value="release"/>
+                                    <arg value="pubsub-sync"/>
                                     <arg value="https://github.com/yottachain/YTDNMgmt.git"/>
                                     <arg value="${project.build.directory}/ytdnmgmt"/>
                                 </exec>
@@ -155,7 +154,6 @@
                     </execution>
                 </executions>
             </plugin>
-        
         </plugins>
         <finalName>${project.artifactId}-${project.version}</finalName>
     </build>
