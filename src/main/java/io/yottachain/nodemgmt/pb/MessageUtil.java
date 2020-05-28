@@ -10,29 +10,31 @@ public class MessageUtil {
     public static io.yottachain.nodemgmt.pb.NodeMsg convertNodeToMsg(Node node) {
         NodeMsg.Builder builder =  NodeMsg.newBuilder()
                 .setID(node.getId());
-                if (node.getNodeid() != null)
-                    builder.setNodeID(node.getNodeid());
-                if (node.getPubkey() != null)
-                    builder.setPubKey(node.getPubkey());
-                if (node.getOwner() != null)
-                    builder.setOwner(node.getOwner());
-                if (node.getProfitAcc() != null)
-                    builder.setProfitAcc(node.getProfitAcc());
-                if (node.getPoolID() != null)
-                    builder.setPoolID(node.getPoolID());
-                if (node.getPoolOwner() != null)
-                    builder.setPoolOwner(node.getPoolOwner());
-                builder.setQuota(node.getQuota());
-                if (node.getAddrs() != null)
-                    builder.addAllAddrs(node.getAddrs());
-                builder.setCPU(node.getCpu())
+        if (node.getNodeid() != null)
+            builder.setNodeID(node.getNodeid());
+        if (node.getPubkey() != null)
+            builder.setPubKey(node.getPubkey());
+        if (node.getOwner() != null)
+            builder.setOwner(node.getOwner());
+        if (node.getProfitAcc() != null)
+            builder.setProfitAcc(node.getProfitAcc());
+        if (node.getPoolID() != null)
+            builder.setPoolID(node.getPoolID());
+        if (node.getPoolOwner() != null)
+            builder.setPoolOwner(node.getPoolOwner());
+        builder.setQuota(node.getQuota());
+        if (node.getAddrs() != null)
+            builder.addAllAddrs(node.getAddrs());
+        builder.setCPU(node.getCpu())
                 .setMemory(node.getMemory())
                 .setBandwidth(node.getBandwidth())
                 .setMaxDataSpace(node.getMaxDataSpace())
                 .setAssignedSpace(node.getAssignedSpace())
                 .setProductiveSpace(node.getProductiveSpace())
-                .setUsedSpace(node.getUsedSpace())
-                .setWeight(node.getWeight())
+                .setUsedSpace(node.getUsedSpace());
+        if (node.getUspaces()!=null)
+            builder.putAllUspaces(node.getUspaces());
+        builder.setWeight(node.getWeight())
                 .setValid(node.getValid())
                 .setRelay(node.getRelay())
                 .setStatus(node.getStatus())
@@ -42,8 +44,8 @@ public class MessageUtil {
                 .setRealSpace(node.getRealSpace())
                 .setTx(node.getTx())
                 .setRx(node.getRx());
-                if (node.getOther() != null)
-                    builder.setExt(node.getOther());
+        if (node.getOther() != null)
+            builder.setExt(node.getOther());
         return builder.build();
 
     }
@@ -66,6 +68,7 @@ public class MessageUtil {
         node.setAssignedSpace(msg.getAssignedSpace());
         node.setProductiveSpace(msg.getProductiveSpace());
         node.setUsedSpace(msg.getUsedSpace());
+        node.setUspaces(msg.getUspacesMap());
         node.setWeight(msg.getWeight());
         node.setValid(msg.getValid());
         node.setRelay(msg.getRelay());
