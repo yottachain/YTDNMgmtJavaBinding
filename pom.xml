@@ -74,7 +74,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!--
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
@@ -155,7 +154,6 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
         </plugins>
         <finalName>${project.artifactId}-${project.version}</finalName>
     </build>
