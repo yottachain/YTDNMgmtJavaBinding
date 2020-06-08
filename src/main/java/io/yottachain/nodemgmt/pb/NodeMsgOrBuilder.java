@@ -233,10 +233,118 @@ public interface NodeMsgOrBuilder extends
 
   /**
    * <pre>
+   *weight for allocate data node
+   * </pre>
+   *
+   * <code>double weight = 17;</code>
+   */
+  double getWeight();
+
+  /**
+   * <pre>
+   *Is node valid
+   * </pre>
+   *
+   * <code>int32 valid = 18;</code>
+   */
+  int getValid();
+
+  /**
+   * <pre>
+   *Is relay node
+   * </pre>
+   *
+   * <code>int32 relay = 19;</code>
+   */
+  int getRelay();
+
+  /**
+   * <pre>
+   *status code: 0 - registered 1 - active
+   * </pre>
+   *
+   * <code>int32 status = 20;</code>
+   */
+  int getStatus();
+
+  /**
+   * <pre>
+   *timestamp of status updating operation
+   * </pre>
+   *
+   * <code>int64 timestamp = 21;</code>
+   */
+  long getTimestamp();
+
+  /**
+   * <pre>
+   *version number of miner
+   * </pre>
+   *
+   * <code>int32 version = 22;</code>
+   */
+  int getVersion();
+
+  /**
+   * <pre>
+   *if node is under rebuilding
+   * </pre>
+   *
+   * <code>int32 rebuilding = 23;</code>
+   */
+  int getRebuilding();
+
+  /**
+   * <pre>
+   *real space of miner
+   * </pre>
+   *
+   * <code>int64 realSpace = 24;</code>
+   */
+  long getRealSpace();
+
+  /**
+   * <pre>
+   *tx
+   * </pre>
+   *
+   * <code>int64 tx = 25;</code>
+   */
+  long getTx();
+
+  /**
+   * <pre>
+   *rx
+   * </pre>
+   *
+   * <code>int64 rx = 26;</code>
+   */
+  long getRx();
+
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  java.lang.String getExt();
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  com.google.protobuf.ByteString
+      getExtBytes();
+
+  /**
+   * <pre>
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
   int getUspacesCount();
   /**
@@ -244,7 +352,7 @@ public interface NodeMsgOrBuilder extends
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
   boolean containsUspaces(
       java.lang.String key);
@@ -259,7 +367,7 @@ public interface NodeMsgOrBuilder extends
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long>
   getUspacesMap();
@@ -268,7 +376,7 @@ public interface NodeMsgOrBuilder extends
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
 
   long getUspacesOrDefault(
@@ -279,117 +387,9 @@ public interface NodeMsgOrBuilder extends
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
 
   long getUspacesOrThrow(
       java.lang.String key);
-
-  /**
-   * <pre>
-   *weight for allocate data node
-   * </pre>
-   *
-   * <code>double weight = 18;</code>
-   */
-  double getWeight();
-
-  /**
-   * <pre>
-   *Is node valid
-   * </pre>
-   *
-   * <code>int32 valid = 19;</code>
-   */
-  int getValid();
-
-  /**
-   * <pre>
-   *Is relay node
-   * </pre>
-   *
-   * <code>int32 relay = 20;</code>
-   */
-  int getRelay();
-
-  /**
-   * <pre>
-   *status code: 0 - registered 1 - active
-   * </pre>
-   *
-   * <code>int32 status = 21;</code>
-   */
-  int getStatus();
-
-  /**
-   * <pre>
-   *timestamp of status updating operation
-   * </pre>
-   *
-   * <code>int64 timestamp = 22;</code>
-   */
-  long getTimestamp();
-
-  /**
-   * <pre>
-   *version number of miner
-   * </pre>
-   *
-   * <code>int32 version = 23;</code>
-   */
-  int getVersion();
-
-  /**
-   * <pre>
-   *if node is under rebuilding
-   * </pre>
-   *
-   * <code>int32 rebuilding = 24;</code>
-   */
-  int getRebuilding();
-
-  /**
-   * <pre>
-   *real space of miner
-   * </pre>
-   *
-   * <code>int64 realSpace = 25;</code>
-   */
-  long getRealSpace();
-
-  /**
-   * <pre>
-   *tx
-   * </pre>
-   *
-   * <code>int64 tx = 26;</code>
-   */
-  long getTx();
-
-  /**
-   * <pre>
-   *rx
-   * </pre>
-   *
-   * <code>int64 rx = 27;</code>
-   */
-  long getRx();
-
-  /**
-   * <pre>
-   *other
-   * </pre>
-   *
-   * <code>string ext = 28;</code>
-   */
-  java.lang.String getExt();
-  /**
-   * <pre>
-   *other
-   * </pre>
-   *
-   * <code>string ext = 28;</code>
-   */
-  com.google.protobuf.ByteString
-      getExtBytes();
 }

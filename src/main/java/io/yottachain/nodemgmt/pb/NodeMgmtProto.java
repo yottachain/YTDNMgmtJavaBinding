@@ -169,12 +169,12 @@ public final class NodeMgmtProto {
       "(\005\022\016\n\006memory\030\013 \001(\005\022\021\n\tbandwidth\030\014 \001(\005\022\024\n" +
       "\014maxDataSpace\030\r \001(\003\022\025\n\rassignedSpace\030\016 \001" +
       "(\003\022\027\n\017productiveSpace\030\017 \001(\003\022\021\n\tusedSpace" +
-      "\030\020 \001(\003\022)\n\007uspaces\030\021 \003(\0132\030.pb.NodeMsg.Usp" +
-      "acesEntry\022\016\n\006weight\030\022 \001(\001\022\r\n\005valid\030\023 \001(\005" +
-      "\022\r\n\005relay\030\024 \001(\005\022\016\n\006status\030\025 \001(\005\022\021\n\ttimes" +
-      "tamp\030\026 \001(\003\022\017\n\007version\030\027 \001(\005\022\022\n\nrebuildin" +
-      "g\030\030 \001(\005\022\021\n\trealSpace\030\031 \001(\003\022\n\n\002tx\030\032 \001(\003\022\n" +
-      "\n\002rx\030\033 \001(\003\022\013\n\003ext\030\034 \001(\t\032.\n\014UspacesEntry\022" +
+      "\030\020 \001(\003\022\016\n\006weight\030\021 \001(\001\022\r\n\005valid\030\022 \001(\005\022\r\n" +
+      "\005relay\030\023 \001(\005\022\016\n\006status\030\024 \001(\005\022\021\n\ttimestam" +
+      "p\030\025 \001(\003\022\017\n\007version\030\026 \001(\005\022\022\n\nrebuilding\030\027" +
+      " \001(\005\022\021\n\trealSpace\030\030 \001(\003\022\n\n\002tx\030\031 \001(\003\022\n\n\002r" +
+      "x\030\032 \001(\003\022\013\n\003ext\030\033 \001(\t\022)\n\007uspaces\030\034 \003(\0132\030." +
+      "pb.NodeMsg.UspacesEntry\032.\n\014UspacesEntry\022" +
       "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"Z\n\014Super" +
       "NodeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006p" +
       "ubKey\030\003 \001(\t\022\017\n\007privKey\030\004 \001(\t\022\r\n\005addrs\030\005 " +
@@ -269,7 +269,7 @@ public final class NodeMgmtProto {
     internal_static_pb_NodeMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_NodeMsg_descriptor,
-        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Uspaces", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", "RealSpace", "Tx", "Rx", "Ext", });
+        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", "RealSpace", "Tx", "Rx", "Ext", "Uspaces", });
     internal_static_pb_NodeMsg_UspacesEntry_descriptor =
       internal_static_pb_NodeMsg_descriptor.getNestedTypes().get(0);
     internal_static_pb_NodeMsg_UspacesEntry_fieldAccessorTable = new
