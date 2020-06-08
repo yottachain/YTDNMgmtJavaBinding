@@ -151,7 +151,63 @@ private static final long serialVersionUID = 0L;
             usedSpace_ = input.readInt64();
             break;
           }
-          case 138: {
+          case 137: {
+
+            weight_ = input.readDouble();
+            break;
+          }
+          case 144: {
+
+            valid_ = input.readInt32();
+            break;
+          }
+          case 152: {
+
+            relay_ = input.readInt32();
+            break;
+          }
+          case 160: {
+
+            status_ = input.readInt32();
+            break;
+          }
+          case 168: {
+
+            timestamp_ = input.readInt64();
+            break;
+          }
+          case 176: {
+
+            version_ = input.readInt32();
+            break;
+          }
+          case 184: {
+
+            rebuilding_ = input.readInt32();
+            break;
+          }
+          case 192: {
+
+            realSpace_ = input.readInt64();
+            break;
+          }
+          case 200: {
+
+            tx_ = input.readInt64();
+            break;
+          }
+          case 208: {
+
+            rx_ = input.readInt64();
+            break;
+          }
+          case 218: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ext_ = s;
+            break;
+          }
+          case 226: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               uspaces_ = com.google.protobuf.MapField.newMapField(
                   UspacesDefaultEntryHolder.defaultEntry);
@@ -162,62 +218,6 @@ private static final long serialVersionUID = 0L;
                 UspacesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             uspaces_.getMutableMap().put(
                 uspaces__.getKey(), uspaces__.getValue());
-            break;
-          }
-          case 145: {
-
-            weight_ = input.readDouble();
-            break;
-          }
-          case 152: {
-
-            valid_ = input.readInt32();
-            break;
-          }
-          case 160: {
-
-            relay_ = input.readInt32();
-            break;
-          }
-          case 168: {
-
-            status_ = input.readInt32();
-            break;
-          }
-          case 176: {
-
-            timestamp_ = input.readInt64();
-            break;
-          }
-          case 184: {
-
-            version_ = input.readInt32();
-            break;
-          }
-          case 192: {
-
-            rebuilding_ = input.readInt32();
-            break;
-          }
-          case 200: {
-
-            realSpace_ = input.readInt64();
-            break;
-          }
-          case 208: {
-
-            tx_ = input.readInt64();
-            break;
-          }
-          case 216: {
-
-            rx_ = input.readInt64();
-            break;
-          }
-          case 226: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            ext_ = s;
             break;
           }
           default: {
@@ -252,7 +252,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 17:
+      case 28:
         return internalGetUspaces();
       default:
         throw new RuntimeException(
@@ -681,7 +681,179 @@ private static final long serialVersionUID = 0L;
     return usedSpace_;
   }
 
-  public static final int USPACES_FIELD_NUMBER = 17;
+  public static final int WEIGHT_FIELD_NUMBER = 17;
+  private double weight_;
+  /**
+   * <pre>
+   *weight for allocate data node
+   * </pre>
+   *
+   * <code>double weight = 17;</code>
+   */
+  public double getWeight() {
+    return weight_;
+  }
+
+  public static final int VALID_FIELD_NUMBER = 18;
+  private int valid_;
+  /**
+   * <pre>
+   *Is node valid
+   * </pre>
+   *
+   * <code>int32 valid = 18;</code>
+   */
+  public int getValid() {
+    return valid_;
+  }
+
+  public static final int RELAY_FIELD_NUMBER = 19;
+  private int relay_;
+  /**
+   * <pre>
+   *Is relay node
+   * </pre>
+   *
+   * <code>int32 relay = 19;</code>
+   */
+  public int getRelay() {
+    return relay_;
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 20;
+  private int status_;
+  /**
+   * <pre>
+   *status code: 0 - registered 1 - active
+   * </pre>
+   *
+   * <code>int32 status = 20;</code>
+   */
+  public int getStatus() {
+    return status_;
+  }
+
+  public static final int TIMESTAMP_FIELD_NUMBER = 21;
+  private long timestamp_;
+  /**
+   * <pre>
+   *timestamp of status updating operation
+   * </pre>
+   *
+   * <code>int64 timestamp = 21;</code>
+   */
+  public long getTimestamp() {
+    return timestamp_;
+  }
+
+  public static final int VERSION_FIELD_NUMBER = 22;
+  private int version_;
+  /**
+   * <pre>
+   *version number of miner
+   * </pre>
+   *
+   * <code>int32 version = 22;</code>
+   */
+  public int getVersion() {
+    return version_;
+  }
+
+  public static final int REBUILDING_FIELD_NUMBER = 23;
+  private int rebuilding_;
+  /**
+   * <pre>
+   *if node is under rebuilding
+   * </pre>
+   *
+   * <code>int32 rebuilding = 23;</code>
+   */
+  public int getRebuilding() {
+    return rebuilding_;
+  }
+
+  public static final int REALSPACE_FIELD_NUMBER = 24;
+  private long realSpace_;
+  /**
+   * <pre>
+   *real space of miner
+   * </pre>
+   *
+   * <code>int64 realSpace = 24;</code>
+   */
+  public long getRealSpace() {
+    return realSpace_;
+  }
+
+  public static final int TX_FIELD_NUMBER = 25;
+  private long tx_;
+  /**
+   * <pre>
+   *tx
+   * </pre>
+   *
+   * <code>int64 tx = 25;</code>
+   */
+  public long getTx() {
+    return tx_;
+  }
+
+  public static final int RX_FIELD_NUMBER = 26;
+  private long rx_;
+  /**
+   * <pre>
+   *rx
+   * </pre>
+   *
+   * <code>int64 rx = 26;</code>
+   */
+  public long getRx() {
+    return rx_;
+  }
+
+  public static final int EXT_FIELD_NUMBER = 27;
+  private volatile java.lang.Object ext_;
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  public java.lang.String getExt() {
+    java.lang.Object ref = ext_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ext_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  public com.google.protobuf.ByteString
+      getExtBytes() {
+    java.lang.Object ref = ext_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ext_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USPACES_FIELD_NUMBER = 28;
   private static final class UspacesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.Long> defaultEntry =
@@ -712,7 +884,7 @@ private static final long serialVersionUID = 0L;
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
 
   public boolean containsUspaces(
@@ -732,7 +904,7 @@ private static final long serialVersionUID = 0L;
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.Long> getUspacesMap() {
@@ -743,7 +915,7 @@ private static final long serialVersionUID = 0L;
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
 
   public long getUspacesOrDefault(
@@ -759,7 +931,7 @@ private static final long serialVersionUID = 0L;
    *used spaces on each SN
    * </pre>
    *
-   * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
    */
 
   public long getUspacesOrThrow(
@@ -771,178 +943,6 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
-  }
-
-  public static final int WEIGHT_FIELD_NUMBER = 18;
-  private double weight_;
-  /**
-   * <pre>
-   *weight for allocate data node
-   * </pre>
-   *
-   * <code>double weight = 18;</code>
-   */
-  public double getWeight() {
-    return weight_;
-  }
-
-  public static final int VALID_FIELD_NUMBER = 19;
-  private int valid_;
-  /**
-   * <pre>
-   *Is node valid
-   * </pre>
-   *
-   * <code>int32 valid = 19;</code>
-   */
-  public int getValid() {
-    return valid_;
-  }
-
-  public static final int RELAY_FIELD_NUMBER = 20;
-  private int relay_;
-  /**
-   * <pre>
-   *Is relay node
-   * </pre>
-   *
-   * <code>int32 relay = 20;</code>
-   */
-  public int getRelay() {
-    return relay_;
-  }
-
-  public static final int STATUS_FIELD_NUMBER = 21;
-  private int status_;
-  /**
-   * <pre>
-   *status code: 0 - registered 1 - active
-   * </pre>
-   *
-   * <code>int32 status = 21;</code>
-   */
-  public int getStatus() {
-    return status_;
-  }
-
-  public static final int TIMESTAMP_FIELD_NUMBER = 22;
-  private long timestamp_;
-  /**
-   * <pre>
-   *timestamp of status updating operation
-   * </pre>
-   *
-   * <code>int64 timestamp = 22;</code>
-   */
-  public long getTimestamp() {
-    return timestamp_;
-  }
-
-  public static final int VERSION_FIELD_NUMBER = 23;
-  private int version_;
-  /**
-   * <pre>
-   *version number of miner
-   * </pre>
-   *
-   * <code>int32 version = 23;</code>
-   */
-  public int getVersion() {
-    return version_;
-  }
-
-  public static final int REBUILDING_FIELD_NUMBER = 24;
-  private int rebuilding_;
-  /**
-   * <pre>
-   *if node is under rebuilding
-   * </pre>
-   *
-   * <code>int32 rebuilding = 24;</code>
-   */
-  public int getRebuilding() {
-    return rebuilding_;
-  }
-
-  public static final int REALSPACE_FIELD_NUMBER = 25;
-  private long realSpace_;
-  /**
-   * <pre>
-   *real space of miner
-   * </pre>
-   *
-   * <code>int64 realSpace = 25;</code>
-   */
-  public long getRealSpace() {
-    return realSpace_;
-  }
-
-  public static final int TX_FIELD_NUMBER = 26;
-  private long tx_;
-  /**
-   * <pre>
-   *tx
-   * </pre>
-   *
-   * <code>int64 tx = 26;</code>
-   */
-  public long getTx() {
-    return tx_;
-  }
-
-  public static final int RX_FIELD_NUMBER = 27;
-  private long rx_;
-  /**
-   * <pre>
-   *rx
-   * </pre>
-   *
-   * <code>int64 rx = 27;</code>
-   */
-  public long getRx() {
-    return rx_;
-  }
-
-  public static final int EXT_FIELD_NUMBER = 28;
-  private volatile java.lang.Object ext_;
-  /**
-   * <pre>
-   *other
-   * </pre>
-   *
-   * <code>string ext = 28;</code>
-   */
-  public java.lang.String getExt() {
-    java.lang.Object ref = ext_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      ext_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   *other
-   * </pre>
-   *
-   * <code>string ext = 28;</code>
-   */
-  public com.google.protobuf.ByteString
-      getExtBytes() {
-    java.lang.Object ref = ext_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      ext_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1007,45 +1007,45 @@ private static final long serialVersionUID = 0L;
     if (usedSpace_ != 0L) {
       output.writeInt64(16, usedSpace_);
     }
+    if (weight_ != 0D) {
+      output.writeDouble(17, weight_);
+    }
+    if (valid_ != 0) {
+      output.writeInt32(18, valid_);
+    }
+    if (relay_ != 0) {
+      output.writeInt32(19, relay_);
+    }
+    if (status_ != 0) {
+      output.writeInt32(20, status_);
+    }
+    if (timestamp_ != 0L) {
+      output.writeInt64(21, timestamp_);
+    }
+    if (version_ != 0) {
+      output.writeInt32(22, version_);
+    }
+    if (rebuilding_ != 0) {
+      output.writeInt32(23, rebuilding_);
+    }
+    if (realSpace_ != 0L) {
+      output.writeInt64(24, realSpace_);
+    }
+    if (tx_ != 0L) {
+      output.writeInt64(25, tx_);
+    }
+    if (rx_ != 0L) {
+      output.writeInt64(26, rx_);
+    }
+    if (!getExtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, ext_);
+    }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetUspaces(),
         UspacesDefaultEntryHolder.defaultEntry,
-        17);
-    if (weight_ != 0D) {
-      output.writeDouble(18, weight_);
-    }
-    if (valid_ != 0) {
-      output.writeInt32(19, valid_);
-    }
-    if (relay_ != 0) {
-      output.writeInt32(20, relay_);
-    }
-    if (status_ != 0) {
-      output.writeInt32(21, status_);
-    }
-    if (timestamp_ != 0L) {
-      output.writeInt64(22, timestamp_);
-    }
-    if (version_ != 0) {
-      output.writeInt32(23, version_);
-    }
-    if (rebuilding_ != 0) {
-      output.writeInt32(24, rebuilding_);
-    }
-    if (realSpace_ != 0L) {
-      output.writeInt64(25, realSpace_);
-    }
-    if (tx_ != 0L) {
-      output.writeInt64(26, tx_);
-    }
-    if (rx_ != 0L) {
-      output.writeInt64(27, rx_);
-    }
-    if (!getExtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, ext_);
-    }
+        28);
     unknownFields.writeTo(output);
   }
 
@@ -1117,6 +1117,49 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(16, usedSpace_);
     }
+    if (weight_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(17, weight_);
+    }
+    if (valid_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(18, valid_);
+    }
+    if (relay_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(19, relay_);
+    }
+    if (status_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(20, status_);
+    }
+    if (timestamp_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(21, timestamp_);
+    }
+    if (version_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(22, version_);
+    }
+    if (rebuilding_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(23, rebuilding_);
+    }
+    if (realSpace_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(24, realSpace_);
+    }
+    if (tx_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(25, tx_);
+    }
+    if (rx_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(26, rx_);
+    }
+    if (!getExtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, ext_);
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
          : internalGetUspaces().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
@@ -1125,50 +1168,7 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, uspaces__);
-    }
-    if (weight_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(18, weight_);
-    }
-    if (valid_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(19, valid_);
-    }
-    if (relay_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(20, relay_);
-    }
-    if (status_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(21, status_);
-    }
-    if (timestamp_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(22, timestamp_);
-    }
-    if (version_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(23, version_);
-    }
-    if (rebuilding_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(24, rebuilding_);
-    }
-    if (realSpace_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(25, realSpace_);
-    }
-    if (tx_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(26, tx_);
-    }
-    if (rx_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(27, rx_);
-    }
-    if (!getExtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, ext_);
+          .computeMessageSize(28, uspaces__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1217,8 +1217,6 @@ private static final long serialVersionUID = 0L;
         != other.getProductiveSpace()) return false;
     if (getUsedSpace()
         != other.getUsedSpace()) return false;
-    if (!internalGetUspaces().equals(
-        other.internalGetUspaces())) return false;
     if (java.lang.Double.doubleToLongBits(getWeight())
         != java.lang.Double.doubleToLongBits(
             other.getWeight())) return false;
@@ -1242,6 +1240,8 @@ private static final long serialVersionUID = 0L;
         != other.getRx()) return false;
     if (!getExt()
         .equals(other.getExt())) return false;
+    if (!internalGetUspaces().equals(
+        other.internalGetUspaces())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1292,10 +1292,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USEDSPACE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUsedSpace());
-    if (!internalGetUspaces().getMap().isEmpty()) {
-      hash = (37 * hash) + USPACES_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetUspaces().hashCode();
-    }
     hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getWeight()));
@@ -1323,6 +1319,10 @@ private static final long serialVersionUID = 0L;
         getRx());
     hash = (37 * hash) + EXT_FIELD_NUMBER;
     hash = (53 * hash) + getExt().hashCode();
+    if (!internalGetUspaces().getMap().isEmpty()) {
+      hash = (37 * hash) + USPACES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUspaces().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1438,7 +1438,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 17:
+        case 28:
           return internalGetUspaces();
         default:
           throw new RuntimeException(
@@ -1449,7 +1449,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 17:
+        case 28:
           return internalGetMutableUspaces();
         default:
           throw new RuntimeException(
@@ -1514,7 +1514,6 @@ private static final long serialVersionUID = 0L;
 
       usedSpace_ = 0L;
 
-      internalGetMutableUspaces().clear();
       weight_ = 0D;
 
       valid_ = 0;
@@ -1537,6 +1536,7 @@ private static final long serialVersionUID = 0L;
 
       ext_ = "";
 
+      internalGetMutableUspaces().clear();
       return this;
     }
 
@@ -1584,8 +1584,6 @@ private static final long serialVersionUID = 0L;
       result.assignedSpace_ = assignedSpace_;
       result.productiveSpace_ = productiveSpace_;
       result.usedSpace_ = usedSpace_;
-      result.uspaces_ = internalGetUspaces();
-      result.uspaces_.makeImmutable();
       result.weight_ = weight_;
       result.valid_ = valid_;
       result.relay_ = relay_;
@@ -1597,6 +1595,8 @@ private static final long serialVersionUID = 0L;
       result.tx_ = tx_;
       result.rx_ = rx_;
       result.ext_ = ext_;
+      result.uspaces_ = internalGetUspaces();
+      result.uspaces_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1706,8 +1706,6 @@ private static final long serialVersionUID = 0L;
       if (other.getUsedSpace() != 0L) {
         setUsedSpace(other.getUsedSpace());
       }
-      internalGetMutableUspaces().mergeFrom(
-          other.internalGetUspaces());
       if (other.getWeight() != 0D) {
         setWeight(other.getWeight());
       }
@@ -1742,6 +1740,8 @@ private static final long serialVersionUID = 0L;
         ext_ = other.ext_;
         onChanged();
       }
+      internalGetMutableUspaces().mergeFrom(
+          other.internalGetUspaces());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2778,6 +2778,475 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private double weight_ ;
+    /**
+     * <pre>
+     *weight for allocate data node
+     * </pre>
+     *
+     * <code>double weight = 17;</code>
+     */
+    public double getWeight() {
+      return weight_;
+    }
+    /**
+     * <pre>
+     *weight for allocate data node
+     * </pre>
+     *
+     * <code>double weight = 17;</code>
+     */
+    public Builder setWeight(double value) {
+      
+      weight_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *weight for allocate data node
+     * </pre>
+     *
+     * <code>double weight = 17;</code>
+     */
+    public Builder clearWeight() {
+      
+      weight_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int valid_ ;
+    /**
+     * <pre>
+     *Is node valid
+     * </pre>
+     *
+     * <code>int32 valid = 18;</code>
+     */
+    public int getValid() {
+      return valid_;
+    }
+    /**
+     * <pre>
+     *Is node valid
+     * </pre>
+     *
+     * <code>int32 valid = 18;</code>
+     */
+    public Builder setValid(int value) {
+      
+      valid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *Is node valid
+     * </pre>
+     *
+     * <code>int32 valid = 18;</code>
+     */
+    public Builder clearValid() {
+      
+      valid_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int relay_ ;
+    /**
+     * <pre>
+     *Is relay node
+     * </pre>
+     *
+     * <code>int32 relay = 19;</code>
+     */
+    public int getRelay() {
+      return relay_;
+    }
+    /**
+     * <pre>
+     *Is relay node
+     * </pre>
+     *
+     * <code>int32 relay = 19;</code>
+     */
+    public Builder setRelay(int value) {
+      
+      relay_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *Is relay node
+     * </pre>
+     *
+     * <code>int32 relay = 19;</code>
+     */
+    public Builder clearRelay() {
+      
+      relay_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int status_ ;
+    /**
+     * <pre>
+     *status code: 0 - registered 1 - active
+     * </pre>
+     *
+     * <code>int32 status = 20;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+    /**
+     * <pre>
+     *status code: 0 - registered 1 - active
+     * </pre>
+     *
+     * <code>int32 status = 20;</code>
+     */
+    public Builder setStatus(int value) {
+      
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *status code: 0 - registered 1 - active
+     * </pre>
+     *
+     * <code>int32 status = 20;</code>
+     */
+    public Builder clearStatus() {
+      
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long timestamp_ ;
+    /**
+     * <pre>
+     *timestamp of status updating operation
+     * </pre>
+     *
+     * <code>int64 timestamp = 21;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+    /**
+     * <pre>
+     *timestamp of status updating operation
+     * </pre>
+     *
+     * <code>int64 timestamp = 21;</code>
+     */
+    public Builder setTimestamp(long value) {
+      
+      timestamp_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *timestamp of status updating operation
+     * </pre>
+     *
+     * <code>int64 timestamp = 21;</code>
+     */
+    public Builder clearTimestamp() {
+      
+      timestamp_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int version_ ;
+    /**
+     * <pre>
+     *version number of miner
+     * </pre>
+     *
+     * <code>int32 version = 22;</code>
+     */
+    public int getVersion() {
+      return version_;
+    }
+    /**
+     * <pre>
+     *version number of miner
+     * </pre>
+     *
+     * <code>int32 version = 22;</code>
+     */
+    public Builder setVersion(int value) {
+      
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *version number of miner
+     * </pre>
+     *
+     * <code>int32 version = 22;</code>
+     */
+    public Builder clearVersion() {
+      
+      version_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int rebuilding_ ;
+    /**
+     * <pre>
+     *if node is under rebuilding
+     * </pre>
+     *
+     * <code>int32 rebuilding = 23;</code>
+     */
+    public int getRebuilding() {
+      return rebuilding_;
+    }
+    /**
+     * <pre>
+     *if node is under rebuilding
+     * </pre>
+     *
+     * <code>int32 rebuilding = 23;</code>
+     */
+    public Builder setRebuilding(int value) {
+      
+      rebuilding_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *if node is under rebuilding
+     * </pre>
+     *
+     * <code>int32 rebuilding = 23;</code>
+     */
+    public Builder clearRebuilding() {
+      
+      rebuilding_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long realSpace_ ;
+    /**
+     * <pre>
+     *real space of miner
+     * </pre>
+     *
+     * <code>int64 realSpace = 24;</code>
+     */
+    public long getRealSpace() {
+      return realSpace_;
+    }
+    /**
+     * <pre>
+     *real space of miner
+     * </pre>
+     *
+     * <code>int64 realSpace = 24;</code>
+     */
+    public Builder setRealSpace(long value) {
+      
+      realSpace_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *real space of miner
+     * </pre>
+     *
+     * <code>int64 realSpace = 24;</code>
+     */
+    public Builder clearRealSpace() {
+      
+      realSpace_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long tx_ ;
+    /**
+     * <pre>
+     *tx
+     * </pre>
+     *
+     * <code>int64 tx = 25;</code>
+     */
+    public long getTx() {
+      return tx_;
+    }
+    /**
+     * <pre>
+     *tx
+     * </pre>
+     *
+     * <code>int64 tx = 25;</code>
+     */
+    public Builder setTx(long value) {
+      
+      tx_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *tx
+     * </pre>
+     *
+     * <code>int64 tx = 25;</code>
+     */
+    public Builder clearTx() {
+      
+      tx_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long rx_ ;
+    /**
+     * <pre>
+     *rx
+     * </pre>
+     *
+     * <code>int64 rx = 26;</code>
+     */
+    public long getRx() {
+      return rx_;
+    }
+    /**
+     * <pre>
+     *rx
+     * </pre>
+     *
+     * <code>int64 rx = 26;</code>
+     */
+    public Builder setRx(long value) {
+      
+      rx_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *rx
+     * </pre>
+     *
+     * <code>int64 rx = 26;</code>
+     */
+    public Builder clearRx() {
+      
+      rx_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ext_ = "";
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public java.lang.String getExt() {
+      java.lang.Object ref = ext_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ext_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExtBytes() {
+      java.lang.Object ref = ext_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ext_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder setExt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ext_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder clearExt() {
+      
+      ext_ = getDefaultInstance().getExt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder setExtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ext_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.Long> uspaces_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
@@ -2809,7 +3278,7 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
 
     public boolean containsUspaces(
@@ -2829,7 +3298,7 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.Long> getUspacesMap() {
@@ -2840,7 +3309,7 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
 
     public long getUspacesOrDefault(
@@ -2856,7 +3325,7 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
 
     public long getUspacesOrThrow(
@@ -2880,7 +3349,7 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
 
     public Builder removeUspaces(
@@ -2903,7 +3372,7 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
     public Builder putUspaces(
         java.lang.String key,
@@ -2919,482 +3388,13 @@ private static final long serialVersionUID = 0L;
      *used spaces on each SN
      * </pre>
      *
-     * <code>map&lt;string, int64&gt; uspaces = 17;</code>
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
      */
 
     public Builder putAllUspaces(
         java.util.Map<java.lang.String, java.lang.Long> values) {
       internalGetMutableUspaces().getMutableMap()
           .putAll(values);
-      return this;
-    }
-
-    private double weight_ ;
-    /**
-     * <pre>
-     *weight for allocate data node
-     * </pre>
-     *
-     * <code>double weight = 18;</code>
-     */
-    public double getWeight() {
-      return weight_;
-    }
-    /**
-     * <pre>
-     *weight for allocate data node
-     * </pre>
-     *
-     * <code>double weight = 18;</code>
-     */
-    public Builder setWeight(double value) {
-      
-      weight_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *weight for allocate data node
-     * </pre>
-     *
-     * <code>double weight = 18;</code>
-     */
-    public Builder clearWeight() {
-      
-      weight_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private int valid_ ;
-    /**
-     * <pre>
-     *Is node valid
-     * </pre>
-     *
-     * <code>int32 valid = 19;</code>
-     */
-    public int getValid() {
-      return valid_;
-    }
-    /**
-     * <pre>
-     *Is node valid
-     * </pre>
-     *
-     * <code>int32 valid = 19;</code>
-     */
-    public Builder setValid(int value) {
-      
-      valid_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *Is node valid
-     * </pre>
-     *
-     * <code>int32 valid = 19;</code>
-     */
-    public Builder clearValid() {
-      
-      valid_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int relay_ ;
-    /**
-     * <pre>
-     *Is relay node
-     * </pre>
-     *
-     * <code>int32 relay = 20;</code>
-     */
-    public int getRelay() {
-      return relay_;
-    }
-    /**
-     * <pre>
-     *Is relay node
-     * </pre>
-     *
-     * <code>int32 relay = 20;</code>
-     */
-    public Builder setRelay(int value) {
-      
-      relay_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *Is relay node
-     * </pre>
-     *
-     * <code>int32 relay = 20;</code>
-     */
-    public Builder clearRelay() {
-      
-      relay_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int status_ ;
-    /**
-     * <pre>
-     *status code: 0 - registered 1 - active
-     * </pre>
-     *
-     * <code>int32 status = 21;</code>
-     */
-    public int getStatus() {
-      return status_;
-    }
-    /**
-     * <pre>
-     *status code: 0 - registered 1 - active
-     * </pre>
-     *
-     * <code>int32 status = 21;</code>
-     */
-    public Builder setStatus(int value) {
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *status code: 0 - registered 1 - active
-     * </pre>
-     *
-     * <code>int32 status = 21;</code>
-     */
-    public Builder clearStatus() {
-      
-      status_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private long timestamp_ ;
-    /**
-     * <pre>
-     *timestamp of status updating operation
-     * </pre>
-     *
-     * <code>int64 timestamp = 22;</code>
-     */
-    public long getTimestamp() {
-      return timestamp_;
-    }
-    /**
-     * <pre>
-     *timestamp of status updating operation
-     * </pre>
-     *
-     * <code>int64 timestamp = 22;</code>
-     */
-    public Builder setTimestamp(long value) {
-      
-      timestamp_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *timestamp of status updating operation
-     * </pre>
-     *
-     * <code>int64 timestamp = 22;</code>
-     */
-    public Builder clearTimestamp() {
-      
-      timestamp_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private int version_ ;
-    /**
-     * <pre>
-     *version number of miner
-     * </pre>
-     *
-     * <code>int32 version = 23;</code>
-     */
-    public int getVersion() {
-      return version_;
-    }
-    /**
-     * <pre>
-     *version number of miner
-     * </pre>
-     *
-     * <code>int32 version = 23;</code>
-     */
-    public Builder setVersion(int value) {
-      
-      version_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *version number of miner
-     * </pre>
-     *
-     * <code>int32 version = 23;</code>
-     */
-    public Builder clearVersion() {
-      
-      version_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int rebuilding_ ;
-    /**
-     * <pre>
-     *if node is under rebuilding
-     * </pre>
-     *
-     * <code>int32 rebuilding = 24;</code>
-     */
-    public int getRebuilding() {
-      return rebuilding_;
-    }
-    /**
-     * <pre>
-     *if node is under rebuilding
-     * </pre>
-     *
-     * <code>int32 rebuilding = 24;</code>
-     */
-    public Builder setRebuilding(int value) {
-      
-      rebuilding_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *if node is under rebuilding
-     * </pre>
-     *
-     * <code>int32 rebuilding = 24;</code>
-     */
-    public Builder clearRebuilding() {
-      
-      rebuilding_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private long realSpace_ ;
-    /**
-     * <pre>
-     *real space of miner
-     * </pre>
-     *
-     * <code>int64 realSpace = 25;</code>
-     */
-    public long getRealSpace() {
-      return realSpace_;
-    }
-    /**
-     * <pre>
-     *real space of miner
-     * </pre>
-     *
-     * <code>int64 realSpace = 25;</code>
-     */
-    public Builder setRealSpace(long value) {
-      
-      realSpace_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *real space of miner
-     * </pre>
-     *
-     * <code>int64 realSpace = 25;</code>
-     */
-    public Builder clearRealSpace() {
-      
-      realSpace_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long tx_ ;
-    /**
-     * <pre>
-     *tx
-     * </pre>
-     *
-     * <code>int64 tx = 26;</code>
-     */
-    public long getTx() {
-      return tx_;
-    }
-    /**
-     * <pre>
-     *tx
-     * </pre>
-     *
-     * <code>int64 tx = 26;</code>
-     */
-    public Builder setTx(long value) {
-      
-      tx_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *tx
-     * </pre>
-     *
-     * <code>int64 tx = 26;</code>
-     */
-    public Builder clearTx() {
-      
-      tx_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long rx_ ;
-    /**
-     * <pre>
-     *rx
-     * </pre>
-     *
-     * <code>int64 rx = 27;</code>
-     */
-    public long getRx() {
-      return rx_;
-    }
-    /**
-     * <pre>
-     *rx
-     * </pre>
-     *
-     * <code>int64 rx = 27;</code>
-     */
-    public Builder setRx(long value) {
-      
-      rx_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *rx
-     * </pre>
-     *
-     * <code>int64 rx = 27;</code>
-     */
-    public Builder clearRx() {
-      
-      rx_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object ext_ = "";
-    /**
-     * <pre>
-     *other
-     * </pre>
-     *
-     * <code>string ext = 28;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     *other
-     * </pre>
-     *
-     * <code>string ext = 28;</code>
-     */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     *other
-     * </pre>
-     *
-     * <code>string ext = 28;</code>
-     */
-    public Builder setExt(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      ext_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *other
-     * </pre>
-     *
-     * <code>string ext = 28;</code>
-     */
-    public Builder clearExt() {
-      
-      ext_ = getDefaultInstance().getExt();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *other
-     * </pre>
-     *
-     * <code>string ext = 28;</code>
-     */
-    public Builder setExtBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      ext_ = value;
-      onChanged();
       return this;
     }
     @java.lang.Override

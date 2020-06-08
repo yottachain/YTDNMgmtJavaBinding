@@ -35,7 +35,7 @@ public class PbClient implements NodeMgmtInterface {
         try {
             blockingStub.setMaster(Int32Msg.newBuilder().setValue(v).build());
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -47,7 +47,7 @@ public class PbClient implements NodeMgmtInterface {
         try {
             blockingStub.changeEosURL(StringMsg.newBuilder().setValue(eosURL).build());
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -57,7 +57,7 @@ public class PbClient implements NodeMgmtInterface {
             Int32Msg resp = blockingStub.newNodeID(Empty.newBuilder().build());
             return resp.getValue();
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -70,7 +70,7 @@ public class PbClient implements NodeMgmtInterface {
         try {
             blockingStub.callAPI(req);
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -84,7 +84,7 @@ public class PbClient implements NodeMgmtInterface {
             NodeMsg resp = blockingStub.updateNodeStatus(req);
             return MessageUtil.convertMsgToNode(resp);
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -109,7 +109,7 @@ public class PbClient implements NodeMgmtInterface {
             }
             return nodes;
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -122,7 +122,7 @@ public class PbClient implements NodeMgmtInterface {
             NodeMsg req = MessageUtil.convertNodeToMsg(node);
             blockingStub.syncNode(req);
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -143,7 +143,7 @@ public class PbClient implements NodeMgmtInterface {
             }
             return nodes;
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -158,7 +158,7 @@ public class PbClient implements NodeMgmtInterface {
             }
             return superNodes;
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -168,7 +168,7 @@ public class PbClient implements NodeMgmtInterface {
             StringMsg resp = blockingStub.getSuperNodePrivateKey(Int32Msg.newBuilder().setValue(id).build());
             return resp.getValue();
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -180,7 +180,7 @@ public class PbClient implements NodeMgmtInterface {
             Int32Msg resp = blockingStub.getNodeIDByPubKey(StringMsg.newBuilder().setValue(pubkey).build());
             return resp.getValue();
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -193,7 +193,7 @@ public class PbClient implements NodeMgmtInterface {
             NodeMsg resp = blockingStub.getNodeByPubKey(StringMsg.newBuilder().setValue(pubkey).build());
             return MessageUtil.convertMsgToNode(resp);
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -206,7 +206,7 @@ public class PbClient implements NodeMgmtInterface {
             Int32Msg resp = blockingStub.getSuperNodeIDByPubKey(StringMsg.newBuilder().setValue(pubkey).build());
             return resp.getValue();
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -222,7 +222,7 @@ public class PbClient implements NodeMgmtInterface {
                     .build();
             blockingStub.addDNI(req);
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -237,7 +237,7 @@ public class PbClient implements NodeMgmtInterface {
             }
             return nodes;
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -254,7 +254,7 @@ public class PbClient implements NodeMgmtInterface {
             result.put("usedSpace", resp.getUsedTotal());
             return result;
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
