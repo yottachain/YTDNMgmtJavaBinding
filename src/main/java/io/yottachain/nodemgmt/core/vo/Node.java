@@ -21,7 +21,6 @@ public class Node {
     private long assignedSpace;
     private long productiveSpace;
     private long usedSpace;
-    private Map<String, Long> uspaces;
     private double weight;
     private int valid;
     private int relay;
@@ -33,6 +32,7 @@ public class Node {
     private long tx;
     private long rx;
     private String other;
+    private Map<String, Long> uspaces;
 
     public int getId() {
         return id;
