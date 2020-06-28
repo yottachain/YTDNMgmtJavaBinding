@@ -46,7 +46,7 @@ public class AnalysisCli {
             spotCheckList.setTimestamp(timestamp);
             return spotCheckList;
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -55,7 +55,7 @@ public class AnalysisCli {
             BoolMessage resp = blockingStub.withDeadlineAfter(timeout, TimeUnit.MILLISECONDS).isNodeSelected(Empty.newBuilder().build());
             return resp.getValue();
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 
@@ -67,7 +67,7 @@ public class AnalysisCli {
                     .build();
             blockingStub.withDeadlineAfter(timeout, TimeUnit.MILLISECONDS).updateTaskStatus(req);
         } catch (StatusRuntimeException e) {
-            throw new NodeMgmtException("", e);
+            throw new NodeMgmtException(e.getMessage(), e);
         }
     }
 }

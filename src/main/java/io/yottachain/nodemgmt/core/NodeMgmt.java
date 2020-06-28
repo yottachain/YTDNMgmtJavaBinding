@@ -9,14 +9,17 @@ import io.yottachain.nodemgmt.core.interfaces.NodeMgmtInterface;
 import io.yottachain.nodemgmt.core.vo.*;
 import io.yottachain.nodemgmt.core.wrapper.*;
 import io.yottachain.nodemgmt.pb.PbClient;
+import io.yottachain.nodemgmt.rebuilder.pb.RebuilderCli;
 
 import java.util.*;
 
 public class NodeMgmt implements NodeMgmtInterface {
     private AnalysisCli analysisCli;
+    private RebuilderCli rebuilderCli;
+
     private PbClient pbClient;
 
-    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master, String nodemgmthostname, int nodemgmtPort, String analysisHost, int analysisPort, int analysisTimeout) throws NodeMgmtException {
+    public NodeMgmt(String mongoURL, String eosURL, String bpAccount, String bpPrivkey, String contractOwnerM, String contractOwnerD, String shadowAccount, int bpid, int master, String nodemgmthostname, int nodemgmtPort, String analysisHost, int analysisPort, int analysisTimeout,  String rebuilderHost, int rebuilderPort, int rebuilderTimeout) throws NodeMgmtException {
         Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.NewInstance(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master);
         if (errPtr != null) {
             String err = errPtr.getString(0);
@@ -25,6 +28,7 @@ public class NodeMgmt implements NodeMgmtInterface {
         }
 
         analysisCli = new AnalysisCli(analysisHost, analysisPort, analysisTimeout);
+        rebuilderCli = new RebuilderCli(rebuilderHost, rebuilderPort, rebuilderTimeout);
         pbClient = new PbClient(nodemgmthostname, nodemgmtPort);
     }
 
@@ -524,81 +528,12 @@ public class NodeMgmt implements NodeMgmtInterface {
 //        }
     }
 
-//    @Override
-    public List<ShardCount> getInvalidNodes() throws NodeMgmtException {
-        return null;
-//        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetInvalidNodes();
-//        if (ptr != null) {
-//            try {
-//                NodeMgmtWrapper.Shardcountlist shardcountlist = new NodeMgmtWrapper.Shardcountlist(ptr);
-//                if (shardcountlist.error != null) {
-//                    String err = shardcountlist.error.getString(0);
-//                    throw new NodeMgmtException(err);
-//                }
-//                List<ShardCount> shardcounts = new ArrayList<ShardCount>();
-//                if (shardcountlist.shardcounts != null) {
-//                    Pointer[] ptrs = shardcountlist.shardcounts.getPointerArray(0, shardcountlist.size);
-//                    for (int i = 0; i< ptrs.length; i++){
-//                        Pointer p = ptrs[i];
-//                        NodeMgmtWrapper.Shardcount sc = new NodeMgmtWrapper.Shardcount(p);
-//                        shardcounts.add(sc.convertTo());
-//                    }
-//                }
-//                return shardcounts.size()==0 ? null : shardcounts;
-//
-//            } finally {
-//                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeShardcountlist(ptr);
-//            }
-//        } else {
-//            throw new NodeMgmtException("unknown exception");
-//        }
+    public List<byte[]> getRebuildTasks() throws NodeMgmtException {
+        return rebuilderCli.getRebuildTasks();
     }
 
-//    @Override
-    public RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
-        return null;
-//        Pointer ptr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.GetRebuildItem(minerID, index, total);
-//        if (ptr != null) {
-//            try {
-//                NodeMgmtWrapper.Rebuilditem rebuilditem = new NodeMgmtWrapper.Rebuilditem(ptr);
-//                if (rebuilditem.error != null) {
-//                    String err = rebuilditem.error.getString(0);
-//                    throw new NodeMgmtException(err);
-//                }
-//                return rebuilditem.convertTo();
-//
-//            } finally {
-//                NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeRebuilditem(ptr);
-//            }
-//        } else {
-//            throw new NodeMgmtException("unknown exception");
-//        }
-    }
-
-//    @Override
-    public void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
-//        Pointer shardPtr = new Memory(Native.getNativeSize(Byte.TYPE) * shard.length);
-//        for (int i=0; i<shard.length; i++) {
-//            shardPtr.setByte(i, shard[i]);
-//        }
-//        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.DeleteDNI(id, shardPtr, shard.length);
-//        Native.free(Pointer.nativeValue(shardPtr));
-//        Pointer.nativeValue(shardPtr, 0);
-//        if (errPtr != null) {
-//            String err = errPtr.getString(0);
-//            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
-//            throw new NodeMgmtException(err);
-//        }
-    }
-
-//    @Override
-    public void finishRebuild(int id) throws NodeMgmtException {
-//        Pointer errPtr = NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FinishRebuild(id);
-//        if (errPtr != null) {
-//            String err = errPtr.getString(0);
-//            NodeMgmtWrapper.NodeMgmtLib.INSTANCE.FreeString(errPtr);
-//            throw new NodeMgmtException(err);
-//        }
+    public void updateTaskStatus(List<byte[]> ids, List<Integer> results) throws NodeMgmtException {
+        rebuilderCli.updateTaskStatus(ids, results);
     }
 
 }
