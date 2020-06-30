@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * Node message
  * </pre>
  *
- * Protobuf type {@code pb.NodeMsg}
+ * Protobuf type {@code pbanalysis.NodeMsg}
  */
 public  final class NodeMsg extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.NodeMsg)
+    // @@protoc_insertion_point(message_implements:pbanalysis.NodeMsg)
     NodeMsgOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use NodeMsg.newBuilder() to construct.
@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     poolID_ = "";
     poolOwner_ = "";
     addrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ext_ = "";
   }
 
   @java.lang.Override
@@ -200,6 +201,25 @@ private static final long serialVersionUID = 0L;
             rx_ = input.readInt64();
             break;
           }
+          case 218: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ext_ = s;
+            break;
+          }
+          case 226: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              uspaces_ = com.google.protobuf.MapField.newMapField(
+                  UspacesDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000002;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+            uspaces__ = input.readMessage(
+                UspacesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            uspaces_.getMutableMap().put(
+                uspaces__.getKey(), uspaces__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -224,13 +244,25 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeMsg_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeMsg_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 28:
+        return internalGetUspaces();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeMsg_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeMsg_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.NodeMsg.class, io.yottachain.nodemgmt.analysis.pb.NodeMsg.Builder.class);
   }
@@ -779,6 +811,140 @@ private static final long serialVersionUID = 0L;
     return rx_;
   }
 
+  public static final int EXT_FIELD_NUMBER = 27;
+  private volatile java.lang.Object ext_;
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  public java.lang.String getExt() {
+    java.lang.Object ref = ext_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ext_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  public com.google.protobuf.ByteString
+      getExtBytes() {
+    java.lang.Object ref = ext_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ext_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USPACES_FIELD_NUMBER = 28;
+  private static final class UspacesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.Long> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.Long>newDefaultInstance(
+                io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeMsg_UspacesEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.INT64,
+                0L);
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.Long> uspaces_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+  internalGetUspaces() {
+    if (uspaces_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          UspacesDefaultEntryHolder.defaultEntry);
+    }
+    return uspaces_;
+  }
+
+  public int getUspacesCount() {
+    return internalGetUspaces().getMap().size();
+  }
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+
+  public boolean containsUspaces(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetUspaces().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getUspacesMap()} instead.
+   */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Long> getUspaces() {
+    return getUspacesMap();
+  }
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+
+  public java.util.Map<java.lang.String, java.lang.Long> getUspacesMap() {
+    return internalGetUspaces().getMap();
+  }
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+
+  public long getUspacesOrDefault(
+      java.lang.String key,
+      long defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.Long> map =
+        internalGetUspaces().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+
+  public long getUspacesOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.Long> map =
+        internalGetUspaces().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -871,6 +1037,15 @@ private static final long serialVersionUID = 0L;
     if (rx_ != 0L) {
       output.writeInt64(26, rx_);
     }
+    if (!getExtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, ext_);
+    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetUspaces(),
+        UspacesDefaultEntryHolder.defaultEntry,
+        28);
     unknownFields.writeTo(output);
   }
 
@@ -982,6 +1157,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(26, rx_);
     }
+    if (!getExtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, ext_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
+         : internalGetUspaces().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+      uspaces__ = UspacesDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(28, uspaces__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1050,6 +1238,10 @@ private static final long serialVersionUID = 0L;
         != other.getTx()) return false;
     if (getRx()
         != other.getRx()) return false;
+    if (!getExt()
+        .equals(other.getExt())) return false;
+    if (!internalGetUspaces().equals(
+        other.internalGetUspaces())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1125,6 +1317,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RX_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRx());
+    hash = (37 * hash) + EXT_FIELD_NUMBER;
+    hash = (53 * hash) + getExt().hashCode();
+    if (!internalGetUspaces().getMap().isEmpty()) {
+      hash = (37 * hash) + USPACES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUspaces().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1225,21 +1423,43 @@ private static final long serialVersionUID = 0L;
    * Node message
    * </pre>
    *
-   * Protobuf type {@code pb.NodeMsg}
+   * Protobuf type {@code pbanalysis.NodeMsg}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.NodeMsg)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.NodeMsg)
       io.yottachain.nodemgmt.analysis.pb.NodeMsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeMsg_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 28:
+          return internalGetUspaces();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 28:
+          return internalGetMutableUspaces();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeMsg_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.NodeMsg.class, io.yottachain.nodemgmt.analysis.pb.NodeMsg.Builder.class);
     }
@@ -1314,13 +1534,16 @@ private static final long serialVersionUID = 0L;
 
       rx_ = 0L;
 
+      ext_ = "";
+
+      internalGetMutableUspaces().clear();
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeMsg_descriptor;
     }
 
     @java.lang.Override
@@ -1371,6 +1594,9 @@ private static final long serialVersionUID = 0L;
       result.realSpace_ = realSpace_;
       result.tx_ = tx_;
       result.rx_ = rx_;
+      result.ext_ = ext_;
+      result.uspaces_ = internalGetUspaces();
+      result.uspaces_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1510,6 +1736,12 @@ private static final long serialVersionUID = 0L;
       if (other.getRx() != 0L) {
         setRx(other.getRx());
       }
+      if (!other.getExt().isEmpty()) {
+        ext_ = other.ext_;
+        onChanged();
+      }
+      internalGetMutableUspaces().mergeFrom(
+          other.internalGetUspaces());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2925,6 +3157,246 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private java.lang.Object ext_ = "";
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public java.lang.String getExt() {
+      java.lang.Object ref = ext_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ext_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExtBytes() {
+      java.lang.Object ref = ext_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ext_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder setExt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ext_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder clearExt() {
+      
+      ext_ = getDefaultInstance().getExt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *other
+     * </pre>
+     *
+     * <code>string ext = 27;</code>
+     */
+    public Builder setExtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ext_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Long> uspaces_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+    internalGetUspaces() {
+      if (uspaces_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UspacesDefaultEntryHolder.defaultEntry);
+      }
+      return uspaces_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+    internalGetMutableUspaces() {
+      onChanged();;
+      if (uspaces_ == null) {
+        uspaces_ = com.google.protobuf.MapField.newMapField(
+            UspacesDefaultEntryHolder.defaultEntry);
+      }
+      if (!uspaces_.isMutable()) {
+        uspaces_ = uspaces_.copy();
+      }
+      return uspaces_;
+    }
+
+    public int getUspacesCount() {
+      return internalGetUspaces().getMap().size();
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+
+    public boolean containsUspaces(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetUspaces().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getUspacesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getUspaces() {
+      return getUspacesMap();
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.Long> getUspacesMap() {
+      return internalGetUspaces().getMap();
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+
+    public long getUspacesOrDefault(
+        java.lang.String key,
+        long defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetUspaces().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+
+    public long getUspacesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetUspaces().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUspaces() {
+      internalGetMutableUspaces().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+
+    public Builder removeUspaces(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableUspaces().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long>
+    getMutableUspaces() {
+      return internalGetMutableUspaces().getMutableMap();
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+    public Builder putUspaces(
+        java.lang.String key,
+        long value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      
+      internalGetMutableUspaces().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     *used spaces on each SN
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+     */
+
+    public Builder putAllUspaces(
+        java.util.Map<java.lang.String, java.lang.Long> values) {
+      internalGetMutableUspaces().getMutableMap()
+          .putAll(values);
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2938,10 +3410,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.NodeMsg)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.NodeMsg)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.NodeMsg)
+  // @@protoc_insertion_point(class_scope:pbanalysis.NodeMsg)
   private static final io.yottachain.nodemgmt.analysis.pb.NodeMsg DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.NodeMsg();

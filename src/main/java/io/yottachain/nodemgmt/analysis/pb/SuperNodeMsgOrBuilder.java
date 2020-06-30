@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface SuperNodeMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.SuperNodeMsg)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.SuperNodeMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

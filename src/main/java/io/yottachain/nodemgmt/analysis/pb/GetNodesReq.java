@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * request message of GetNodes function
  * </pre>
  *
- * Protobuf type {@code pb.GetNodesReq}
+ * Protobuf type {@code pbanalysis.GetNodesReq}
  */
 public  final class GetNodesReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.GetNodesReq)
+    // @@protoc_insertion_point(message_implements:pbanalysis.GetNodesReq)
     GetNodesReqOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use GetNodesReq.newBuilder() to construct.
@@ -99,13 +99,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetNodesReq_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetNodesReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetNodesReq_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetNodesReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.GetNodesReq.class, io.yottachain.nodemgmt.analysis.pb.GetNodesReq.Builder.class);
   }
@@ -310,21 +310,21 @@ private static final long serialVersionUID = 0L;
    * request message of GetNodes function
    * </pre>
    *
-   * Protobuf type {@code pb.GetNodesReq}
+   * Protobuf type {@code pbanalysis.GetNodesReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.GetNodesReq)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.GetNodesReq)
       io.yottachain.nodemgmt.analysis.pb.GetNodesReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetNodesReq_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetNodesReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetNodesReq_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetNodesReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.GetNodesReq.class, io.yottachain.nodemgmt.analysis.pb.GetNodesReq.Builder.class);
     }
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetNodesReq_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetNodesReq_descriptor;
     }
 
     @java.lang.Override
@@ -548,10 +548,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.GetNodesReq)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.GetNodesReq)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.GetNodesReq)
+  // @@protoc_insertion_point(class_scope:pbanalysis.GetNodesReq)
   private static final io.yottachain.nodemgmt.analysis.pb.GetNodesReq DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.GetNodesReq();

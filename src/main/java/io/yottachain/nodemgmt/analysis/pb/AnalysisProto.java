@@ -15,130 +15,155 @@ public final class AnalysisProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_Empty_descriptor;
+    internal_static_pbanalysis_Empty_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_Empty_fieldAccessorTable;
+      internal_static_pbanalysis_Empty_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_BoolMessage_descriptor;
+    internal_static_pbanalysis_BoolMessage_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_BoolMessage_fieldAccessorTable;
+      internal_static_pbanalysis_BoolMessage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_StringMsg_descriptor;
+    internal_static_pbanalysis_StringMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_StringMsg_fieldAccessorTable;
+      internal_static_pbanalysis_StringMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_String2Msg_descriptor;
+    internal_static_pbanalysis_String2Msg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_String2Msg_fieldAccessorTable;
+      internal_static_pbanalysis_String2Msg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_Int32Msg_descriptor;
+    internal_static_pbanalysis_Int32Msg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_Int32Msg_fieldAccessorTable;
+      internal_static_pbanalysis_Int32Msg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_Int64Msg_descriptor;
+    internal_static_pbanalysis_Int64Msg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_Int64Msg_fieldAccessorTable;
+      internal_static_pbanalysis_Int64Msg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_NodeMsg_descriptor;
+    internal_static_pbanalysis_NodeMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_NodeMsg_fieldAccessorTable;
+      internal_static_pbanalysis_NodeMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_SuperNodeMsg_descriptor;
+    internal_static_pbanalysis_NodeMsg_UspacesEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_SuperNodeMsg_fieldAccessorTable;
+      internal_static_pbanalysis_NodeMsg_UspacesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_NodeStatMsg_descriptor;
+    internal_static_pbanalysis_SuperNodeMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_NodeStatMsg_fieldAccessorTable;
+      internal_static_pbanalysis_SuperNodeMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_SpotCheckTaskMsg_descriptor;
+    internal_static_pbanalysis_NodeStatMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_SpotCheckTaskMsg_fieldAccessorTable;
+      internal_static_pbanalysis_NodeStatMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_SpotCheckListMsg_descriptor;
+    internal_static_pbanalysis_SpotCheckTaskMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_SpotCheckListMsg_fieldAccessorTable;
+      internal_static_pbanalysis_SpotCheckTaskMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_GetSpotCheckListResp_descriptor;
+    internal_static_pbanalysis_SpotCheckListMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_GetSpotCheckListResp_fieldAccessorTable;
+      internal_static_pbanalysis_SpotCheckListMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_NodesResp_descriptor;
+    internal_static_pbanalysis_GetSpotCheckListResp_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_NodesResp_fieldAccessorTable;
+      internal_static_pbanalysis_GetSpotCheckListResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_SuperNodesResp_descriptor;
+    internal_static_pbanalysis_NodesResp_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_SuperNodesResp_fieldAccessorTable;
+      internal_static_pbanalysis_NodesResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_IncrUsedSpaceReq_descriptor;
+    internal_static_pbanalysis_SuperNodesResp_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_IncrUsedSpaceReq_fieldAccessorTable;
+      internal_static_pbanalysis_SuperNodesResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_AllocNodesReq_descriptor;
+    internal_static_pbanalysis_IncrUsedSpaceReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_AllocNodesReq_fieldAccessorTable;
+      internal_static_pbanalysis_IncrUsedSpaceReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_GetNodesReq_descriptor;
+    internal_static_pbanalysis_AllocNodesReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_GetNodesReq_fieldAccessorTable;
+      internal_static_pbanalysis_AllocNodesReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_DNIReq_descriptor;
+    internal_static_pbanalysis_GetNodesReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_DNIReq_fieldAccessorTable;
+      internal_static_pbanalysis_GetNodesReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_UpdateTaskStatusReq_descriptor;
+    internal_static_pbanalysis_DNIReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_UpdateTaskStatusReq_fieldAccessorTable;
+      internal_static_pbanalysis_DNIReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_ShardCountMsg_descriptor;
+    internal_static_pbanalysis_UpdateTaskStatusReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_ShardCountMsg_fieldAccessorTable;
+      internal_static_pbanalysis_UpdateTaskStatusReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_GetInvalidNodesResp_descriptor;
+    internal_static_pbanalysis_ShardCountMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_GetInvalidNodesResp_fieldAccessorTable;
+      internal_static_pbanalysis_ShardCountMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_GetRebuildItemReq_descriptor;
+    internal_static_pbanalysis_GetInvalidNodesResp_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_GetRebuildItemReq_fieldAccessorTable;
+      internal_static_pbanalysis_GetInvalidNodesResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_GetRebuildItemResp_descriptor;
+    internal_static_pbanalysis_GetRebuildItemReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_GetRebuildItemResp_fieldAccessorTable;
+      internal_static_pbanalysis_GetRebuildItemReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_DownloadShardRequest_descriptor;
+    internal_static_pbanalysis_GetRebuildItemResp_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_DownloadShardRequest_fieldAccessorTable;
+      internal_static_pbanalysis_GetRebuildItemResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pb_DownloadShardResponse_descriptor;
+    internal_static_pbanalysis_DownloadShardRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pb_DownloadShardResponse_fieldAccessorTable;
+      internal_static_pbanalysis_DownloadShardRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pbanalysis_DownloadShardResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pbanalysis_DownloadShardResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pbanalysis_SignMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pbanalysis_SignMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pbanalysis_UpdateUspaceMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pbanalysis_UpdateUspaceMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pbanalysis_PunishMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pbanalysis_PunishMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pbanalysis_PunishMessage_RuleEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pbanalysis_PunishMessage_RuleEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -148,22 +173,25 @@ public final class AnalysisProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013types.proto\022\002pb\"\007\n\005Empty\"\034\n\013BoolMessag" +
-      "e\022\r\n\005value\030\001 \001(\010\"\032\n\tStringMsg\022\r\n\005value\030\001" +
-      " \001(\t\",\n\nString2Msg\022\016\n\006param1\030\001 \001(\t\022\016\n\006pa" +
-      "ram2\030\002 \001(\t\"\031\n\010Int32Msg\022\r\n\005value\030\001 \001(\005\"\031\n" +
-      "\010Int64Msg\022\r\n\005value\030\001 \001(\003\"\302\003\n\007NodeMsg\022\n\n\002" +
-      "iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006pubKey\030\003 \001(\t" +
-      "\022\r\n\005owner\030\004 \001(\t\022\021\n\tprofitAcc\030\005 \001(\t\022\016\n\006po" +
-      "olID\030\006 \001(\t\022\021\n\tpoolOwner\030\007 \001(\t\022\r\n\005quota\030\010" +
-      " \001(\003\022\r\n\005addrs\030\t \003(\t\022\013\n\003cPU\030\n \001(\005\022\016\n\006memo" +
-      "ry\030\013 \001(\005\022\021\n\tbandwidth\030\014 \001(\005\022\024\n\014maxDataSp" +
-      "ace\030\r \001(\003\022\025\n\rassignedSpace\030\016 \001(\003\022\027\n\017prod" +
-      "uctiveSpace\030\017 \001(\003\022\021\n\tusedSpace\030\020 \001(\003\022\016\n\006" +
-      "weight\030\021 \001(\001\022\r\n\005valid\030\022 \001(\005\022\r\n\005relay\030\023 \001" +
-      "(\005\022\016\n\006status\030\024 \001(\005\022\021\n\ttimestamp\030\025 \001(\003\022\017\n" +
-      "\007version\030\026 \001(\005\022\022\n\nrebuilding\030\027 \001(\005\022\021\n\tre" +
-      "alSpace\030\030 \001(\003\022\n\n\002tx\030\031 \001(\003\022\n\n\002rx\030\032 \001(\003\"Z\n" +
+      "\n\013types.proto\022\npbanalysis\"\007\n\005Empty\"\034\n\013Bo" +
+      "olMessage\022\r\n\005value\030\001 \001(\010\"\032\n\tStringMsg\022\r\n" +
+      "\005value\030\001 \001(\t\",\n\nString2Msg\022\016\n\006param1\030\001 \001" +
+      "(\t\022\016\n\006param2\030\002 \001(\t\"\031\n\010Int32Msg\022\r\n\005value\030" +
+      "\001 \001(\005\"\031\n\010Int64Msg\022\r\n\005value\030\001 \001(\003\"\262\004\n\007Nod" +
+      "eMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(\t\022\016\n\006pubK" +
+      "ey\030\003 \001(\t\022\r\n\005owner\030\004 \001(\t\022\021\n\tprofitAcc\030\005 \001" +
+      "(\t\022\016\n\006poolID\030\006 \001(\t\022\021\n\tpoolOwner\030\007 \001(\t\022\r\n" +
+      "\005quota\030\010 \001(\003\022\r\n\005addrs\030\t \003(\t\022\013\n\003cPU\030\n \001(\005" +
+      "\022\016\n\006memory\030\013 \001(\005\022\021\n\tbandwidth\030\014 \001(\005\022\024\n\014m" +
+      "axDataSpace\030\r \001(\003\022\025\n\rassignedSpace\030\016 \001(\003" +
+      "\022\027\n\017productiveSpace\030\017 \001(\003\022\021\n\tusedSpace\030\020" +
+      " \001(\003\022\016\n\006weight\030\021 \001(\001\022\r\n\005valid\030\022 \001(\005\022\r\n\005r" +
+      "elay\030\023 \001(\005\022\016\n\006status\030\024 \001(\005\022\021\n\ttimestamp\030" +
+      "\025 \001(\003\022\017\n\007version\030\026 \001(\005\022\022\n\nrebuilding\030\027 \001" +
+      "(\005\022\021\n\trealSpace\030\030 \001(\003\022\n\n\002tx\030\031 \001(\003\022\n\n\002rx\030" +
+      "\032 \001(\003\022\013\n\003ext\030\033 \001(\t\0221\n\007uspaces\030\034 \003(\0132 .pb" +
+      "analysis.NodeMsg.UspacesEntry\032.\n\014Uspaces" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"Z\n" +
       "\014SuperNodeMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(" +
       "\t\022\016\n\006pubKey\030\003 \001(\t\022\017\n\007privKey\030\004 \001(\t\022\r\n\005ad" +
       "drs\030\005 \003(\t\"\215\001\n\013NodeStatMsg\022\024\n\014activeMiner" +
@@ -171,188 +199,229 @@ public final class AnalysisProto {
       "\030\003 \001(\003\022\025\n\rassignedTotal\030\004 \001(\003\022\027\n\017product" +
       "iveTotal\030\005 \001(\003\022\021\n\tusedTotal\030\006 \001(\003\"I\n\020Spo" +
       "tCheckTaskMsg\022\n\n\002iD\030\001 \001(\005\022\016\n\006nodeID\030\002 \001(" +
-      "\t\022\014\n\004addr\030\003 \001(\t\022\013\n\003vNI\030\004 \001(\t\"]\n\020SpotChec" +
-      "kListMsg\022\016\n\006taskID\030\001 \001(\t\022&\n\010taskList\030\002 \003" +
-      "(\0132\024.pb.SpotCheckTaskMsg\022\021\n\ttimestamp\030\003 " +
-      "\001(\003\"D\n\024GetSpotCheckListResp\022,\n\016spotCheck" +
-      "Lists\030\001 \003(\0132\024.pb.SpotCheckListMsg\"\'\n\tNod" +
-      "esResp\022\032\n\005nodes\030\001 \003(\0132\013.pb.NodeMsg\"6\n\016Su" +
-      "perNodesResp\022$\n\nsuperNodes\030\001 \003(\0132\020.pb.Su" +
-      "perNodeMsg\",\n\020IncrUsedSpaceReq\022\n\n\002id\030\001 \001" +
-      "(\005\022\014\n\004incr\030\002 \001(\003\"3\n\rAllocNodesReq\022\022\n\nsha" +
-      "rdCount\030\001 \001(\005\022\016\n\006errIDs\030\002 \003(\005\"\036\n\013GetNode" +
-      "sReq\022\017\n\007nodeIDs\030\001 \003(\005\"#\n\006DNIReq\022\n\n\002id\030\001 " +
-      "\001(\005\022\r\n\005shard\030\002 \001(\014\"6\n\023UpdateTaskStatusRe" +
-      "q\022\n\n\002id\030\001 \001(\t\022\023\n\013invalidNode\030\002 \001(\005\"(\n\rSh" +
-      "ardCountMsg\022\n\n\002iD\030\001 \001(\005\022\013\n\003cnt\030\002 \001(\003\"=\n\023" +
-      "GetInvalidNodesResp\022&\n\013shardCounts\030\001 \003(\013" +
-      "2\021.pb.ShardCountMsg\"B\n\021GetRebuildItemReq" +
+      "\t\022\014\n\004addr\030\003 \001(\t\022\013\n\003vNI\030\004 \001(\t\"e\n\020SpotChec" +
+      "kListMsg\022\016\n\006taskID\030\001 \001(\t\022.\n\010taskList\030\002 \003" +
+      "(\0132\034.pbanalysis.SpotCheckTaskMsg\022\021\n\ttime" +
+      "stamp\030\003 \001(\003\"L\n\024GetSpotCheckListResp\0224\n\016s" +
+      "potCheckLists\030\001 \003(\0132\034.pbanalysis.SpotChe" +
+      "ckListMsg\"/\n\tNodesResp\022\"\n\005nodes\030\001 \003(\0132\023." +
+      "pbanalysis.NodeMsg\">\n\016SuperNodesResp\022,\n\n" +
+      "superNodes\030\001 \003(\0132\030.pbanalysis.SuperNodeM" +
+      "sg\",\n\020IncrUsedSpaceReq\022\n\n\002id\030\001 \001(\005\022\014\n\004in" +
+      "cr\030\002 \001(\003\"3\n\rAllocNodesReq\022\022\n\nshardCount\030" +
+      "\001 \001(\005\022\016\n\006errIDs\030\002 \003(\005\"\036\n\013GetNodesReq\022\017\n\007" +
+      "nodeIDs\030\001 \003(\005\"#\n\006DNIReq\022\n\n\002id\030\001 \001(\005\022\r\n\005s" +
+      "hard\030\002 \001(\014\"6\n\023UpdateTaskStatusReq\022\n\n\002id\030" +
+      "\001 \001(\t\022\023\n\013invalidNode\030\002 \001(\005\"(\n\rShardCount" +
+      "Msg\022\n\n\002iD\030\001 \001(\005\022\013\n\003cnt\030\002 \001(\003\"E\n\023GetInval" +
+      "idNodesResp\022.\n\013shardCounts\030\001 \003(\0132\031.pbana" +
+      "lysis.ShardCountMsg\"B\n\021GetRebuildItemReq" +
       "\022\017\n\007minerID\030\001 \001(\005\022\r\n\005index\030\002 \001(\003\022\r\n\005tota" +
-      "l\030\003 \001(\003\"?\n\022GetRebuildItemResp\022\031\n\004node\030\001 " +
-      "\001(\0132\013.pb.NodeMsg\022\016\n\006shards\030\002 \003(\014\"#\n\024Down" +
-      "loadShardRequest\022\013\n\003VHF\030\001 \001(\014\"%\n\025Downloa" +
-      "dShardResponse\022\014\n\004data\030\001 \001(\0142\253\001\n\010Analysi" +
-      "s\0225\n\020GetSpotCheckList\022\t.pb.Empty\032\024.pb.Sp" +
-      "otCheckListMsg\"\000\022.\n\016IsNodeSelected\022\t.pb." +
-      "Empty\032\017.pb.BoolMessage\"\000\0228\n\020UpdateTaskSt" +
-      "atus\022\027.pb.UpdateTaskStatusReq\032\t.pb.Empty" +
-      "\"\000B7\n\"io.yottachain.nodemgmt.analysis.pb" +
-      "B\rAnalysisProtoH\001P\001b\006proto3"
+      "l\030\003 \001(\003\"G\n\022GetRebuildItemResp\022!\n\004node\030\001 " +
+      "\001(\0132\023.pbanalysis.NodeMsg\022\016\n\006shards\030\002 \003(\014" +
+      "\"#\n\024DownloadShardRequest\022\013\n\003VHF\030\001 \001(\014\"%\n" +
+      "\025DownloadShardResponse\022\014\n\004data\030\001 \001(\014\"C\n\013" +
+      "SignMessage\022\023\n\013accountName\030\001 \001(\t\022\014\n\004data" +
+      "\030\002 \001(\014\022\021\n\tsignature\030\003 \001(\t\"I\n\023UpdateUspac" +
+      "eMessage\022\016\n\006nodeID\030\001 \001(\005\022\022\n\nfromNodeID\030\002" +
+      " \001(\005\022\016\n\006uspace\030\003 \001(\003\"\260\001\n\rPunishMessage\022\016" +
+      "\n\006nodeID\030\001 \001(\005\022\014\n\004type\030\002 \001(\005\022\022\n\nneedPuni" +
+      "sh\030\003 \001(\010\022\r\n\005count\030\004 \001(\005\0221\n\004rule\030\005 \003(\0132#." +
+      "pbanalysis.PunishMessage.RuleEntry\032+\n\tRu" +
+      "leEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\0012" +
+      "\333\001\n\010Analysis\022E\n\020GetSpotCheckList\022\021.pbana" +
+      "lysis.Empty\032\034.pbanalysis.SpotCheckListMs" +
+      "g\"\000\022>\n\016IsNodeSelected\022\021.pbanalysis.Empty" +
+      "\032\027.pbanalysis.BoolMessage\"\000\022H\n\020UpdateTas" +
+      "kStatus\022\037.pbanalysis.UpdateTaskStatusReq" +
+      "\032\021.pbanalysis.Empty\"\000B7\n\"io.yottachain.n" +
+      "odemgmt.analysis.pbB\rAnalysisProtoH\001P\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_pb_Empty_descriptor =
+    internal_static_pbanalysis_Empty_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_pb_Empty_fieldAccessorTable = new
+    internal_static_pbanalysis_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_Empty_descriptor,
+        internal_static_pbanalysis_Empty_descriptor,
         new java.lang.String[] { });
-    internal_static_pb_BoolMessage_descriptor =
+    internal_static_pbanalysis_BoolMessage_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_pb_BoolMessage_fieldAccessorTable = new
+    internal_static_pbanalysis_BoolMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_BoolMessage_descriptor,
+        internal_static_pbanalysis_BoolMessage_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_pb_StringMsg_descriptor =
+    internal_static_pbanalysis_StringMsg_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_pb_StringMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_StringMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_StringMsg_descriptor,
+        internal_static_pbanalysis_StringMsg_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_pb_String2Msg_descriptor =
+    internal_static_pbanalysis_String2Msg_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_pb_String2Msg_fieldAccessorTable = new
+    internal_static_pbanalysis_String2Msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_String2Msg_descriptor,
+        internal_static_pbanalysis_String2Msg_descriptor,
         new java.lang.String[] { "Param1", "Param2", });
-    internal_static_pb_Int32Msg_descriptor =
+    internal_static_pbanalysis_Int32Msg_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_pb_Int32Msg_fieldAccessorTable = new
+    internal_static_pbanalysis_Int32Msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_Int32Msg_descriptor,
+        internal_static_pbanalysis_Int32Msg_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_pb_Int64Msg_descriptor =
+    internal_static_pbanalysis_Int64Msg_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_pb_Int64Msg_fieldAccessorTable = new
+    internal_static_pbanalysis_Int64Msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_Int64Msg_descriptor,
+        internal_static_pbanalysis_Int64Msg_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_pb_NodeMsg_descriptor =
+    internal_static_pbanalysis_NodeMsg_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_pb_NodeMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_NodeMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_NodeMsg_descriptor,
-        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", "RealSpace", "Tx", "Rx", });
-    internal_static_pb_SuperNodeMsg_descriptor =
+        internal_static_pbanalysis_NodeMsg_descriptor,
+        new java.lang.String[] { "ID", "NodeID", "PubKey", "Owner", "ProfitAcc", "PoolID", "PoolOwner", "Quota", "Addrs", "CPU", "Memory", "Bandwidth", "MaxDataSpace", "AssignedSpace", "ProductiveSpace", "UsedSpace", "Weight", "Valid", "Relay", "Status", "Timestamp", "Version", "Rebuilding", "RealSpace", "Tx", "Rx", "Ext", "Uspaces", });
+    internal_static_pbanalysis_NodeMsg_UspacesEntry_descriptor =
+      internal_static_pbanalysis_NodeMsg_descriptor.getNestedTypes().get(0);
+    internal_static_pbanalysis_NodeMsg_UspacesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pbanalysis_NodeMsg_UspacesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pbanalysis_SuperNodeMsg_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_pb_SuperNodeMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_SuperNodeMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_SuperNodeMsg_descriptor,
+        internal_static_pbanalysis_SuperNodeMsg_descriptor,
         new java.lang.String[] { "ID", "NodeID", "PubKey", "PrivKey", "Addrs", });
-    internal_static_pb_NodeStatMsg_descriptor =
+    internal_static_pbanalysis_NodeStatMsg_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_pb_NodeStatMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_NodeStatMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_NodeStatMsg_descriptor,
+        internal_static_pbanalysis_NodeStatMsg_descriptor,
         new java.lang.String[] { "ActiveMiners", "TotalMiners", "MaxTotal", "AssignedTotal", "ProductiveTotal", "UsedTotal", });
-    internal_static_pb_SpotCheckTaskMsg_descriptor =
+    internal_static_pbanalysis_SpotCheckTaskMsg_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_pb_SpotCheckTaskMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_SpotCheckTaskMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_SpotCheckTaskMsg_descriptor,
+        internal_static_pbanalysis_SpotCheckTaskMsg_descriptor,
         new java.lang.String[] { "ID", "NodeID", "Addr", "VNI", });
-    internal_static_pb_SpotCheckListMsg_descriptor =
+    internal_static_pbanalysis_SpotCheckListMsg_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_pb_SpotCheckListMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_SpotCheckListMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_SpotCheckListMsg_descriptor,
+        internal_static_pbanalysis_SpotCheckListMsg_descriptor,
         new java.lang.String[] { "TaskID", "TaskList", "Timestamp", });
-    internal_static_pb_GetSpotCheckListResp_descriptor =
+    internal_static_pbanalysis_GetSpotCheckListResp_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_pb_GetSpotCheckListResp_fieldAccessorTable = new
+    internal_static_pbanalysis_GetSpotCheckListResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_GetSpotCheckListResp_descriptor,
+        internal_static_pbanalysis_GetSpotCheckListResp_descriptor,
         new java.lang.String[] { "SpotCheckLists", });
-    internal_static_pb_NodesResp_descriptor =
+    internal_static_pbanalysis_NodesResp_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_pb_NodesResp_fieldAccessorTable = new
+    internal_static_pbanalysis_NodesResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_NodesResp_descriptor,
+        internal_static_pbanalysis_NodesResp_descriptor,
         new java.lang.String[] { "Nodes", });
-    internal_static_pb_SuperNodesResp_descriptor =
+    internal_static_pbanalysis_SuperNodesResp_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_pb_SuperNodesResp_fieldAccessorTable = new
+    internal_static_pbanalysis_SuperNodesResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_SuperNodesResp_descriptor,
+        internal_static_pbanalysis_SuperNodesResp_descriptor,
         new java.lang.String[] { "SuperNodes", });
-    internal_static_pb_IncrUsedSpaceReq_descriptor =
+    internal_static_pbanalysis_IncrUsedSpaceReq_descriptor =
       getDescriptor().getMessageTypes().get(14);
-    internal_static_pb_IncrUsedSpaceReq_fieldAccessorTable = new
+    internal_static_pbanalysis_IncrUsedSpaceReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_IncrUsedSpaceReq_descriptor,
+        internal_static_pbanalysis_IncrUsedSpaceReq_descriptor,
         new java.lang.String[] { "Id", "Incr", });
-    internal_static_pb_AllocNodesReq_descriptor =
+    internal_static_pbanalysis_AllocNodesReq_descriptor =
       getDescriptor().getMessageTypes().get(15);
-    internal_static_pb_AllocNodesReq_fieldAccessorTable = new
+    internal_static_pbanalysis_AllocNodesReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_AllocNodesReq_descriptor,
+        internal_static_pbanalysis_AllocNodesReq_descriptor,
         new java.lang.String[] { "ShardCount", "ErrIDs", });
-    internal_static_pb_GetNodesReq_descriptor =
+    internal_static_pbanalysis_GetNodesReq_descriptor =
       getDescriptor().getMessageTypes().get(16);
-    internal_static_pb_GetNodesReq_fieldAccessorTable = new
+    internal_static_pbanalysis_GetNodesReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_GetNodesReq_descriptor,
+        internal_static_pbanalysis_GetNodesReq_descriptor,
         new java.lang.String[] { "NodeIDs", });
-    internal_static_pb_DNIReq_descriptor =
+    internal_static_pbanalysis_DNIReq_descriptor =
       getDescriptor().getMessageTypes().get(17);
-    internal_static_pb_DNIReq_fieldAccessorTable = new
+    internal_static_pbanalysis_DNIReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_DNIReq_descriptor,
+        internal_static_pbanalysis_DNIReq_descriptor,
         new java.lang.String[] { "Id", "Shard", });
-    internal_static_pb_UpdateTaskStatusReq_descriptor =
+    internal_static_pbanalysis_UpdateTaskStatusReq_descriptor =
       getDescriptor().getMessageTypes().get(18);
-    internal_static_pb_UpdateTaskStatusReq_fieldAccessorTable = new
+    internal_static_pbanalysis_UpdateTaskStatusReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_UpdateTaskStatusReq_descriptor,
+        internal_static_pbanalysis_UpdateTaskStatusReq_descriptor,
         new java.lang.String[] { "Id", "InvalidNode", });
-    internal_static_pb_ShardCountMsg_descriptor =
+    internal_static_pbanalysis_ShardCountMsg_descriptor =
       getDescriptor().getMessageTypes().get(19);
-    internal_static_pb_ShardCountMsg_fieldAccessorTable = new
+    internal_static_pbanalysis_ShardCountMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_ShardCountMsg_descriptor,
+        internal_static_pbanalysis_ShardCountMsg_descriptor,
         new java.lang.String[] { "ID", "Cnt", });
-    internal_static_pb_GetInvalidNodesResp_descriptor =
+    internal_static_pbanalysis_GetInvalidNodesResp_descriptor =
       getDescriptor().getMessageTypes().get(20);
-    internal_static_pb_GetInvalidNodesResp_fieldAccessorTable = new
+    internal_static_pbanalysis_GetInvalidNodesResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_GetInvalidNodesResp_descriptor,
+        internal_static_pbanalysis_GetInvalidNodesResp_descriptor,
         new java.lang.String[] { "ShardCounts", });
-    internal_static_pb_GetRebuildItemReq_descriptor =
+    internal_static_pbanalysis_GetRebuildItemReq_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_pb_GetRebuildItemReq_fieldAccessorTable = new
+    internal_static_pbanalysis_GetRebuildItemReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_GetRebuildItemReq_descriptor,
+        internal_static_pbanalysis_GetRebuildItemReq_descriptor,
         new java.lang.String[] { "MinerID", "Index", "Total", });
-    internal_static_pb_GetRebuildItemResp_descriptor =
+    internal_static_pbanalysis_GetRebuildItemResp_descriptor =
       getDescriptor().getMessageTypes().get(22);
-    internal_static_pb_GetRebuildItemResp_fieldAccessorTable = new
+    internal_static_pbanalysis_GetRebuildItemResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_GetRebuildItemResp_descriptor,
+        internal_static_pbanalysis_GetRebuildItemResp_descriptor,
         new java.lang.String[] { "Node", "Shards", });
-    internal_static_pb_DownloadShardRequest_descriptor =
+    internal_static_pbanalysis_DownloadShardRequest_descriptor =
       getDescriptor().getMessageTypes().get(23);
-    internal_static_pb_DownloadShardRequest_fieldAccessorTable = new
+    internal_static_pbanalysis_DownloadShardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_DownloadShardRequest_descriptor,
+        internal_static_pbanalysis_DownloadShardRequest_descriptor,
         new java.lang.String[] { "VHF", });
-    internal_static_pb_DownloadShardResponse_descriptor =
+    internal_static_pbanalysis_DownloadShardResponse_descriptor =
       getDescriptor().getMessageTypes().get(24);
-    internal_static_pb_DownloadShardResponse_fieldAccessorTable = new
+    internal_static_pbanalysis_DownloadShardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pb_DownloadShardResponse_descriptor,
+        internal_static_pbanalysis_DownloadShardResponse_descriptor,
         new java.lang.String[] { "Data", });
+    internal_static_pbanalysis_SignMessage_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_pbanalysis_SignMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pbanalysis_SignMessage_descriptor,
+        new java.lang.String[] { "AccountName", "Data", "Signature", });
+    internal_static_pbanalysis_UpdateUspaceMessage_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_pbanalysis_UpdateUspaceMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pbanalysis_UpdateUspaceMessage_descriptor,
+        new java.lang.String[] { "NodeID", "FromNodeID", "Uspace", });
+    internal_static_pbanalysis_PunishMessage_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_pbanalysis_PunishMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pbanalysis_PunishMessage_descriptor,
+        new java.lang.String[] { "NodeID", "Type", "NeedPunish", "Count", "Rule", });
+    internal_static_pbanalysis_PunishMessage_RuleEntry_descriptor =
+      internal_static_pbanalysis_PunishMessage_descriptor.getNestedTypes().get(0);
+    internal_static_pbanalysis_PunishMessage_RuleEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pbanalysis_PunishMessage_RuleEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface GetNodesReqOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.GetNodesReq)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.GetNodesReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

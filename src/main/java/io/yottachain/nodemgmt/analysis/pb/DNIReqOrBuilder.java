@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface DNIReqOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.DNIReq)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.DNIReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

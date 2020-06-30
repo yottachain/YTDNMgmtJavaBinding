@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * request message of UpdateTaskStatus function
  * </pre>
  *
- * Protobuf type {@code pb.UpdateTaskStatusReq}
+ * Protobuf type {@code pbanalysis.UpdateTaskStatusReq}
  */
 public  final class UpdateTaskStatusReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.UpdateTaskStatusReq)
+    // @@protoc_insertion_point(message_implements:pbanalysis.UpdateTaskStatusReq)
     UpdateTaskStatusReqOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use UpdateTaskStatusReq.newBuilder() to construct.
@@ -85,13 +85,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_UpdateTaskStatusReq_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_UpdateTaskStatusReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_UpdateTaskStatusReq_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_UpdateTaskStatusReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReq.class, io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReq.Builder.class);
   }
@@ -309,21 +309,21 @@ private static final long serialVersionUID = 0L;
    * request message of UpdateTaskStatus function
    * </pre>
    *
-   * Protobuf type {@code pb.UpdateTaskStatusReq}
+   * Protobuf type {@code pbanalysis.UpdateTaskStatusReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.UpdateTaskStatusReq)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.UpdateTaskStatusReq)
       io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_UpdateTaskStatusReq_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_UpdateTaskStatusReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_UpdateTaskStatusReq_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_UpdateTaskStatusReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReq.class, io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReq.Builder.class);
     }
@@ -356,7 +356,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_UpdateTaskStatusReq_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_UpdateTaskStatusReq_descriptor;
     }
 
     @java.lang.Override
@@ -569,10 +569,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.UpdateTaskStatusReq)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.UpdateTaskStatusReq)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.UpdateTaskStatusReq)
+  // @@protoc_insertion_point(class_scope:pbanalysis.UpdateTaskStatusReq)
   private static final io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReq DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.UpdateTaskStatusReq();

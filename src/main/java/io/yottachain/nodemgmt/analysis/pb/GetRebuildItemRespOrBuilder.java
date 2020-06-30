@@ -4,19 +4,19 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface GetRebuildItemRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.GetRebuildItemResp)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.GetRebuildItemResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pb.NodeMsg node = 1;</code>
+   * <code>.pbanalysis.NodeMsg node = 1;</code>
    */
   boolean hasNode();
   /**
-   * <code>.pb.NodeMsg node = 1;</code>
+   * <code>.pbanalysis.NodeMsg node = 1;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.NodeMsg getNode();
   /**
-   * <code>.pb.NodeMsg node = 1;</code>
+   * <code>.pbanalysis.NodeMsg node = 1;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.NodeMsgOrBuilder getNodeOrBuilder();
 

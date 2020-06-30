@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface SpotCheckTaskMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.SpotCheckTaskMsg)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.SpotCheckTaskMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -7,6 +7,7 @@ import com.ibm.etcd.client.KeyUtils;
 import com.ibm.etcd.client.KvStoreClient;
 import com.ibm.etcd.client.kv.KvClient;
 import io.grpc.netty.shaded.io.netty.util.internal.StringUtil;
+import io.yottachain.nodemgmt.analysis.pb.AnalysisCli;
 import io.yottachain.nodemgmt.pb.NodeMsg;
 import io.yottachain.nodemgmt.core.*;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
@@ -214,7 +215,23 @@ public class YottaNodeMgmt {
             try {
                 analysisTimeout = Integer.parseInt(analysisTimeoutStr);
             } catch (Exception e) {}
-            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, nodemgmthostname, nodemgmtPort, analysisHost, analysisPort, analysisTimeout);
+
+        String rebuilderHost = System.getenv("NODEMGMT_REBUILDERHOSTNAME");
+        if (StringUtil.isNullOrEmpty(rebuilderHost)) {
+            rebuilderHost = "127.0.0.1";
+        }
+        String rebuilderPortStr = System.getenv("NODEMGMT_REBUILDERPORT");
+        int rebuilderPort = 8080;
+        try {
+            rebuilderPort = Integer.parseInt(rebuilderPortStr);
+        } catch (Exception e) {}
+        String rebuilderTimeoutStr = System.getenv("NODEMGMT_REBUILDERTIMEOUT");
+        int rebuilderTimeout = 5000;
+        try {
+            rebuilderTimeout = Integer.parseInt(rebuilderTimeoutStr);
+        } catch (Exception e) {}
+
+            client = new NodeMgmt(mongoURL, eosURL, bpAccount, bpPrivkey, contractOwnerM, contractOwnerD, shadowAccount, bpid, master, nodemgmthostname, nodemgmtPort, analysisHost, analysisPort, analysisTimeout, rebuilderHost, rebuilderPort, rebuilderTimeout);
 //        }
     }
 
@@ -346,21 +363,29 @@ public class YottaNodeMgmt {
         client.updateTaskStatus(id, nodeIDs);
     }
 
-    public static List<ShardCount> getInvalidNodes() throws NodeMgmtException {
-        return client.getInvalidNodes();
+    public List<byte[]> getRebuildTasks() throws NodeMgmtException {
+        return client.getRebuildTasks();
     }
 
-    public static RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
-        return client.getRebuildItem(minerID, index, total);
+    public void updateTaskStatus(List<byte[]> ids, List<Integer> results) throws NodeMgmtException {
+        client.updateTaskStatus(ids, results);
     }
 
-    public static void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
-        client.deleteDNI(id, shard);
-    }
-
-    public static void finishRebuild(int id) throws NodeMgmtException {
-        client.finishRebuild(id);
-    }
+//    public static List<ShardCount> getInvalidNodes() throws NodeMgmtException {
+//        return client.getInvalidNodes();
+//    }
+//
+//    public static RebuildItem getRebuildItem(int minerID, long index, long total) throws NodeMgmtException {
+//        return client.getRebuildItem(minerID, index, total);
+//    }
+//
+//    public static void deleteDNI(int id, byte[] shard) throws NodeMgmtException {
+//        client.deleteDNI(id, shard);
+//    }
+//
+//    public static void finishRebuild(int id) throws NodeMgmtException {
+//        client.finishRebuild(id);
+//    }
 
 //    private static String checkPublicIP(List<String> addrs) {
 //        for (String addr : addrs) {
@@ -428,6 +453,9 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
+        AnalysisCli cli = new AnalysisCli("117.161.73.21", 8080, 5000);
+        boolean r = cli.isNodeSelected();
+        System.out.println(r);
         PbClient client = new PbClient("127.0.0.1", 11001);
         try {
             client.callAPI("adhkahjkahda", "PreRegisterNode");

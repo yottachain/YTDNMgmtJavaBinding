@@ -27,7 +27,7 @@ public final class AnalysisGrpc {
 
   private AnalysisGrpc() {}
 
-  public static final String SERVICE_NAME = "pb.Analysis";
+  public static final String SERVICE_NAME = "pbanalysis.Analysis";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.analysis.pb.Empty,

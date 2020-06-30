@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface Int64MsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.Int64Msg)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.Int64Msg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -4,29 +4,29 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface GetInvalidNodesRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.GetInvalidNodesResp)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.GetInvalidNodesResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   java.util.List<io.yottachain.nodemgmt.analysis.pb.ShardCountMsg> 
       getShardCountsList();
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.ShardCountMsg getShardCounts(int index);
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   int getShardCountsCount();
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   java.util.List<? extends io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder> 
       getShardCountsOrBuilderList();
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder getShardCountsOrBuilder(
       int index);
