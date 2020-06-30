@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface IncrUsedSpaceReqOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.IncrUsedSpaceReq)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.IncrUsedSpaceReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

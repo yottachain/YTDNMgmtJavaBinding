@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface String2MsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.String2Msg)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.String2Msg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

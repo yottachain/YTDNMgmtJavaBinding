@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  *msgid=0xc258
  * </pre>
  *
- * Protobuf type {@code pb.TaskDescriptionCP}
+ * Protobuf type {@code pbrebuilder.TaskDescriptionCP}
  */
 public  final class TaskDescriptionCP extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.TaskDescriptionCP)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.TaskDescriptionCP)
     TaskDescriptionCPOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use TaskDescriptionCP.newBuilder() to construct.
@@ -99,13 +99,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskDescriptionCP_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskDescriptionCP_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskDescriptionCP_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskDescriptionCP_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCP.class, io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCP.Builder.class);
   }
@@ -131,32 +131,32 @@ private static final long serialVersionUID = 0L;
   public static final int LOCATIONS_FIELD_NUMBER = 3;
   private java.util.List<io.yottachain.nodemgmt.rebuilder.pb.P2PLocation> locations_;
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.P2PLocation> getLocationsList() {
     return locations_;
   }
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   public java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder> 
       getLocationsOrBuilderList() {
     return locations_;
   }
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   public int getLocationsCount() {
     return locations_.size();
   }
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   public io.yottachain.nodemgmt.rebuilder.pb.P2PLocation getLocations(int index) {
     return locations_.get(index);
   }
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   public io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder getLocationsOrBuilder(
       int index) {
@@ -347,21 +347,21 @@ private static final long serialVersionUID = 0L;
    *msgid=0xc258
    * </pre>
    *
-   * Protobuf type {@code pb.TaskDescriptionCP}
+   * Protobuf type {@code pbrebuilder.TaskDescriptionCP}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.TaskDescriptionCP)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.TaskDescriptionCP)
       io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCPOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskDescriptionCP_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskDescriptionCP_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskDescriptionCP_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskDescriptionCP_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCP.class, io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCP.Builder.class);
     }
@@ -401,7 +401,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskDescriptionCP_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskDescriptionCP_descriptor;
     }
 
     @java.lang.Override
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
         io.yottachain.nodemgmt.rebuilder.pb.P2PLocation, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder, io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder> locationsBuilder_;
 
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.P2PLocation> getLocationsList() {
       if (locationsBuilder_ == null) {
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public int getLocationsCount() {
       if (locationsBuilder_ == null) {
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.P2PLocation getLocations(int index) {
       if (locationsBuilder_ == null) {
@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder setLocations(
         int index, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation value) {
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder setLocations(
         int index, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder builderForValue) {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder addLocations(io.yottachain.nodemgmt.rebuilder.pb.P2PLocation value) {
       if (locationsBuilder_ == null) {
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder addLocations(
         int index, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation value) {
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder addLocations(
         io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder builderForValue) {
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder addLocations(
         int index, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder builderForValue) {
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder addAllLocations(
         java.lang.Iterable<? extends io.yottachain.nodemgmt.rebuilder.pb.P2PLocation> values) {
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder clearLocations() {
       if (locationsBuilder_ == null) {
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public Builder removeLocations(int index) {
       if (locationsBuilder_ == null) {
@@ -777,14 +777,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder getLocationsBuilder(
         int index) {
       return getLocationsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder getLocationsOrBuilder(
         int index) {
@@ -794,7 +794,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder> 
          getLocationsOrBuilderList() {
@@ -805,14 +805,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder addLocationsBuilder() {
       return getLocationsFieldBuilder().addBuilder(
           io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder addLocationsBuilder(
         int index) {
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
           index, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.P2PLocation locations = 3;</code>
+     * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder> 
          getLocationsBuilderList() {
@@ -853,10 +853,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.TaskDescriptionCP)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.TaskDescriptionCP)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.TaskDescriptionCP)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.TaskDescriptionCP)
   private static final io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCP DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.TaskDescriptionCP();

@@ -4,29 +4,29 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface GetSpotCheckListRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.GetSpotCheckListResp)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.GetSpotCheckListResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg> 
       getSpotCheckListsList();
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg getSpotCheckLists(int index);
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   int getSpotCheckListsCount();
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder> 
       getSpotCheckListsOrBuilderList();
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder getSpotCheckListsOrBuilder(
       int index);

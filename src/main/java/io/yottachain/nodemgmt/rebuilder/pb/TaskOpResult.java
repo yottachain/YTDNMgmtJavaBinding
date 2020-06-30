@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  *msgid=0x16f3
  * </pre>
  *
- * Protobuf type {@code pb.TaskOpResult}
+ * Protobuf type {@code pbrebuilder.TaskOpResult}
  */
 public  final class TaskOpResult extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.TaskOpResult)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.TaskOpResult)
     TaskOpResultOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use TaskOpResult.newBuilder() to construct.
@@ -84,13 +84,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskOpResult_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskOpResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskOpResult_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskOpResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.TaskOpResult.class, io.yottachain.nodemgmt.rebuilder.pb.TaskOpResult.Builder.class);
   }
@@ -284,21 +284,21 @@ private static final long serialVersionUID = 0L;
    *msgid=0x16f3
    * </pre>
    *
-   * Protobuf type {@code pb.TaskOpResult}
+   * Protobuf type {@code pbrebuilder.TaskOpResult}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.TaskOpResult)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.TaskOpResult)
       io.yottachain.nodemgmt.rebuilder.pb.TaskOpResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskOpResult_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskOpResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskOpResult_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskOpResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.TaskOpResult.class, io.yottachain.nodemgmt.rebuilder.pb.TaskOpResult.Builder.class);
     }
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_TaskOpResult_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_TaskOpResult_descriptor;
     }
 
     @java.lang.Override
@@ -503,10 +503,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.TaskOpResult)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.TaskOpResult)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.TaskOpResult)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.TaskOpResult)
   private static final io.yottachain.nodemgmt.rebuilder.pb.TaskOpResult DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.TaskOpResult();

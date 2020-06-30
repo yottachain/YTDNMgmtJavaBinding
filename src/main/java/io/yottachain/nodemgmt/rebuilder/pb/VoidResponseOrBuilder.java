@@ -4,6 +4,6 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface VoidResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.VoidResponse)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.VoidResponse)
     com.google.protobuf.MessageOrBuilder {
 }

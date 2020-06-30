@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * ShardCount message
  * </pre>
  *
- * Protobuf type {@code pb.ShardCountMsg}
+ * Protobuf type {@code pbanalysis.ShardCountMsg}
  */
 public  final class ShardCountMsg extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.ShardCountMsg)
+    // @@protoc_insertion_point(message_implements:pbanalysis.ShardCountMsg)
     ShardCountMsgOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use ShardCountMsg.newBuilder() to construct.
@@ -83,13 +83,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_ShardCountMsg_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_ShardCountMsg_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_ShardCountMsg_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_ShardCountMsg_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.class, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder.class);
   }
@@ -284,21 +284,21 @@ private static final long serialVersionUID = 0L;
    * ShardCount message
    * </pre>
    *
-   * Protobuf type {@code pb.ShardCountMsg}
+   * Protobuf type {@code pbanalysis.ShardCountMsg}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.ShardCountMsg)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.ShardCountMsg)
       io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_ShardCountMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_ShardCountMsg_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_ShardCountMsg_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_ShardCountMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.class, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder.class);
     }
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_ShardCountMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_ShardCountMsg_descriptor;
     }
 
     @java.lang.Override
@@ -500,10 +500,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.ShardCountMsg)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.ShardCountMsg)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.ShardCountMsg)
+  // @@protoc_insertion_point(class_scope:pbanalysis.ShardCountMsg)
   private static final io.yottachain.nodemgmt.analysis.pb.ShardCountMsg DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.ShardCountMsg();

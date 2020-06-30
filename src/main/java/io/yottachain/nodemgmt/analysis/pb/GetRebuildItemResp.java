@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * response message of GetInvalidNodes function
  * </pre>
  *
- * Protobuf type {@code pb.GetRebuildItemResp}
+ * Protobuf type {@code pbanalysis.GetRebuildItemResp}
  */
 public  final class GetRebuildItemResp extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.GetRebuildItemResp)
+    // @@protoc_insertion_point(message_implements:pbanalysis.GetRebuildItemResp)
     GetRebuildItemRespOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use GetRebuildItemResp.newBuilder() to construct.
@@ -99,13 +99,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetRebuildItemResp_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetRebuildItemResp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetRebuildItemResp_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetRebuildItemResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.GetRebuildItemResp.class, io.yottachain.nodemgmt.analysis.pb.GetRebuildItemResp.Builder.class);
   }
@@ -113,19 +113,19 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_FIELD_NUMBER = 1;
   private io.yottachain.nodemgmt.analysis.pb.NodeMsg node_;
   /**
-   * <code>.pb.NodeMsg node = 1;</code>
+   * <code>.pbanalysis.NodeMsg node = 1;</code>
    */
   public boolean hasNode() {
     return node_ != null;
   }
   /**
-   * <code>.pb.NodeMsg node = 1;</code>
+   * <code>.pbanalysis.NodeMsg node = 1;</code>
    */
   public io.yottachain.nodemgmt.analysis.pb.NodeMsg getNode() {
     return node_ == null ? io.yottachain.nodemgmt.analysis.pb.NodeMsg.getDefaultInstance() : node_;
   }
   /**
-   * <code>.pb.NodeMsg node = 1;</code>
+   * <code>.pbanalysis.NodeMsg node = 1;</code>
    */
   public io.yottachain.nodemgmt.analysis.pb.NodeMsgOrBuilder getNodeOrBuilder() {
     return getNode();
@@ -336,21 +336,21 @@ private static final long serialVersionUID = 0L;
    * response message of GetInvalidNodes function
    * </pre>
    *
-   * Protobuf type {@code pb.GetRebuildItemResp}
+   * Protobuf type {@code pbanalysis.GetRebuildItemResp}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.GetRebuildItemResp)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.GetRebuildItemResp)
       io.yottachain.nodemgmt.analysis.pb.GetRebuildItemRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetRebuildItemResp_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetRebuildItemResp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetRebuildItemResp_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetRebuildItemResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.GetRebuildItemResp.class, io.yottachain.nodemgmt.analysis.pb.GetRebuildItemResp.Builder.class);
     }
@@ -387,7 +387,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetRebuildItemResp_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetRebuildItemResp_descriptor;
     }
 
     @java.lang.Override
@@ -513,13 +513,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         io.yottachain.nodemgmt.analysis.pb.NodeMsg, io.yottachain.nodemgmt.analysis.pb.NodeMsg.Builder, io.yottachain.nodemgmt.analysis.pb.NodeMsgOrBuilder> nodeBuilder_;
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public boolean hasNode() {
       return nodeBuilder_ != null || node_ != null;
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.NodeMsg getNode() {
       if (nodeBuilder_ == null) {
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public Builder setNode(io.yottachain.nodemgmt.analysis.pb.NodeMsg value) {
       if (nodeBuilder_ == null) {
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public Builder setNode(
         io.yottachain.nodemgmt.analysis.pb.NodeMsg.Builder builderForValue) {
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public Builder mergeNode(io.yottachain.nodemgmt.analysis.pb.NodeMsg value) {
       if (nodeBuilder_ == null) {
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public Builder clearNode() {
       if (nodeBuilder_ == null) {
@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.NodeMsg.Builder getNodeBuilder() {
       
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       return getNodeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.NodeMsgOrBuilder getNodeOrBuilder() {
       if (nodeBuilder_ != null) {
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.pb.NodeMsg node = 1;</code>
+     * <code>.pbanalysis.NodeMsg node = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         io.yottachain.nodemgmt.analysis.pb.NodeMsg, io.yottachain.nodemgmt.analysis.pb.NodeMsg.Builder, io.yottachain.nodemgmt.analysis.pb.NodeMsgOrBuilder> 
@@ -711,10 +711,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.GetRebuildItemResp)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.GetRebuildItemResp)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.GetRebuildItemResp)
+  // @@protoc_insertion_point(class_scope:pbanalysis.GetRebuildItemResp)
   private static final io.yottachain.nodemgmt.analysis.pb.GetRebuildItemResp DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.GetRebuildItemResp();

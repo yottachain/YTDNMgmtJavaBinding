@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * request message of GetInvalidNodes function
  * </pre>
  *
- * Protobuf type {@code pb.GetRebuildItemReq}
+ * Protobuf type {@code pbrebuilder.GetRebuildItemReq}
  */
 public  final class GetRebuildItemReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.GetRebuildItemReq)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.GetRebuildItemReq)
     GetRebuildItemReqOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use GetRebuildItemReq.newBuilder() to construct.
@@ -88,13 +88,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetRebuildItemReq_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetRebuildItemReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetRebuildItemReq_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetRebuildItemReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReq.class, io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReq.Builder.class);
   }
@@ -310,21 +310,21 @@ private static final long serialVersionUID = 0L;
    * request message of GetInvalidNodes function
    * </pre>
    *
-   * Protobuf type {@code pb.GetRebuildItemReq}
+   * Protobuf type {@code pbrebuilder.GetRebuildItemReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.GetRebuildItemReq)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.GetRebuildItemReq)
       io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetRebuildItemReq_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetRebuildItemReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetRebuildItemReq_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetRebuildItemReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReq.class, io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReq.Builder.class);
     }
@@ -359,7 +359,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetRebuildItemReq_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetRebuildItemReq_descriptor;
     }
 
     @java.lang.Override
@@ -558,10 +558,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.GetRebuildItemReq)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.GetRebuildItemReq)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.GetRebuildItemReq)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.GetRebuildItemReq)
   private static final io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReq DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.GetRebuildItemReq();

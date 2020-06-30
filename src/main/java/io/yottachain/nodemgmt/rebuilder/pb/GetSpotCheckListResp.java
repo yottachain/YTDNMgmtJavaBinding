@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * response message of GetSpotCheckList function
  * </pre>
  *
- * Protobuf type {@code pb.GetSpotCheckListResp}
+ * Protobuf type {@code pbrebuilder.GetSpotCheckListResp}
  */
 public  final class GetSpotCheckListResp extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.GetSpotCheckListResp)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.GetSpotCheckListResp)
     GetSpotCheckListRespOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use GetSpotCheckListResp.newBuilder() to construct.
@@ -87,13 +87,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetSpotCheckListResp_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetSpotCheckListResp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetSpotCheckListResp_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetSpotCheckListResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListResp.class, io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListResp.Builder.class);
   }
@@ -101,32 +101,32 @@ private static final long serialVersionUID = 0L;
   public static final int SPOTCHECKLISTS_FIELD_NUMBER = 1;
   private java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg> spotCheckLists_;
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg> getSpotCheckListsList() {
     return spotCheckLists_;
   }
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   public java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder> 
       getSpotCheckListsOrBuilderList() {
     return spotCheckLists_;
   }
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   public int getSpotCheckListsCount() {
     return spotCheckLists_.size();
   }
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg getSpotCheckLists(int index) {
     return spotCheckLists_.get(index);
   }
   /**
-   * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+   * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
    */
   public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder getSpotCheckListsOrBuilder(
       int index) {
@@ -295,21 +295,21 @@ private static final long serialVersionUID = 0L;
    * response message of GetSpotCheckList function
    * </pre>
    *
-   * Protobuf type {@code pb.GetSpotCheckListResp}
+   * Protobuf type {@code pbrebuilder.GetSpotCheckListResp}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.GetSpotCheckListResp)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.GetSpotCheckListResp)
       io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetSpotCheckListResp_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetSpotCheckListResp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetSpotCheckListResp_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetSpotCheckListResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListResp.class, io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListResp.Builder.class);
     }
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_GetSpotCheckListResp_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_GetSpotCheckListResp_descriptor;
     }
 
     @java.lang.Override
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
         io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder> spotCheckListsBuilder_;
 
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg> getSpotCheckListsList() {
       if (spotCheckListsBuilder_ == null) {
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public int getSpotCheckListsCount() {
       if (spotCheckListsBuilder_ == null) {
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg getSpotCheckLists(int index) {
       if (spotCheckListsBuilder_ == null) {
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder setSpotCheckLists(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg value) {
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder setSpotCheckLists(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder builderForValue) {
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder addSpotCheckLists(io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg value) {
       if (spotCheckListsBuilder_ == null) {
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder addSpotCheckLists(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg value) {
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder addSpotCheckLists(
         io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder builderForValue) {
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder addSpotCheckLists(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder builderForValue) {
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder addAllSpotCheckLists(
         java.lang.Iterable<? extends io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg> values) {
@@ -629,7 +629,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder clearSpotCheckLists() {
       if (spotCheckListsBuilder_ == null) {
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public Builder removeSpotCheckLists(int index) {
       if (spotCheckListsBuilder_ == null) {
@@ -655,14 +655,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder getSpotCheckListsBuilder(
         int index) {
       return getSpotCheckListsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder getSpotCheckListsOrBuilder(
         int index) {
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsgOrBuilder> 
          getSpotCheckListsOrBuilderList() {
@@ -683,14 +683,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder addSpotCheckListsBuilder() {
       return getSpotCheckListsFieldBuilder().addBuilder(
           io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder addSpotCheckListsBuilder(
         int index) {
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
           index, io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.SpotCheckListMsg spotCheckLists = 1;</code>
+     * <code>repeated .pbrebuilder.SpotCheckListMsg spotCheckLists = 1;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SpotCheckListMsg.Builder> 
          getSpotCheckListsBuilderList() {
@@ -731,10 +731,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.GetSpotCheckListResp)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.GetSpotCheckListResp)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.GetSpotCheckListResp)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.GetSpotCheckListResp)
   private static final io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListResp DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.GetSpotCheckListResp();

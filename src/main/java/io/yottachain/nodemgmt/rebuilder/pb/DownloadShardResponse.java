@@ -4,11 +4,11 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 /**
- * Protobuf type {@code pb.DownloadShardResponse}
+ * Protobuf type {@code pbrebuilder.DownloadShardResponse}
  */
 public  final class DownloadShardResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.DownloadShardResponse)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.DownloadShardResponse)
     DownloadShardResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use DownloadShardResponse.newBuilder() to construct.
@@ -75,13 +75,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_DownloadShardResponse_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_DownloadShardResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_DownloadShardResponse_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_DownloadShardResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponse.class, io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponse.Builder.class);
   }
@@ -251,21 +251,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.DownloadShardResponse}
+   * Protobuf type {@code pbrebuilder.DownloadShardResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.DownloadShardResponse)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.DownloadShardResponse)
       io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_DownloadShardResponse_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_DownloadShardResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_DownloadShardResponse_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_DownloadShardResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponse.class, io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponse.Builder.class);
     }
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_DownloadShardResponse_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_DownloadShardResponse_descriptor;
     }
 
     @java.lang.Override
@@ -438,10 +438,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.DownloadShardResponse)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.DownloadShardResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.DownloadShardResponse)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.DownloadShardResponse)
   private static final io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.DownloadShardResponse();

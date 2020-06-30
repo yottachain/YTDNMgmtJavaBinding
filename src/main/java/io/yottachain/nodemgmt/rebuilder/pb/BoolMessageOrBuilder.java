@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface BoolMessageOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.BoolMessage)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.BoolMessage)
     com.google.protobuf.MessageOrBuilder {
 
   /**

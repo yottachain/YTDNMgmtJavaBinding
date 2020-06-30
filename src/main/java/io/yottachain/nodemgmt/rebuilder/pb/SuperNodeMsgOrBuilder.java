@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface SuperNodeMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.SuperNodeMsg)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.SuperNodeMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

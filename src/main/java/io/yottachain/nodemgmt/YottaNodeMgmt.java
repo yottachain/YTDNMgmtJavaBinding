@@ -7,6 +7,7 @@ import com.ibm.etcd.client.KeyUtils;
 import com.ibm.etcd.client.KvStoreClient;
 import com.ibm.etcd.client.kv.KvClient;
 import io.grpc.netty.shaded.io.netty.util.internal.StringUtil;
+import io.yottachain.nodemgmt.analysis.pb.AnalysisCli;
 import io.yottachain.nodemgmt.pb.NodeMsg;
 import io.yottachain.nodemgmt.core.*;
 import io.yottachain.nodemgmt.core.exception.NodeMgmtException;
@@ -452,6 +453,9 @@ public class YottaNodeMgmt {
     }
 
     public static void main(String[] args) throws Exception {
+        AnalysisCli cli = new AnalysisCli("117.161.73.21", 8080, 5000);
+        boolean r = cli.isNodeSelected();
+        System.out.println(r);
         PbClient client = new PbClient("127.0.0.1", 11001);
         try {
             client.callAPI("adhkahjkahda", "PreRegisterNode");

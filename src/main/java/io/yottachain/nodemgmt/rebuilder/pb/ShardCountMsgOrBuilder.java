@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface ShardCountMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.ShardCountMsg)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.ShardCountMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface MultiTaskDescriptionOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.MultiTaskDescription)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.MultiTaskDescription)
     com.google.protobuf.MessageOrBuilder {
 
   /**

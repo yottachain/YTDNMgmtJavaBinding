@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * NodeStat message
  * </pre>
  *
- * Protobuf type {@code pb.NodeStatMsg}
+ * Protobuf type {@code pbanalysis.NodeStatMsg}
  */
 public  final class NodeStatMsg extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.NodeStatMsg)
+    // @@protoc_insertion_point(message_implements:pbanalysis.NodeStatMsg)
     NodeStatMsgOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use NodeStatMsg.newBuilder() to construct.
@@ -103,13 +103,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeStatMsg_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeStatMsg_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeStatMsg_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeStatMsg_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.NodeStatMsg.class, io.yottachain.nodemgmt.analysis.pb.NodeStatMsg.Builder.class);
   }
@@ -413,21 +413,21 @@ private static final long serialVersionUID = 0L;
    * NodeStat message
    * </pre>
    *
-   * Protobuf type {@code pb.NodeStatMsg}
+   * Protobuf type {@code pbanalysis.NodeStatMsg}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.NodeStatMsg)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.NodeStatMsg)
       io.yottachain.nodemgmt.analysis.pb.NodeStatMsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeStatMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeStatMsg_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeStatMsg_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeStatMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.NodeStatMsg.class, io.yottachain.nodemgmt.analysis.pb.NodeStatMsg.Builder.class);
     }
@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_NodeStatMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_NodeStatMsg_descriptor;
     }
 
     @java.lang.Override
@@ -829,10 +829,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.NodeStatMsg)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.NodeStatMsg)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.NodeStatMsg)
+  // @@protoc_insertion_point(class_scope:pbanalysis.NodeStatMsg)
   private static final io.yottachain.nodemgmt.analysis.pb.NodeStatMsg DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.NodeStatMsg();

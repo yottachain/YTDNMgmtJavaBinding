@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface AllocNodesReqOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.AllocNodesReq)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.AllocNodesReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

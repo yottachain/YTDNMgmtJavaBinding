@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * request message of GetInvalidNodes function
  * </pre>
  *
- * Protobuf type {@code pb.GetInvalidNodesResp}
+ * Protobuf type {@code pbanalysis.GetInvalidNodesResp}
  */
 public  final class GetInvalidNodesResp extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.GetInvalidNodesResp)
+    // @@protoc_insertion_point(message_implements:pbanalysis.GetInvalidNodesResp)
     GetInvalidNodesRespOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use GetInvalidNodesResp.newBuilder() to construct.
@@ -87,13 +87,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetInvalidNodesResp_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetInvalidNodesResp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetInvalidNodesResp_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetInvalidNodesResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesResp.class, io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesResp.Builder.class);
   }
@@ -101,32 +101,32 @@ private static final long serialVersionUID = 0L;
   public static final int SHARDCOUNTS_FIELD_NUMBER = 1;
   private java.util.List<io.yottachain.nodemgmt.analysis.pb.ShardCountMsg> shardCounts_;
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   public java.util.List<io.yottachain.nodemgmt.analysis.pb.ShardCountMsg> getShardCountsList() {
     return shardCounts_;
   }
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   public java.util.List<? extends io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder> 
       getShardCountsOrBuilderList() {
     return shardCounts_;
   }
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   public int getShardCountsCount() {
     return shardCounts_.size();
   }
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   public io.yottachain.nodemgmt.analysis.pb.ShardCountMsg getShardCounts(int index) {
     return shardCounts_.get(index);
   }
   /**
-   * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+   * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
    */
   public io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder getShardCountsOrBuilder(
       int index) {
@@ -295,21 +295,21 @@ private static final long serialVersionUID = 0L;
    * request message of GetInvalidNodes function
    * </pre>
    *
-   * Protobuf type {@code pb.GetInvalidNodesResp}
+   * Protobuf type {@code pbanalysis.GetInvalidNodesResp}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.GetInvalidNodesResp)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.GetInvalidNodesResp)
       io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetInvalidNodesResp_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetInvalidNodesResp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetInvalidNodesResp_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetInvalidNodesResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesResp.class, io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesResp.Builder.class);
     }
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_GetInvalidNodesResp_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_GetInvalidNodesResp_descriptor;
     }
 
     @java.lang.Override
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
         io.yottachain.nodemgmt.analysis.pb.ShardCountMsg, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder, io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder> shardCountsBuilder_;
 
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.analysis.pb.ShardCountMsg> getShardCountsList() {
       if (shardCountsBuilder_ == null) {
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public int getShardCountsCount() {
       if (shardCountsBuilder_ == null) {
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.ShardCountMsg getShardCounts(int index) {
       if (shardCountsBuilder_ == null) {
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder setShardCounts(
         int index, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg value) {
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder setShardCounts(
         int index, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder builderForValue) {
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder addShardCounts(io.yottachain.nodemgmt.analysis.pb.ShardCountMsg value) {
       if (shardCountsBuilder_ == null) {
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder addShardCounts(
         int index, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg value) {
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder addShardCounts(
         io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder builderForValue) {
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder addShardCounts(
         int index, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder builderForValue) {
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder addAllShardCounts(
         java.lang.Iterable<? extends io.yottachain.nodemgmt.analysis.pb.ShardCountMsg> values) {
@@ -629,7 +629,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder clearShardCounts() {
       if (shardCountsBuilder_ == null) {
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public Builder removeShardCounts(int index) {
       if (shardCountsBuilder_ == null) {
@@ -655,14 +655,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder getShardCountsBuilder(
         int index) {
       return getShardCountsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder getShardCountsOrBuilder(
         int index) {
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public java.util.List<? extends io.yottachain.nodemgmt.analysis.pb.ShardCountMsgOrBuilder> 
          getShardCountsOrBuilderList() {
@@ -683,14 +683,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder addShardCountsBuilder() {
       return getShardCountsFieldBuilder().addBuilder(
           io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder addShardCountsBuilder(
         int index) {
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
           index, io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.ShardCountMsg shardCounts = 1;</code>
+     * <code>repeated .pbanalysis.ShardCountMsg shardCounts = 1;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.analysis.pb.ShardCountMsg.Builder> 
          getShardCountsBuilderList() {
@@ -731,10 +731,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.GetInvalidNodesResp)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.GetInvalidNodesResp)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.GetInvalidNodesResp)
+  // @@protoc_insertion_point(class_scope:pbanalysis.GetInvalidNodesResp)
   private static final io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesResp DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.GetInvalidNodesResp();

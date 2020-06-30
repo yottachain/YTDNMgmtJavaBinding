@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * Node message
  * </pre>
  *
- * Protobuf type {@code pb.NodeMsg}
+ * Protobuf type {@code pbrebuilder.NodeMsg}
  */
 public  final class NodeMsg extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.NodeMsg)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.NodeMsg)
     NodeMsgOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use NodeMsg.newBuilder() to construct.
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_NodeMsg_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_NodeMsg_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_NodeMsg_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_NodeMsg_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.NodeMsg.class, io.yottachain.nodemgmt.rebuilder.pb.NodeMsg.Builder.class);
   }
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String, java.lang.Long> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.Long>newDefaultInstance(
-                io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_NodeMsg_UspacesEntry_descriptor, 
+                io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_NodeMsg_UspacesEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.INT64,
@@ -1423,15 +1423,15 @@ private static final long serialVersionUID = 0L;
    * Node message
    * </pre>
    *
-   * Protobuf type {@code pb.NodeMsg}
+   * Protobuf type {@code pbrebuilder.NodeMsg}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.NodeMsg)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.NodeMsg)
       io.yottachain.nodemgmt.rebuilder.pb.NodeMsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_NodeMsg_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_NodeMsg_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -1459,7 +1459,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_NodeMsg_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_NodeMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.NodeMsg.class, io.yottachain.nodemgmt.rebuilder.pb.NodeMsg.Builder.class);
     }
@@ -1543,7 +1543,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_NodeMsg_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_NodeMsg_descriptor;
     }
 
     @java.lang.Override
@@ -3410,10 +3410,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.NodeMsg)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.NodeMsg)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.NodeMsg)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.NodeMsg)
   private static final io.yottachain.nodemgmt.rebuilder.pb.NodeMsg DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.NodeMsg();

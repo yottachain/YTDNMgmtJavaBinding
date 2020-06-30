@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  *MessageID:1b31
  * </pre>
  *
- * Protobuf type {@code pb.MultiTaskOpResult}
+ * Protobuf type {@code pbrebuilder.MultiTaskOpResult}
  */
 public  final class MultiTaskOpResult extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.MultiTaskOpResult)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.MultiTaskOpResult)
     MultiTaskOpResultOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use MultiTaskOpResult.newBuilder() to construct.
@@ -111,13 +111,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskOpResult_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskOpResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskOpResult_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskOpResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResult.class, io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResult.Builder.class);
   }
@@ -362,21 +362,21 @@ private static final long serialVersionUID = 0L;
    *MessageID:1b31
    * </pre>
    *
-   * Protobuf type {@code pb.MultiTaskOpResult}
+   * Protobuf type {@code pbrebuilder.MultiTaskOpResult}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.MultiTaskOpResult)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.MultiTaskOpResult)
       io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskOpResult_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskOpResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskOpResult_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskOpResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResult.class, io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResult.Builder.class);
     }
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskOpResult_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskOpResult_descriptor;
     }
 
     @java.lang.Override
@@ -690,10 +690,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.MultiTaskOpResult)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.MultiTaskOpResult)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.MultiTaskOpResult)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.MultiTaskOpResult)
   private static final io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResult DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.MultiTaskOpResult();

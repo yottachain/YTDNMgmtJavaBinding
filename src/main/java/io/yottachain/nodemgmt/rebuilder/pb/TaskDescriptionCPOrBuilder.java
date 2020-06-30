@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface TaskDescriptionCPOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.TaskDescriptionCP)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.TaskDescriptionCP)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -18,25 +18,25 @@ public interface TaskDescriptionCPOrBuilder extends
   com.google.protobuf.ByteString getDataHash();
 
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   java.util.List<io.yottachain.nodemgmt.rebuilder.pb.P2PLocation> 
       getLocationsList();
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   io.yottachain.nodemgmt.rebuilder.pb.P2PLocation getLocations(int index);
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   int getLocationsCount();
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder> 
       getLocationsOrBuilderList();
   /**
-   * <code>repeated .pb.P2PLocation locations = 3;</code>
+   * <code>repeated .pbrebuilder.P2PLocation locations = 3;</code>
    */
   io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder getLocationsOrBuilder(
       int index);

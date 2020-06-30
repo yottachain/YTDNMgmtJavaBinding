@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.analysis.pb;
  * SuperNode message
  * </pre>
  *
- * Protobuf type {@code pb.SuperNodeMsg}
+ * Protobuf type {@code pbanalysis.SuperNodeMsg}
  */
 public  final class SuperNodeMsg extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.SuperNodeMsg)
+    // @@protoc_insertion_point(message_implements:pbanalysis.SuperNodeMsg)
     SuperNodeMsgOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use SuperNodeMsg.newBuilder() to construct.
@@ -113,13 +113,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_SuperNodeMsg_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_SuperNodeMsg_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_SuperNodeMsg_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_SuperNodeMsg_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg.class, io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg.Builder.class);
   }
@@ -515,21 +515,21 @@ private static final long serialVersionUID = 0L;
    * SuperNode message
    * </pre>
    *
-   * Protobuf type {@code pb.SuperNodeMsg}
+   * Protobuf type {@code pbanalysis.SuperNodeMsg}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.SuperNodeMsg)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.SuperNodeMsg)
       io.yottachain.nodemgmt.analysis.pb.SuperNodeMsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_SuperNodeMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_SuperNodeMsg_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_SuperNodeMsg_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_SuperNodeMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg.class, io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg.Builder.class);
     }
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_SuperNodeMsg_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_SuperNodeMsg_descriptor;
     }
 
     @java.lang.Override
@@ -1148,10 +1148,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.SuperNodeMsg)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.SuperNodeMsg)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.SuperNodeMsg)
+  // @@protoc_insertion_point(class_scope:pbanalysis.SuperNodeMsg)
   private static final io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg();

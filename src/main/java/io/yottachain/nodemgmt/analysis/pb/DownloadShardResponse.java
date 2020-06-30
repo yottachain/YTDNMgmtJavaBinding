@@ -4,11 +4,11 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 /**
- * Protobuf type {@code pb.DownloadShardResponse}
+ * Protobuf type {@code pbanalysis.DownloadShardResponse}
  */
 public  final class DownloadShardResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.DownloadShardResponse)
+    // @@protoc_insertion_point(message_implements:pbanalysis.DownloadShardResponse)
     DownloadShardResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use DownloadShardResponse.newBuilder() to construct.
@@ -75,13 +75,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_DownloadShardResponse_descriptor;
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_DownloadShardResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_DownloadShardResponse_fieldAccessorTable
+    return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_DownloadShardResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.analysis.pb.DownloadShardResponse.class, io.yottachain.nodemgmt.analysis.pb.DownloadShardResponse.Builder.class);
   }
@@ -251,21 +251,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.DownloadShardResponse}
+   * Protobuf type {@code pbanalysis.DownloadShardResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.DownloadShardResponse)
+      // @@protoc_insertion_point(builder_implements:pbanalysis.DownloadShardResponse)
       io.yottachain.nodemgmt.analysis.pb.DownloadShardResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_DownloadShardResponse_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_DownloadShardResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_DownloadShardResponse_fieldAccessorTable
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_DownloadShardResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.analysis.pb.DownloadShardResponse.class, io.yottachain.nodemgmt.analysis.pb.DownloadShardResponse.Builder.class);
     }
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pb_DownloadShardResponse_descriptor;
+      return io.yottachain.nodemgmt.analysis.pb.AnalysisProto.internal_static_pbanalysis_DownloadShardResponse_descriptor;
     }
 
     @java.lang.Override
@@ -438,10 +438,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.DownloadShardResponse)
+    // @@protoc_insertion_point(builder_scope:pbanalysis.DownloadShardResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.DownloadShardResponse)
+  // @@protoc_insertion_point(class_scope:pbanalysis.DownloadShardResponse)
   private static final io.yottachain.nodemgmt.analysis.pb.DownloadShardResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.analysis.pb.DownloadShardResponse();

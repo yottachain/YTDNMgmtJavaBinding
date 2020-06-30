@@ -4,6 +4,6 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface EmptyOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.Empty)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.Empty)
     com.google.protobuf.MessageOrBuilder {
 }

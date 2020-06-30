@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * request message of IncrUsedSpace function
  * </pre>
  *
- * Protobuf type {@code pb.IncrUsedSpaceReq}
+ * Protobuf type {@code pbrebuilder.IncrUsedSpaceReq}
  */
 public  final class IncrUsedSpaceReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.IncrUsedSpaceReq)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.IncrUsedSpaceReq)
     IncrUsedSpaceReqOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use IncrUsedSpaceReq.newBuilder() to construct.
@@ -83,13 +83,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_IncrUsedSpaceReq_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_IncrUsedSpaceReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_IncrUsedSpaceReq_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_IncrUsedSpaceReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReq.class, io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReq.Builder.class);
   }
@@ -284,21 +284,21 @@ private static final long serialVersionUID = 0L;
    * request message of IncrUsedSpace function
    * </pre>
    *
-   * Protobuf type {@code pb.IncrUsedSpaceReq}
+   * Protobuf type {@code pbrebuilder.IncrUsedSpaceReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.IncrUsedSpaceReq)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.IncrUsedSpaceReq)
       io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_IncrUsedSpaceReq_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_IncrUsedSpaceReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_IncrUsedSpaceReq_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_IncrUsedSpaceReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReq.class, io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReq.Builder.class);
     }
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_IncrUsedSpaceReq_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_IncrUsedSpaceReq_descriptor;
     }
 
     @java.lang.Override
@@ -500,10 +500,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.IncrUsedSpaceReq)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.IncrUsedSpaceReq)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.IncrUsedSpaceReq)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.IncrUsedSpaceReq)
   private static final io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReq DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.IncrUsedSpaceReq();

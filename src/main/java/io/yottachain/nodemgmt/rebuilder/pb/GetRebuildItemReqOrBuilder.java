@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface GetRebuildItemReqOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.GetRebuildItemReq)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.GetRebuildItemReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

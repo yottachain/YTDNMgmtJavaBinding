@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  *msgid=0x2cb0
  * </pre>
  *
- * Protobuf type {@code pb.MultiTaskDescription}
+ * Protobuf type {@code pbrebuilder.MultiTaskDescription}
  */
 public  final class MultiTaskDescription extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.MultiTaskDescription)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.MultiTaskDescription)
     MultiTaskDescriptionOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use MultiTaskDescription.newBuilder() to construct.
@@ -86,13 +86,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskDescription_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskDescription_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskDescription_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskDescription_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescription.class, io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescription.Builder.class);
   }
@@ -286,21 +286,21 @@ private static final long serialVersionUID = 0L;
    *msgid=0x2cb0
    * </pre>
    *
-   * Protobuf type {@code pb.MultiTaskDescription}
+   * Protobuf type {@code pbrebuilder.MultiTaskDescription}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.MultiTaskDescription)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.MultiTaskDescription)
       io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescriptionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskDescription_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskDescription_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskDescription_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskDescription_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescription.class, io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescription.Builder.class);
     }
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_MultiTaskDescription_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_MultiTaskDescription_descriptor;
     }
 
     @java.lang.Override
@@ -530,10 +530,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.MultiTaskDescription)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.MultiTaskDescription)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.MultiTaskDescription)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.MultiTaskDescription)
   private static final io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescription DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.MultiTaskDescription();

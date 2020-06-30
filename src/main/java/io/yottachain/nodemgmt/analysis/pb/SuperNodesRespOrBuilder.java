@@ -4,29 +4,29 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface SuperNodesRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.SuperNodesResp)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.SuperNodesResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbanalysis.SuperNodeMsg superNodes = 1;</code>
    */
   java.util.List<io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg> 
       getSuperNodesList();
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbanalysis.SuperNodeMsg superNodes = 1;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.SuperNodeMsg getSuperNodes(int index);
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbanalysis.SuperNodeMsg superNodes = 1;</code>
    */
   int getSuperNodesCount();
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbanalysis.SuperNodeMsg superNodes = 1;</code>
    */
   java.util.List<? extends io.yottachain.nodemgmt.analysis.pb.SuperNodeMsgOrBuilder> 
       getSuperNodesOrBuilderList();
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbanalysis.SuperNodeMsg superNodes = 1;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.SuperNodeMsgOrBuilder getSuperNodesOrBuilder(
       int index);

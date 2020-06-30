@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface UpdateTaskStatusReqOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.UpdateTaskStatusReq)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.UpdateTaskStatusReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

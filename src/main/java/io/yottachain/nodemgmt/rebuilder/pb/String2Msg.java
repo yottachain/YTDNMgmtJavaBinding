@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * message that only contains two values of string
  * </pre>
  *
- * Protobuf type {@code pb.String2Msg}
+ * Protobuf type {@code pbrebuilder.String2Msg}
  */
 public  final class String2Msg extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.String2Msg)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.String2Msg)
     String2MsgOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use String2Msg.newBuilder() to construct.
@@ -87,13 +87,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_String2Msg_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_String2Msg_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_String2Msg_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_String2Msg_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.String2Msg.class, io.yottachain.nodemgmt.rebuilder.pb.String2Msg.Builder.class);
   }
@@ -335,21 +335,21 @@ private static final long serialVersionUID = 0L;
    * message that only contains two values of string
    * </pre>
    *
-   * Protobuf type {@code pb.String2Msg}
+   * Protobuf type {@code pbrebuilder.String2Msg}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.String2Msg)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.String2Msg)
       io.yottachain.nodemgmt.rebuilder.pb.String2MsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_String2Msg_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_String2Msg_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_String2Msg_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_String2Msg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.String2Msg.class, io.yottachain.nodemgmt.rebuilder.pb.String2Msg.Builder.class);
     }
@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_String2Msg_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_String2Msg_descriptor;
     }
 
     @java.lang.Override
@@ -639,10 +639,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.String2Msg)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.String2Msg)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.String2Msg)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.String2Msg)
   private static final io.yottachain.nodemgmt.rebuilder.pb.String2Msg DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.String2Msg();

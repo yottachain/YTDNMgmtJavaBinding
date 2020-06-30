@@ -4,29 +4,29 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface NodesRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.NodesResp)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.NodesResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pb.NodeMsg nodes = 1;</code>
+   * <code>repeated .pbrebuilder.NodeMsg nodes = 1;</code>
    */
   java.util.List<io.yottachain.nodemgmt.rebuilder.pb.NodeMsg> 
       getNodesList();
   /**
-   * <code>repeated .pb.NodeMsg nodes = 1;</code>
+   * <code>repeated .pbrebuilder.NodeMsg nodes = 1;</code>
    */
   io.yottachain.nodemgmt.rebuilder.pb.NodeMsg getNodes(int index);
   /**
-   * <code>repeated .pb.NodeMsg nodes = 1;</code>
+   * <code>repeated .pbrebuilder.NodeMsg nodes = 1;</code>
    */
   int getNodesCount();
   /**
-   * <code>repeated .pb.NodeMsg nodes = 1;</code>
+   * <code>repeated .pbrebuilder.NodeMsg nodes = 1;</code>
    */
   java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.NodeMsgOrBuilder> 
       getNodesOrBuilderList();
   /**
-   * <code>repeated .pb.NodeMsg nodes = 1;</code>
+   * <code>repeated .pbrebuilder.NodeMsg nodes = 1;</code>
    */
   io.yottachain.nodemgmt.rebuilder.pb.NodeMsgOrBuilder getNodesOrBuilder(
       int index);

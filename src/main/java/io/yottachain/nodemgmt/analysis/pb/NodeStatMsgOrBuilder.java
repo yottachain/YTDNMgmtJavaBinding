@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface NodeStatMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.NodeStatMsg)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.NodeStatMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**

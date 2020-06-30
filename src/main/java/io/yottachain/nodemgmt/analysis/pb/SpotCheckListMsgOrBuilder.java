@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface SpotCheckListMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.SpotCheckListMsg)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.SpotCheckListMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -18,25 +18,25 @@ public interface SpotCheckListMsgOrBuilder extends
       getTaskIDBytes();
 
   /**
-   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   * <code>repeated .pbanalysis.SpotCheckTaskMsg taskList = 2;</code>
    */
   java.util.List<io.yottachain.nodemgmt.analysis.pb.SpotCheckTaskMsg> 
       getTaskListList();
   /**
-   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   * <code>repeated .pbanalysis.SpotCheckTaskMsg taskList = 2;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.SpotCheckTaskMsg getTaskList(int index);
   /**
-   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   * <code>repeated .pbanalysis.SpotCheckTaskMsg taskList = 2;</code>
    */
   int getTaskListCount();
   /**
-   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   * <code>repeated .pbanalysis.SpotCheckTaskMsg taskList = 2;</code>
    */
   java.util.List<? extends io.yottachain.nodemgmt.analysis.pb.SpotCheckTaskMsgOrBuilder> 
       getTaskListOrBuilderList();
   /**
-   * <code>repeated .pb.SpotCheckTaskMsg taskList = 2;</code>
+   * <code>repeated .pbanalysis.SpotCheckTaskMsg taskList = 2;</code>
    */
   io.yottachain.nodemgmt.analysis.pb.SpotCheckTaskMsgOrBuilder getTaskListOrBuilder(
       int index);

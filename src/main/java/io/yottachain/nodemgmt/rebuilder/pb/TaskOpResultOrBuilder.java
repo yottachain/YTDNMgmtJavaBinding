@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface TaskOpResultOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.TaskOpResult)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.TaskOpResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**

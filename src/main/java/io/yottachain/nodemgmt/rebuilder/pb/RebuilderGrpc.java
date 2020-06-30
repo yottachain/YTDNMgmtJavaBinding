@@ -27,7 +27,7 @@ public final class RebuilderGrpc {
 
   private RebuilderGrpc() {}
 
-  public static final String SERVICE_NAME = "pb.Rebuilder";
+  public static final String SERVICE_NAME = "pbrebuilder.Rebuilder";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<io.yottachain.nodemgmt.rebuilder.pb.Empty,

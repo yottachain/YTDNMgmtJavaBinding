@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * response message with multiple supernodes
  * </pre>
  *
- * Protobuf type {@code pb.SuperNodesResp}
+ * Protobuf type {@code pbrebuilder.SuperNodesResp}
  */
 public  final class SuperNodesResp extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.SuperNodesResp)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.SuperNodesResp)
     SuperNodesRespOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use SuperNodesResp.newBuilder() to construct.
@@ -87,13 +87,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_SuperNodesResp_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_SuperNodesResp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_SuperNodesResp_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_SuperNodesResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.SuperNodesResp.class, io.yottachain.nodemgmt.rebuilder.pb.SuperNodesResp.Builder.class);
   }
@@ -101,32 +101,32 @@ private static final long serialVersionUID = 0L;
   public static final int SUPERNODES_FIELD_NUMBER = 1;
   private java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg> superNodes_;
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
    */
   public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg> getSuperNodesList() {
     return superNodes_;
   }
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
    */
   public java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsgOrBuilder> 
       getSuperNodesOrBuilderList() {
     return superNodes_;
   }
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
    */
   public int getSuperNodesCount() {
     return superNodes_.size();
   }
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
    */
   public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg getSuperNodes(int index) {
     return superNodes_.get(index);
   }
   /**
-   * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+   * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
    */
   public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsgOrBuilder getSuperNodesOrBuilder(
       int index) {
@@ -295,21 +295,21 @@ private static final long serialVersionUID = 0L;
    * response message with multiple supernodes
    * </pre>
    *
-   * Protobuf type {@code pb.SuperNodesResp}
+   * Protobuf type {@code pbrebuilder.SuperNodesResp}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.SuperNodesResp)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.SuperNodesResp)
       io.yottachain.nodemgmt.rebuilder.pb.SuperNodesRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_SuperNodesResp_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_SuperNodesResp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_SuperNodesResp_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_SuperNodesResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.SuperNodesResp.class, io.yottachain.nodemgmt.rebuilder.pb.SuperNodesResp.Builder.class);
     }
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_SuperNodesResp_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_SuperNodesResp_descriptor;
     }
 
     @java.lang.Override
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
         io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsgOrBuilder> superNodesBuilder_;
 
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg> getSuperNodesList() {
       if (superNodesBuilder_ == null) {
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public int getSuperNodesCount() {
       if (superNodesBuilder_ == null) {
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg getSuperNodes(int index) {
       if (superNodesBuilder_ == null) {
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder setSuperNodes(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg value) {
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder setSuperNodes(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder builderForValue) {
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder addSuperNodes(io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg value) {
       if (superNodesBuilder_ == null) {
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder addSuperNodes(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg value) {
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder addSuperNodes(
         io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder builderForValue) {
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder addSuperNodes(
         int index, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder builderForValue) {
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder addAllSuperNodes(
         java.lang.Iterable<? extends io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg> values) {
@@ -629,7 +629,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder clearSuperNodes() {
       if (superNodesBuilder_ == null) {
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public Builder removeSuperNodes(int index) {
       if (superNodesBuilder_ == null) {
@@ -655,14 +655,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder getSuperNodesBuilder(
         int index) {
       return getSuperNodesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsgOrBuilder getSuperNodesOrBuilder(
         int index) {
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public java.util.List<? extends io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsgOrBuilder> 
          getSuperNodesOrBuilderList() {
@@ -683,14 +683,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder addSuperNodesBuilder() {
       return getSuperNodesFieldBuilder().addBuilder(
           io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder addSuperNodesBuilder(
         int index) {
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
           index, io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.getDefaultInstance());
     }
     /**
-     * <code>repeated .pb.SuperNodeMsg superNodes = 1;</code>
+     * <code>repeated .pbrebuilder.SuperNodeMsg superNodes = 1;</code>
      */
     public java.util.List<io.yottachain.nodemgmt.rebuilder.pb.SuperNodeMsg.Builder> 
          getSuperNodesBuilderList() {
@@ -731,10 +731,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.SuperNodesResp)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.SuperNodesResp)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.SuperNodesResp)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.SuperNodesResp)
   private static final io.yottachain.nodemgmt.rebuilder.pb.SuperNodesResp DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.SuperNodesResp();

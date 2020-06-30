@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface DownloadShardResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.DownloadShardResponse)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.DownloadShardResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

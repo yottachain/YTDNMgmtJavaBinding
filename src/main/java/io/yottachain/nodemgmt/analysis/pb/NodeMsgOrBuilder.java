@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.analysis.pb;
 
 public interface NodeMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.NodeMsg)
+    // @@protoc_insertion_point(interface_extends:pbanalysis.NodeMsg)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -320,4 +320,76 @@ public interface NodeMsgOrBuilder extends
    * <code>int64 rx = 26;</code>
    */
   long getRx();
+
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  java.lang.String getExt();
+  /**
+   * <pre>
+   *other
+   * </pre>
+   *
+   * <code>string ext = 27;</code>
+   */
+  com.google.protobuf.ByteString
+      getExtBytes();
+
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+  int getUspacesCount();
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+  boolean containsUspaces(
+      java.lang.String key);
+  /**
+   * Use {@link #getUspacesMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Long>
+  getUspaces();
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.Long>
+  getUspacesMap();
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+
+  long getUspacesOrDefault(
+      java.lang.String key,
+      long defaultValue);
+  /**
+   * <pre>
+   *used spaces on each SN
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; uspaces = 28;</code>
+   */
+
+  long getUspacesOrThrow(
+      java.lang.String key);
 }

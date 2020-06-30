@@ -4,11 +4,11 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 /**
- * Protobuf type {@code pb.P2PLocation}
+ * Protobuf type {@code pbrebuilder.P2PLocation}
  */
 public  final class P2PLocation extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.P2PLocation)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.P2PLocation)
     P2PLocationOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use P2PLocation.newBuilder() to construct.
@@ -90,13 +90,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_P2PLocation_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_P2PLocation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_P2PLocation_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_P2PLocation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.class, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder.class);
   }
@@ -336,21 +336,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.P2PLocation}
+   * Protobuf type {@code pbrebuilder.P2PLocation}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.P2PLocation)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.P2PLocation)
       io.yottachain.nodemgmt.rebuilder.pb.P2PLocationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_P2PLocation_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_P2PLocation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_P2PLocation_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_P2PLocation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.class, io.yottachain.nodemgmt.rebuilder.pb.P2PLocation.Builder.class);
     }
@@ -383,7 +383,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_P2PLocation_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_P2PLocation_descriptor;
     }
 
     @java.lang.Override
@@ -677,10 +677,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.P2PLocation)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.P2PLocation)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.P2PLocation)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.P2PLocation)
   private static final io.yottachain.nodemgmt.rebuilder.pb.P2PLocation DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.P2PLocation();

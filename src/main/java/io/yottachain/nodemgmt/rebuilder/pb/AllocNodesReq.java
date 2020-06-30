@@ -8,11 +8,11 @@ package io.yottachain.nodemgmt.rebuilder.pb;
  * request message of AllocNodes function
  * </pre>
  *
- * Protobuf type {@code pb.AllocNodesReq}
+ * Protobuf type {@code pbrebuilder.AllocNodesReq}
  */
 public  final class AllocNodesReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.AllocNodesReq)
+    // @@protoc_insertion_point(message_implements:pbrebuilder.AllocNodesReq)
     AllocNodesReqOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use AllocNodesReq.newBuilder() to construct.
@@ -104,13 +104,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_AllocNodesReq_descriptor;
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_AllocNodesReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_AllocNodesReq_fieldAccessorTable
+    return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_AllocNodesReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReq.class, io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReq.Builder.class);
   }
@@ -335,21 +335,21 @@ private static final long serialVersionUID = 0L;
    * request message of AllocNodes function
    * </pre>
    *
-   * Protobuf type {@code pb.AllocNodesReq}
+   * Protobuf type {@code pbrebuilder.AllocNodesReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.AllocNodesReq)
+      // @@protoc_insertion_point(builder_implements:pbrebuilder.AllocNodesReq)
       io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_AllocNodesReq_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_AllocNodesReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_AllocNodesReq_fieldAccessorTable
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_AllocNodesReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReq.class, io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReq.Builder.class);
     }
@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pb_AllocNodesReq_descriptor;
+      return io.yottachain.nodemgmt.rebuilder.pb.RebuilderProto.internal_static_pbrebuilder_AllocNodesReq_descriptor;
     }
 
     @java.lang.Override
@@ -605,10 +605,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.AllocNodesReq)
+    // @@protoc_insertion_point(builder_scope:pbrebuilder.AllocNodesReq)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.AllocNodesReq)
+  // @@protoc_insertion_point(class_scope:pbrebuilder.AllocNodesReq)
   private static final io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReq DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.yottachain.nodemgmt.rebuilder.pb.AllocNodesReq();

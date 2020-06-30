@@ -4,7 +4,7 @@
 package io.yottachain.nodemgmt.rebuilder.pb;
 
 public interface P2PLocationOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.P2PLocation)
+    // @@protoc_insertion_point(interface_extends:pbrebuilder.P2PLocation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
