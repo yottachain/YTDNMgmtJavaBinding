@@ -28,7 +28,7 @@ public class NodeMgmt implements NodeMgmtInterface {
         }
 
         analysisCli = new AnalysisCli(analysisHost, analysisPort, analysisTimeout);
-        rebuilderCli = new RebuilderCli(rebuilderHost, rebuilderPort, rebuilderTimeout);
+        //rebuilderCli = new RebuilderCli(rebuilderHost, rebuilderPort, rebuilderTimeout);
         pbClient = new PbClient(nodemgmthostname, nodemgmtPort);
     }
 
