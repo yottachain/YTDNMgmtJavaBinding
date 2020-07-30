@@ -329,6 +329,7 @@ public class YottaNodeMgmt {
                 m.put("id", Integer.toString(n.getId()));
                 m.put("ip", ip);
                 m.put("nodeid", n.getNodeid());
+                m.put("weight", new Double(n.getWeight()).toString());
                 result.add(m);
             }
         }
